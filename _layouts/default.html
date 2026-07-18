@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
+<body>
+  <header class="page-header" role="banner">
+    <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+    <p class="project-tagline">{{ page.description | default: site.description }}</p>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/docs/achievement-index.html' | relative_url }}">Achievements</a>
+      <a href="{{ '/faq/' | relative_url }}">FAQ</a>
+      <a href="{{ '/submit-evidence/' | relative_url }}">Submit evidence</a>
+      <a href="{{ '/contribute/' | relative_url }}">Contribute</a>
+    </nav>
+  </header>
+
+  <main id="content" class="main-content" role="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>Evidence-led, community-maintained documentation. GitHub achievement rules may change while the feature remains in public preview.</p>
+    <p><a href="{{ site.github.repository_url }}">View the repository</a> · <a href="{{ '/site-map/' | relative_url }}">Site map</a></p>
+  </footer>
+</body>
+</html>
