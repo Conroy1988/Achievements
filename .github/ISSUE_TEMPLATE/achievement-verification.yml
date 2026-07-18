@@ -1,0 +1,38 @@
+name: Achievement verification
+
+description: Report a correction or new reproducible finding about a GitHub achievement.
+
+title: "[Verification]: "
+
+labels:
+  - verification
+
+body:
+  - type: input
+    id: achievement
+    attributes:
+      label: Achievement
+      description: Name the achievement or tier.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim or correction
+      description: State exactly what should be added or corrected.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include official documentation, reproducible steps, dates, and observed results.
+    validations:
+      required: true
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Integrity checks
+      options:
+        - label: This report does not rely on fake accounts, fabricated engagement, or identity misuse.
+          required: true
