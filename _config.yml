@@ -1,5 +1,18 @@
 title: GitHub Achievement Encyclopedia
-description: Evidence-led guides to GitHub profile achievements, tiers, triggers, and verification.
+description: Evidence-led guides to GitHub profile achievements, badges, tier thresholds, triggers, award delays, retired achievements, and verification.
 theme: jekyll-theme-cayman
 show_downloads: false
 markdown: kramdown
+url: https://conroy1988.github.io
+baseurl: /Achievements
+lang: en-GB
+author: Conroy1988
+github:
+  repository_url: https://github.com/Conroy1988/Achievements
+plugins:
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/social-card.png
