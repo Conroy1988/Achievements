@@ -11,8 +11,9 @@ github:
   repository_url: https://github.com/Conroy1988/Achievements
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 defaults:
   - scope:
       path: ""
     values:
-      image: /assets/social-card.png
+      image: /assets/social-card.svg
