@@ -1,0 +1,39 @@
+name: Accessibility check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 7 * * 1'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+      - '**/*.html'
+      - 'assets/css/**'
+      - '_layouts/**'
+      - '_config.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install pa11y-ci
+        run: npm install --global pa11y-ci
+      - name: Audit deployed pages
+        run: |
+          pa11y-ci \
+            https://conroy1988.github.io/Achievements/ \
+            https://conroy1988.github.io/Achievements/achievements/pull-shark/ \
+            https://conroy1988.github.io/Achievements/faq/ \
+            --standard WCAG2AA \
+            --threshold 0
