@@ -2,49 +2,116 @@
 layout: default
 title: GitHub Pair Extraordinaire Achievement
 permalink: /achievements/pair-extraordinaire/
-description: Co-authored commits, merged pull requests, Pair Extraordinaire tiers, attribution rules, and verification.
+description: Co-authored commits, merged pull requests, Pair Extraordinaire tiers, attribution rules, verification, and troubleshooting.
 ---
 
 # Pair Extraordinaire
 
+## Summary
+
 **Status:** Earnable  
 **Tiered:** Yes  
-**Evidence level:** Strong community consensus; exact tier values are not published in GitHub's general profile documentation.
+**Evidence status:** GitHub officially documents co-authored commits and contribution attribution. The achievement trigger and tier thresholds remain community-reported because GitHub does not publish a complete Pair Extraordinaire specification.
+
+Pair Extraordinaire recognises genuine collaboration recorded through co-authored commits that are incorporated into merged pull requests.
 
 ## Trigger
 
-Pair Extraordinaire recognises genuine co-authored commits that become part of merged pull requests.
+The community-observed trigger is participation as a correctly attributed co-author on a commit that becomes part of a merged pull request.
 
-## Community-reported tiers
+A visible `Co-authored-by:` trailer proves commit attribution, but GitHub does not officially guarantee that every visible co-authored commit will increment this achievement.
 
-| Level | Qualifying co-authored merged pull requests |
-|---|---:|
-| Base | 1 |
-| Bronze | 10 |
-| Silver | 24 |
-| Gold | 48 |
+## Community-reported progression
 
-## Attribution requirements
+| Level | Reported qualifying merged pull requests | Evidence classification |
+|---|---:|---|
+| Base | 1 | Community-reported |
+| Bronze | 10 | Community-reported |
+| Silver | 24 | Community-reported |
+| Gold | 48 | Community-reported |
 
-GitHub supports a standard co-author trailer in commit messages. Contributors should follow GitHub's documented co-authoring format and use an email address already associated with the relevant account.
+These values have broad community support but should not be described as official GitHub thresholds.
 
-## Recommended workflow
+## Eligibility conditions
 
-1. Collaborate on a substantive change.
-2. Record each contributor accurately in the commit metadata.
-3. Push the commit to a pull-request branch.
-4. Merge the pull request after normal review.
-5. Confirm GitHub displays the correct contributors on the commit.
+For GitHub to associate a co-authored commit with the intended account:
 
-## Common failures
+- the commit message must contain a correctly formatted `Co-authored-by: Name <email>` trailer;
+- there must be a blank line between the main commit message and the trailer;
+- the email must be associated with the co-author's GitHub account, or be that account's GitHub-provided no-reply address;
+- each co-author must have a separate trailer line;
+- the commit must be pushed to GitHub and remain in the merged pull request history;
+- the attribution must represent a real contribution.
 
-- Incorrect trailer formatting.
-- An email not associated with the contributor's GitHub account.
-- Attribution text placed outside the commit message.
-- A co-authored commit that never reaches a merged pull request.
+The treatment of private repositories, squash merges, rebases, rewritten commit messages, and unusual merge strategies is not comprehensively documented by GitHub.
 
-## Integrity rule
+## Award timing
 
-Only credit people who genuinely contributed. Co-author metadata forms part of the permanent project history and should remain accurate.
+Achievement processing is not guaranteed to be immediate. A correctly attributed merged contribution may appear on the profile before the achievement badge or tier updates.
+
+No official maximum processing time is published. Allow a reasonable delay before treating a missing badge as evidence of failure.
+
+## Verification
+
+1. Open the merged pull request.
+2. Open the relevant commit from the pull request timeline or commit list.
+3. Confirm GitHub displays the expected co-author attribution.
+4. Confirm the pull request is merged rather than merely closed.
+5. Check the contributor's public profile achievement section after processing time has elapsed.
+6. Record the pull-request URL, merge date, and visible attribution when collecting reproducible evidence.
+
+Do not publish private repository names, private commit content, personal email addresses, or other sensitive information as evidence.
+
+## Evidence status
+
+- **Official:** GitHub supports `Co-authored-by:` commit trailers and requires an account-associated email for the commit to count as a contribution.
+- **Confirmed:** Correctly formatted co-author trailers are displayed on GitHub after the commit is pushed.
+- **Community-reported:** Pair Extraordinaire is linked to co-authored commits contained in merged pull requests.
+- **Community-reported:** The thresholds are 1, 10, 24, and 48 qualifying merged pull requests.
+- **Unknown:** The exact treatment of every private-repository, squash-merge, rebase, rewritten-history, and delayed-processing scenario.
+
+## Known limitations and edge cases
+
+- A trailer using an unassociated email may display as text without linking to the intended account.
+- Rewriting or squashing commits can remove or alter the original trailer.
+- Attribution added only to a pull-request description or comment does not create a co-authored commit.
+- A co-authored commit on an unmerged branch does not satisfy the commonly reported merged-pull-request condition.
+- GitHub may process contribution attribution and achievement progression on different schedules.
+- Repository visibility and profile privacy settings can make public verification incomplete.
+- Multiple co-authored commits in one pull request should not automatically be assumed to represent multiple qualifying units; community evidence generally describes progression by merged pull requests.
+
+## Troubleshooting
+
+When an expected badge or tier does not appear:
+
+1. Confirm the pull request shows a merged state.
+2. Inspect the final commit history rather than the pre-merge branch history.
+3. Verify the trailer uses the exact `Co-authored-by:` syntax.
+4. Check for the required blank line before the trailer.
+5. Confirm the email belongs to the intended GitHub account or uses its valid no-reply format.
+6. Check whether squash merging or rebasing replaced the attributed commit.
+7. Confirm the co-author is visibly linked on GitHub.
+8. Allow additional processing time.
+9. Treat the event as an observation until independently reproduced.
+
+## Responsible participation
+
+Use co-author attribution only when another person made a substantive contribution to the commit. Accurate authorship is part of the permanent project record and should take priority over profile recognition.
+
+## History
+
+GitHub has long supported multiple-author attribution through commit-message trailers. Pair Extraordinaire later exposed this form of collaboration as a profile achievement. GitHub has not published a complete public change log for the achievement's thresholds or counting logic.
+
+Material changes should therefore be documented with dated, reproducible evidence and should retain earlier claims until contradictions are resolved.
+
+## References
+
+- [Creating a commit with multiple authors](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors)
+- [Viewing contributions on your profile](https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/viewing-contributions-on-your-profile)
+- [GitHub achievement index]({{ site.baseurl }}/docs/achievement-index.html)
+
+## Last verified
+
+**19 July 2026** — verified the current GitHub documentation for co-authored commit syntax, account-associated email requirements, no-reply addresses, visible attribution, and profile contribution behaviour. The achievement trigger and tier thresholds remain classified as community-reported.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)
