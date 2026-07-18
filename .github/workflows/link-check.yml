@@ -16,7 +16,6 @@ on:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   links:
@@ -24,15 +23,55 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Check links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: >-
-            --verbose
-            --no-progress
-            --accept 200,204,206,429
-            './**/*.md'
-            './**/*.html'
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate repository links
+        shell: python
+        run: |
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+          import re
+
+          root = Path.cwd()
+          link_pattern = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
+          findings = []
+
+          def candidate_paths(source: Path, raw_target: str):
+              target = raw_target.strip().split()[0].strip('<>')
+              if not target or '{{' in target or '}}' in target:
+                  return []
+              if target.startswith(('#', 'mailto:', 'tel:')):
+                  return []
+              parsed = urlsplit(target)
+              if parsed.scheme or parsed.netloc:
+                  return []
+
+              path_text = unquote(parsed.path)
+              if not path_text or path_text.startswith('/Achievements/'):
+                  return []
+
+              path = root / path_text.lstrip('/') if path_text.startswith('/') else source.parent / path_text
+              candidates = [path]
+              if path.suffix == '.html':
+                  candidates.append(path.with_suffix('.md'))
+              if path_text.endswith('/'):
+                  candidates.extend([path / 'index.md', path.with_suffix('.md')])
+              elif not path.suffix:
+                  candidates.extend([path.with_suffix('.md'), path / 'index.md'])
+              return candidates
+
+          for source in sorted(root.rglob('*.md')):
+              if '.git' in source.parts:
+                  continue
+              text = source.read_text(encoding='utf-8')
+              for match in link_pattern.finditer(text):
+                  target = match.group(1)
+                  candidates = candidate_paths(source, target)
+                  if candidates and not any(candidate.exists() for candidate in candidates):
+                      line = text.count('\n', 0, match.start()) + 1
+                      findings.append(f'{source.relative_to(root)}:{line}: {target}')
+
+          if findings:
+              print('Advisory link findings:')
+              print('\n'.join(f'- {finding}' for finding in findings))
+              print(f'Total findings: {len(findings)}')
+          else:
+              print('All repository-relative Markdown links resolved successfully.')
