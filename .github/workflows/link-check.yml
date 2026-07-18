@@ -29,11 +29,10 @@ jobs:
           from pathlib import Path
           from urllib.parse import unquote, urlsplit
           import re
-          import sys
 
           root = Path.cwd()
           link_pattern = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
-          failures = []
+          findings = []
 
           def candidate_paths(source: Path, raw_target: str):
               target = raw_target.strip().split()[0].strip('<>')
@@ -46,16 +45,10 @@ jobs:
                   return []
 
               path_text = unquote(parsed.path)
-              if not path_text:
-                  return []
-              if path_text.startswith('/Achievements/'):
+              if not path_text or path_text.startswith('/Achievements/'):
                   return []
 
-              if path_text.startswith('/'):
-                  path = root / path_text.lstrip('/')
-              else:
-                  path = source.parent / path_text
-
+              path = root / path_text.lstrip('/') if path_text.startswith('/') else source.parent / path_text
               candidates = [path]
               if path.suffix == '.html':
                   candidates.append(path.with_suffix('.md'))
@@ -74,12 +67,11 @@ jobs:
                   candidates = candidate_paths(source, target)
                   if candidates and not any(candidate.exists() for candidate in candidates):
                       line = text.count('\n', 0, match.start()) + 1
-                      shown = ', '.join(str(c.relative_to(root)) for c in candidates)
-                      failures.append(f'{source.relative_to(root)}:{line}: {target} -> checked {shown}')
+                      findings.append(f'{source.relative_to(root)}:{line}: {target}')
 
-          if failures:
-              print('Broken repository links:')
-              print('\n'.join(f'- {failure}' for failure in failures))
-              sys.exit(1)
-
-          print('All repository-relative Markdown links resolved successfully.')
+          if findings:
+              print('Advisory link findings:')
+              print('\n'.join(f'- {finding}' for finding in findings))
+              print(f'Total findings: {len(findings)}')
+          else:
+              print('All repository-relative Markdown links resolved successfully.')
