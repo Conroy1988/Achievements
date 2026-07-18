@@ -26,14 +26,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       - name: Install pa11y-ci
         run: npm install --global pa11y-ci
+      - name: Wait for deployed pages
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error https://conroy1988.github.io/Achievements/ >/dev/null; then
+              exit 0
+            fi
+            sleep 30
+          done
+          exit 1
       - name: Audit deployed pages
         run: |
           pa11y-ci \
             https://conroy1988.github.io/Achievements/ \
             https://conroy1988.github.io/Achievements/achievements/pull-shark/ \
             https://conroy1988.github.io/Achievements/faq/ \
+            https://conroy1988.github.io/Achievements/contribute/ \
             --standard WCAG2AA \
             --threshold 0
