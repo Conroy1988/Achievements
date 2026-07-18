@@ -1,18 +1,42 @@
 # Contributing
 
-Contributions should improve the accuracy, usability, or maintainability of this GitHub achievement reference.
+Contributions should improve the accuracy, usability, accessibility, or maintainability of the GitHub Achievement Encyclopedia.
+
+## Choose the correct route
+
+- Use the correction issue form for inaccurate or outdated documentation.
+- Use the evidence issue form for a dated observation or reproduction result.
+- Open a pull request when the correction is understood and you can provide the finished change.
+- Use the security policy for credentials, private data, malicious links, or workflow risks.
 
 ## Before opening a pull request
 
-- Check whether the claim is current and reproducible.
-- Distinguish official GitHub documentation from community-observed behaviour.
-- Avoid instructions that encourage spam, fake engagement, identity misuse, or payment manipulation.
-- Keep each pull request focused on one independently reviewable change.
+1. Check whether an issue or pull request already covers the subject.
+2. Verify that the claim is current and reproducible.
+3. Distinguish official documentation from community-observed behaviour.
+4. Remove private information, tokens, billing details, and unrelated account data.
+5. Keep the change focused on one independently reviewable purpose.
+6. Run `python scripts/check_links.py` when changing Markdown links.
+
+## Evidence expectations
+
+Preferred evidence order:
+
+1. current official GitHub documentation or announcements;
+2. dated and reproducible observations;
+3. repeated independent community reports;
+4. clearly labelled unconfirmed reports.
+
+Screenshots should include enough context to understand the observation while excluding private repository content and personal information.
 
 ## Documentation style
 
-Use concise headings, explicit thresholds, reproducible steps, caveats, and a verification section where relevant.
+Use concise headings, explicit conditions, reproducible steps, caveats, and an evidence-confidence statement where relevant. Avoid presenting community thresholds as official guarantees.
 
 ## Pull requests
 
-Explain what changed, why it is useful, and how the information was validated. Corrections are preferred over silent deletion of disputed material.
+Explain what changed, why it is useful, how it was validated, and which issue it addresses. Complete the pull-request checklist. Corrections are preferred over silently deleting disputed or historical material.
+
+## Conduct and scope
+
+Follow `CODE_OF_CONDUCT.md`, `GOVERNANCE.md`, and `SECURITY.md`. Empty activity, fabricated evidence, deceptive attribution, fake engagement, and instructions designed solely to manipulate contribution metrics are not accepted.
