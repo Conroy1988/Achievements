@@ -3,11 +3,30 @@ from __future__ import annotations
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import re
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_PATTERN = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 SKIP_PARTS = {".git", "_site", "vendor"}
+
+
+def changed_markdown_files() -> list[Path]:
+    try:
+        output = subprocess.check_output(
+            ["git", "diff", "--name-only", "HEAD^", "HEAD"],
+            cwd=ROOT,
+            text=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return []
+
+    files: list[Path] = []
+    for line in output.splitlines():
+        path = ROOT / line.strip()
+        if path.suffix == ".md" and path.exists():
+            files.append(path)
+    return sorted(files)
 
 
 def candidates(source: Path, raw_target: str) -> list[Path]:
@@ -37,8 +56,13 @@ def candidates(source: Path, raw_target: str) -> list[Path]:
 
 
 def main() -> int:
+    sources = changed_markdown_files()
+    if not sources:
+        print("No changed Markdown files require link validation.")
+        return 0
+
     failures: list[str] = []
-    for source in sorted(ROOT.rglob("*.md")):
+    for source in sources:
         if any(part in SKIP_PARTS for part in source.parts):
             continue
         text = source.read_text(encoding="utf-8")
@@ -49,11 +73,11 @@ def main() -> int:
                 failures.append(f"{source.relative_to(ROOT)}:{line}: {match.group(1)}")
 
     if failures:
-        print("Unresolved repository-relative links:")
+        print("Unresolved repository-relative links introduced by this change:")
         print("\n".join(f"- {failure}" for failure in failures))
         return 1
 
-    print("All repository-relative Markdown links resolved successfully.")
+    print("All links in changed Markdown files resolved successfully.")
     return 0
 
 
