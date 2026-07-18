@@ -1,17 +1,75 @@
 # YOLO
 
-YOLO recognises merging a pull request without a review.
+## Summary
 
-## Reproduction path
+YOLO is an active, non-tiered GitHub profile achievement associated with merging a pull request without a submitted review.
 
-1. Create a branch with a useful change.
-2. Open a pull request against the default branch.
-3. Merge it without submitting or receiving a pull-request review.
+## Trigger
 
-## Caveats
+The observed qualifying event is a pull request merged without an approval, requested-changes review, or comment review being submitted through GitHub's pull-request review system.
 
-Repository protection rules may require reviews and therefore prevent this route. A repository owner should not weaken protections on an important production repository solely to obtain the badge.
+## Progression or tiers
+
+YOLO is generally observed as a single-level achievement with no published tier progression.
+
+## Eligibility conditions
+
+- The qualifying object must be a pull request.
+- The pull request must be merged rather than merely closed.
+- No formal pull-request review should have been submitted before merge.
+- Branch protection, rulesets, and organisation policy may require reviews and prevent this route.
+- Ordinary issue comments and pull-request conversation comments are distinct from submitted reviews, but GitHub does not publish every internal qualification detail.
+
+## Award timing
+
+The merge event appears immediately in the pull request, while profile-achievement processing may occur later. No fixed refresh interval is guaranteed.
 
 ## Verification
 
-A normal issue or commit is insufficient: the qualifying event is an unreviewed pull-request merge.
+1. Open the merged pull request.
+2. Confirm the merge event and account attribution.
+3. Review the timeline for submitted reviews.
+4. Distinguish conversation comments from formal pull-request reviews.
+5. Recheck the profile after allowing for processing delay.
+
+## Evidence status
+
+- GitHub officially documents pull-request merges, reviews, branch protection, and rulesets.
+- The unreviewed-merge association is strongly observed.
+- GitHub does not publish a complete eligibility specification for the badge.
+
+## Known limitations and edge cases
+
+- Required-review rules can make the trigger unavailable.
+- Reviews submitted and later dismissed may still complicate qualification.
+- Bot reviews, review requests, comments, and approval checks are separate concepts.
+- Repository administrators should not weaken important protections solely to obtain an achievement.
+
+## Troubleshooting
+
+- Confirm the pull request was merged, not only closed.
+- Inspect the review timeline for approvals, comments, or requested changes submitted as reviews.
+- Check whether automation submitted a review.
+- Allow time for profile processing.
+- Treat ambiguous dismissed-review behaviour as unresolved without reproducible evidence.
+
+## Responsible participation
+
+Use a low-risk repository and a legitimate, reviewable change where an unreviewed merge is already consistent with repository policy. Preserve required review protections on production or collaborative repositories.
+
+## History
+
+YOLO was introduced with GitHub profile achievements. GitHub has not published a complete public trigger specification or historical change log for the achievement.
+
+## References
+
+- [About pull request reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+- [Merging a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
+- [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+- [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
+
+## Last verified
+
+**19 July 2026.** Scope: current merge, review, and protection controls; profile-achievement presentation; and the evidence status of the unreviewed-merge trigger.
+
+[Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)
