@@ -1,0 +1,98 @@
+---
+---
+@import "jekyll-theme-cayman";
+
+:root {
+  --ink: #e6edf3;
+  --muted: #9da7b3;
+  --panel: #111820;
+  --panel-2: #17212b;
+  --line: #2b3743;
+  --accent: #58a6ff;
+  --accent-2: #8b5cf6;
+  --success: #3fb950;
+  --warning: #d29922;
+}
+
+body {
+  background: #0b1117;
+  color: var(--ink);
+}
+
+.page-header {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 48%, #312e81 100%);
+  padding: 3rem 1rem 2.4rem;
+}
+
+.project-name { letter-spacing: -0.035em; }
+.project-tagline { color: #d1d5db; opacity: 1; }
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.site-nav a {
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  color: #fff;
+  padding: .45rem .85rem;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease;
+}
+.site-nav a:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.45); }
+
+.main-content { max-width: 1120px; color: var(--ink); }
+.main-content h1, .main-content h2, .main-content h3 { color: #f8fafc; }
+.main-content a { color: #79c0ff; }
+.main-content table { display: table; width: 100%; }
+.main-content table th, .main-content table td { border-color: var(--line); }
+.main-content blockquote { color: #c7d2fe; border-left-color: var(--accent-2); }
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.achievement-card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.2);
+  padding: 1.15rem;
+}
+.achievement-card h3 { margin-top: 0; }
+.achievement-card p { color: var(--muted); }
+
+.status-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  padding: .2rem .55rem;
+}
+.status-live { color: #7ee787; border-color: rgba(63,185,80,.55); }
+.status-tiered { color: #d2a8ff; border-color: rgba(139,92,246,.65); }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  margin-top: 3rem;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .page-header { padding-top: 2.2rem; }
+  .project-name { font-size: 2rem; }
+  .main-content { font-size: .98rem; padding: 1.5rem 1rem; }
+  .main-content table { display: block; overflow-x: auto; }
+  .site-nav { gap: .4rem; }
+  .site-nav a { font-size: .9rem; padding: .4rem .65rem; }
+}
