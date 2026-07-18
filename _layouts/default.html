@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": {{ site.title | jsonify }},
+    "description": {{ site.description | jsonify }},
+    "url": {{ site.url | append: site.baseurl | append: '/' | jsonify }},
+    "inLanguage": {{ site.lang | jsonify }},
+    "publisher": {
+      "@type": "Person",
+      "name": {{ site.author | jsonify }},
+      "url": "https://github.com/{{ site.author }}"
+    },
+    "isAccessibleForFree": true,
+    "license": "https://opensource.org/license/mit"
+  }
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 </head>
 <body>
