@@ -1,0 +1,48 @@
+name: Documentation correction
+description: Report inaccurate, outdated, unclear, or broken encyclopedia content.
+title: "Correction: "
+labels:
+  - correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the encyclopedia accurate. Do not include private repository content, billing data, tokens, or personal information.
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      description: Link to the page or provide its repository path.
+      placeholder: https://conroy1988.github.io/Achievements/achievements/...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current statement
+      description: Quote or summarise the content that needs correction.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed correction
+      description: Explain the replacement wording or factual correction.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Include official documentation, dated observations, or reproducible evidence. Remove private information.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I have removed private or sensitive information.
+          required: true
+        - label: I have searched for an existing issue covering this correction.
+          required: true

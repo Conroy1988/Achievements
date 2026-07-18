@@ -1,0 +1,70 @@
+name: Achievement evidence
+description: Submit a reproducible observation about a GitHub achievement.
+title: "Evidence: "
+labels:
+  - evidence
+body:
+  - type: dropdown
+    id: achievement
+    attributes:
+      label: Achievement
+      options:
+        - Pull Shark
+        - Quickdraw
+        - YOLO
+        - Galaxy Brain
+        - Pair Extraordinaire
+        - Starstruck
+        - Public Sponsor
+        - Retired or historical achievement
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Observation date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: What happened?
+      description: Describe the activity, result, timing, and relevant account or repository conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide enough detail for another contributor to verify the observation responsibly.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Public evidence
+      description: Add public URLs or redacted screenshots. Never include tokens, billing details, or private repository data.
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Suggested evidence level
+      options:
+        - Official
+        - Reproduced
+        - Community consensus
+        - Unconfirmed
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: This submission describes genuine activity rather than manufactured engagement.
+          required: true
+        - label: I have removed private or sensitive information.
+          required: true
