@@ -1,15 +1,28 @@
 ## Summary
 
-Describe the focused change and why it improves the reference project.
+Describe the documentation, evidence, design, accessibility, or maintenance improvement.
 
-## Evidence
+## Why this change is needed
 
-List official documentation, reproducible observations, or community evidence supporting any achievement criteria changed.
+Explain the reader problem, factual issue, or project requirement addressed.
+
+## Evidence and sources
+
+List official sources, dated public observations, or reproducible evidence. Clearly label community-reported claims.
 
 ## Validation
 
-- [ ] The change is independently reviewable.
-- [ ] Thresholds and caveats are explicit.
-- [ ] Historical or unavailable achievements are clearly marked.
-- [ ] No fake engagement, identity misuse, spam, or unsafe automation is encouraged.
-- [ ] Links and formatting have been checked.
+- [ ] Links were checked.
+- [ ] Markdown renders correctly.
+- [ ] Mobile readability was considered.
+- [ ] No private repository content, personal information, billing data, or secrets are included.
+- [ ] The change does not encourage empty activity, fake engagement, misleading attribution, or spam.
+- [ ] Material factual changes explain what changed and why.
+
+## Screenshots
+
+Add screenshots for visual changes, with private information removed.
+
+## Related issue
+
+Closes #
