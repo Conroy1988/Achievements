@@ -1,0 +1,95 @@
+name: Official documentation monitor
+
+on:
+  pull_request:
+    paths:
+      - 'data/official-document-monitor.json'
+      - 'docs/official-document-monitor.md'
+      - 'scripts/monitor_official_docs.py'
+      - '.github/workflows/official-document-monitor.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '37 7 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    name: Compare official GitHub documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Run documentation monitor
+        id: monitor
+        shell: bash
+        run: |
+          set +e
+          python scripts/monitor_official_docs.py \
+            --report official-doc-monitor-report.md \
+            --json official-doc-monitor-report.json
+          exit_code=$?
+          status=$(python -c "import json; print(json.load(open('official-doc-monitor-report.json'))['status'])")
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Open review issue for a detected change
+        if: github.event_name != 'pull_request' && steps.monitor.outputs.status == 'changed'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title='Official GitHub documentation change detected'
+          if gh issue list --state open --search "$title in:title" --json number --jq 'length' | grep -qx '0'; then
+            gh issue create \
+              --title "$title" \
+              --body-file official-doc-monitor-report.md
+          else
+            echo 'An open documentation-change review issue already exists.'
+          fi
+      - name: Upload monitor evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: official-document-monitor
+          path: |
+            official-doc-monitor-report.md
+            official-doc-monitor-report.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Enforce monitor result
+        if: steps.monitor.outputs.status == 'error'
+        run: exit 1
+
+  initialise:
+    name: Record Phase 36 documentation baselines
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-36/official-doc-monitor'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out Phase 36 branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Capture official documentation baselines once
+        run: |
+          if [[ -f docs/official-document-monitor.md ]] && \
+             python -c "import json,sys; d=json.load(open('data/official-document-monitor.json')); sys.exit(0 if all(x.get('baseline_sha256') and x.get('baseline_checked_at') for x in d['documents']) else 1)"; then
+            echo 'Official documentation baselines already exist.'
+            exit 0
+          fi
+          python scripts/monitor_official_docs.py --initialise
+      - name: Commit monitor baselines
+        run: |
+          if [[ -z "$(git status --porcelain -- data/official-document-monitor.json docs/official-document-monitor.md)" ]]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/official-document-monitor.json docs/official-document-monitor.md
+          git commit -m 'Phase 36: record official documentation baselines'
+          git push

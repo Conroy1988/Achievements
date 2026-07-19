@@ -25,6 +25,8 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Public evidence register](docs/evidence-register.md)
 - [Evidence register policy](docs/evidence-register-policy.md)
 - [Machine-readable evidence records](api/evidence.json)
+- [Official documentation monitor](docs/official-document-monitor.md)
+- [Monitor configuration](data/official-document-monitor.json)
 - [Repository health dashboard](docs/health-dashboard.md)
 - [Unified repository audit](docs/repository-audit.md)
 - [Public data API reference](docs/api-reference.md)
