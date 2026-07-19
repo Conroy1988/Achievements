@@ -75,8 +75,14 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           ref: ${{ github.head_ref }}
-      - name: Capture official documentation baselines
-        run: python scripts/monitor_official_docs.py --initialise
+      - name: Capture official documentation baselines once
+        run: |
+          if [[ -f docs/official-document-monitor.md ]] && \
+             python -c "import json,sys; d=json.load(open('data/official-document-monitor.json')); sys.exit(0 if all(x.get('baseline_sha256') and x.get('baseline_checked_at') for x in d['documents']) else 1)"; then
+            echo 'Official documentation baselines already exist.'
+            exit 0
+          fi
+          python scripts/monitor_official_docs.py --initialise
       - name: Commit monitor baselines
         run: |
           if [[ -z "$(git status --porcelain -- data/official-document-monitor.json docs/official-document-monitor.md)" ]]; then
