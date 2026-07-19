@@ -12,6 +12,7 @@ SCHEMA = ROOT / "data" / "achievement.schema.json"
 DEFAULT_OUTPUT = ROOT / "api"
 API_VERSION = "1.1.0"
 PUBLIC_BASE = "/Achievements/api"
+
 AUXILIARY_ENDPOINTS = {
     "evidence": Path("evidence.json"),
     "timelines": Path("timelines.json"),
@@ -25,6 +26,7 @@ AUXILIARY_ENDPOINTS = {
     "auditor_rules": Path("auditor-rules.json"),
     "submission_schema": Path("submission-schema.json"),
     "command_centre": Path("command-centre.json"),
+    "public_observations": Path("public-observations.json"),
 }
 AUXILIARY_COLLECTIONS = {
     "evidence": "records",
@@ -36,19 +38,14 @@ AUXILIARY_COLLECTIONS = {
     "change_impact": "documents",
     "lab_protocols": "protocols",
     "auditor_rules": "rules",
+    "public_observations": "observations",
 }
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Build or verify the static achievement API."
-    )
+    parser = argparse.ArgumentParser(description="Build or verify the static achievement API.")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument(
-        "--check",
-        action="store_true",
-        help="fail when committed API files differ from generated output",
-    )
+    parser.add_argument("--check", action="store_true")
     return parser.parse_args()
 
 
@@ -84,11 +81,8 @@ def expected_documents() -> dict[Path, object]:
         },
         Path("schema.json"): schema,
     }
-
     for achievement in achievements:
-        if not isinstance(achievement, dict) or not isinstance(
-            achievement.get("slug"), str
-        ):
+        if not isinstance(achievement, dict) or not isinstance(achievement.get("slug"), str):
             raise ValueError("Every achievement must define a string slug")
         slug = achievement["slug"]
         if slug in slugs:
@@ -122,26 +116,19 @@ def expected_documents() -> dict[Path, object]:
 
 
 def validate_status(output: Path, errors: list[str]) -> None:
-    status_path = output / "status.json"
-    if not status_path.exists():
+    path = output / "status.json"
+    if not path.exists():
         errors.append("api/status.json is missing")
         return
     try:
-        status = load_json(status_path)
+        payload = load_json(path)
     except (OSError, ValueError, json.JSONDecodeError) as error:
         errors.append(f"api/status.json is invalid: {error}")
         return
-    for field in (
-        "schema_version",
-        "repository",
-        "generated_at",
-        "health",
-        "workflows",
-        "metrics",
-    ):
-        if field not in status:
+    for field in ("schema_version", "repository", "generated_at", "health", "workflows", "metrics"):
+        if field not in payload:
             errors.append(f"api/status.json is missing {field}")
-    if status.get("repository") != "Conroy1988/Achievements":
+    if payload.get("repository") != "Conroy1988/Achievements":
         errors.append("api/status.json identifies the wrong repository")
 
 
@@ -163,34 +150,27 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
         if collection and not isinstance(payload.get(collection), list):
             errors.append(f"{path.relative_to(ROOT)} is missing {collection}")
         if name == "coverage":
-            for field in (
-                "overall_coverage_score",
-                "unassigned_gap_count",
-                "achievements",
-                "claims",
-            ):
+            for field in ("overall_coverage_score", "unassigned_gap_count", "achievements", "claims"):
                 if field not in payload:
                     errors.append(f"{path.relative_to(ROOT)} is missing {field}")
         if name == "submission_schema" and not isinstance(payload.get("schema"), dict):
             errors.append("api/submission-schema.json is missing schema")
         if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
             errors.append("api/command-centre.json is missing metrics")
+        if name == "public_observations" and not isinstance(payload.get("metrics"), dict):
+            errors.append("api/public-observations.json is missing metrics")
 
 
 def write_documents(output: Path, documents: dict[Path, object]) -> None:
     output.mkdir(parents=True, exist_ok=True)
-    achievement_dir = output / "achievements"
-    shutil.rmtree(achievement_dir, ignore_errors=True)
+    shutil.rmtree(output / "achievements", ignore_errors=True)
     for relative, value in documents.items():
         destination = output / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(serialise(value), encoding="utf-8")
 
 
-def check_documents(
-    output: Path,
-    documents: dict[Path, object],
-) -> list[str]:
+def check_documents(output: Path, documents: dict[Path, object]) -> list[str]:
     errors: list[str] = []
     expected_paths = set(documents)
     for relative, value in documents.items():
@@ -205,12 +185,10 @@ def check_documents(
             continue
         if actual != value:
             errors.append(f"API drift detected: {destination.relative_to(ROOT)}")
-
     achievement_dir = output / "achievements"
     if achievement_dir.exists():
         for path in achievement_dir.glob("*.json"):
-            relative = path.relative_to(output)
-            if relative not in expected_paths:
+            if path.relative_to(output) not in expected_paths:
                 errors.append(f"Stale API endpoint: {path.relative_to(ROOT)}")
     validate_status(output, errors)
     validate_auxiliary(output, errors)
@@ -247,10 +225,7 @@ def main() -> int:
         print("Public API generated, but auxiliary validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print(
-        f"Generated {len(documents)} static API endpoints "
-        "from 9 achievement records."
-    )
+    print(f"Generated {len(documents)} static API endpoints from 9 achievement records.")
     return 0
 
 
