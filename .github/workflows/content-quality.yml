@@ -42,12 +42,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Build with GitHub Pages
+        uses: actions/jekyll-build-pages@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
-      - name: Build site
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build --trace
+          source: ./
+          destination: ./_site
