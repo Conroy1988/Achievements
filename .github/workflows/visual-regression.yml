@@ -56,7 +56,7 @@ jobs:
         run: npm run visual:update
       - name: Commit baselines
         run: |
-          if git diff --quiet -- tests/visual/baselines; then
+          if [[ -z "$(git status --porcelain -- tests/visual/baselines)" ]]; then
             echo "No baseline changes were generated."
             exit 0
           fi
