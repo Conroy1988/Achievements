@@ -26,6 +26,8 @@ AUXILIARY_ENDPOINTS = {
     "auditor_rules": Path("auditor-rules.json"),
     "submission_schema": Path("submission-schema.json"),
     "mission_submission_schema": Path("mission-submission-schema.json"),
+    "mission_review_queue": Path("mission-review-queue.json"),
+    "mission_review_schema": Path("mission-review-schema.json"),
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
     "event_linked_evidence": Path("event-linked-evidence.json"),
@@ -50,6 +52,7 @@ AUXILIARY_COLLECTIONS = {
     "event_linked_evidence": "events",
     "evidence_intelligence": "achievements",
     "acquisition_missions": "missions",
+    "mission_review_queue": "queue",
     "threshold_boundaries": "programmes",
     "contradiction_assessments": "assessments",
 }
@@ -163,12 +166,19 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             for field in ("overall_coverage_score", "unassigned_gap_count", "achievements", "claims"):
                 if field not in payload:
                     errors.append(f"{path.relative_to(ROOT)} is missing {field}")
-        if name in {"submission_schema", "mission_submission_schema"} and not isinstance(payload.get("schema"), dict):
+        if name in {"submission_schema", "mission_submission_schema", "mission_review_schema"} and not isinstance(payload.get("schema"), dict):
             errors.append(f"api/{relative.name} is missing schema")
         if name == "mission_submission_schema":
             for field in ("mission_count", "form_url"):
                 if field not in payload:
                     errors.append(f"api/mission-submission-schema.json is missing {field}")
+        if name == "mission_review_queue":
+            for field in ("policy", "review_schema", "packet_directory", "review_directory", "metrics"):
+                if field not in payload:
+                    errors.append(f"api/mission-review-queue.json is missing {field}")
+            metrics = payload.get("metrics")
+            if isinstance(metrics, dict) and metrics.get("automatic_canonical_mutation_count") != 0:
+                errors.append("api/mission-review-queue.json reports an automatic canonical mutation")
         if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
             errors.append("api/command-centre.json is missing metrics")
         if name in {
@@ -177,6 +187,7 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             "contradiction_assessments",
             "evidence_intelligence",
             "acquisition_missions",
+            "mission_review_queue",
         } and not isinstance(payload.get("metrics"), dict):
             errors.append(f"api/{relative.name} is missing metrics")
         if name == "acquisition_missions":
