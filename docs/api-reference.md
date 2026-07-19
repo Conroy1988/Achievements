@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, research missions, analytics, adjudication, release readiness, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research missions, intake contracts, analytics, adjudication, release readiness, schema, and repository health.
 permalink: /api/
 ---
 
@@ -45,7 +45,8 @@ https://conroy1988.github.io/Achievements/api/
 |---|---|
 | [`lab-protocols.json`](../api/lab-protocols.json) | Ethical, privacy-safe reproduction protocols |
 | [`auditor-rules.json`](../api/auditor-rules.json) | Read-only public-signal rules and explicit limitations |
-| [`submission-schema.json`](../api/submission-schema.json) | Structured evidence-observation contract |
+| [`submission-schema.json`](../api/submission-schema.json) | Structured general evidence-observation contract |
+| [`mission-submission-schema.json`](../api/mission-submission-schema.json) | Closed mission-packet contract with relationship, safeguard, and timing requirements |
 | [`command-centre.json`](../api/command-centre.json) | Static research metrics, targets, and public routes |
 
 ## Evidence-quality programme endpoints
@@ -60,7 +61,7 @@ https://conroy1988.github.io/Achievements/api/
 | [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
 | [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
 
-The discovery index now exposes **33 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty auxiliary endpoints.
+The discovery index now exposes **34 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-one auxiliary endpoints.
 
 ## Response obligations
 
@@ -73,6 +74,8 @@ Event-linked records retain participant reports, negative results, processing-de
 Evidence-intelligence pressure scores prioritise unresolved work. They are not confidence scores and do not predict whether a community-reported claim is true.
 
 Acquisition missions are bounded research instructions. They prohibit artificial activity, spam, false attribution, repository manipulation, and automatic claim promotion.
+
+Mission intake packets must preserve the published mission, task, claim, contradiction, evidence-key, timing, safeguard, privacy, and human-review boundaries. Automated acceptance is not an evidence promotion.
 
 The profile-auditor rules are expressly non-authoritative. They describe public signals, not badge detection.
 
@@ -89,6 +92,7 @@ python scripts/build_public_observations.py
 python scripts/build_evidence_quality_programme.py
 python scripts/build_evidence_intelligence.py
 python scripts/build_acquisition_missions.py
+python scripts/build_mission_intake.py
 ```
 
 Generated endpoints must not be edited independently. Update the canonical source, run its builder, then commit the source and output together.
@@ -96,7 +100,7 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 ## Versioning
 
 - The core catalogue envelope remains `1.1.0`.
-- Research, observation, mission, adjudication, analytics, and evidence-operations endpoints carry independent schema and API versions.
+- Research, observation, mission, intake, adjudication, analytics, and evidence-operations endpoints carry independent schema and API versions.
 - A breaking envelope change increments the relevant major version.
 - Release tags describe encyclopedia releases rather than GitHub's achievement system.
 
@@ -112,6 +116,7 @@ The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](.
 
 ## Related material
 
+- [Mission execution intake](mission-execution-intake.md)
 - [Targeted evidence acquisition missions](targeted-evidence-missions.md)
 - [Evidence intelligence dashboard](evidence-intelligence-dashboard.md)
 - [Event-linked evidence](event-linked-evidence.md)
