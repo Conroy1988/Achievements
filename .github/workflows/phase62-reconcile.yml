@@ -1,19 +1,23 @@
 name: Phase 62 reconciliation
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/public-reconstruction-evidence-lift
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 permissions:
   contents: write
 
 jobs:
   reconcile:
-    if: github.actor != 'github-actions[bot]'
+    if: github.head_ref == 'agent/public-reconstruction-evidence-lift' && github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Check out branch
+      - name: Check out source branch
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           ref: agent/public-reconstruction-evidence-lift
