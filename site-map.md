@@ -10,6 +10,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Achievement guides
 
+- [Search and filter the encyclopedia](search.md)
 - [Achievement index](docs/achievement-index.md)
 - [Pull Shark](achievements/pull-shark.md)
 - [Quickdraw](docs/quickdraw.md)

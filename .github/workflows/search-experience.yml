@@ -1,0 +1,84 @@
+name: Search experience
+
+on:
+  pull_request:
+    paths:
+      - 'search.md'
+      - 'data/achievements.json'
+      - 'data/search-resources.json'
+      - 'assets/css/search.css'
+      - 'assets/js/achievement-search.js'
+      - 'scripts/test_search_page.mjs'
+      - 'package.json'
+      - '.github/workflows/search-experience.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'search.md'
+      - 'data/achievements.json'
+      - 'data/search-resources.json'
+      - 'assets/css/search.css'
+      - 'assets/js/achievement-search.js'
+      - 'scripts/test_search_page.mjs'
+      - 'package.json'
+      - '.github/workflows/search-experience.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    name: Browser search behaviour
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Build GitHub Pages site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser-test dependencies
+        run: npm install --no-package-lock
+      - name: Install Chromium
+        run: |
+          if ! npx playwright install --with-deps chromium > /tmp/playwright-install.log 2>&1; then
+            cat /tmp/playwright-install.log
+            exit 1
+          fi
+          tail -n 12 /tmp/playwright-install.log
+      - name: Start project-path web server
+        run: |
+          mkdir -p _serve
+          ln -s "$(pwd)/_site" _serve/Achievements
+          python -m http.server 4173 --directory _serve > /tmp/search-server.log 2>&1 &
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/Achievements/search/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/search-server.log
+          exit 1
+      - name: Test search and filters
+        run: |
+          set +e
+          npm run search:test 2>&1 | tee search-test.log
+          status=${PIPESTATUS[0]}
+          exit "$status"
+      - name: Upload search diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: search-test-diagnostics
+          path: |
+            search-test.log
+            search-test-results
+          if-no-files-found: warn
+          retention-days: 14
