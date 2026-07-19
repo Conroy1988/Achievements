@@ -100,6 +100,8 @@ Structured delivery does not convert community-reported information into officia
 - [`v1.1.0`](releases/v1.1.0.md) introduced the initial achievement and health API.
 - [`v1.2.0`](releases/v1.2.0.md) adds evidence, timeline, and contributor-research discovery.
 
+The immutable `v1.2.0` source baseline is commit `614308f84ba6fde634109cb4da0300a398aa4f7e`. The tag resolves exactly to that commit.
+
 Tagged releases are immutable source baselines. The health endpoint remains operational data and continues to refresh after release publication.
 
 ## Related material
