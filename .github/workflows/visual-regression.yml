@@ -1,0 +1,65 @@
+name: Visual regression
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.html'
+      - 'assets/**'
+      - 'tests/visual/baselines/**'
+      - '_config.yml'
+      - 'Gemfile'
+      - 'package.json'
+      - 'scripts/visual_regression.mjs'
+      - '.github/workflows/visual-regression.yml'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '43 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  visual:
+    name: Compare visual baselines
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Build GitHub Pages site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install visual-test dependencies
+        run: npm install --no-package-lock
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python -m http.server 4173 --directory _site > /tmp/visual-server.log 2>&1 &
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/visual-server.log
+          exit 1
+      - name: Compare screenshots
+        run: npm run visual:test
+      - name: Upload visual results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-results
+          path: visual-results
+          if-no-files-found: warn
+          retention-days: 14
