@@ -1,0 +1,140 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 6,
+  "documents": [
+    {
+      "document_id": "github-profile-reference",
+      "url": "https://docs.github.com/en/account-and-profile/reference/profile-reference",
+      "risk": "critical",
+      "affected_achievements": [
+        "pull-shark",
+        "quickdraw",
+        "yolo",
+        "pair-extraordinaire",
+        "galaxy-brain",
+        "starstruck",
+        "public-sponsor",
+        "mars-2020-contributor"
+      ],
+      "claim_ids": [
+        "CLM-001",
+        "CLM-002",
+        "CLM-003",
+        "CLM-004",
+        "CLM-005",
+        "CLM-006",
+        "CLM-007",
+        "CLM-008",
+        "CLM-009",
+        "CLM-010",
+        "CLM-011",
+        "CLM-013"
+      ],
+      "contradiction_ids": [
+        "CTR-001",
+        "CTR-002",
+        "CTR-003",
+        "CTR-004",
+        "CTR-005",
+        "CTR-006"
+      ],
+      "research_task_ids": [
+        "RSH-001",
+        "RSH-002",
+        "RSH-003",
+        "RSH-004",
+        "RSH-005",
+        "RSH-007"
+      ],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    },
+    {
+      "document_id": "multiple-authors",
+      "url": "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors",
+      "risk": "high",
+      "affected_achievements": [
+        "pair-extraordinaire"
+      ],
+      "claim_ids": [
+        "CLM-005",
+        "CLM-006"
+      ],
+      "contradiction_ids": [
+        "CTR-004"
+      ],
+      "research_task_ids": [],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    },
+    {
+      "document_id": "pull-request-reviews",
+      "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews",
+      "risk": "critical",
+      "affected_achievements": [
+        "yolo"
+      ],
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "contradiction_ids": [
+        "CTR-002"
+      ],
+      "research_task_ids": [
+        "RSH-002"
+      ],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    },
+    {
+      "document_id": "github-discussions",
+      "url": "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions",
+      "risk": "high",
+      "affected_achievements": [
+        "galaxy-brain"
+      ],
+      "claim_ids": [
+        "CLM-007",
+        "CLM-008"
+      ],
+      "contradiction_ids": [
+        "CTR-005"
+      ],
+      "research_task_ids": [
+        "RSH-004"
+      ],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    },
+    {
+      "document_id": "repository-stars",
+      "url": "https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars",
+      "risk": "high",
+      "affected_achievements": [
+        "starstruck"
+      ],
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "contradiction_ids": [
+        "CTR-006"
+      ],
+      "research_task_ids": [
+        "RSH-005"
+      ],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    },
+    {
+      "document_id": "github-sponsors",
+      "url": "https://docs.github.com/en/sponsors",
+      "risk": "high",
+      "affected_achievements": [
+        "public-sponsor"
+      ],
+      "claim_ids": [
+        "CLM-011"
+      ],
+      "contradiction_ids": [],
+      "research_task_ids": [],
+      "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
+    }
+  ]
+}

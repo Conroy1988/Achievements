@@ -1,0 +1,192 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 8,
+  "priorities": [
+    {
+      "task_id": "RSH-001",
+      "title": "Independently reproduce the Quickdraw qualifying window",
+      "achievement_slug": "quickdraw",
+      "declared_priority": "critical",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 95,
+      "score_components": {
+        "declared_priority": 40,
+        "evidence_weakness": 25,
+        "open_dispute": 20,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-003"
+      ],
+      "contradiction_ids": [
+        "CTR-001"
+      ],
+      "rank": 1
+    },
+    {
+      "task_id": "RSH-002",
+      "title": "Independently reproduce the YOLO review-state trigger",
+      "achievement_slug": "yolo",
+      "declared_priority": "critical",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 95,
+      "score_components": {
+        "declared_priority": 40,
+        "evidence_weakness": 25,
+        "open_dispute": 20,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "contradiction_ids": [
+        "CTR-002"
+      ],
+      "rank": 2
+    },
+    {
+      "task_id": "RSH-003",
+      "title": "Strengthen Pull Shark tier evidence",
+      "achievement_slug": "pull-shark",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 80,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 15,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-002"
+      ],
+      "contradiction_ids": [
+        "CTR-003"
+      ],
+      "rank": 3
+    },
+    {
+      "task_id": "RSH-004",
+      "title": "Verify Galaxy Brain tier thresholds",
+      "achievement_slug": "galaxy-brain",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 80,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 15,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-008"
+      ],
+      "contradiction_ids": [
+        "CTR-005"
+      ],
+      "rank": 4
+    },
+    {
+      "task_id": "RSH-005",
+      "title": "Verify Starstruck ownership edge cases",
+      "achievement_slug": "starstruck",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 80,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 15,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "contradiction_ids": [
+        "CTR-006"
+      ],
+      "rank": 5
+    },
+    {
+      "task_id": "RSH-008",
+      "title": "Document award-processing delay observations",
+      "achievement_slug": null,
+      "declared_priority": "medium",
+      "status": "open",
+      "good_first_issue": true,
+      "score": 58,
+      "score_components": {
+        "declared_priority": 20,
+        "evidence_weakness": 30,
+        "open_dispute": 0,
+        "active_scope": 5,
+        "good_first_issue": 3,
+        "status_adjustment": 0
+      },
+      "claim_ids": [],
+      "contradiction_ids": [],
+      "rank": 6
+    },
+    {
+      "task_id": "RSH-006",
+      "title": "Locate durable Arctic Code Vault sources",
+      "achievement_slug": "arctic-code-vault-contributor",
+      "declared_priority": "medium",
+      "status": "open",
+      "good_first_issue": true,
+      "score": 28,
+      "score_components": {
+        "declared_priority": 20,
+        "evidence_weakness": 5,
+        "open_dispute": 0,
+        "active_scope": 0,
+        "good_first_issue": 3,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-012"
+      ],
+      "contradiction_ids": [],
+      "rank": 7
+    },
+    {
+      "task_id": "RSH-007",
+      "title": "Locate durable Mars 2020 qualification sources",
+      "achievement_slug": "mars-2020-contributor",
+      "declared_priority": "medium",
+      "status": "open",
+      "good_first_issue": true,
+      "score": 28,
+      "score_components": {
+        "declared_priority": 20,
+        "evidence_weakness": 5,
+        "open_dispute": 0,
+        "active_scope": 0,
+        "good_first_issue": 3,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-013"
+      ],
+      "contradiction_ids": [],
+      "rank": 8
+    }
+  ]
+}

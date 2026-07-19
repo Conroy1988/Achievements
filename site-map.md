@@ -20,6 +20,20 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Public Sponsor](achievements/public-sponsor.md)
 - [Starstruck](achievements/starstruck.md)
 
+## Research intelligence
+
+- [Research intelligence system](docs/research-intelligence.md)
+- [Claim-level evidence register](docs/claim-register.md)
+- [Contradiction and dispute ledger](docs/contradiction-ledger.md)
+- [Evidence-coverage matrix](docs/evidence-coverage.md)
+- [Research priority board](docs/research-priorities.md)
+- [Official-document change-impact map](docs/change-impact-map.md)
+- [Machine-readable claims](api/claims.json)
+- [Machine-readable contradictions](api/contradictions.json)
+- [Machine-readable coverage](api/coverage.json)
+- [Machine-readable priorities](api/priorities.json)
+- [Machine-readable change impact](api/change-impact.json)
+
 ## Research, data, and verification
 
 - [Contributor research hub](docs/research-hub.md)

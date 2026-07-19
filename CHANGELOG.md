@@ -6,7 +6,18 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 ## Unreleased
 
-No unreleased changes are currently recorded.
+### Added
+
+- Claim-level evidence register covering thirteen canonical trigger, tier, and historical claims.
+- Contradiction and dispute ledger with six explicit ambiguities and measurable resolution criteria.
+- Evidence-coverage matrix with transparent confidence weights, dispute penalties, and unassigned-gap detection.
+- Deterministic research priority board exposing every score component for the eight open contributor tasks.
+- Official-document change-impact map connecting monitored GitHub pages to claims, disputes, achievements, and research work.
+- Five supplemental machine-readable research-intelligence endpoints and a dedicated scheduled validation workflow.
+
+### Changed
+
+- Public navigation and API documentation now expose the complete research-intelligence layer.
 
 ## v1.2.0 — 2026-07-19
 

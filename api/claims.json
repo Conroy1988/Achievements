@@ -1,0 +1,192 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 13,
+  "claims": [
+    {
+      "id": "CLM-001",
+      "achievement_slug": "pull-shark",
+      "claim_type": "trigger",
+      "statement": "A substantive pull request attributable to the account is merged.",
+      "evidence_level": "confirmed",
+      "evidence_ids": [
+        "EVD-2026-001"
+      ],
+      "research_task_ids": [],
+      "status": "maintained",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-002",
+      "achievement_slug": "pull-shark",
+      "claim_type": "tiers",
+      "statement": "Pull Shark tiers are awarded at 2, 16, 128, and 1024 qualifying merged pull requests.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-001"
+      ],
+      "research_task_ids": [
+        "RSH-003"
+      ],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-003",
+      "achievement_slug": "quickdraw",
+      "claim_type": "trigger",
+      "statement": "Closing an issue or pull request within a short qualifying window can award Quickdraw.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-002"
+      ],
+      "research_task_ids": [
+        "RSH-001"
+      ],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-004",
+      "achievement_slug": "yolo",
+      "claim_type": "trigger",
+      "statement": "Merging the account's own pull request without an approving review can award YOLO.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-003"
+      ],
+      "research_task_ids": [
+        "RSH-002"
+      ],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-005",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_type": "trigger",
+      "statement": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-004"
+      ],
+      "research_task_ids": [],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-006",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_type": "tiers",
+      "statement": "Pair Extraordinaire tiers are awarded at 1, 10, 24, and 48 qualifying merged pull requests.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-004"
+      ],
+      "research_task_ids": [],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-007",
+      "achievement_slug": "galaxy-brain",
+      "claim_type": "trigger",
+      "statement": "An answer posted by the account in a GitHub Discussion is marked as accepted.",
+      "evidence_level": "observed",
+      "evidence_ids": [
+        "EVD-2026-005"
+      ],
+      "research_task_ids": [],
+      "status": "maintained-with-limitations",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-008",
+      "achievement_slug": "galaxy-brain",
+      "claim_type": "tiers",
+      "statement": "Galaxy Brain tiers are awarded at 2, 8, 16, and 32 accepted answers.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-005"
+      ],
+      "research_task_ids": [
+        "RSH-004"
+      ],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-009",
+      "achievement_slug": "starstruck",
+      "claim_type": "trigger",
+      "statement": "A repository attributable to the account reaching the base star threshold can award Starstruck.",
+      "evidence_level": "observed",
+      "evidence_ids": [
+        "EVD-2026-006"
+      ],
+      "research_task_ids": [
+        "RSH-005"
+      ],
+      "status": "maintained-with-limitations",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-010",
+      "achievement_slug": "starstruck",
+      "claim_type": "tiers",
+      "statement": "Starstruck tiers are awarded at 16, 128, 512, and 4096 repository stars.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-006"
+      ],
+      "research_task_ids": [
+        "RSH-005"
+      ],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-011",
+      "achievement_slug": "public-sponsor",
+      "claim_type": "trigger",
+      "statement": "An active and publicly visible GitHub Sponsors sponsorship can award Public Sponsor.",
+      "evidence_level": "community-reported",
+      "evidence_ids": [
+        "EVD-2026-007"
+      ],
+      "research_task_ids": [],
+      "status": "provisional",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-012",
+      "achievement_slug": "arctic-code-vault-contributor",
+      "claim_type": "historical-trigger",
+      "statement": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.",
+      "evidence_level": "confirmed",
+      "evidence_ids": [
+        "EVD-2026-008"
+      ],
+      "research_task_ids": [
+        "RSH-006"
+      ],
+      "status": "historical",
+      "last_reviewed": "2026-07-19"
+    },
+    {
+      "id": "CLM-013",
+      "achievement_slug": "mars-2020-contributor",
+      "claim_type": "historical-trigger",
+      "statement": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission.",
+      "evidence_level": "confirmed",
+      "evidence_ids": [
+        "EVD-2026-009"
+      ],
+      "research_task_ids": [
+        "RSH-007"
+      ],
+      "status": "historical",
+      "last_reviewed": "2026-07-19"
+    }
+  ]
+}
