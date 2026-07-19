@@ -85,8 +85,15 @@ Generated catalogue endpoints must not be edited manually. Update `data/achievem
 
 Structured delivery does not convert community-reported information into official information. Consumers should preserve each record's evidence classification, verification date, and known limitations when displaying triggers or thresholds.
 
+## Release baseline
+
+The endpoint contract was introduced in [`v1.1.0`](releases/v1.1.0.md). That release records the initial API version, all endpoint paths, the dataset and schema versions, the unified audit result, public API drift validation, and known service limitations.
+
+The `v1.1.0` tag is the immutable source baseline for the initial public API. The health endpoint remains operational data and continues to refresh after the tagged release.
+
 ## Related material
 
+- [v1.1.0 release record](releases/v1.1.0.md)
 - [Achievement data reference](data-reference.md)
 - [Achievement index](achievement-index.md)
 - [Evidence strength levels](evidence-strength-levels.md)
