@@ -46,4 +46,8 @@ Check the Sponsors section of your profile and the sponsorship's visibility stat
 
 GitHub's official profile documentation states that private profiles cannot receive sponsorships. Account and regional eligibility for GitHub Sponsors can also change, so consult the current GitHub Sponsors terms before paying.
 
+## Last verified
+
+**19 July 2026** — reviewed public sponsorship visibility, profile settings, processing conditions, privacy guidance, and account limitations.
+
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

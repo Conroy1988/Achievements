@@ -50,4 +50,8 @@ Artificial engagement damages repository credibility and may violate platform ru
 
 Confirm the public star count, repository ownership history, and achievement visibility settings. Keep dated evidence because star counts can later fall below a threshold.
 
+## Last verified
+
+**19 July 2026** — reviewed community-reported star thresholds, repository association conditions, award timing, and legitimate growth guidance.
+
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

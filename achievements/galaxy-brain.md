@@ -45,4 +45,8 @@ GitHub added a separate verified-answer state for Discussions in 2025. Galaxy Br
 
 Check that the discussion category supports answers and that the response visibly carries the accepted-answer state. Achievement updates may be delayed.
 
+## Last verified
+
+**19 July 2026** — reviewed accepted-answer behaviour, community-reported tiers, the verified-answer distinction, and responsible participation guidance.
+
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

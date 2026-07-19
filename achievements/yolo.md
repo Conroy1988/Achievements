@@ -43,4 +43,8 @@ Verify the pull request shows you as both author and merger, and that no approva
 
 The self-merge-without-review description is consistently reported by established community references. GitHub's official profile documentation confirms that achievement-generating events are attached to profile badges but does not publish this precise trigger.
 
+## Last verified
+
+**19 July 2026** — reviewed the reported self-merge trigger, formal-review distinction, safe testing conditions, and known processing delays.
+
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)
