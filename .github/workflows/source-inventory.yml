@@ -1,6 +1,13 @@
 name: Source inventory
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+      - 'scripts/build_source_inventory.py'
+      - '.github/workflows/source-inventory.yml'
   pull_request:
     paths:
       - '**/*.md'
