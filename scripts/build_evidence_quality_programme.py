@@ -14,6 +14,7 @@ SOURCE = ROOT / "data/evidence-quality-programme.json"
 CLAIMS = ROOT / "data/claims.json"
 CONTRADICTIONS = ROOT / "data/contradictions.json"
 OBSERVATIONS = ROOT / "data/public-observations.json"
+FRAGMENTS = ROOT / "data/official-achievement-fragments.json"
 COVERAGE = ROOT / "api/coverage.json"
 
 DOCS = {
@@ -76,18 +77,19 @@ def check_ids(rows: list[dict], field: str, pattern: re.Pattern[str], errors: li
     return seen
 
 
-def validate(source: dict, claims: dict, contradictions: dict, observations: dict, coverage: dict) -> list[str]:
+def validate(source: dict, claims: dict, contradictions: dict, observations: dict, fragments: dict, coverage: dict) -> list[str]:
     errors: list[str] = []
     claim_by_id = {row["id"]: row for row in claims.get("claims", [])}
     contradiction_ids = {row["id"] for row in contradictions.get("records", [])}
     observation_ids = {row["id"] for row in observations.get("observations", [])}
+    fragment_ids = {row["id"] for row in fragments.get("records", [])}
 
     if source.get("schema_version") != "1.0.0":
         errors.append("schema_version must be 1.0.0")
     phases = source.get("phases", [])
     if [row.get("number") for row in phases] != [52, 53, 54, 55, 56]:
         errors.append("phases must contain 52 through 56 in order")
-    if any(row.get("status") not in {"complete", "implemented-release-blocked"} for row in phases):
+    if any(row.get("status") not in {"complete", "implemented-release-blocked", "implemented-release-ready"} for row in phases):
         errors.append("invalid phase status")
 
     events = source.get("event_evidence", [])
@@ -146,7 +148,7 @@ def validate(source: dict, claims: dict, contradictions: dict, observations: dic
 
     assessments = source.get("contradiction_assessments", [])
     seen_ctr: set[str] = set()
-    valid_basis = event_ids | boundary_ids
+    valid_basis = event_ids | boundary_ids | fragment_ids
     if len(assessments) != len(contradiction_ids):
         errors.append("every contradiction requires one assessment")
     for row in assessments:
@@ -222,7 +224,7 @@ def adjudication_page(source: dict) -> str:
     lines += ["## Current decisions", "", "| Decision | Claim | Outcome | Proposed level |", "|---|---|---|---|"]
     for row in source["adjudication_decisions"]:
         lines.append(f"| `{row['id']}` | `{row['claim_id']}` | {row['decision']} | {row['proposed_level']} |")
-    lines += ["", "Every current decision is deferred. No canonical claim level or evidence score changes in this programme.", ""]
+    lines += ["", "Decisions record remaining research after maintainer-reviewed canonical reconciliation. Generated observations never change claims automatically.", ""]
     for row in source["adjudication_decisions"]:
         lines += [f"### {row['id']} — {row['claim_id']}", "", row["reason"], ""]
     return "\n".join(lines + ["## Machine-readable data", "", "See [`/api/adjudication.json`](../api/adjudication.json).", ""])
@@ -235,7 +237,7 @@ def contradiction_page(source: dict) -> str:
     lines += ["## Contradiction resolution programme", "", "All six contradictions have been reassessed against event-linked and boundary evidence. Narrowing a dispute is not the same as resolving it.", "", f"**Narrowed:** {counts['narrowed']}  ", f"**Still disputed:** {counts['still-disputed']}  ", f"**Resolved:** {counts['resolved']}", "", "| Contradiction | Outcome | Evidence basis |", "|---|---|---|"]
     for row in rows:
         lines.append(f"| `{row['contradiction_id']}` | {row['outcome']} | {', '.join(f'`{v}`' for v in row['basis_ids'])} |")
-    lines += ["", "## Remaining questions", ""]
+    lines += ["", "## Assessment details", ""]
     for row in rows:
         lines += [f"### {row['contradiction_id']} — {row['outcome']}", "", row["remaining_question"], ""]
     return "\n".join(lines + ["## Machine-readable data", "", "See [`/api/contradiction-assessments.json`](../api/contradiction-assessments.json).", ""])
@@ -244,7 +246,12 @@ def contradiction_page(source: dict) -> str:
 def release_page(source: dict) -> str:
     gate, current, required = source["release_gate"], source["release_gate"]["current_snapshot"], source["release_gate"]["required_snapshot"]
     lines = frontmatter("Evidence quality release gate", "Fail-closed publication criteria for the proposed v1.4.0 evidence-quality release.", "/evidence-quality-release-gate/")
-    lines += ["## Evidence quality release gate", "", f"**Candidate:** `{gate['candidate_version']}`  ", f"**Status:** `{gate['status']}`", "", "The release is intentionally blocked. Phases 52–55 improve the research system and narrow three contradictions, but they do not yet justify any canonical claim promotion or coverage increase.", "", "| Gate | Current | Required | Result |", "|---|---:|---:|---|", f"| Evidence coverage | {current['coverage_score']} | ≥ {required['minimum_coverage_score']} | FAIL |", f"| Official or confirmed claims | {current['official_or_confirmed_claims']} | ≥ {required['minimum_official_or_confirmed_claims']} | FAIL |", f"| Claims below confirmed | {current['claims_below_confirmed']} | ≤ {required['maximum_claims_below_confirmed']} | FAIL |", f"| Open contradictions | {current['open_contradictions']} | ≤ {required['maximum_open_contradictions']} | FAIL |", f"| Operational health | evaluated on merged `main` | {required['required_operational_health']} | PENDING |", "", "## Publication rule", "", gate["publication_rule"], "", "## Machine-readable data", "", "See [`/api/release-readiness.json`](../api/release-readiness.json).", ""]
+    coverage_result = "PASS" if current["coverage_score"] >= required["minimum_coverage_score"] else "FAIL"
+    confirmed_result = "PASS" if current["official_or_confirmed_claims"] >= required["minimum_official_or_confirmed_claims"] else "FAIL"
+    weak_result = "PASS" if current["claims_below_confirmed"] <= required["maximum_claims_below_confirmed"] else "FAIL"
+    contradiction_result = "PASS" if current["open_contradictions"] <= required["maximum_open_contradictions"] else "FAIL"
+    summary = "All evidence gates pass. Publication still requires merged-main operational verification." if gate["status"] == "ready" else "One or more evidence gates remain blocked."
+    lines += ["## Evidence quality release gate", "", f"**Candidate:** `{gate['candidate_version']}`  ", f"**Status:** `{gate['status']}`", "", summary, "", "| Gate | Current | Required | Result |", "|---|---:|---:|---|", f"| Evidence coverage | {current['coverage_score']} | ≥ {required['minimum_coverage_score']} | {coverage_result} |", f"| Official or confirmed claims | {current['official_or_confirmed_claims']} | ≥ {required['minimum_official_or_confirmed_claims']} | {confirmed_result} |", f"| Claims below confirmed | {current['claims_below_confirmed']} | ≤ {required['maximum_claims_below_confirmed']} | {weak_result} |", f"| Open contradictions | {current['open_contradictions']} | ≤ {required['maximum_open_contradictions']} | {contradiction_result} |", f"| Operational health | evaluated on merged `main` | {required['required_operational_health']} | PENDING |", "", "## Publication rule", "", gate["publication_rule"], "", "## Machine-readable data", "", "See [`/api/release-readiness.json`](../api/release-readiness.json).", ""]
     return "\n".join(lines)
 
 
@@ -267,11 +274,11 @@ def main() -> int:
     parser.add_argument("--report", default="evidence-quality-programme-report.md")
     args = parser.parse_args()
     try:
-        source, claims, contradictions, observations, coverage = map(load, [SOURCE, CLAIMS, CONTRADICTIONS, OBSERVATIONS, COVERAGE])
+        source, claims, contradictions, observations, fragments, coverage = map(load, [SOURCE, CLAIMS, CONTRADICTIONS, OBSERVATIONS, FRAGMENTS, COVERAGE])
     except (OSError, ValueError, json.JSONDecodeError) as error:
         print(error)
         return 1
-    errors = validate(source, claims, contradictions, observations, coverage)
+    errors = validate(source, claims, contradictions, observations, fragments, coverage)
     report = ["# Evidence quality programme validation", "", f"- Event records: {len(source.get('event_evidence', []))}", f"- Boundary programmes: {len(source.get('boundary_programmes', []))}", f"- Adjudication decisions: {len(source.get('adjudication_decisions', []))}", f"- Contradiction assessments: {len(source.get('contradiction_assessments', []))}", f"- Release status: {source.get('release_gate', {}).get('status', 'unknown')}", f"- Result: {'FAIL' if errors else 'PASS'}"]
     if errors:
         report += ["", "## Failures", "", *[f"- {error}" for error in errors]]
@@ -289,7 +296,7 @@ def main() -> int:
         for path, content in expected.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
-    print("Evidence quality programme passed: phases 52-56 validated; v1.4.0 remains blocked.")
+    print(f"Evidence quality programme passed: phases 52-56 validated; v1.4.0 is {source['release_gate']['status']}.")
     return 0
 
 

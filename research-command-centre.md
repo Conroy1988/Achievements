@@ -23,6 +23,8 @@ The [mission evidence promotion planner](docs/promotion-planner.md) converts onl
 
 The [public reconstruction corpus](docs/public-reconstruction-corpus.md) preserves exact independent event/profile pairs that strengthen broad triggers while leaving causal, timing, threshold, and edge-case limitations explicit.
 
+The [official achievement fragment corpus](docs/official-achievement-fragments.md) records GitHub-owned live criteria and milestone histories that now satisfy the evidence-quality release gates.
+
 <div
   id="research-command-centre"
   class="operations-app"

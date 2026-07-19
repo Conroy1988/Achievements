@@ -11,15 +11,15 @@ description: Co-authored commits, merged pull requests, Pair Extraordinaire tier
 
 **Status:** Earnable  
 **Tiered:** Yes  
-**Evidence status:** GitHub officially documents co-authored commits and contribution attribution. Two independent public merged-pull-request reconstructions support the broad achievement trigger at observed level; tier thresholds and rewrite edge cases remain community-reported.
+**Evidence status:** GitHub's live achievement fragment officially states the broad trigger: coauthored commits on merged pull requests. Numerical tier thresholds and rewrite edge cases remain community-reported.
 
 Pair Extraordinaire recognises genuine collaboration recorded through co-authored commits that are incorporated into merged pull requests.
 
 ## Trigger
 
-The observed broad trigger is participation as a correctly attributed co-author on a commit that becomes part of a merged pull request.
+GitHub's live detail fragment states that Pair Extraordinaire recognises **coauthored commits on merged pull requests**.
 
-A visible `Co-authored-by:` trailer proves commit attribution, but GitHub does not officially guarantee that every visible co-authored commit will increment this achievement.
+A visible `Co-authored-by:` trailer proves commit attribution, while squash, rebase, email matching and rewritten-history counting remain separate limitations.
 
 ## Community-reported progression
 
@@ -66,7 +66,7 @@ Do not publish private repository names, private commit content, personal email 
 
 - **Official:** GitHub supports `Co-authored-by:` commit trailers and requires an account-associated email for the commit to count as a contribution.
 - **Confirmed:** Correctly formatted co-author trailers are displayed on GitHub after the commit is pushed.
-- **Observed:** Two independent public accounts have account-linked co-author attribution preserved in merged pull-request history and publicly display Pair Extraordinaire.
+- **Official:** GitHub's live product fragment states that the achievement recognises coauthored commits on merged pull requests.
 - **Community-reported:** The thresholds are 1, 10, 24, and 48 qualifying merged pull requests.
 - **Unknown:** The exact treatment of every private-repository, squash-merge, rebase, rewritten-history, and delayed-processing scenario.
 
@@ -110,9 +110,10 @@ Material changes should therefore be documented with dated, reproducible evidenc
 - [Viewing contributions on your profile](https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/viewing-contributions-on-your-profile)
 - [GitHub achievement index]({{ site.baseurl }}/docs/achievement-index.html)
 - [Public reconstruction corpus]({{ site.baseurl }}/public-reconstruction-corpus/)
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
 
 ## Last verified
 
-**19 July 2026** — verified two independent public merged-pull-request/co-author reconstructions plus current GitHub documentation for trailer syntax and account-linked attribution. The broad trigger is observed; tier thresholds and merge-rewrite edge cases remain community-reported or unknown.
+**19 July 2026** — verified GitHub's first-party Pair Extraordinaire fragment and linked co-author history. The broad trigger is official; numerical tier thresholds and merge-rewrite edge cases remain community-reported or unknown.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

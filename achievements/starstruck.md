@@ -9,13 +9,13 @@ description: Repository star thresholds, Starstruck tiers, ownership conditions,
 
 **Status:** Earnable  
 **Tiered:** Yes  
-**Evidence level:** Strong community consensus; GitHub does not publish the complete threshold table in its general profile documentation.
+**Evidence level:** GitHub's live x4 achievement fragment officially publishes the repository-creation trigger and complete star milestone table.
 
 ## Trigger
 
-Starstruck recognises repositories you created that reach community-reported star thresholds.
+GitHub's live detail fragment states that Starstruck recognises repositories created by the account that reach the published star milestones.
 
-## Community-reported tiers
+## Official tiers
 
 | Level | Repository stars |
 |---|---:|
@@ -24,7 +24,7 @@ Starstruck recognises repositories you created that reach community-reported sta
 | Silver | 512 |
 | Gold | 4,096 |
 
-These values are widely reproduced but should be treated as observed platform behaviour rather than a formal guarantee.
+GitHub's x4 achievement history labels milestones at 16, 128, 512, and 4,096 stars.
 
 ## What appears to matter
 
@@ -50,8 +50,12 @@ Artificial engagement damages repository credibility and may violate platform ru
 
 Confirm the public star count, repository ownership history, and achievement visibility settings. Keep dated evidence because star counts can later fall below a threshold.
 
+## References
+
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
+
 ## Last verified
 
-**19 July 2026** — reviewed community-reported star thresholds, repository association conditions, award timing, and legitimate growth guidance.
+**19 July 2026** — verified GitHub's live x4 Starstruck fragment and complete star milestone history. Transfer, organisation ownership, archival, forks, falling counts, and persistence remain open edge cases.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

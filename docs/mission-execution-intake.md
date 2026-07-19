@@ -15,12 +15,12 @@ The mission intake converts a completed or blocked mission observation into a re
 
 | Mission | Status | Achievement | Claims | Contradiction | Required evidence fields |
 |---|---|---|---|---|---:|
-| `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | scheduled | pull-shark | CLM-001, CLM-002 | CTR-003 | 6 |
 | `MSN-001` — Preserve real co-author attribution across merge methods | participant-needed | pair-extraordinaire | CLM-005, CLM-006 | CTR-004 | 8 |
-| `MSN-004` — Find exact public observations around the Starstruck x4 boundary | candidate-search | starstruck | CLM-009, CLM-010 | CTR-006 | 9 |
-| `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | participant-needed | galaxy-brain | CLM-007, CLM-008 | CTR-005 | 8 |
-| `MSN-003` — Bracket the Quickdraw timing boundary | participant-needed | quickdraw | CLM-003 | CTR-001 | 9 |
+| `MSN-004` — Find exact public observations around the Starstruck x4 boundary | complete | starstruck | CLM-009, CLM-010 | CTR-006 | 9 |
+| `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | scheduled | pull-shark | CLM-001, CLM-002 | CTR-003 | 6 |
 | `MSN-006` — Separate YOLO review-state and merger-identity conditions | participant-needed | yolo | CLM-004 | CTR-002 | 9 |
+| `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | complete | galaxy-brain | CLM-007, CLM-008 | CTR-005 | 8 |
+| `MSN-003` — Bracket the Quickdraw timing boundary | complete | quickdraw | CLM-003 | CTR-001 | 9 |
 | `MSN-007` — Maintain a passive cross-achievement processing-delay ledger | passive-observation | cross-achievement | none | none | 7 |
 
 ## Intake checks

@@ -42,27 +42,27 @@ The engine separates collection from promotion. Generated observations never mod
 
 | Decision | Claim | Outcome | Proposed level |
 |---|---|---|---|
-| `ADJ-D001` | `CLM-003` | defer | confirmed |
-| `ADJ-D002` | `CLM-004` | defer | confirmed |
-| `ADJ-D003` | `CLM-002` | defer | observed |
+| `ADJ-D001` | `CLM-003` | defer | official |
+| `ADJ-D002` | `CLM-004` | defer | official |
+| `ADJ-D003` | `CLM-002` | defer | official |
 | `ADJ-D004` | `CLM-006` | defer | observed |
-| `ADJ-D005` | `CLM-008` | defer | observed |
-| `ADJ-D006` | `CLM-010` | defer | observed |
-| `ADJ-D007` | `CLM-005` | defer | confirmed |
+| `ADJ-D005` | `CLM-008` | defer | official |
+| `ADJ-D006` | `CLM-010` | defer | official |
+| `ADJ-D007` | `CLM-005` | defer | official |
 
-Every current decision is deferred. No canonical claim level or evidence score changes in this programme.
+Decisions record remaining research after maintainer-reviewed canonical reconciliation. Generated observations never change claims automatically.
 
 ### ADJ-D001 — CLM-003
 
-Two independent public reconstructions support the broad rapid-close association at observed level; controlled boundary reproduction and measured award timing are still required for confirmed status.
+GitHub's live Quickdraw fragment now states the five-minute contract. Further work is limited to issue equivalence and processing-delay edge cases.
 
 ### ADJ-D002 — CLM-004
 
-Two independent authored and unreviewed merged pull requests support the broad YOLO association at observed level; merger identity and alternate review-state controls remain unresolved.
+GitHub's live YOLO fragment states 'Merged without a review'. Alternate review-state and merger-identity edge cases remain separate research.
 
 ### ADJ-D003 — CLM-002
 
-Visible x3 and x4 tiers lack exact attributed qualifying counts.
+GitHub's live Pull Shark x4 fragment publishes the complete merged-pull-request milestone table.
 
 ### ADJ-D004 — CLM-006
 
@@ -70,15 +70,15 @@ The x4 sighting lacks final-history co-author counts and merge-method controls.
 
 ### ADJ-D005 — CLM-008
 
-The x2 and x4 sightings lack exact accepted-answer totals.
+GitHub's live Galaxy Brain x4 fragment publishes the complete accepted-answer milestone table.
 
 ### ADJ-D006 — CLM-010
 
-The x3-to-x4 bracket is informative, but rounded star displays and ownership edge cases prevent exact threshold confirmation.
+GitHub's live Starstruck x4 fragment publishes the complete star milestone table; ownership-transfer persistence remains open.
 
 ### ADJ-D007 — CLM-005
 
-Two independent account-linked co-author reconstructions support the broad merged-pull-request association at observed level; controlled merge-method and rewrite tests remain required for confirmed status.
+GitHub's live Pair Extraordinaire fragment states the broad coauthored-commit trigger; numerical tiers and merge-rewrite edge cases remain open.
 
 ## Machine-readable data
 

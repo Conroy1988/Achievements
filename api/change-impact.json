@@ -32,11 +32,8 @@
         "CLM-013"
       ],
       "contradiction_ids": [
-        "CTR-001",
         "CTR-002",
-        "CTR-003",
         "CTR-004",
-        "CTR-005",
         "CTR-006"
       ],
       "research_task_ids": [
@@ -94,7 +91,7 @@
     {
       "document_id": "github-discussions",
       "url": "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions",
-      "risk": "high",
+      "risk": "low",
       "affected_achievements": [
         "galaxy-brain"
       ],
@@ -102,9 +99,7 @@
         "CLM-007",
         "CLM-008"
       ],
-      "contradiction_ids": [
-        "CTR-005"
-      ],
+      "contradiction_ids": [],
       "research_task_ids": [
         "RSH-004",
         "RSH-011"

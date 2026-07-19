@@ -6,20 +6,20 @@ Pull Shark is an active, tiered GitHub profile achievement associated with autho
 
 ## Trigger
 
-The qualifying action is having a pull request authored by your account merged into a repository.
+GitHub's live achievement detail states that Pull Shark recognises pull requests opened by the account that have been merged.
 
-GitHub does not publish a complete Pull Shark counting specification. Treat repository visibility, deleted repositories, transferred repositories, account changes, and historical recalculation behaviour as implementation details unless GitHub documents them.
+GitHub does not publish every internal attribution filter. Treat repository visibility, deleted repositories, transferred repositories, account changes, and historical recalculation behaviour as implementation details unless GitHub documents them.
 
 ## Progression and tiers
 
-The following thresholds are widely reproduced by the community but are not published as guaranteed thresholds in GitHub's current profile documentation.
+GitHub's live x4 achievement history publishes the following milestone ordinals.
 
 | Level | Reported threshold | Evidence status |
 |---|---:|---|
-| Base achievement | 2 merged pull requests | Community-reported |
-| Bronze | 16 merged pull requests | Community-reported |
-| Silver | 128 merged pull requests | Community-reported |
-| Gold | 1,024 merged pull requests | Community-reported |
+| Base achievement | 2 merged pull requests | Official |
+| Bronze | 16 merged pull requests | Official |
+| Silver | 128 merged pull requests | Official |
+| Gold | 1,024 merged pull requests | Official |
 
 A threshold should not be described as reached solely from a manually counted total. GitHub's internal eligible-event count may differ from a user's own search results.
 
@@ -56,8 +56,8 @@ Do not publish screenshots that expose private repository names, organisation na
 | GitHub displays achievements on user profiles | Official |
 | Achievement event links depend on repository or organisation access | Official |
 | Achievements can be hidden globally or individually | Official |
-| Pull Shark is associated with merged pull requests | Confirmed |
-| The four numerical thresholds in this guide | Community-reported |
+| Pull Shark recognises opened pull requests that are merged | Official |
+| The four numerical thresholds in this guide | Official |
 | Exact processing delay | Unknown |
 | Exact handling of deleted, transferred, imported, or migrated history | Unknown |
 
@@ -92,7 +92,7 @@ Avoid empty pull requests, duplicate edits, artificial repository splitting, mis
 
 GitHub announced profile achievements as a public beta on 9 June 2022. Pull Shark appeared among the achievements shown in that launch material.
 
-No official tier-threshold changelog was located during this verification. Threshold claims therefore remain community-reported rather than official.
+GitHub's live x4 detail fragment exposes the complete milestone history at the 2nd, 16th, 128th, and 1024th merged pull requests.
 
 ## References
 
@@ -100,9 +100,10 @@ No official tier-threshold changelog was located during this verification. Thres
 - [GitHub Docs: Manage visibility settings for private contributions and achievements](https://docs.github.com/en/account-and-profile/how-tos/contribution-settings/manage-visibility-settings-for-private-contributions-and-achievements)
 - [GitHub Docs: Profile contributions reference](https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference)
 - [GitHub Changelog: Achievements public beta](https://github.blog/changelog/2022-06-09-achievements-public-beta/)
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
 - [GitHub Achievement Index](../achievement-index.md)
 - [Achievement Guide Standard](../achievement-guide-standard.md)
 
 ## Last verified
 
-**19 July 2026** — verified against current GitHub profile, achievement-visibility, contribution-reference, and public-beta documentation. The numerical Pull Shark thresholds were not found in current official GitHub documentation and remain classified as community-reported.
+**19 July 2026** — verified against GitHub's live x4 Pull Shark detail fragment, including linked milestone history at 2, 16, 128, and 1,024 merged pull requests. Attribution and processing edge cases remain documented limitations.

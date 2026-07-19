@@ -7,7 +7,7 @@
     "category": "issues-and-pull-requests",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "observed"
+      "trigger": "official"
     },
     "guide_path": "docs/quickdraw.md",
     "known_limitations": [
@@ -21,12 +21,14 @@
     "slug": "quickdraw",
     "sources": {
       "community": [],
-      "official": []
+      "official": [
+        "https://github.com/users/Schweinepriester/achievements/quickdraw/detail?hovercard=1"
+      ]
     },
     "status": "active",
     "tiered": false,
     "tiers": [],
-    "trigger": "Closing an issue or pull request very shortly after creation can award Quickdraw."
+    "trigger": "Close a qualifying pull request within five minutes of opening."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

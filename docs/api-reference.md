@@ -39,6 +39,7 @@ https://conroy1988.github.io/Achievements/api/
 | [`change-impact.json`](../api/change-impact.json) | Official-document changes mapped to claims, disputes, and tasks |
 | [`public-observations.json`](../api/public-observations.json) | Dated GitHub-owned profile, tier, and repository observations with explicit limitations |
 | [`public-reconstructions.json`](../api/public-reconstructions.json) | Exact public event/profile pairs used to support broad trigger associations without overstating causality |
+| [`official-achievement-fragments.json`](../api/official-achievement-fragments.json) | GitHub-owned live achievement criteria, linked history, fingerprints, and tier milestones |
 
 ## Evidence-operations endpoints
 
@@ -66,7 +67,7 @@ https://conroy1988.github.io/Achievements/api/
 | [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
 | [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
 
-The discovery index now exposes **39 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-five auxiliary endpoints.
+The discovery index now exposes **40 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-five auxiliary endpoints.
 
 ## Response obligations
 
@@ -99,6 +100,7 @@ python scripts/build_research_intelligence.py
 python scripts/build_evidence_operations.py
 python scripts/build_public_observations.py
 python scripts/build_public_reconstructions.py
+python scripts/build_official_achievement_fragments.py
 python scripts/build_evidence_quality_programme.py
 python scripts/build_evidence_intelligence.py
 python scripts/build_acquisition_missions.py
@@ -140,6 +142,7 @@ The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](.
 - [Evidence quality release gate](evidence-quality-release-gate.md)
 - [Public observation corpus](public-observation-corpus.md)
 - [Public reconstruction corpus](public-reconstruction-corpus.md)
+- [Official achievement fragments](official-achievement-fragments.md)
 - [Evidence road to 100](evidence-road-to-100.md)
 - [Research command centre](../research-command-centre.md)
 - [GitHub achievement profile auditor](../profile-auditor.md)

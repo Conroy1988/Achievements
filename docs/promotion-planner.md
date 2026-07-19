@@ -13,7 +13,7 @@ The planner converts accepted mission-review promotion proposals into isolated i
 **Ready for maintainer review:** 0  
 **Blocked:** 0  
 **Automatic applications:** 0  
-**Current release status:** `blocked`
+**Current release status:** `ready`
 
 ## Planning rules
 

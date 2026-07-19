@@ -3,14 +3,11 @@
   "assessments": [
     {
       "basis_ids": [
-        "EVT-2026-001",
-        "BND-005",
-        "EVT-2026-006",
-        "EVT-2026-007"
+        "GAF-2026-001"
       ],
       "contradiction_id": "CTR-001",
-      "outcome": "narrowed",
-      "remaining_question": "What is the maximum qualifying interval, do issue and pull-request closure behave identically, and when does the award first become visible?"
+      "outcome": "resolved",
+      "remaining_question": "Resolved by GitHub's first-party five-minute Quickdraw criterion; issue equivalence and processing delay remain documented limitations outside the timing dispute."
     },
     {
       "basis_ids": [
@@ -24,14 +21,11 @@
     },
     {
       "basis_ids": [
-        "BND-001",
-        "EVT-2026-003",
-        "EVT-2026-004",
-        "EVT-2026-005"
+        "GAF-2026-004"
       ],
       "contradiction_id": "CTR-003",
-      "outcome": "still-disputed",
-      "remaining_question": "Which merged PRs GitHub attributes internally and where each exact tier boundary lies."
+      "outcome": "resolved",
+      "remaining_question": "Resolved by GitHub's first-party x4 Pull Shark milestone history: 2, 16, 128, and 1024 merged pull requests."
     },
     {
       "basis_ids": [
@@ -45,26 +39,26 @@
     },
     {
       "basis_ids": [
-        "BND-003"
+        "GAF-2026-005"
       ],
       "contradiction_id": "CTR-005",
-      "outcome": "still-disputed",
-      "remaining_question": "Exact accepted-answer totals immediately around each displayed tier."
+      "outcome": "resolved",
+      "remaining_question": "Resolved by GitHub's first-party x4 Galaxy Brain milestone history: 2, 8, 16, and 32 accepted answers."
     },
     {
       "basis_ids": [
-        "BND-004"
+        "GAF-2026-006"
       ],
       "contradiction_id": "CTR-006",
       "outcome": "narrowed",
-      "remaining_question": "The exact star boundaries and persistence across ownership transfer, forks, archival, and falling counts."
+      "remaining_question": "The exact star milestones are resolved; repository transfer, organisation ownership, forks, archival, falling counts, and persistence remain open."
     }
   ],
   "count": 6,
   "generated_from": "data/evidence-quality-programme.json",
   "metrics": {
-    "narrowed": 4,
-    "still-disputed": 2
+    "narrowed": 3,
+    "resolved": 3
   },
   "schema_version": "1.0.0"
 }

@@ -33,6 +33,7 @@ AUXILIARY_ENDPOINTS = {
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
     "public_reconstructions": Path("public-reconstructions.json"),
+    "official_achievement_fragments": Path("official-achievement-fragments.json"),
     "event_linked_evidence": Path("event-linked-evidence.json"),
     "evidence_intelligence": Path("evidence-intelligence.json"),
     "acquisition_missions": Path("acquisition-missions.json"),
@@ -53,6 +54,7 @@ AUXILIARY_COLLECTIONS = {
     "auditor_rules": "rules",
     "public_observations": "observations",
     "public_reconstructions": "records",
+    "official_achievement_fragments": "records",
     "event_linked_evidence": "events",
     "evidence_intelligence": "achievements",
     "acquisition_missions": "missions",
@@ -204,6 +206,7 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
         if name in {
             "public_observations",
             "public_reconstructions",
+            "official_achievement_fragments",
             "event_linked_evidence",
             "contradiction_assessments",
             "evidence_intelligence",

@@ -34,6 +34,8 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Dedicated mission packet review workflow and public queue/schema endpoints.
 - Six-record public reconstruction corpus linking exact public pull-request, review, co-author, and profile state across three independent achievement triggers.
 - Dedicated reconstruction validator, API endpoint, public guide, search route, and drift-controlled workflow.
+- GitHub-owned achievement fragment corpus with exact Quickdraw, YOLO, Pair Extraordinaire, Pull Shark, Galaxy Brain, and Starstruck product contracts.
+- Complete first-party Pull Shark, Galaxy Brain, and Starstruck x4 milestone histories with normalized fingerprints and linked events.
 - Closed promotion-plan policy and JSON Schema covering canonical source edits, generated outputs, release-gate impact, validation, approval, and rollback.
 - Deterministic promotion planner that converts only accepted review proposals into isolated maintainer-review plans.
 - Six promotion-planner tests covering empty state, valid plans, non-accepted proposals, duplicate claims, stale transitions, and automatic-mutation blocking.
@@ -44,7 +46,7 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
-- Public API discovery expanded from 26 to 39 JSON files.
+- Public API discovery expanded from 26 to 40 JSON files.
 - Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, mission packet review, and promotion planning.
 - Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
@@ -52,13 +54,16 @@ The project uses semantic versioning for tagged documentation releases in accord
 - General evidence observations and mission-controlled evidence now use separate issue forms, schemas, triage rules, and draft packet paths.
 - Search discovery now includes the targeted mission board, mission execution intake, mission packet review queue, and promotion planner.
 - Promotion proposals now require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
-- Quickdraw, YOLO, and Pair Extraordinaire broad trigger claims advanced from community-reported to observed using two independent public reconstructions per claim; exact timing, alternate review states, attribution rewrites, and all tier thresholds remain unresolved.
+- Quickdraw, YOLO, and Pair Extraordinaire broad trigger claims advanced from community-reported to observed using two independent public reconstructions per claim.
+- GitHub-owned live fragments subsequently promoted Pull Shark, Quickdraw, YOLO, Pair Extraordinaire, Galaxy Brain tiers, and Starstruck claims to official while retaining Pair tier and edge-case limitations.
+- Quickdraw timing, Pull Shark tiers, and Galaxy Brain tiers are resolved from first-party product history; YOLO review edge cases, Pair rewrite/tier behaviour, and Starstruck ownership persistence remain open.
 - Accepted promotion proposals now produce impact previews with exact source paths, generated outputs, release-gate direction, validation steps, and rollback scope.
 
 ### Integrity
 
 - Three broad trigger claims changed from community-reported to observed in Phase 62; no claim was promoted to confirmed or official.
-- Evidence coverage increases from 54.6 to 60.4 without changing weights or closing a contradiction.
+- Evidence coverage increases from 54.6 to 60.4 through public reconstructions, then to 91.2 through GitHub-owned product fragments without changing weights.
+- The v1.4.0 evidence gates now pass at 12 official/confirmed claims, 1 claim below confirmed, and 3 open contradictions; publication still requires merged-main operational verification.
 - Research-pressure values are prioritisation aids, not evidence-confidence scores.
 - Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission and mission submission.
 - Automated mission acceptance creates only a draft review packet and cannot promote evidence, resolve contradictions, or change mission state.

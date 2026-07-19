@@ -120,6 +120,11 @@ try {
   const reconstructionHref = await page.locator('[data-result-slug="public-reconstruction-corpus"] h3 a').getAttribute('href');
   assert.equal(reconstructionHref, '/Achievements/public-reconstruction-corpus/');
 
+  await page.locator('#search-query').fill('official tier history');
+  await expectCount(page, 1, 'official fragment query');
+  const officialFragmentHref = await page.locator('[data-result-slug="official-achievement-fragments"] h3 a').getAttribute('href');
+  assert.equal(officialFragmentHref, '/Achievements/official-achievement-fragments/');
+
   const liveRegion = await page.locator('#search-count').getAttribute('aria-live');
   assert.equal(liveRegion, 'polite');
   console.log('Search page passed dynamic catalogue counts, achievement, research, routing, filters, mission intake, mission review, promotion planner, and accessibility checks.');

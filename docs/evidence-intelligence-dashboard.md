@@ -9,40 +9,36 @@ permalink: /evidence-intelligence/
 
 This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the formal release gate.
 
-**Evidence coverage:** 60.4/100  
+**Evidence coverage:** 91.2/100  
 **Event-linked records:** 11  
 **Boundary investigations:** 5  
 **Deferred adjudications:** 7  
-**Release status:** `blocked`
+**Release status:** `ready`
 
 ## Distance to the evidence-quality release
 
 | Gate | Remaining gap |
 |---|---:|
-| Coverage | 9.6 points |
-| Official or confirmed claims | 3 claims |
-| Claims below confirmed | 3 promotions |
-| Open contradictions | 3 resolutions |
+| Coverage | 0.0 points |
+| Official or confirmed claims | 0 claims |
+| Claims below confirmed | 0 promotions |
+| Open contradictions | 0 resolutions |
 
 ## Research pressure ranking
 
 | Rank | Achievement | Pressure | Coverage | Events | Boundaries | Deferred | Contradiction |
 |---:|---|---:|---:|---:|---:|---:|---|
-| 1 | Pull Shark | 67 | 55.0 | 3 | 1 | 1 | still-disputed |
-| 2 | Pair Extraordinaire | 58 | 37.5 | 2 | 1 | 2 | narrowed |
-| 3 | Starstruck | 58 | 37.5 | 0 | 1 | 1 | narrowed |
-| 4 | Galaxy Brain | 55 | 62.5 | 0 | 1 | 1 | still-disputed |
-| 5 | Quickdraw | 52 | 50.0 | 3 | 1 | 1 | narrowed |
-| 6 | YOLO | 42 | 50.0 | 3 | 0 | 1 | narrowed |
+| 1 | Pair Extraordinaire | 49 | 57.5 | 2 | 1 | 2 | narrowed |
+| 2 | Starstruck | 34 | 90.0 | 0 | 1 | 1 | narrowed |
+| 3 | Pull Shark | 27 | 100.0 | 3 | 1 | 1 | none |
+| 4 | YOLO | 24 | 90.0 | 3 | 0 | 1 | narrowed |
+| 5 | Galaxy Brain | 18 | 100.0 | 0 | 1 | 1 | none |
+| 6 | Quickdraw | 18 | 100.0 | 3 | 1 | 1 | none |
 | 7 | Arctic Code Vault Contributor | 0 | 100.0 | 0 | 0 | 0 | none |
 | 8 | Mars 2020 Contributor | 0 | 100.0 | 0 | 0 | 0 | none |
 | 9 | Public Sponsor | 0 | 100.0 | 0 | 0 | 0 | none |
 
 ## Immediate evidence requirements
-
-### Pull Shark
-
-- Capture independently attributed exact counts immediately below and at each visible tier transition.
 
 ### Pair Extraordinaire
 
@@ -50,15 +46,19 @@ This dashboard combines the public evidence-operation endpoints into one read-on
 
 ### Starstruck
 
-- Obtain exact unrounded star totals immediately below and above the x4 transition with ownership and timing controls.
+- Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required.
+
+### Pull Shark
+
+- Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required.
 
 ### Galaxy Brain
 
-- Capture exact accepted-answer totals and public tier states around each proposed transition.
+- Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required.
 
 ### Quickdraw
 
-- Run independent positive and negative controls immediately around the proposed five-minute boundary.
+- Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required.
 
 ## Pressure-score contract
 

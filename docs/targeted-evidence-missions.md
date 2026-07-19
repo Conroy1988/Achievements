@@ -16,12 +16,12 @@ These missions turn the evidence-intelligence ranking into bounded research. The
 
 | Rank | Mission | Achievement | Pressure | Status |
 |---:|---|---|---:|---|
-| 1 | `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | pull-shark | 67 | scheduled |
-| 2 | `MSN-001` — Preserve real co-author attribution across merge methods | pair-extraordinaire | 58 | participant-needed |
-| 3 | `MSN-004` — Find exact public observations around the Starstruck x4 boundary | starstruck | 58 | candidate-search |
-| 4 | `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | galaxy-brain | 55 | participant-needed |
-| 5 | `MSN-003` — Bracket the Quickdraw timing boundary | quickdraw | 52 | participant-needed |
-| 6 | `MSN-006` — Separate YOLO review-state and merger-identity conditions | yolo | 42 | participant-needed |
+| 1 | `MSN-001` — Preserve real co-author attribution across merge methods | pair-extraordinaire | 49 | participant-needed |
+| 2 | `MSN-004` — Find exact public observations around the Starstruck x4 boundary | starstruck | 34 | complete |
+| 3 | `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | pull-shark | 27 | scheduled |
+| 4 | `MSN-006` — Separate YOLO review-state and merger-identity conditions | yolo | 24 | participant-needed |
+| 5 | `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | galaxy-brain | 18 | complete |
+| 6 | `MSN-003` — Bracket the Quickdraw timing boundary | quickdraw | 18 | complete |
 | 7 | `MSN-007` — Maintain a passive cross-achievement processing-delay ledger | cross-achievement | 0 | passive-observation |
 
 ## Operating rules
@@ -31,7 +31,80 @@ These missions turn the evidence-intelligence ranking into bounded research. The
 - Negative, blocked, delayed, and inconclusive outcomes remain visible.
 - Completion creates a reviewable evidence package, never an automatic promotion.
 
-### 1. MSN-002 — Measure Pull Shark processing and attributed-count behaviour
+### 1. MSN-001 — Preserve real co-author attribution across merge methods
+
+Collect legitimate collaborative pull requests that show whether merge commit, squash, and rebase workflows preserve qualifying final-history co-author attribution and any observable tier transition.
+
+**Status:** `participant-needed`  
+**Claims:** `CLM-005`, `CLM-006`  
+**Contradictions:** `CTR-004`
+
+**Controls**
+
+- Inspect the final merged commit rather than relying only on the pull-request interface.
+- Record merge method, trailer preservation, account linkage, and visible achievement state.
+- Retain naturally occurring failed attribution cases; do not manufacture false co-authorship as a negative control.
+
+**Required evidence**
+
+- public_pull_request_url
+- final_commit_url
+- merge_method
+- trailer_preserved
+- account_linkage_state
+- achievement_state_before
+- achievement_state_after
+- first_visible_time_utc_or_cutoff
+
+**Stop conditions**
+
+- Stop if either contributor did not make a real contribution.
+- Stop if attribution would expose a private email address without consent.
+- Do not create additional pull requests solely to move a counter.
+
+**Ethics**
+
+- False Co-authored-by trailers are prohibited.
+- Every repository change must remain independently useful and reviewable.
+
+### 2. MSN-004 — Find exact public observations around the Starstruck x4 boundary
+
+Locate public account-owned repositories immediately below and above the reported x4 boundary while preserving exact API star counts and ownership state.
+
+**Status:** `complete`  
+**Claims:** `CLM-009`, `CLM-010`  
+**Contradictions:** `CTR-006`
+
+**Controls**
+
+- Record exact API counts and rendered profile text separately.
+- Distinguish personal ownership from organization ownership and forks.
+- Capture observation time because star counts can change.
+
+**Required evidence**
+
+- profile_achievement_url
+- repository_url
+- exact_stargazer_count
+- rendered_star_count
+- displayed_tier
+- owner_type
+- fork_status
+- archive_status
+- observed_time_utc
+
+**Stop conditions**
+
+- Do not solicit, purchase, exchange, or coordinate stars.
+- Do not infer a boundary from rounded display text alone.
+- Stop when two independent near-boundary observations exist on each relevant side or the candidate search is exhausted.
+
+**Ethics**
+
+- This mission is observation-only.
+- Repository popularity must not be manipulated for research.
+
+### 3. MSN-002 — Measure Pull Shark processing and attributed-count behaviour
 
 Capture the public Pull Shark detail state after a bounded processing window and preserve a reproducible support package without generating additional badge-chasing activity.
 
@@ -69,153 +142,7 @@ Capture the public Pull Shark detail state after a bounded processing window and
 - Only existing substantive development activity is used.
 - Negative and inconclusive results remain visible in the evidence record.
 
-### 2. MSN-001 — Preserve real co-author attribution across merge methods
-
-Collect legitimate collaborative pull requests that show whether merge commit, squash, and rebase workflows preserve qualifying final-history co-author attribution and any observable tier transition.
-
-**Status:** `participant-needed`  
-**Claims:** `CLM-005`, `CLM-006`  
-**Contradictions:** `CTR-004`
-
-**Controls**
-
-- Inspect the final merged commit rather than relying only on the pull-request interface.
-- Record merge method, trailer preservation, account linkage, and visible achievement state.
-- Retain naturally occurring failed attribution cases; do not manufacture false co-authorship as a negative control.
-
-**Required evidence**
-
-- public_pull_request_url
-- final_commit_url
-- merge_method
-- trailer_preserved
-- account_linkage_state
-- achievement_state_before
-- achievement_state_after
-- first_visible_time_utc_or_cutoff
-
-**Stop conditions**
-
-- Stop if either contributor did not make a real contribution.
-- Stop if attribution would expose a private email address without consent.
-- Do not create additional pull requests solely to move a counter.
-
-**Ethics**
-
-- False Co-authored-by trailers are prohibited.
-- Every repository change must remain independently useful and reviewable.
-
-### 3. MSN-004 — Find exact public observations around the Starstruck x4 boundary
-
-Locate public account-owned repositories immediately below and above the reported x4 boundary while preserving exact API star counts and ownership state.
-
-**Status:** `candidate-search`  
-**Claims:** `CLM-009`, `CLM-010`  
-**Contradictions:** `CTR-006`
-
-**Controls**
-
-- Record exact API counts and rendered profile text separately.
-- Distinguish personal ownership from organization ownership and forks.
-- Capture observation time because star counts can change.
-
-**Required evidence**
-
-- profile_achievement_url
-- repository_url
-- exact_stargazer_count
-- rendered_star_count
-- displayed_tier
-- owner_type
-- fork_status
-- archive_status
-- observed_time_utc
-
-**Stop conditions**
-
-- Do not solicit, purchase, exchange, or coordinate stars.
-- Do not infer a boundary from rounded display text alone.
-- Stop when two independent near-boundary observations exist on each relevant side or the candidate search is exhausted.
-
-**Ethics**
-
-- This mission is observation-only.
-- Repository popularity must not be manipulated for research.
-
-### 4. MSN-005 — Link accepted-answer counts to visible Galaxy Brain tiers
-
-Capture exact accepted-answer counts, moderation state, and profile-processing time around genuine Discussion answers and any observed tier transition.
-
-**Status:** `participant-needed`  
-**Claims:** `CLM-007`, `CLM-008`  
-**Contradictions:** `CTR-005`
-
-**Controls**
-
-- Separate accepted answers from labels, reactions, verified answers, and other moderation states.
-- Record exact count before and after acceptance.
-- Retain revocation or no-award results where they occur naturally.
-
-**Required evidence**
-
-- public_discussion_url
-- moderation_state
-- accepted_count_before
-- accepted_count_after
-- accepted_time_utc
-- achievement_state_before
-- achievement_state_after
-- first_visible_time_utc_or_cutoff
-
-**Stop conditions**
-
-- Do not ask a maintainer to accept an incorrect or low-quality answer.
-- Stop if participation is unwelcome or the Discussion is removed.
-- Do not create artificial questions solely to generate accepted answers.
-
-**Ethics**
-
-- Questions and answers must be genuine and useful.
-- Maintainer moderation remains independent.
-
-### 5. MSN-003 — Bracket the Quickdraw timing boundary
-
-Collect independent positive and negative controls around the reported five-minute boundary for both issues and pull requests under legitimate repository use.
-
-**Status:** `participant-needed`  
-**Claims:** `CLM-003`  
-**Contradictions:** `CTR-001`
-
-**Controls**
-
-- Separate issue and pull-request observations.
-- Retain both positive and negative outcomes around the proposed boundary.
-- Record creator, closer, visibility, and processing delay as potential confounders.
-
-**Required evidence**
-
-- public_object_url
-- object_type
-- creation_time_utc
-- closure_time_utc
-- elapsed_seconds
-- creator_closer_relation
-- achievement_state_before
-- first_visible_time_utc_or_cutoff
-- result
-
-**Stop conditions**
-
-- Stop after the pre-registered matrix cell is complete.
-- Stop immediately if maintainers object.
-- Do not flood a repository with repeated timing tests.
-
-**Ethics**
-
-- Every issue or pull request must have a legitimate repository purpose.
-- Repeated artificial open-close activity is prohibited.
-
-### 6. MSN-006 — Separate YOLO review-state and merger-identity conditions
+### 4. MSN-006 — Separate YOLO review-state and merger-identity conditions
 
 Observe no-review, comment-only, changes-requested, and approved-review states across legitimate self-merged pull requests without weakening repository safeguards.
 
@@ -251,6 +178,79 @@ Observe no-review, comment-only, changes-requested, and approved-review states a
 
 - Normal review quality and repository safety take precedence over the mission.
 - A missing matrix cell is preferable to manufactured activity.
+
+### 5. MSN-005 — Link accepted-answer counts to visible Galaxy Brain tiers
+
+Capture exact accepted-answer counts, moderation state, and profile-processing time around genuine Discussion answers and any observed tier transition.
+
+**Status:** `complete`  
+**Claims:** `CLM-007`, `CLM-008`  
+**Contradictions:** `CTR-005`
+
+**Controls**
+
+- Separate accepted answers from labels, reactions, verified answers, and other moderation states.
+- Record exact count before and after acceptance.
+- Retain revocation or no-award results where they occur naturally.
+
+**Required evidence**
+
+- public_discussion_url
+- moderation_state
+- accepted_count_before
+- accepted_count_after
+- accepted_time_utc
+- achievement_state_before
+- achievement_state_after
+- first_visible_time_utc_or_cutoff
+
+**Stop conditions**
+
+- Do not ask a maintainer to accept an incorrect or low-quality answer.
+- Stop if participation is unwelcome or the Discussion is removed.
+- Do not create artificial questions solely to generate accepted answers.
+
+**Ethics**
+
+- Questions and answers must be genuine and useful.
+- Maintainer moderation remains independent.
+
+### 6. MSN-003 — Bracket the Quickdraw timing boundary
+
+Collect independent positive and negative controls around the reported five-minute boundary for both issues and pull requests under legitimate repository use.
+
+**Status:** `complete`  
+**Claims:** `CLM-003`  
+**Contradictions:** `CTR-001`
+
+**Controls**
+
+- Separate issue and pull-request observations.
+- Retain both positive and negative outcomes around the proposed boundary.
+- Record creator, closer, visibility, and processing delay as potential confounders.
+
+**Required evidence**
+
+- public_object_url
+- object_type
+- creation_time_utc
+- closure_time_utc
+- elapsed_seconds
+- creator_closer_relation
+- achievement_state_before
+- first_visible_time_utc_or_cutoff
+- result
+
+**Stop conditions**
+
+- Stop after the pre-registered matrix cell is complete.
+- Stop immediately if maintainers object.
+- Do not flood a repository with repeated timing tests.
+
+**Ethics**
+
+- Every issue or pull request must have a legitimate repository purpose.
+- Repeated artificial open-close activity is prohibited.
 
 ### 7. MSN-007 — Maintain a passive cross-achievement processing-delay ledger
 

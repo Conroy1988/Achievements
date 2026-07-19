@@ -7,36 +7,36 @@
       "id": "CLM-001",
       "achievement_slug": "pull-shark",
       "claim_type": "trigger",
-      "statement": "A substantive pull request attributable to the account is merged.",
-      "evidence_level": "confirmed",
+      "statement": "Opening pull requests that are merged can award Pull Shark.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-001"
       ],
       "research_task_ids": [],
-      "status": "maintained",
+      "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
     {
       "id": "CLM-002",
       "achievement_slug": "pull-shark",
       "claim_type": "tiers",
-      "statement": "Pull Shark tiers are awarded at 2, 16, 128, and 1024 qualifying merged pull requests.",
-      "evidence_level": "community-reported",
+      "statement": "Pull Shark milestones are the 2nd, 16th, 128th, and 1024th merged pull requests.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-001"
       ],
       "research_task_ids": [
         "RSH-003"
       ],
-      "status": "provisional",
+      "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
     {
       "id": "CLM-003",
       "achievement_slug": "quickdraw",
       "claim_type": "trigger",
-      "statement": "Closing an issue or pull request very shortly after creation can award Quickdraw.",
-      "evidence_level": "observed",
+      "statement": "Closing a qualifying pull request within five minutes of opening can award Quickdraw.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-002"
       ],
@@ -50,8 +50,8 @@
       "id": "CLM-004",
       "achievement_slug": "yolo",
       "claim_type": "trigger",
-      "statement": "A pull request authored by the account and merged without a submitted formal review can award YOLO.",
-      "evidence_level": "observed",
+      "statement": "Merging a pull request without a review can award YOLO.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-003"
       ],
@@ -65,8 +65,8 @@
       "id": "CLM-005",
       "achievement_slug": "pair-extraordinaire",
       "claim_type": "trigger",
-      "statement": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
-      "evidence_level": "observed",
+      "statement": "Coauthored commits on merged pull requests can award Pair Extraordinaire.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-004"
       ],
@@ -95,7 +95,7 @@
       "id": "CLM-007",
       "achievement_slug": "galaxy-brain",
       "claim_type": "trigger",
-      "statement": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
+      "statement": "Accepted answers in GitHub Discussions can award Galaxy Brain.",
       "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-005"
@@ -110,23 +110,23 @@
       "id": "CLM-008",
       "achievement_slug": "galaxy-brain",
       "claim_type": "tiers",
-      "statement": "Galaxy Brain tiers are awarded at 2, 8, 16, and 32 accepted answers.",
-      "evidence_level": "community-reported",
+      "statement": "Galaxy Brain milestones are the 2nd, 8th, 16th, and 32nd accepted answers.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-005"
       ],
       "research_task_ids": [
         "RSH-004"
       ],
-      "status": "provisional",
+      "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
     {
       "id": "CLM-009",
       "achievement_slug": "starstruck",
       "claim_type": "trigger",
-      "statement": "A repository attributable to the account reaching the base star threshold can award Starstruck.",
-      "evidence_level": "observed",
+      "statement": "Creating a repository that reaches GitHub's published star milestones can award Starstruck.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-006"
       ],
@@ -140,15 +140,15 @@
       "id": "CLM-010",
       "achievement_slug": "starstruck",
       "claim_type": "tiers",
-      "statement": "Starstruck tiers are awarded at 16, 128, 512, and 4096 repository stars.",
-      "evidence_level": "community-reported",
+      "statement": "Starstruck milestones are 16, 128, 512, and 4096 repository stars.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-006"
       ],
       "research_task_ids": [
         "RSH-005"
       ],
-      "status": "provisional",
+      "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
     {
