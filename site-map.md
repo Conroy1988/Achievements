@@ -4,7 +4,7 @@ title: Encyclopedia navigation
 permalink: /site-map/
 ---
 
-# Encyclopedia navigation
+## Encyclopedia navigation
 
 Use this page as the central route into the GitHub Achievement Encyclopedia.
 

@@ -5,7 +5,7 @@ permalink: /achievements/public-sponsor/
 description: GitHub Public Sponsor eligibility, public sponsorship visibility, award timing, privacy, and troubleshooting.
 ---
 
-# Public Sponsor
+## Public Sponsor
 
 **Status:** Earnable  
 **Tiered:** No  

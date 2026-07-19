@@ -5,7 +5,7 @@ permalink: /submit-evidence/
 description: Structured template for submitting reproducible, privacy-safe evidence about GitHub achievement triggers, tiers, delays, and retired behaviour.
 ---
 
-# Submit achievement evidence
+## Submit achievement evidence
 
 Use this structure when reporting a new finding, correction, failed reproduction, or tier observation.
 

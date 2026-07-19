@@ -5,7 +5,7 @@ permalink: /achievements/pull-shark/
 description: Evidence-led guide to GitHub's Pull Shark profile achievement, including known tiers, qualifying activity, exclusions, delays, and verification notes.
 ---
 
-# GitHub Pull Shark achievement
+## GitHub Pull Shark achievement
 
 Pull Shark recognises pull requests that are successfully merged. This guide separates confirmed behaviour from community-reported tier thresholds.
 

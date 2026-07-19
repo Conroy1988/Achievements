@@ -4,7 +4,7 @@ title: GitHub Achievement Encyclopedia
 description: Evidence-led guides to every GitHub profile achievement, badge trigger, tier threshold, award delay, and retired achievement.
 ---
 
-# GitHub Achievement Encyclopedia
+## GitHub Achievement Encyclopedia
 
 A community-maintained reference for GitHub profile achievements—built around reproducible evidence, clear uncertainty labels, and responsible participation.
 

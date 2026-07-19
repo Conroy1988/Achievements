@@ -5,7 +5,7 @@ permalink: /contribute/first-contribution/
 description: A practical route for making a small, evidence-led contribution to the GitHub Achievement Encyclopedia.
 ---
 
-# Make your first contribution
+## Make your first contribution
 
 ## Good starter changes
 

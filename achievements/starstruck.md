@@ -5,7 +5,7 @@ permalink: /achievements/starstruck/
 description: Repository star thresholds, Starstruck tiers, ownership conditions, legitimate growth, and verification.
 ---
 
-# Starstruck
+## Starstruck
 
 **Status:** Earnable  
 **Tiered:** Yes  
