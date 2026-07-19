@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://conroy1988.github.io/Achievements/api/schema.json",
+  "title": "GitHub Achievement Encyclopedia dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "catalogue", "achievements"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "catalogue": {
+      "type": "string",
+      "const": "docs/achievement-index.md"
+    },
+    "achievements": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "$ref": "#/$defs/achievement"
+      }
+    }
+  },
+  "$defs": {
+    "evidenceLevel": {
+      "type": "string",
+      "enum": [
+        "official",
+        "confirmed",
+        "observed",
+        "community-reported",
+        "unknown",
+        "not-applicable"
+      ]
+    },
+    "tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "threshold", "unit"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["Base", "Bronze", "Silver", "Gold"]
+        },
+        "threshold": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["official", "community"],
+      "properties": {
+        "official": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "community": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "achievement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "name",
+        "status",
+        "category",
+        "tiered",
+        "primary_action",
+        "trigger",
+        "guide_path",
+        "permalink",
+        "evidence",
+        "tiers",
+        "last_verified",
+        "aliases",
+        "sources",
+        "known_limitations"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "retired", "restricted"]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tiered": {
+          "type": "boolean"
+        },
+        "primary_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trigger": {
+          "type": "string",
+          "minLength": 1
+        },
+        "guide_path": {
+          "type": "string",
+          "pattern": "^[^/].*\\.md$"
+        },
+        "permalink": {
+          "type": "string",
+          "pattern": "^/.*/$"
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["trigger", "tiers"],
+          "properties": {
+            "trigger": {
+              "$ref": "#/$defs/evidenceLevel"
+            },
+            "tiers": {
+              "$ref": "#/$defs/evidenceLevel"
+            }
+          }
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tier"
+          }
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "aliases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "sources": {
+          "$ref": "#/$defs/sources"
+        },
+        "known_limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

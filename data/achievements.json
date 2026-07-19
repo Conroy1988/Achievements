@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "catalogue": "docs/achievement-index.md",
+  "achievements": [
+    {
+      "slug": "pull-shark",
+      "name": "Pull Shark",
+      "status": "active",
+      "category": "collaboration",
+      "tiered": true,
+      "primary_action": "Have pull requests merged",
+      "trigger": "A substantive pull request attributable to the account is merged.",
+      "guide_path": "docs/achievements/pull-shark.md",
+      "permalink": "/achievements/pull-shark/",
+      "evidence": {
+        "trigger": "confirmed",
+        "tiers": "community-reported"
+      },
+      "tiers": [
+        {"name": "Base", "threshold": 2, "unit": "merged pull requests"},
+        {"name": "Bronze", "threshold": 16, "unit": "merged pull requests"},
+        {"name": "Silver", "threshold": 128, "unit": "merged pull requests"},
+        {"name": "Gold", "threshold": 1024, "unit": "merged pull requests"}
+      ],
+      "last_verified": "2026-07-19",
+      "aliases": ["merged PR badge", "pull request achievement"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "GitHub does not publish the complete tier table.",
+        "Achievement processing can be delayed."
+      ]
+    },
+    {
+      "slug": "quickdraw",
+      "name": "Quickdraw",
+      "status": "active",
+      "category": "issues-and-pull-requests",
+      "tiered": false,
+      "primary_action": "Close an issue or pull request shortly after opening it",
+      "trigger": "An issue or pull request is closed within the short community-observed qualifying window after creation.",
+      "guide_path": "docs/quickdraw.md",
+      "permalink": "/quickdraw/",
+      "evidence": {
+        "trigger": "community-reported",
+        "tiers": "not-applicable"
+      },
+      "tiers": [],
+      "last_verified": "2026-07-19",
+      "aliases": ["fast close badge", "quick issue close"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "GitHub does not publish the exact qualifying time window.",
+        "Repeated artificial issue activity is outside the project standard."
+      ]
+    },
+    {
+      "slug": "yolo",
+      "name": "YOLO",
+      "status": "active",
+      "category": "pull-request-review",
+      "tiered": false,
+      "primary_action": "Merge a pull request without review",
+      "trigger": "The account merges its own pull request without an approving review.",
+      "guide_path": "docs/achievements/yolo.md",
+      "permalink": "/achievements/yolo/",
+      "evidence": {
+        "trigger": "community-reported",
+        "tiers": "not-applicable"
+      },
+      "tiers": [],
+      "last_verified": "2026-07-19",
+      "aliases": ["self merge badge", "merge without review"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "Comments and formal approving reviews are different GitHub objects.",
+        "Protected branches may correctly prevent the qualifying sequence."
+      ]
+    },
+    {
+      "slug": "pair-extraordinaire",
+      "name": "Pair Extraordinaire",
+      "status": "active",
+      "category": "collaboration",
+      "tiered": true,
+      "primary_action": "Co-author commits in merged pull requests",
+      "trigger": "A correctly attributed co-authored commit is incorporated into a merged pull request.",
+      "guide_path": "achievements/pair-extraordinaire.md",
+      "permalink": "/achievements/pair-extraordinaire/",
+      "evidence": {
+        "trigger": "community-reported",
+        "tiers": "community-reported"
+      },
+      "tiers": [
+        {"name": "Base", "threshold": 1, "unit": "qualifying merged pull requests"},
+        {"name": "Bronze", "threshold": 10, "unit": "qualifying merged pull requests"},
+        {"name": "Silver", "threshold": 24, "unit": "qualifying merged pull requests"},
+        {"name": "Gold", "threshold": 48, "unit": "qualifying merged pull requests"}
+      ],
+      "last_verified": "2026-07-19",
+      "aliases": ["co-author badge", "paired commit achievement"],
+      "sources": {
+        "official": [
+          "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
+        ],
+        "community": []
+      },
+      "known_limitations": [
+        "Squash merges and rewritten history can alter attribution.",
+        "Private repository and unusual merge-strategy behaviour is not comprehensively documented."
+      ]
+    },
+    {
+      "slug": "galaxy-brain",
+      "name": "Galaxy Brain",
+      "status": "active",
+      "category": "discussions",
+      "tiered": true,
+      "primary_action": "Receive accepted answers in GitHub Discussions",
+      "trigger": "An answer posted by the account in a GitHub Discussion is marked as accepted.",
+      "guide_path": "docs/achievements/galaxy-brain.md",
+      "permalink": "/achievements/galaxy-brain/",
+      "evidence": {
+        "trigger": "observed",
+        "tiers": "community-reported"
+      },
+      "tiers": [
+        {"name": "Base", "threshold": 2, "unit": "accepted answers"},
+        {"name": "Bronze", "threshold": 8, "unit": "accepted answers"},
+        {"name": "Silver", "threshold": 16, "unit": "accepted answers"},
+        {"name": "Gold", "threshold": 32, "unit": "accepted answers"}
+      ],
+      "last_verified": "2026-07-19",
+      "aliases": ["accepted answer badge", "discussion answer achievement"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "Accepted and verified answers are distinct moderation states.",
+        "GitHub does not publish the complete tier table."
+      ]
+    },
+    {
+      "slug": "starstruck",
+      "name": "Starstruck",
+      "status": "active",
+      "category": "repositories",
+      "tiered": true,
+      "primary_action": "Own a repository that receives stars",
+      "trigger": "A repository associated with the account reaches a community-reported star threshold.",
+      "guide_path": "docs/achievements/starstruck.md",
+      "permalink": "/achievements/starstruck/",
+      "evidence": {
+        "trigger": "observed",
+        "tiers": "community-reported"
+      },
+      "tiers": [
+        {"name": "Base", "threshold": 16, "unit": "repository stars"},
+        {"name": "Bronze", "threshold": 128, "unit": "repository stars"},
+        {"name": "Silver", "threshold": 512, "unit": "repository stars"},
+        {"name": "Gold", "threshold": 4096, "unit": "repository stars"}
+      ],
+      "last_verified": "2026-07-19",
+      "aliases": ["repository star badge", "star achievement"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "Repository ownership and transfer edge cases are not fully documented.",
+        "Star counts can fall after a tier is awarded."
+      ]
+    },
+    {
+      "slug": "public-sponsor",
+      "name": "Public Sponsor",
+      "status": "active",
+      "category": "sponsors",
+      "tiered": false,
+      "primary_action": "Publicly sponsor open-source work through GitHub Sponsors",
+      "trigger": "The account creates an active and publicly visible sponsorship through GitHub Sponsors.",
+      "guide_path": "docs/achievements/public-sponsor.md",
+      "permalink": "/achievements/public-sponsor/",
+      "evidence": {
+        "trigger": "community-reported",
+        "tiers": "not-applicable"
+      },
+      "tiers": [],
+      "last_verified": "2026-07-19",
+      "aliases": ["sponsor badge", "GitHub Sponsors achievement"],
+      "sources": {
+        "official": [
+          "https://docs.github.com/en/sponsors"
+        ],
+        "community": []
+      },
+      "known_limitations": [
+        "Sponsorship privacy settings can prevent public attribution.",
+        "Regional, account, and payment eligibility can change."
+      ]
+    },
+    {
+      "slug": "arctic-code-vault-contributor",
+      "name": "Arctic Code Vault Contributor",
+      "status": "retired",
+      "category": "historical",
+      "tiered": false,
+      "primary_action": "Contributed to qualifying repositories included in the 2020 archive",
+      "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.",
+      "guide_path": "docs/arctic-code-vault-contributor.md",
+      "permalink": "/arctic-code-vault-contributor/",
+      "evidence": {
+        "trigger": "confirmed",
+        "tiers": "not-applicable"
+      },
+      "tiers": [],
+      "last_verified": "2026-07-19",
+      "aliases": ["Arctic vault badge", "2020 archive achievement"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "The qualifying archival event is complete and cannot be repeated by new activity.",
+        "Historical attribution depends on the archived snapshot."
+      ]
+    },
+    {
+      "slug": "mars-2020-contributor",
+      "name": "Mars 2020 Contributor",
+      "status": "retired",
+      "category": "historical",
+      "tiered": false,
+      "primary_action": "Contributed to repositories used by the Mars 2020 mission",
+      "trigger": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission.",
+      "guide_path": "docs/mars-2020-contributor.md",
+      "permalink": "/mars-2020-contributor/",
+      "evidence": {
+        "trigger": "confirmed",
+        "tiers": "not-applicable"
+      },
+      "tiers": [],
+      "last_verified": "2026-07-19",
+      "aliases": ["Mars badge", "Mars helicopter contributor"],
+      "sources": {
+        "official": [],
+        "community": []
+      },
+      "known_limitations": [
+        "The mission-linked qualifying event is historical and not currently earnable.",
+        "The complete internal qualification list is not maintained as a current public contract."
+      ]
+    }
+  ]
+}
