@@ -25,7 +25,20 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
       - name: Validate all Markdown files
-        run: npx --yes markdownlint-cli2@0.18.1 "**/*.md"
+        run: |
+          touch markdownlint-report.txt
+          set +e
+          npx --yes markdownlint-cli2@0.18.1 "**/*.md" 2>&1 | tee markdownlint-report.txt
+          status=${PIPESTATUS[0]}
+          exit "$status"
+      - name: Upload Markdown report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-report
+          path: markdownlint-report.txt
+          if-no-files-found: error
+          retention-days: 14
 
   catalogue:
     name: Achievement catalogue
