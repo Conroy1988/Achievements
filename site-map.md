@@ -20,14 +20,17 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Public Sponsor](achievements/public-sponsor.md)
 - [Starstruck](achievements/starstruck.md)
 
-## Research and verification
+## Research, data, and verification
 
 - [Repository health dashboard](docs/health-dashboard.md)
 - [Unified repository audit](docs/repository-audit.md)
+- [Public data API reference](docs/api-reference.md)
+- [API discovery index](api/index.json)
+- [Public achievement catalogue](api/achievements.json)
 - [Machine-readable health status](api/status.json)
 - [Achievement data reference](docs/data-reference.md)
-- [Canonical achievement dataset](data/achievements.json)
-- [Achievement JSON Schema](data/achievement.schema.json)
+- [Canonical source dataset](data/achievements.json)
+- [Achievement JSON Schema](api/schema.json)
 - [Verification methodology](docs/verification-methodology.md)
 - [Source quality policy](docs/source-quality-policy.md)
 - [Evidence strength levels](docs/evidence-strength-levels.md)
