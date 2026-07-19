@@ -28,27 +28,34 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Deterministic mission triage that enforces scheduled holds, required evidence keys, safeguard declarations, and privacy screening.
 - Five mission-triage tests covering acceptance, missing evidence, relationship mismatch, scheduled-hold enforcement, and sensitive-value blocking.
 - Automated mission packet staging into privacy-screened draft pull requests for mandatory human review.
+- Closed mission-review policy and JSON Schema covering dispositions, reviewer identities, conflict disclosures, checklist state, rationale, and promotion proposals.
+- Generated mission packet review queue with explicit pending, accepted, deferred, retained-inconclusive, needs-correction, and rejected states.
+- Six mission-review tests covering the empty launch state, valid proposals, reviewer minimums, checklist failures, relationship drift, and mutation blocking.
+- Dedicated mission packet review workflow and public queue/schema endpoints.
 
 ### Changed
 
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
-- Public API discovery expanded from 26 to 34 JSON files.
-- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, and mission execution intake.
+- Public API discovery expanded from 26 to 36 JSON files.
+- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, and mission packet review.
 - Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
 - Evidence pressure rankings now map to bounded execution missions rather than additional infrastructure work.
 - General evidence observations and mission-controlled evidence now use separate issue forms, schemas, triage rules, and draft packet paths.
-- Search discovery now includes the targeted mission board and mission execution intake.
+- Search discovery now includes the targeted mission board, mission execution intake, and mission packet review queue.
+- Promotion proposals now require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
 
 ### Integrity
 
-- No canonical claim level changed during Phases 52–59.
+- No canonical claim level changed during Phases 52–60.
 - Evidence coverage remains 54.6/100.
 - Research-pressure values are prioritisation aids, not evidence-confidence scores.
 - Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission and mission submission.
 - Automated mission acceptance creates only a draft review packet and cannot promote evidence, resolve contradictions, or change mission state.
+- Review records classify packets only and must report `canonical_mutation: false`.
+- The mission review queue launches empty because no real packet has passed intake.
 - `v1.4.0` remains blocked and no release tag is created.
 
 ## v1.3.0 — 2026-07-19
