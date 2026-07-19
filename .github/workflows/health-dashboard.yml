@@ -12,6 +12,13 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows:
+      - 'Source inventory'
+    branches:
+      - main
+    types:
+      - completed
   workflow_dispatch:
   schedule:
     - cron: '41 6 * * 1'
