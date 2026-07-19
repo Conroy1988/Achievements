@@ -9,7 +9,16 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_PATTERN = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
-SKIP_PARTS = {".git", "_site", "vendor"}
+SKIP_PARTS = {
+    ".git",
+    "_site",
+    "_audit-serve",
+    "vendor",
+    "node_modules",
+    "audit-artifacts",
+    "search-test-results",
+    "visual-results",
+}
 
 
 def changed_markdown_files() -> list[Path]:
@@ -25,7 +34,9 @@ def changed_markdown_files() -> list[Path]:
     files: list[Path] = []
     for line in output.splitlines():
         path = ROOT / line.strip()
-        if path.suffix == ".md" and path.exists():
+        if path.suffix == ".md" and path.exists() and not any(
+            part in SKIP_PARTS for part in path.relative_to(ROOT).parts
+        ):
             files.append(path)
     return sorted(files)
 
@@ -69,7 +80,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--all",
         action="store_true",
-        help="validate every Markdown file instead of only files changed by the latest commit",
+        help="validate every repository-owned Markdown file instead of only files changed by the latest commit",
     )
     return parser.parse_args()
 
@@ -97,7 +108,7 @@ def main() -> int:
         print("\n".join(f"- {failure}" for failure in failures))
         return 1
 
-    print(f"All links passed {mode} validation across {len(sources)} Markdown files.")
+    print(f"All links passed {mode} validation across {len(sources)} repository-owned Markdown files.")
     return 0
 
 
