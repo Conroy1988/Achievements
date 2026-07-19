@@ -47,7 +47,12 @@ jobs:
       - name: Install browser-test dependencies
         run: npm install --no-package-lock
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+        run: |
+          if ! npx playwright install --with-deps chromium > /tmp/playwright-install.log 2>&1; then
+            cat /tmp/playwright-install.log
+            exit 1
+          fi
+          tail -n 12 /tmp/playwright-install.log
       - name: Start project-path web server
         run: |
           mkdir -p _serve
@@ -62,4 +67,18 @@ jobs:
           cat /tmp/search-server.log
           exit 1
       - name: Test search and filters
-        run: npm run search:test
+        run: |
+          set +e
+          npm run search:test 2>&1 | tee search-test.log
+          status=${PIPESTATUS[0]}
+          exit "$status"
+      - name: Upload search diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: search-test-diagnostics
+          path: |
+            search-test.log
+            search-test-results
+          if-no-files-found: warn
+          retention-days: 14
