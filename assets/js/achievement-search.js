@@ -15,15 +15,21 @@
     evidence: document.getElementById('search-evidence'),
     category: document.getElementById('search-category'),
     freshness: document.getElementById('search-freshness'),
-    reset: document.getElementById('search-reset'),
     count: document.getElementById('search-count'),
     error: document.getElementById('search-error'),
     results: document.getElementById('search-results')
   };
 
+  const achievementDataUrl = new URL(app.dataset.achievements, window.location.href);
+  const siteRootPath = achievementDataUrl.pathname.replace(/\/data\/achievements\.json$/, '/');
   let records = [];
 
   const normalise = (value) => String(value || '').toLocaleLowerCase('en-GB').trim();
+  const tokenise = (value) => normalise(value).split(/[^a-z0-9]+/).filter(Boolean);
+  const routeFor = (permalink) => {
+    const prefix = siteRootPath === '/' ? '' : siteRootPath.replace(/\/$/, '');
+    return `${prefix}/${String(permalink).replace(/^\/+/, '')}`;
+  };
 
   const freshnessFor = (isoDate) => {
     const verified = new Date(`${isoDate}T00:00:00Z`);
@@ -34,79 +40,89 @@
     return 'overdue';
   };
 
+  const searchableRecord = (record, values) => {
+    const haystack = values.map(normalise).join(' ');
+    return {
+      ...record,
+      href: routeFor(record.permalink),
+      haystack,
+      searchTokens: new Set(tokenise(haystack))
+    };
+  };
+
   const achievementRecord = (item) => {
     const evidence = [...new Set(Object.values(item.evidence || {}))];
     const aliases = item.aliases || [];
     const tiers = item.tiers || [];
-    const haystack = [
-      item.name,
-      item.slug,
-      item.primary_action,
-      item.trigger,
-      item.category,
-      item.status,
-      ...aliases,
-      ...evidence,
-      ...tiers.flatMap((tier) => [tier.name, tier.unit, tier.threshold]),
-      ...(item.known_limitations || [])
-    ].map(normalise).join(' ');
-
-    return {
-      type: 'achievement',
-      slug: item.slug,
-      name: item.name,
-      status: item.status,
-      category: item.category,
-      tiered: item.tiered,
-      evidence,
-      freshness: freshnessFor(item.last_verified),
-      lastVerified: item.last_verified,
-      summary: item.trigger,
-      primaryAction: item.primary_action,
-      permalink: item.permalink,
-      aliases,
-      tiers,
-      haystack
-    };
+    return searchableRecord(
+      {
+        type: 'achievement',
+        slug: item.slug,
+        name: item.name,
+        status: item.status,
+        category: item.category,
+        tiered: item.tiered,
+        evidence,
+        freshness: freshnessFor(item.last_verified),
+        lastVerified: item.last_verified,
+        summary: item.trigger,
+        primaryAction: item.primary_action,
+        permalink: item.permalink,
+        aliases,
+        tiers
+      },
+      [
+        item.name,
+        item.slug,
+        item.primary_action,
+        item.trigger,
+        item.category,
+        item.status,
+        ...aliases,
+        ...evidence,
+        ...tiers.flatMap((tier) => [tier.name, tier.unit, tier.threshold]),
+        ...(item.known_limitations || [])
+      ]
+    );
   };
 
-  const referenceRecord = (item) => ({
-    type: 'reference',
-    slug: item.slug,
-    name: item.name,
-    status: 'reference',
-    category: item.category,
-    tiered: null,
-    evidence: [],
-    freshness: null,
-    lastVerified: null,
-    summary: item.summary,
-    primaryAction: 'Project reference',
-    permalink: item.permalink,
-    aliases: item.aliases || [],
-    tiers: [],
-    haystack: [item.name, item.slug, item.category, item.summary, ...(item.aliases || [])]
-      .map(normalise)
-      .join(' ')
-  });
+  const referenceRecord = (item) => searchableRecord(
+    {
+      type: 'reference',
+      slug: item.slug,
+      name: item.name,
+      status: 'reference',
+      category: item.category,
+      tiered: null,
+      evidence: [],
+      freshness: null,
+      lastVerified: null,
+      summary: item.summary,
+      primaryAction: 'Project reference',
+      permalink: item.permalink,
+      aliases: item.aliases || [],
+      tiers: []
+    },
+    [item.name, item.slug, item.category, item.summary, ...(item.aliases || [])]
+  );
 
-  const textTokens = () => normalise(controls.query.value).split(/\s+/).filter(Boolean);
+  const textTokens = () => tokenise(controls.query.value);
+  const hasToken = (record, token) => {
+    if (record.searchTokens.has(token)) return true;
+    if (token.length < 3) return false;
+    return [...record.searchTokens].some((word) => word.startsWith(token));
+  };
 
   const matches = (record) => {
-    const tokens = textTokens();
-    if (tokens.some((token) => !record.haystack.includes(token))) return false;
+    if (textTokens().some((token) => !hasToken(record, token))) return false;
     if (controls.status.value !== 'all' && record.status !== controls.status.value) return false;
     if (controls.tiered.value !== 'all') {
       if (record.type !== 'achievement') return false;
       if ((controls.tiered.value === 'yes') !== record.tiered) return false;
     }
-    if (controls.evidence.value !== 'all') {
-      if (!record.evidence.includes(controls.evidence.value)) return false;
-    }
+    if (controls.evidence.value !== 'all' && !record.evidence.includes(controls.evidence.value)) return false;
     if (controls.category.value !== 'all' && record.category !== controls.category.value) return false;
-    if (controls.freshness.value !== 'all') {
-      if (record.freshness !== controls.freshness.value) return false;
-    }
+    if (controls.freshness.value !== 'all' && record.freshness !== controls.freshness.value) return false;
     return true;
   };
 
@@ -148,7 +164,7 @@
 
     const heading = document.createElement('h3');
     const link = document.createElement('a');
-    link.href = record.permalink;
+    link.href = record.href;
     link.textContent = record.name;
     heading.append(link);
     card.append(heading);
@@ -191,7 +207,6 @@
 
       card.append(details);
     }
-
     return card;
   };
 
@@ -206,8 +221,7 @@
 
   const syncUrl = () => {
     const url = new URL(window.location.href);
-    const state = currentState();
-    for (const [key, value] of Object.entries(state)) {
+    for (const [key, value] of Object.entries(currentState())) {
       if (!value || value === 'all') url.searchParams.delete(key);
       else url.searchParams.set(key, value);
     }
@@ -218,7 +232,6 @@
     const filtered = records
       .filter(matches)
       .sort((left, right) => relevance(right) - relevance(left) || left.name.localeCompare(right.name, 'en-GB'));
-
     controls.results.replaceChildren(...filtered.map(createCard));
     controls.count.textContent = `${filtered.length} result${filtered.length === 1 ? '' : 's'} found.`;
     controls.results.dataset.resultCount = String(filtered.length);
@@ -226,7 +239,8 @@
   };
 
   const populateCategories = () => {
-    const categories = [...new Set(records.map((record) => record.category))].sort((a, b) => a.localeCompare(b, 'en-GB'));
+    const categories = [...new Set(records.map((record) => record.category))]
+      .sort((left, right) => left.localeCompare(right, 'en-GB'));
     for (const category of categories) {
       const option = document.createElement('option');
       option.value = category;
@@ -237,13 +251,11 @@
 
   const restoreState = () => {
     const params = new URLSearchParams(window.location.search);
-    const fields = ['query', 'status', 'tiered', 'evidence', 'category', 'freshness'];
-    for (const field of fields) {
+    for (const field of ['query', 'status', 'tiered', 'evidence', 'category', 'freshness']) {
       const value = params.get(field);
       if (!value || !controls[field]) continue;
       if (controls[field] instanceof HTMLSelectElement) {
-        const valid = [...controls[field].options].some((option) => option.value === value);
-        if (valid) controls[field].value = value;
+        if ([...controls[field].options].some((option) => option.value === value)) controls[field].value = value;
       } else {
         controls[field].value = value;
       }
