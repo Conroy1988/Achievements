@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "search:test": "node scripts/test_search_page.mjs",
     "visual:test": "node scripts/visual_regression.mjs",
     "visual:update": "node scripts/visual_regression.mjs --update"
   },
