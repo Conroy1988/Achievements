@@ -53,7 +53,7 @@ The badge may not update immediately after the qualifying merge. Profile process
 
 ## Related material
 
-- [Achievement index](../achievement-index.md)
+- [Achievement index](../docs/achievement-index.md)
 - [Verification methodology](../docs/verification-methodology.md)
 - [Award delay troubleshooting](../docs/award-delay-troubleshooting.md)
 - [Evidence strength levels](../docs/evidence-strength-levels.md)
