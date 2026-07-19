@@ -9,8 +9,8 @@ permalink: /research-hub/
 
 This hub converts known evidence gaps into bounded research tasks. Contributions must follow the evidence register policy and may document failed or contradictory results.
 
-**Open tasks:** 12  
-**Good first research tasks:** 3  
+**Open tasks:** 10  
+**Good first research tasks:** 1  
 **Schema version:** `1.1.0`
 
 | Task | Achievement | Type | Priority | Difficulty | Status |
@@ -22,11 +22,11 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 | `RSH-005` | Starstruck | edge-case-research | high | advanced | open |
 | `RSH-009` | Pair Extraordinaire | independent-reproduction | high | advanced | open |
 | `RSH-010` | Pair Extraordinaire | threshold-verification | high | advanced | open |
-| `RSH-011` | Galaxy Brain | independent-reproduction | high | intermediate | open |
-| `RSH-012` | Public Sponsor | independent-reproduction | high | intermediate | open |
-| `RSH-006` | Arctic Code Vault Contributor | source-replacement — good first issue | medium | beginner | open |
-| `RSH-007` | Mars 2020 Contributor | source-replacement — good first issue | medium | beginner | open |
+| `RSH-011` | Galaxy Brain | edge-case-research | high | intermediate | open |
+| `RSH-012` | Public Sponsor | edge-case-research | high | intermediate | open |
 | `RSH-008` | Cross-achievement | cross-achievement-observation — good first issue | medium | beginner | open |
+| `RSH-006` | Arctic Code Vault Contributor | source-replacement — good first issue | medium | beginner | resolved |
+| `RSH-007` | Mars 2020 Contributor | source-replacement — good first issue | medium | beginner | resolved |
 
 ## Research tasks
 
@@ -156,41 +156,59 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 
 **Related evidence records:** `EVD-2026-004`
 
-### RSH-011 — Reproduce the Galaxy Brain accepted-answer trigger
+### RSH-011 — Verify Galaxy Brain accepted-answer semantics and processing
 
 **Achievement:** Galaxy Brain  
 **Priority:** `high`  
 **Difficulty:** `intermediate`  
 **Target evidence:** `confirmed`
 
-**Research question:** Does a genuine GitHub Discussion answer being marked accepted reliably create Galaxy Brain progress, and how long does profile visibility take?
+**Research question:** How does GitHub’s official “answer deemed helpful” description map to current accepted-answer interface states, revocation behaviour, and profile-processing delay?
 
 **Acceptance criteria**
 
 - Use genuine Discussion questions and answers moderated by the repository maintainer.
-- Record answer, acceptance, and first-visible-award timestamps.
+- Record answer, acceptance, revocation where applicable, and first-visible-award timestamps.
 - Distinguish accepted answers from verified answers, labels, reactions, and other moderation states.
-- Provide observations from at least two independent accounts.
+- Provide observations from at least two independent accounts without publishing restricted content.
 
 **Related evidence records:** `EVD-2026-005`
 
-### RSH-012 — Reproduce the Public Sponsor visibility trigger
+### RSH-012 — Verify Public Sponsor visibility and processing edge cases
 
 **Achievement:** Public Sponsor  
 **Priority:** `high`  
 **Difficulty:** `intermediate`  
 **Target evidence:** `confirmed`
 
-**Research question:** Which sponsorship visibility and account conditions are required for Public Sponsor to appear without exposing financial information?
+**Research question:** How do sponsorship visibility, cancellation, account state, and processing delay affect an officially documented Public Sponsor award?
 
 **Acceptance criteria**
 
 - Record only public sponsorship state, activation date, and profile-award visibility; exclude payment details.
-- Compare public and private sponsorship visibility where the participant can safely do so.
-- Record account, region, and processing limitations without publishing sensitive eligibility data.
+- Compare public and private sponsorship visibility only where participants can do so safely and legitimately.
+- Record cancellation or visibility-change outcomes without exposing financial or eligibility data.
 - Provide dated observations from at least two independent accounts.
 
 **Related evidence records:** `EVD-2026-007`
+
+### RSH-008 — Document award-processing delay observations
+
+**Achievement:** Cross-achievement  
+**Priority:** `medium`  
+**Difficulty:** `beginner`  
+**Target evidence:** `observed`
+
+**Research question:** What processing delays are observed between a qualifying event and profile-award visibility across different achievements?
+
+**Acceptance criteria**
+
+- Submit dated qualifying-event and first-visible-award timestamps.
+- Identify the achievement and relevant repository visibility.
+- Do not present a maximum guarantee from a small sample.
+- Remove unnecessary account identifiers from submitted evidence.
+
+**Related evidence records:** None
 
 ### RSH-006 — Locate durable Arctic Code Vault sources
 
@@ -227,24 +245,6 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 - Do not infer a complete qualification list from partial examples.
 
 **Related evidence records:** `EVD-2026-009`
-
-### RSH-008 — Document award-processing delay observations
-
-**Achievement:** Cross-achievement  
-**Priority:** `medium`  
-**Difficulty:** `beginner`  
-**Target evidence:** `observed`
-
-**Research question:** What processing delays are observed between a qualifying event and profile-award visibility across different achievements?
-
-**Acceptance criteria**
-
-- Submit dated qualifying-event and first-visible-award timestamps.
-- Identify the achievement and relevant repository visibility.
-- Do not present a maximum guarantee from a small sample.
-- Remove unnecessary account identifiers from submitted evidence.
-
-**Related evidence records:** None
 
 ## Starting work
 

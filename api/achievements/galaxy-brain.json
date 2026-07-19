@@ -7,12 +7,12 @@
     "category": "discussions",
     "evidence": {
       "tiers": "community-reported",
-      "trigger": "observed"
+      "trigger": "official"
     },
     "guide_path": "docs/achievements/galaxy-brain.md",
     "known_limitations": [
-      "Accepted and verified answers are distinct moderation states.",
-      "GitHub does not publish the complete tier table."
+      "GitHub’s official launch material describes helpful-answer activity, but does not publish the complete tier table.",
+      "The exact mapping between “deemed helpful” and current accepted-answer interface states still requires controlled observation."
     ],
     "last_verified": "2026-07-19",
     "name": "Galaxy Brain",
@@ -21,7 +21,10 @@
     "slug": "galaxy-brain",
     "sources": {
       "community": [],
-      "official": []
+      "official": [
+        "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
+        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+      ]
     },
     "status": "active",
     "tiered": true,
@@ -47,7 +50,7 @@
         "unit": "accepted answers"
       }
     ],
-    "trigger": "An answer posted by the account in a GitHub Discussion is marked as accepted."
+    "trigger": "A GitHub Discussion answer authored by the account is deemed helpful by another user."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

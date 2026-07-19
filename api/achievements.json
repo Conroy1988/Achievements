@@ -168,12 +168,12 @@
       "category": "discussions",
       "evidence": {
         "tiers": "community-reported",
-        "trigger": "observed"
+        "trigger": "official"
       },
       "guide_path": "docs/achievements/galaxy-brain.md",
       "known_limitations": [
-        "Accepted and verified answers are distinct moderation states.",
-        "GitHub does not publish the complete tier table."
+        "GitHub’s official launch material describes helpful-answer activity, but does not publish the complete tier table.",
+        "The exact mapping between “deemed helpful” and current accepted-answer interface states still requires controlled observation."
       ],
       "last_verified": "2026-07-19",
       "name": "Galaxy Brain",
@@ -182,7 +182,10 @@
       "slug": "galaxy-brain",
       "sources": {
         "community": [],
-        "official": []
+        "official": [
+          "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
+          "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+        ]
       },
       "status": "active",
       "tiered": true,
@@ -208,7 +211,7 @@
           "unit": "accepted answers"
         }
       ],
-      "trigger": "An answer posted by the account in a GitHub Discussion is marked as accepted."
+      "trigger": "A GitHub Discussion answer authored by the account is deemed helpful by another user."
     },
     {
       "aliases": [
@@ -268,12 +271,12 @@
       "category": "sponsors",
       "evidence": {
         "tiers": "not-applicable",
-        "trigger": "community-reported"
+        "trigger": "official"
       },
       "guide_path": "docs/achievements/public-sponsor.md",
       "known_limitations": [
-        "Sponsorship privacy settings can prevent public attribution.",
-        "Regional, account, and payment eligibility can change."
+        "Archived GitHub documentation states the broad trigger; public/private visibility and award-processing edge cases remain under study.",
+        "Regional, account, recipient, and payment eligibility can change independently of the achievement rule."
       ],
       "last_verified": "2026-07-19",
       "name": "Public Sponsor",
@@ -283,13 +286,14 @@
       "sources": {
         "community": [],
         "official": [
-          "https://docs.github.com/en/sponsors"
+          "https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor-through-github",
+          "https://github.blog/news-insights/company-news/open-source-goes-to-mars/"
         ]
       },
       "status": "active",
       "tiered": false,
       "tiers": [],
-      "trigger": "The account creates an active and publicly visible sponsorship through GitHub Sponsors."
+      "trigger": "Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor."
     },
     {
       "aliases": [
@@ -299,12 +303,12 @@
       "category": "historical",
       "evidence": {
         "tiers": "not-applicable",
-        "trigger": "confirmed"
+        "trigger": "official"
       },
       "guide_path": "docs/arctic-code-vault-contributor.md",
       "known_limitations": [
-        "The qualifying archival event is complete and cannot be repeated by new activity.",
-        "Historical attribution depends on the archived snapshot."
+        "The qualifying archival event is complete and cannot be repeated through new activity.",
+        "Historical attribution can still be complicated by deleted accounts, renamed repositories, and email association at the time of processing."
       ],
       "last_verified": "2026-07-19",
       "name": "Arctic Code Vault Contributor",
@@ -313,12 +317,15 @@
       "slug": "arctic-code-vault-contributor",
       "sources": {
         "community": [],
-        "official": []
+        "official": [
+          "https://github.blog/news-insights/company-news/github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/",
+          "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+        ]
       },
       "status": "retired",
       "tiered": false,
       "tiers": [],
-      "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot."
+      "trigger": "The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program."
     },
     {
       "aliases": [
@@ -328,12 +335,12 @@
       "category": "historical",
       "evidence": {
         "tiers": "not-applicable",
-        "trigger": "confirmed"
+        "trigger": "official"
       },
       "guide_path": "docs/mars-2020-contributor.md",
       "known_limitations": [
-        "The mission-linked qualifying event is historical and not currently earnable.",
-        "The complete internal qualification list is not maintained as a current public contract."
+        "The qualifying event has ended and cannot be repeated through new activity.",
+        "Attribution depended on the verified email associated with the account when GitHub determined eligible contributions."
       ],
       "last_verified": "2026-07-19",
       "name": "Mars 2020 Contributor",
@@ -342,12 +349,16 @@
       "slug": "mars-2020-contributor",
       "sources": {
         "community": [],
-        "official": []
+        "official": [
+          "https://docs.github.com/en/account-and-profile/reference/profile-reference",
+          "https://github.blog/news-insights/company-news/open-source-goes-to-mars/",
+          "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+        ]
       },
       "status": "retired",
       "tiered": false,
       "tiers": [],
-      "trigger": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission."
+      "trigger": "The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission."
     }
   ],
   "api_version": "1.1.0",

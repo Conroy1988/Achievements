@@ -75,19 +75,22 @@
     {
       "id": "EVD-2026-005",
       "achievement_slug": "galaxy-brain",
-      "claim": "An answer posted by the account in a GitHub Discussion is marked as accepted.",
-      "evidence_level": "observed",
+      "claim": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
+      "source_urls": [
+        "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
+        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+      ],
       "archive_urls": [],
-      "reproduction_status": "observed-not-fully-reproduced",
+      "reproduction_status": "official-trigger-description",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/galaxy-brain.md",
       "guide_section": "Accepted answers",
-      "notes": "Accepted and verified answers are different moderation states."
+      "notes": "GitHub’s launch material directly ties Galaxy Brain to Discussion answers another user deems helpful. Exact current accepted-state semantics, processing delay, and tiers remain separate research questions."
     },
     {
       "id": "EVD-2026-006",
@@ -109,55 +112,67 @@
     {
       "id": "EVD-2026-007",
       "achievement_slug": "public-sponsor",
-      "claim": "The account creates an active and publicly visible sponsorship through GitHub Sponsors.",
-      "evidence_level": "community-reported",
+      "claim": "Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
-        "https://docs.github.com/en/sponsors"
+        "https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor-through-github",
+        "https://github.blog/news-insights/company-news/open-source-goes-to-mars/"
       ],
-      "archive_urls": [],
-      "reproduction_status": "partially-reproduced",
+      "archive_urls": [
+        "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+      ],
+      "reproduction_status": "officially-documented-trigger",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-financial-data",
       "guide_path": "docs/achievements/public-sponsor.md",
       "guide_section": "Public sponsorship visibility",
-      "notes": "The official Sponsors documentation explains the product but not the achievement-award contract."
+      "notes": "Archived GitHub documentation directly states the sponsor-badge trigger. Visibility, cancellation, eligibility, and processing behaviour remain limitations rather than changes to the broad trigger."
     },
     {
       "id": "EVD-2026-008",
       "achievement_slug": "arctic-code-vault-contributor",
-      "claim": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.",
-      "evidence_level": "confirmed",
+      "claim": "The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
-      "archive_urls": [],
-      "reproduction_status": "historical-confirmation",
+      "source_urls": [
+        "https://github.blog/news-insights/company-news/github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/"
+      ],
+      "archive_urls": [
+        "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+      ],
+      "reproduction_status": "historical-official-documentation",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/arctic-code-vault-contributor.md",
       "guide_section": "2020 archive qualification",
-      "notes": "The qualifying archival event is complete and cannot be reproduced through new activity."
+      "notes": "GitHub’s archived profile documentation states the default-branch commit criterion, while GitHub’s Archive Program publication documents the badge and 2020 vault."
     },
     {
       "id": "EVD-2026-009",
       "achievement_slug": "mars-2020-contributor",
-      "claim": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission.",
-      "evidence_level": "confirmed",
+      "claim": "The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
-      "archive_urls": [],
-      "reproduction_status": "historical-confirmation",
+      "source_urls": [
+        "https://docs.github.com/en/account-and-profile/reference/profile-reference",
+        "https://github.blog/news-insights/company-news/open-source-goes-to-mars/"
+      ],
+      "archive_urls": [
+        "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+      ],
+      "reproduction_status": "historical-official-documentation",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/mars-2020-contributor.md",
       "guide_section": "Mission-linked qualification",
-      "notes": "The mission-linked event is historical and not currently earnable."
+      "notes": "Current GitHub documentation publishes the qualifying repository/version/tag list. Archived documentation records commit authorship, co-authorship, tag, and verified-email attribution conditions."
     }
   ]
 }

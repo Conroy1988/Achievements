@@ -7,7 +7,7 @@ permalink: /research-priorities/
 
 ## Research priority board
 
-**Open tasks:** 12  
+**Open tasks:** 10  
 **Scoring:** declared priority + evidence weakness + dispute severity + active scope + good-first value + status adjustment
 
 | Rank | Task | Achievement | Score | Priority | Status |
@@ -19,10 +19,8 @@ permalink: /research-priorities/
 | 5 | `RSH-005` — Verify Starstruck ownership edge cases | starstruck | 80 | high | open |
 | 6 | `RSH-009` — Reproduce Pair Extraordinaire merge attribution | pair-extraordinaire | 75 | high | open |
 | 7 | `RSH-010` — Verify Pair Extraordinaire tier thresholds | pair-extraordinaire | 75 | high | open |
-| 8 | `RSH-012` — Reproduce the Public Sponsor visibility trigger | public-sponsor | 65 | high | open |
-| 9 | `RSH-008` — Document award-processing delay observations | Cross-achievement | 58 | medium | open |
-| 10 | `RSH-011` — Reproduce the Galaxy Brain accepted-answer trigger | galaxy-brain | 55 | high | open |
-| 11 | `RSH-006` — Locate durable Arctic Code Vault sources | arctic-code-vault-contributor | 28 | medium | open |
-| 12 | `RSH-007` — Locate durable Mars 2020 qualification sources | mars-2020-contributor | 28 | medium | open |
+| 8 | `RSH-008` — Document award-processing delay observations | Cross-achievement | 58 | medium | open |
+| 9 | `RSH-011` — Verify Galaxy Brain accepted-answer semantics and processing | galaxy-brain | 40 | high | open |
+| 10 | `RSH-012` — Verify Public Sponsor visibility and processing edge cases | public-sponsor | 40 | high | open |
 
 Machine-readable priorities, including every score component, are published at [`/api/priorities.json`](../api/priorities.json).

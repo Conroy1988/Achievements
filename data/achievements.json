@@ -17,13 +17,32 @@
         "tiers": "community-reported"
       },
       "tiers": [
-        {"name": "Base", "threshold": 2, "unit": "merged pull requests"},
-        {"name": "Bronze", "threshold": 16, "unit": "merged pull requests"},
-        {"name": "Silver", "threshold": 128, "unit": "merged pull requests"},
-        {"name": "Gold", "threshold": 1024, "unit": "merged pull requests"}
+        {
+          "name": "Base",
+          "threshold": 2,
+          "unit": "merged pull requests"
+        },
+        {
+          "name": "Bronze",
+          "threshold": 16,
+          "unit": "merged pull requests"
+        },
+        {
+          "name": "Silver",
+          "threshold": 128,
+          "unit": "merged pull requests"
+        },
+        {
+          "name": "Gold",
+          "threshold": 1024,
+          "unit": "merged pull requests"
+        }
       ],
       "last_verified": "2026-07-19",
-      "aliases": ["merged PR badge", "pull request achievement"],
+      "aliases": [
+        "merged PR badge",
+        "pull request achievement"
+      ],
       "sources": {
         "official": [],
         "community": []
@@ -49,7 +68,10 @@
       },
       "tiers": [],
       "last_verified": "2026-07-19",
-      "aliases": ["fast close badge", "quick issue close"],
+      "aliases": [
+        "fast close badge",
+        "quick issue close"
+      ],
       "sources": {
         "official": [],
         "community": []
@@ -75,7 +97,10 @@
       },
       "tiers": [],
       "last_verified": "2026-07-19",
-      "aliases": ["self merge badge", "merge without review"],
+      "aliases": [
+        "self merge badge",
+        "merge without review"
+      ],
       "sources": {
         "official": [],
         "community": []
@@ -100,13 +125,32 @@
         "tiers": "community-reported"
       },
       "tiers": [
-        {"name": "Base", "threshold": 1, "unit": "qualifying merged pull requests"},
-        {"name": "Bronze", "threshold": 10, "unit": "qualifying merged pull requests"},
-        {"name": "Silver", "threshold": 24, "unit": "qualifying merged pull requests"},
-        {"name": "Gold", "threshold": 48, "unit": "qualifying merged pull requests"}
+        {
+          "name": "Base",
+          "threshold": 1,
+          "unit": "qualifying merged pull requests"
+        },
+        {
+          "name": "Bronze",
+          "threshold": 10,
+          "unit": "qualifying merged pull requests"
+        },
+        {
+          "name": "Silver",
+          "threshold": 24,
+          "unit": "qualifying merged pull requests"
+        },
+        {
+          "name": "Gold",
+          "threshold": 48,
+          "unit": "qualifying merged pull requests"
+        }
       ],
       "last_verified": "2026-07-19",
-      "aliases": ["co-author badge", "paired commit achievement"],
+      "aliases": [
+        "co-author badge",
+        "paired commit achievement"
+      ],
       "sources": {
         "official": [
           "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
@@ -125,28 +169,50 @@
       "category": "discussions",
       "tiered": true,
       "primary_action": "Receive accepted answers in GitHub Discussions",
-      "trigger": "An answer posted by the account in a GitHub Discussion is marked as accepted.",
+      "trigger": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
       "guide_path": "docs/achievements/galaxy-brain.md",
       "permalink": "/achievements/galaxy-brain/",
       "evidence": {
-        "trigger": "observed",
+        "trigger": "official",
         "tiers": "community-reported"
       },
       "tiers": [
-        {"name": "Base", "threshold": 2, "unit": "accepted answers"},
-        {"name": "Bronze", "threshold": 8, "unit": "accepted answers"},
-        {"name": "Silver", "threshold": 16, "unit": "accepted answers"},
-        {"name": "Gold", "threshold": 32, "unit": "accepted answers"}
+        {
+          "name": "Base",
+          "threshold": 2,
+          "unit": "accepted answers"
+        },
+        {
+          "name": "Bronze",
+          "threshold": 8,
+          "unit": "accepted answers"
+        },
+        {
+          "name": "Silver",
+          "threshold": 16,
+          "unit": "accepted answers"
+        },
+        {
+          "name": "Gold",
+          "threshold": 32,
+          "unit": "accepted answers"
+        }
       ],
       "last_verified": "2026-07-19",
-      "aliases": ["accepted answer badge", "discussion answer achievement"],
+      "aliases": [
+        "accepted answer badge",
+        "discussion answer achievement"
+      ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
+          "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+        ],
         "community": []
       },
       "known_limitations": [
-        "Accepted and verified answers are distinct moderation states.",
-        "GitHub does not publish the complete tier table."
+        "GitHub’s official launch material describes helpful-answer activity, but does not publish the complete tier table.",
+        "The exact mapping between “deemed helpful” and current accepted-answer interface states still requires controlled observation."
       ]
     },
     {
@@ -164,13 +230,32 @@
         "tiers": "community-reported"
       },
       "tiers": [
-        {"name": "Base", "threshold": 16, "unit": "repository stars"},
-        {"name": "Bronze", "threshold": 128, "unit": "repository stars"},
-        {"name": "Silver", "threshold": 512, "unit": "repository stars"},
-        {"name": "Gold", "threshold": 4096, "unit": "repository stars"}
+        {
+          "name": "Base",
+          "threshold": 16,
+          "unit": "repository stars"
+        },
+        {
+          "name": "Bronze",
+          "threshold": 128,
+          "unit": "repository stars"
+        },
+        {
+          "name": "Silver",
+          "threshold": 512,
+          "unit": "repository stars"
+        },
+        {
+          "name": "Gold",
+          "threshold": 4096,
+          "unit": "repository stars"
+        }
       ],
       "last_verified": "2026-07-19",
-      "aliases": ["repository star badge", "star achievement"],
+      "aliases": [
+        "repository star badge",
+        "star achievement"
+      ],
       "sources": {
         "official": [],
         "community": []
@@ -187,25 +272,29 @@
       "category": "sponsors",
       "tiered": false,
       "primary_action": "Publicly sponsor open-source work through GitHub Sponsors",
-      "trigger": "The account creates an active and publicly visible sponsorship through GitHub Sponsors.",
+      "trigger": "Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor.",
       "guide_path": "docs/achievements/public-sponsor.md",
       "permalink": "/achievements/public-sponsor/",
       "evidence": {
-        "trigger": "community-reported",
+        "trigger": "official",
         "tiers": "not-applicable"
       },
       "tiers": [],
       "last_verified": "2026-07-19",
-      "aliases": ["sponsor badge", "GitHub Sponsors achievement"],
+      "aliases": [
+        "sponsor badge",
+        "GitHub Sponsors achievement"
+      ],
       "sources": {
         "official": [
-          "https://docs.github.com/en/sponsors"
+          "https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor-through-github",
+          "https://github.blog/news-insights/company-news/open-source-goes-to-mars/"
         ],
         "community": []
       },
       "known_limitations": [
-        "Sponsorship privacy settings can prevent public attribution.",
-        "Regional, account, and payment eligibility can change."
+        "Archived GitHub documentation states the broad trigger; public/private visibility and award-processing edge cases remain under study.",
+        "Regional, account, recipient, and payment eligibility can change independently of the achievement rule."
       ]
     },
     {
@@ -215,23 +304,29 @@
       "category": "historical",
       "tiered": false,
       "primary_action": "Contributed to qualifying repositories included in the 2020 archive",
-      "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.",
+      "trigger": "The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program.",
       "guide_path": "docs/arctic-code-vault-contributor.md",
       "permalink": "/arctic-code-vault-contributor/",
       "evidence": {
-        "trigger": "confirmed",
+        "trigger": "official",
         "tiers": "not-applicable"
       },
       "tiers": [],
       "last_verified": "2026-07-19",
-      "aliases": ["Arctic vault badge", "2020 archive achievement"],
+      "aliases": [
+        "Arctic vault badge",
+        "2020 archive achievement"
+      ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.blog/news-insights/company-news/github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/",
+          "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+        ],
         "community": []
       },
       "known_limitations": [
-        "The qualifying archival event is complete and cannot be repeated by new activity.",
-        "Historical attribution depends on the archived snapshot."
+        "The qualifying archival event is complete and cannot be repeated through new activity.",
+        "Historical attribution can still be complicated by deleted accounts, renamed repositories, and email association at the time of processing."
       ]
     },
     {
@@ -241,23 +336,30 @@
       "category": "historical",
       "tiered": false,
       "primary_action": "Contributed to repositories used by the Mars 2020 mission",
-      "trigger": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission.",
+      "trigger": "The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission.",
       "guide_path": "docs/mars-2020-contributor.md",
       "permalink": "/mars-2020-contributor/",
       "evidence": {
-        "trigger": "confirmed",
+        "trigger": "official",
         "tiers": "not-applicable"
       },
       "tiers": [],
       "last_verified": "2026-07-19",
-      "aliases": ["Mars badge", "Mars helicopter contributor"],
+      "aliases": [
+        "Mars badge",
+        "Mars helicopter contributor"
+      ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://docs.github.com/en/account-and-profile/reference/profile-reference",
+          "https://github.blog/news-insights/company-news/open-source-goes-to-mars/",
+          "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+        ],
         "community": []
       },
       "known_limitations": [
-        "The mission-linked qualifying event is historical and not currently earnable.",
-        "The complete internal qualification list is not maintained as a current public contract."
+        "The qualifying event has ended and cannot be repeated through new activity.",
+        "Attribution depended on the verified email associated with the account when GitHub determined eligible contributions."
       ]
     }
   ]

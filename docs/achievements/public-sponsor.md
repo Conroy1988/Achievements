@@ -2,75 +2,65 @@
 
 ## Summary
 
-Public Sponsor is an active, non-tiered GitHub profile achievement associated with publicly sponsoring an eligible developer or organisation through GitHub Sponsors.
+Public Sponsor is an active, non-tiered GitHub profile achievement for sponsoring open-source work through GitHub Sponsors.
 
 ## Trigger
 
-The observed qualifying event is a completed GitHub Sponsors sponsorship that is visible publicly rather than kept private.
+Archived GitHub documentation directly states that sponsoring an open-source contributor through GitHub Sponsors awards the sponsor badge. GitHub's Mars achievement announcement also identifies a badge for sponsoring open-source work through GitHub Sponsors.
 
 ## Progression or tiers
 
-Public Sponsor is generally observed as a single-level achievement. GitHub does not publish a tier progression for it.
+Public Sponsor is documented as a single-level badge. No official tier progression is published.
 
 ## Eligibility conditions
 
-- The recipient must participate in GitHub Sponsors and offer an eligible sponsorship option.
-- The sponsorship must be successfully created through GitHub Sponsors.
-- The sponsorship visibility must permit public recognition where required.
-- Billing, regional availability, account eligibility, and recipient status can affect whether a sponsorship can be completed.
-- Repository commits, stars, issues, or pull requests do not substitute for the sponsorship event.
+- The sponsorship must be created through GitHub Sponsors.
+- The recipient and sponsoring account must be eligible to use the programme.
+- Billing, region, account state, and recipient status can prevent the sponsorship from completing.
+- Visibility affects public verification and may affect presentation; this edge case remains under study.
 
 ## Award timing
 
-Payment and sponsorship status can complete before the profile achievement appears. GitHub does not guarantee a fixed achievement-processing interval.
+GitHub does not publish a fixed processing interval between sponsorship activation and profile-award visibility.
 
 ## Verification
 
-1. Open the GitHub Sponsors sponsorship settings or relevant sponsorship page.
-2. Confirm the recipient and active sponsorship status.
-3. Confirm the visibility setting is public where intended.
-4. Redact payment details, addresses, and other billing information from any evidence.
-5. Recheck the profile after allowing for processing delay.
+1. Confirm the sponsorship is active through GitHub Sponsors.
+2. Record activation and first-visible-award dates without publishing payment details.
+3. Record whether the sponsorship is public or private.
+4. Redact billing information, addresses, transaction identifiers, and eligibility records.
+5. Document cancellation or visibility-change outcomes separately.
 
 ## Evidence status
 
-- GitHub officially documents creating, managing, and controlling the visibility of sponsorships.
-- The relationship between a public sponsorship and Public Sponsor is strongly observed.
-- GitHub does not publish a complete achievement-processing specification.
+- The broad sponsorship trigger is **Official**.
+- Public/private visibility, cancellation, account-state, and processing behaviour remain **Observed** or **Unknown** until independently reproduced.
+- No official tiers are published.
 
 ## Known limitations and edge cases
 
-- Private sponsorships may not create public profile recognition.
-- Sponsorship cancellation, payment failure, recipient suspension, or programme exit can change visible status.
-- Organisation sponsorship and personal sponsorship may expose different controls.
-- Billing records are sensitive and should not be published as evidence.
-- Availability varies by country, payment method, recipient, and account status.
-
-## Troubleshooting
-
-- Confirm the sponsorship completed rather than remaining pending or failed.
-- Confirm the recipient is still active in GitHub Sponsors.
-- Review the sponsorship visibility setting.
-- Confirm the correct GitHub account made the sponsorship.
-- Allow time for profile processing.
-- Contact GitHub Support for account-specific billing or eligibility problems rather than sharing private records publicly.
+- Private sponsorships may prevent public verification.
+- Cancellation, payment failure, recipient suspension, or programme exit can change visible state.
+- Organisation and personal sponsorships may expose different controls.
+- Billing records are sensitive and must not be submitted as public evidence.
 
 ## Responsible participation
 
-Sponsor maintainers or organisations whose work you genuinely wish to support. Review the amount, recurrence, currency, privacy setting, cancellation terms, and any recipient benefits before confirming the transaction.
+Sponsor maintainers or organisations whose work you genuinely wish to support. Do not create circular, coordinated, or misleading transactions for badge testing.
 
 ## History
 
-Public Sponsor was introduced with GitHub profile achievements and depends on the GitHub Sponsors programme. Programme availability, billing behaviour, and profile presentation may change independently.
+GitHub introduced the sponsor badge before the broader achievements system and later presented it alongside the Mars and Arctic profile badges.
 
 ## References
 
-- [Sponsoring an open source contributor](https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor)
+- [Archived GitHub profile documentation](https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile)
+- [Open source goes to Mars](https://github.blog/news-insights/company-news/open-source-goes-to-mars/)
+- [Sponsoring an open-source contributor](https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor-through-github)
 - [Managing your sponsorship](https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/managing-your-sponsorship)
-- [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
 
 ## Last verified
 
-**19 July 2026.** Scope: current sponsorship creation and management controls, public visibility considerations, profile-achievement presentation, and privacy requirements for evidence.
+**19 July 2026.** Scope: official broad trigger, current Sponsors controls, privacy obligations, and unresolved visibility and processing edge cases.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)
