@@ -7,9 +7,9 @@ description: Live operational health, verification freshness, automation status,
 
 ## Repository health dashboard
 
-**Overall health:** 88/100 — **Healthy**
+**Overall health:** 100/100 — **Excellent**
 
-Generated at **2026-07-19 15:07:27 UTC** from repository data and the GitHub API.
+Generated at **2026-07-19 15:08:58 UTC** from repository data and the GitHub API.
 
 ## Current operating state
 
@@ -32,11 +32,11 @@ Generated at **2026-07-19 15:07:27 UTC** from repository data and the GitHub API
 |---|---|
 | Content quality | Success |
 | Link check | Success |
-| Source inventory | Unknown |
+| Source inventory | Success |
 | Verification release | Success |
 | Visual regression | Success |
 
-Latest successful tracked audit: **2026-07-19 14:43:33 UTC**.
+Latest successful tracked audit: **2026-07-19 15:08:13 UTC**.
 
 ## Source resilience
 

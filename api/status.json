@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-07-19T15:07:27Z",
+  "generated_at": "2026-07-19T15:08:58Z",
   "health": {
-    "label": "Healthy",
-    "score": 88
+    "label": "Excellent",
+    "score": 100
   },
-  "latest_successful_audit": "2026-07-19T14:43:33Z",
+  "latest_successful_audit": "2026-07-19T15:08:13Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
@@ -33,7 +33,7 @@
   "workflows": {
     "Content quality": "success",
     "Link check": "success",
-    "Source inventory": "unknown",
+    "Source inventory": "success",
     "Verification release": "success",
     "Visual regression": "success"
   }
