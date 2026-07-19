@@ -12,11 +12,22 @@
   --accent-2: #8b5cf6;
   --success: #3fb950;
   --warning: #d29922;
+  --focus: #facc15;
 }
 
 body {
   background: #0b1117;
   color: var(--ink);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
 }
 
 .page-header {
@@ -44,6 +55,7 @@ body {
   transition: background .18s ease, border-color .18s ease;
 }
 .site-nav a:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.45); }
+.site-nav a:focus-visible { background: rgba(250,204,21,.12); border-color: var(--focus); }
 
 .main-content { max-width: 1120px; color: var(--ink); }
 .main-content h1, .main-content h2, .main-content h3 { color: #f8fafc; }
@@ -86,6 +98,13 @@ body {
   margin-top: 3rem;
   padding: 1.5rem 1rem 2rem;
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 
 @media (max-width: 600px) {
