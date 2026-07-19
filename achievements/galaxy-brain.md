@@ -5,7 +5,7 @@ permalink: /achievements/galaxy-brain/
 description: Accepted GitHub Discussions answers, community-reported Galaxy Brain tiers, qualifying activity, and verification.
 ---
 
-# Galaxy Brain
+## Galaxy Brain
 
 **Status:** Earnable  
 **Tiered:** Yes  

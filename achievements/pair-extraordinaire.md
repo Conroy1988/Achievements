@@ -5,7 +5,7 @@ permalink: /achievements/pair-extraordinaire/
 description: Co-authored commits, merged pull requests, Pair Extraordinaire tiers, attribution rules, verification, and troubleshooting.
 ---
 
-# Pair Extraordinaire
+## Pair Extraordinaire
 
 ## Summary
 

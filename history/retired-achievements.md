@@ -5,7 +5,7 @@ permalink: /history/retired-achievements/
 description: Historical reference for GitHub profile achievements that are retired, unavailable, restricted, or no longer generally earnable.
 ---
 
-# Retired GitHub achievements timeline
+## Retired GitHub achievements timeline
 
 GitHub's achievement system has changed over time. Some profile badges were tied to limited programmes, temporary events, or features that are no longer generally available.
 

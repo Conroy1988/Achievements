@@ -5,7 +5,7 @@ permalink: /achievements/yolo/
 description: How the GitHub YOLO achievement is triggered, review conditions, safe testing, and troubleshooting.
 ---
 
-# YOLO
+## YOLO
 
 **Status:** Earnable  
 **Tiered:** No  

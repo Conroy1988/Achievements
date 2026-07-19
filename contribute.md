@@ -5,7 +5,7 @@ permalink: /contribute/
 description: How to contribute verified achievement research, corrections, examples, and documentation improvements.
 ---
 
-# Contribute
+## Contribute
 
 Contributions are welcome when they improve accuracy, clarity, accessibility, or reproducibility.
 

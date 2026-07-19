@@ -5,7 +5,7 @@ permalink: /faq/
 description: Answers to common questions about GitHub profile achievements, badge delays, private activity, tiers, retired achievements, and evidence quality.
 ---
 
-# GitHub achievements FAQ
+## GitHub achievements FAQ
 
 ## Why has my achievement not appeared yet?
 

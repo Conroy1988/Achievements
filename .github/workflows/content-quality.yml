@@ -19,23 +19,26 @@ permissions:
 
 jobs:
   markdown:
-    name: Markdown style
+    name: Markdown baseline
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-      - name: Run markdownlint on changed files
-        shell: bash
+      - name: Validate all Markdown files
         run: |
-          mapfile -t files < <(git diff --name-only --diff-filter=ACMR HEAD^ HEAD -- '*.md')
-          if (( ${#files[@]} == 0 )); then
-            echo "No changed Markdown files to validate."
-            exit 0
-          fi
-          printf 'Validating %s\n' "${files[@]}"
-          npx --yes markdownlint-cli2@0.18.1 "${files[@]}"
+          touch markdownlint-report.txt
+          set +e
+          npx --yes markdownlint-cli2@0.18.1 "**/*.md" 2>&1 | tee markdownlint-report.txt
+          status=${PIPESTATUS[0]}
+          exit "$status"
+      - name: Upload Markdown report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-report
+          path: markdownlint-report.txt
+          if-no-files-found: error
+          retention-days: 14
 
   catalogue:
     name: Achievement catalogue

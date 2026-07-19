@@ -5,7 +5,7 @@ permalink: /achievements/quickdraw/
 description: How GitHub Quickdraw works, what counts, timing requirements, troubleshooting, and evidence confidence.
 ---
 
-# Quickdraw
+## Quickdraw
 
 **Status:** Earnable  
 **Tiered:** No  

@@ -5,7 +5,7 @@ permalink: /project/deployment-audit/
 description: Operational checklist for validating the GitHub Achievement Encyclopedia deployment.
 ---
 
-# Deployment and metadata audit
+## Deployment and metadata audit
 
 ## Canonical deployment
 
