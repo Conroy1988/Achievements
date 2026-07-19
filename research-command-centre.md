@@ -11,6 +11,8 @@ permalink: /research-command-centre/
 
 The command centre joins repository health, claim coverage, contradictions, protocols, and the research queue into one public operating view.
 
+The generated [evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md) adds achievement-level pressure rankings and the exact remaining distance to the evidence-quality release gates.
+
 <div
   id="research-command-centre"
   class="operations-app"
