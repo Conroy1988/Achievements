@@ -32,30 +32,36 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Generated mission packet review queue with explicit pending, accepted, deferred, retained-inconclusive, needs-correction, and rejected states.
 - Six mission-review tests covering the empty launch state, valid proposals, reviewer minimums, checklist failures, relationship drift, and mutation blocking.
 - Dedicated mission packet review workflow and public queue/schema endpoints.
+- Closed promotion-plan policy and JSON Schema covering canonical source edits, generated outputs, release-gate impact, validation, approval, and rollback.
+- Deterministic promotion planner that converts only accepted review proposals into isolated maintainer-review plans.
+- Six promotion-planner tests covering empty state, valid plans, non-accepted proposals, duplicate claims, stale transitions, and automatic-mutation blocking.
+- Dedicated promotion-planner workflow and public plan/schema endpoints.
 
 ### Changed
 
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
-- Public API discovery expanded from 26 to 36 JSON files.
-- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, and mission packet review.
+- Public API discovery expanded from 26 to 38 JSON files.
+- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, mission packet review, and promotion planning.
 - Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
 - Evidence pressure rankings now map to bounded execution missions rather than additional infrastructure work.
 - General evidence observations and mission-controlled evidence now use separate issue forms, schemas, triage rules, and draft packet paths.
-- Search discovery now includes the targeted mission board, mission execution intake, and mission packet review queue.
+- Search discovery now includes the targeted mission board, mission execution intake, mission packet review queue, and promotion planner.
 - Promotion proposals now require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
+- Accepted promotion proposals now produce impact previews with exact source paths, generated outputs, release-gate direction, validation steps, and rollback scope.
 
 ### Integrity
 
-- No canonical claim level changed during Phases 52–60.
+- No canonical claim level changed during Phases 52–61.
 - Evidence coverage remains 54.6/100.
 - Research-pressure values are prioritisation aids, not evidence-confidence scores.
 - Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission and mission submission.
 - Automated mission acceptance creates only a draft review packet and cannot promote evidence, resolve contradictions, or change mission state.
 - Review records classify packets only and must report `canonical_mutation: false`.
-- The mission review queue launches empty because no real packet has passed intake.
+- Promotion plans are non-executable and must report `automatic_application: false`.
+- The mission review queue and promotion planner launch empty because no real packet has passed intake and review.
 - `v1.4.0` remains blocked and no release tag is created.
 
 ## v1.3.0 — 2026-07-19
@@ -92,7 +98,7 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 - Privacy-safe public evidence register with nine canonical evidence records and a static JSON endpoint.
 - Weekly official GitHub documentation monitor with reviewed content fingerprints and affected-guide mapping.
-- Achievement verification timelines with page-level last-reviewed dates and explicit history limitations.
+- Achievement verification timelines with page-level last-reviewed dates and explicit historical limitations.
 - Contributor research hub containing eight bounded tasks, three good-first research opportunities, and a structured issue form.
 - Research endpoints for evidence records, verification timelines, and the contributor queue.
 
