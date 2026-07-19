@@ -15,3 +15,5 @@ config:
 ignores:
   - "_site/**"
   - "vendor/**"
+  - "node_modules/**"
+  - "audit-artifacts/**"
