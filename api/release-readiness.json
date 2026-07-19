@@ -1,0 +1,22 @@
+{
+  "api_version": "1.0.0",
+  "candidate_version": "v1.4.0",
+  "current_snapshot": {
+    "claims_below_confirmed": 8,
+    "coverage_score": 54.6,
+    "official_or_confirmed_claims": 5,
+    "open_contradictions": 6,
+    "operational_health_target": 100
+  },
+  "generated_from": "data/evidence-quality-programme.json",
+  "publication_rule": "Do not create the v1.4.0 tag or GitHub Release until every evidence and operational gate passes from the merged main branch.",
+  "required_snapshot": {
+    "maximum_claims_below_confirmed": 5,
+    "maximum_open_contradictions": 3,
+    "minimum_coverage_score": 70.0,
+    "minimum_official_or_confirmed_claims": 8,
+    "required_operational_health": 100
+  },
+  "schema_version": "1.0.0",
+  "status": "blocked"
+}

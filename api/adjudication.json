@@ -1,0 +1,102 @@
+{
+  "api_version": "1.0.0",
+  "decisions": [
+    {
+      "claim_id": "CLM-003",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D001",
+      "proposed_level": "observed",
+      "reason": "The four-second public issue event and participant-reported award are useful but lack an independent public achievement-detail capture and boundary controls."
+    },
+    {
+      "claim_id": "CLM-004",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D002",
+      "proposed_level": "observed",
+      "reason": "The no-review PR event and participant report are not sufficient to establish merger identity, causality, or the effect of alternate formal review states."
+    },
+    {
+      "claim_id": "CLM-002",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D003",
+      "proposed_level": "observed",
+      "reason": "Visible x3 and x4 tiers lack exact attributed qualifying counts."
+    },
+    {
+      "claim_id": "CLM-006",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D004",
+      "proposed_level": "observed",
+      "reason": "The x4 sighting lacks final-history co-author counts and merge-method controls."
+    },
+    {
+      "claim_id": "CLM-008",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D005",
+      "proposed_level": "observed",
+      "reason": "The x2 and x4 sightings lack exact accepted-answer totals."
+    },
+    {
+      "claim_id": "CLM-010",
+      "current_level": "community-reported",
+      "decision": "defer",
+      "id": "ADJ-D006",
+      "proposed_level": "observed",
+      "reason": "The x3-to-x4 bracket is informative, but rounded star displays and ownership edge cases prevent exact threshold confirmation."
+    }
+  ],
+  "generated_from": "data/evidence-quality-programme.json",
+  "metrics": {
+    "defer": 6
+  },
+  "rules": [
+    {
+      "id": "ADJ-R01",
+      "requirements": [
+        "At least two independent public observations, or one public event linked by GitHub to its achievement detail.",
+        "Material timestamps and attribution are retained.",
+        "No unresolved contradiction directly defeats the promoted statement."
+      ],
+      "transition": "community-reported-to-observed"
+    },
+    {
+      "id": "ADJ-R02",
+      "requirements": [
+        "Controlled reproduction on at least two independent accounts.",
+        "Positive and relevant negative controls are documented.",
+        "Two reviewers agree and disclose conflicts.",
+        "Processing delay is measured rather than assumed."
+      ],
+      "transition": "observed-to-confirmed"
+    },
+    {
+      "id": "ADJ-R03",
+      "requirements": [
+        "A maintained or preserved GitHub-owned source explicitly states the material contract."
+      ],
+      "transition": "any-to-official"
+    },
+    {
+      "id": "ADJ-R04",
+      "requirements": [
+        "Participant attestation alone cannot promote a claim.",
+        "A badge sighting alone cannot prove an exact threshold or qualifying event."
+      ],
+      "transition": "attestation-limits"
+    },
+    {
+      "id": "ADJ-R05",
+      "requirements": [
+        "Negative and inconclusive observations remain visible.",
+        "They may narrow a claim but cannot be silently discarded or treated as proof of non-qualification."
+      ],
+      "transition": "negative-and-inconclusive-evidence"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

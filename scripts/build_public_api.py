@@ -27,6 +27,11 @@ AUXILIARY_ENDPOINTS = {
     "submission_schema": Path("submission-schema.json"),
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
+    "event_linked_evidence": Path("event-linked-evidence.json"),
+    "threshold_boundaries": Path("threshold-boundaries.json"),
+    "adjudication": Path("adjudication.json"),
+    "contradiction_assessments": Path("contradiction-assessments.json"),
+    "release_readiness": Path("release-readiness.json"),
 }
 AUXILIARY_COLLECTIONS = {
     "evidence": "records",
@@ -39,6 +44,9 @@ AUXILIARY_COLLECTIONS = {
     "lab_protocols": "protocols",
     "auditor_rules": "rules",
     "public_observations": "observations",
+    "event_linked_evidence": "events",
+    "threshold_boundaries": "programmes",
+    "contradiction_assessments": "assessments",
 }
 
 
@@ -101,10 +109,7 @@ def expected_documents() -> dict[Path, object]:
         "schema": f"{PUBLIC_BASE}/schema.json",
         "status": f"{PUBLIC_BASE}/status.json",
     }
-    endpoints.update({
-        name: f"{PUBLIC_BASE}/{path.as_posix()}"
-        for name, path in AUXILIARY_ENDPOINTS.items()
-    })
+    endpoints.update({name: f"{PUBLIC_BASE}/{path.as_posix()}" for name, path in AUXILIARY_ENDPOINTS.items()})
     documents[Path("index.json")] = {
         "api_version": API_VERSION,
         "dataset_schema_version": dataset.get("schema_version"),
@@ -157,8 +162,15 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             errors.append("api/submission-schema.json is missing schema")
         if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
             errors.append("api/command-centre.json is missing metrics")
-        if name == "public_observations" and not isinstance(payload.get("metrics"), dict):
-            errors.append("api/public-observations.json is missing metrics")
+        if name in {"public_observations", "event_linked_evidence", "contradiction_assessments"} and not isinstance(payload.get("metrics"), dict):
+            errors.append(f"api/{relative.name} is missing metrics")
+        if name == "adjudication":
+            if not isinstance(payload.get("rules"), list) or not isinstance(payload.get("decisions"), list):
+                errors.append("api/adjudication.json is missing rules or decisions")
+        if name == "release_readiness":
+            for field in ("candidate_version", "status", "current_snapshot", "required_snapshot", "publication_rule"):
+                if field not in payload:
+                    errors.append(f"api/release-readiness.json is missing {field}")
 
 
 def write_documents(output: Path, documents: dict[Path, object]) -> None:

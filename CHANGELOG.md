@@ -12,16 +12,27 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Archived GitHub documentation as preserved primary evidence for retired and historical achievement contracts.
 - Validated public observation corpus containing dated GitHub-owned profile, tier, and repository observations.
 - Fail-closed corpus generator, API endpoint, public documentation, and dedicated GitHub Actions validation.
-- Explicit observation limitations preventing public badge sightings from being mistaken for exact trigger or threshold proof.
+- Event-linked evidence collector with five public GitHub events, participant-attestation boundaries, and negative-result retention.
+- Threshold boundary programme covering Pull Shark, Pair Extraordinaire, Galaxy Brain, Starstruck, and Quickdraw.
+- Fail-closed evidence adjudication engine with explicit promotion, deferral, retraction, and negative-evidence rules.
+- One current resolution assessment for every open contradiction.
+- Deterministic `v1.4.0` release-readiness gate that blocks publication until every evidence and operational threshold passes.
+- Five new evidence-quality API endpoints and a dedicated validation workflow.
 
 ### Changed
 
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
-- Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than their broad triggers.
-- Search navigation now exposes the evidence road-to-100 campaign.
-- Public API discovery expanded to include the observation corpus as its twenty-sixth JSON file.
-- Site navigation and API guidance now expose the public observation substrate.
+- Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
+- Public API discovery expanded from 26 to 31 JSON files.
+- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, and release readiness.
+- Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
+
+### Integrity
+
+- No canonical claim level changed during Phases 52–56.
+- Evidence coverage remains 54.6/100.
+- `v1.4.0` remains blocked and no release tag is created.
 
 ## v1.3.0 — 2026-07-19
 
