@@ -30,6 +30,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 ## Research operations
 
 - [Evidence road to 100](docs/evidence-road-to-100.md)
+- [Public observation corpus](docs/public-observation-corpus.md)
 - [Achievement reproduction laboratory](docs/reproduction-lab.md)
 - [Submit achievement evidence](evidence-submission.md)
 - [Contributor research hub](docs/research-hub.md)
@@ -53,6 +54,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [API discovery index](api/index.json)
 - [Public achievement catalogue](api/achievements.json)
 - [Research queue](api/research-queue.json)
+- [Public observations](api/public-observations.json)
 - [Reproduction protocols](api/lab-protocols.json)
 - [Profile auditor rules](api/auditor-rules.json)
 - [Evidence submission schema](api/submission-schema.json)

@@ -1,0 +1,46 @@
+name: Public observations
+
+on:
+  pull_request:
+    paths:
+      - 'data/public-observations.json'
+      - 'data/achievements.json'
+      - 'data/claims.json'
+      - 'scripts/build_public_observations.py'
+      - 'api/public-observations.json'
+      - 'docs/public-observation-corpus.md'
+      - '.github/workflows/public-observations.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/public-observations.json'
+      - 'data/achievements.json'
+      - 'data/claims.json'
+      - 'scripts/build_public_observations.py'
+      - 'api/public-observations.json'
+      - 'docs/public-observation-corpus.md'
+      - '.github/workflows/public-observations.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate public observation corpus
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Validate generated corpus
+        run: |
+          python scripts/build_public_observations.py --check --report public-observation-report.md
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: public-observation-validation
+          path: public-observation-report.md
+          if-no-files-found: warn
+          retention-days: 30
