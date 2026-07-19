@@ -25,6 +25,7 @@ jobs:
       - name: Set up Ruby and GitHub Pages dependencies
         uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '3.3'
           bundler-cache: true
       - name: Set up Node.js
         uses: actions/setup-node@v4
