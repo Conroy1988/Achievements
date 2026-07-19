@@ -1,0 +1,54 @@
+{
+  "achievement": {
+    "aliases": [
+      "merged PR badge",
+      "pull request achievement"
+    ],
+    "category": "collaboration",
+    "evidence": {
+      "tiers": "community-reported",
+      "trigger": "confirmed"
+    },
+    "guide_path": "docs/achievements/pull-shark.md",
+    "known_limitations": [
+      "GitHub does not publish the complete tier table.",
+      "Achievement processing can be delayed."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Pull Shark",
+    "permalink": "/achievements/pull-shark/",
+    "primary_action": "Have pull requests merged",
+    "slug": "pull-shark",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "active",
+    "tiered": true,
+    "tiers": [
+      {
+        "name": "Base",
+        "threshold": 2,
+        "unit": "merged pull requests"
+      },
+      {
+        "name": "Bronze",
+        "threshold": 16,
+        "unit": "merged pull requests"
+      },
+      {
+        "name": "Silver",
+        "threshold": 128,
+        "unit": "merged pull requests"
+      },
+      {
+        "name": "Gold",
+        "threshold": 1024,
+        "unit": "merged pull requests"
+      }
+    ],
+    "trigger": "A substantive pull request attributable to the account is merged."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

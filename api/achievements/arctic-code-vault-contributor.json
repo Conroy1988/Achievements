@@ -1,0 +1,33 @@
+{
+  "achievement": {
+    "aliases": [
+      "Arctic vault badge",
+      "2020 archive achievement"
+    ],
+    "category": "historical",
+    "evidence": {
+      "tiers": "not-applicable",
+      "trigger": "confirmed"
+    },
+    "guide_path": "docs/arctic-code-vault-contributor.md",
+    "known_limitations": [
+      "The qualifying archival event is complete and cannot be repeated by new activity.",
+      "Historical attribution depends on the archived snapshot."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Arctic Code Vault Contributor",
+    "permalink": "/arctic-code-vault-contributor/",
+    "primary_action": "Contributed to qualifying repositories included in the 2020 archive",
+    "slug": "arctic-code-vault-contributor",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "retired",
+    "tiered": false,
+    "tiers": [],
+    "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

@@ -1,0 +1,202 @@
+{
+  "$defs": {
+    "achievement": {
+      "additionalProperties": false,
+      "properties": {
+        "aliases": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "category": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence": {
+          "additionalProperties": false,
+          "properties": {
+            "tiers": {
+              "$ref": "#/$defs/evidenceLevel"
+            },
+            "trigger": {
+              "$ref": "#/$defs/evidenceLevel"
+            }
+          },
+          "required": [
+            "trigger",
+            "tiers"
+          ],
+          "type": "object"
+        },
+        "guide_path": {
+          "pattern": "^[^/].*\\.md$",
+          "type": "string"
+        },
+        "known_limitations": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "last_verified": {
+          "format": "date",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "permalink": {
+          "pattern": "^/.*/$",
+          "type": "string"
+        },
+        "primary_action": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "slug": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "sources": {
+          "$ref": "#/$defs/sources"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "retired",
+            "restricted"
+          ],
+          "type": "string"
+        },
+        "tiered": {
+          "type": "boolean"
+        },
+        "tiers": {
+          "items": {
+            "$ref": "#/$defs/tier"
+          },
+          "type": "array"
+        },
+        "trigger": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "name",
+        "status",
+        "category",
+        "tiered",
+        "primary_action",
+        "trigger",
+        "guide_path",
+        "permalink",
+        "evidence",
+        "tiers",
+        "last_verified",
+        "aliases",
+        "sources",
+        "known_limitations"
+      ],
+      "type": "object"
+    },
+    "evidenceLevel": {
+      "enum": [
+        "official",
+        "confirmed",
+        "observed",
+        "community-reported",
+        "unknown",
+        "not-applicable"
+      ],
+      "type": "string"
+    },
+    "sources": {
+      "additionalProperties": false,
+      "properties": {
+        "community": {
+          "items": {
+            "format": "uri",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "official": {
+          "items": {
+            "format": "uri",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "official",
+        "community"
+      ],
+      "type": "object"
+    },
+    "tier": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "Base",
+            "Bronze",
+            "Silver",
+            "Gold"
+          ],
+          "type": "string"
+        },
+        "threshold": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "unit": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "threshold",
+        "unit"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://conroy1988.github.io/Achievements/api/schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "achievements": {
+      "items": {
+        "$ref": "#/$defs/achievement"
+      },
+      "maxItems": 9,
+      "minItems": 9,
+      "type": "array"
+    },
+    "catalogue": {
+      "const": "docs/achievement-index.md",
+      "type": "string"
+    },
+    "schema_version": {
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "catalogue",
+    "achievements"
+  ],
+  "title": "GitHub Achievement Encyclopedia dataset",
+  "type": "object"
+}

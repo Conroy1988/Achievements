@@ -1,0 +1,54 @@
+{
+  "achievement": {
+    "aliases": [
+      "accepted answer badge",
+      "discussion answer achievement"
+    ],
+    "category": "discussions",
+    "evidence": {
+      "tiers": "community-reported",
+      "trigger": "observed"
+    },
+    "guide_path": "docs/achievements/galaxy-brain.md",
+    "known_limitations": [
+      "Accepted and verified answers are distinct moderation states.",
+      "GitHub does not publish the complete tier table."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Galaxy Brain",
+    "permalink": "/achievements/galaxy-brain/",
+    "primary_action": "Receive accepted answers in GitHub Discussions",
+    "slug": "galaxy-brain",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "active",
+    "tiered": true,
+    "tiers": [
+      {
+        "name": "Base",
+        "threshold": 2,
+        "unit": "accepted answers"
+      },
+      {
+        "name": "Bronze",
+        "threshold": 8,
+        "unit": "accepted answers"
+      },
+      {
+        "name": "Silver",
+        "threshold": 16,
+        "unit": "accepted answers"
+      },
+      {
+        "name": "Gold",
+        "threshold": 32,
+        "unit": "accepted answers"
+      }
+    ],
+    "trigger": "An answer posted by the account in a GitHub Discussion is marked as accepted."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

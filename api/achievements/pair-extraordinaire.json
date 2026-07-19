@@ -1,0 +1,56 @@
+{
+  "achievement": {
+    "aliases": [
+      "co-author badge",
+      "paired commit achievement"
+    ],
+    "category": "collaboration",
+    "evidence": {
+      "tiers": "community-reported",
+      "trigger": "community-reported"
+    },
+    "guide_path": "achievements/pair-extraordinaire.md",
+    "known_limitations": [
+      "Squash merges and rewritten history can alter attribution.",
+      "Private repository and unusual merge-strategy behaviour is not comprehensively documented."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Pair Extraordinaire",
+    "permalink": "/achievements/pair-extraordinaire/",
+    "primary_action": "Co-author commits in merged pull requests",
+    "slug": "pair-extraordinaire",
+    "sources": {
+      "community": [],
+      "official": [
+        "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
+      ]
+    },
+    "status": "active",
+    "tiered": true,
+    "tiers": [
+      {
+        "name": "Base",
+        "threshold": 1,
+        "unit": "qualifying merged pull requests"
+      },
+      {
+        "name": "Bronze",
+        "threshold": 10,
+        "unit": "qualifying merged pull requests"
+      },
+      {
+        "name": "Silver",
+        "threshold": 24,
+        "unit": "qualifying merged pull requests"
+      },
+      {
+        "name": "Gold",
+        "threshold": 48,
+        "unit": "qualifying merged pull requests"
+      }
+    ],
+    "trigger": "A correctly attributed co-authored commit is incorporated into a merged pull request."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

@@ -1,0 +1,33 @@
+{
+  "achievement": {
+    "aliases": [
+      "fast close badge",
+      "quick issue close"
+    ],
+    "category": "issues-and-pull-requests",
+    "evidence": {
+      "tiers": "not-applicable",
+      "trigger": "community-reported"
+    },
+    "guide_path": "docs/quickdraw.md",
+    "known_limitations": [
+      "GitHub does not publish the exact qualifying time window.",
+      "Repeated artificial issue activity is outside the project standard."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Quickdraw",
+    "permalink": "/quickdraw/",
+    "primary_action": "Close an issue or pull request shortly after opening it",
+    "slug": "quickdraw",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "active",
+    "tiered": false,
+    "tiers": [],
+    "trigger": "An issue or pull request is closed within the short community-observed qualifying window after creation."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

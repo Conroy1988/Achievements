@@ -1,0 +1,33 @@
+{
+  "achievement": {
+    "aliases": [
+      "Mars badge",
+      "Mars helicopter contributor"
+    ],
+    "category": "historical",
+    "evidence": {
+      "tiers": "not-applicable",
+      "trigger": "confirmed"
+    },
+    "guide_path": "docs/mars-2020-contributor.md",
+    "known_limitations": [
+      "The mission-linked qualifying event is historical and not currently earnable.",
+      "The complete internal qualification list is not maintained as a current public contract."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Mars 2020 Contributor",
+    "permalink": "/mars-2020-contributor/",
+    "primary_action": "Contributed to repositories used by the Mars 2020 mission",
+    "slug": "mars-2020-contributor",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "retired",
+    "tiered": false,
+    "tiers": [],
+    "trigger": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}
