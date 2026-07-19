@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "id": "MRV-2026-001",
+  "packet_id": "MISSION-DRAFT-ISSUE-123",
+  "mission_id": "MSN-003",
+  "source_packet": "triage/mission-drafts/issue-123.json",
+  "disposition": "defer",
+  "reviewed_at": "2026-07-22T20:30:00Z",
+  "reviewers": [
+    {
+      "login": "example-reviewer",
+      "conflict": "none",
+      "notes": "Independent review of the public packet."
+    }
+  ],
+  "checklist": {
+    "relationship_valid": true,
+    "sources_public": true,
+    "required_evidence_complete": true,
+    "controls_credible": true,
+    "limitations_complete": true,
+    "privacy_safe": true,
+    "safeguards_compliant": true,
+    "timing_valid": true,
+    "contradictions_addressed": false,
+    "duplication_checked": true
+  },
+  "rationale": "The packet is structurally valid but does not yet satisfy the published contradiction-resolution criteria, so it remains deferred.",
+  "promotion_proposal": {
+    "target_claim_id": null,
+    "target_level": "none",
+    "applied_rule_ids": []
+  },
+  "canonical_mutation": false
+}
