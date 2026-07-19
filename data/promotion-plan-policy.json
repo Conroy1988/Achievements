@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "policy_date": "2026-07-19",
+  "source_review_queue": "api/mission-review-queue.json",
+  "review_directory": "reviews/mission",
+  "plan_directory": "plans/promotion",
+  "output_endpoint": "api/promotion-plans.json",
+  "schema_endpoint": "api/promotion-plan-schema.json",
+  "automatic_application_allowed": false,
+  "eligible_queue_statuses": [
+    "accepted"
+  ],
+  "eligible_target_levels": [
+    "observed",
+    "confirmed",
+    "official"
+  ],
+  "evidence_level_order": [
+    "unknown",
+    "community-reported",
+    "observed",
+    "confirmed",
+    "official"
+  ],
+  "plan_statuses": [
+    "ready-for-maintainer-review",
+    "blocked"
+  ],
+  "canonical_source_paths": [
+    "data/evidence-register.json",
+    "data/claims.json",
+    "data/achievements.json",
+    "data/contradictions.json",
+    "data/evidence-quality-programme.json",
+    "CHANGELOG.md"
+  ],
+  "generated_output_paths": [
+    "api/evidence.json",
+    "api/claims.json",
+    "api/achievements.json",
+    "api/contradictions.json",
+    "api/coverage.json",
+    "api/evidence-intelligence.json",
+    "api/release-readiness.json",
+    "docs/evidence-register.md",
+    "docs/claim-register.md",
+    "docs/contradiction-ledger.md",
+    "docs/evidence-coverage.md",
+    "docs/evidence-intelligence-dashboard.md",
+    "docs/evidence-quality-release-gate.md"
+  ],
+  "required_preconditions": [
+    "The source packet remains accepted in the public mission review queue.",
+    "The source review remains valid, public, and linked to the same packet, mission, claim, and target level.",
+    "All cited public evidence remains accessible and privacy-safe.",
+    "The proposed level is strictly stronger than the current canonical claim level.",
+    "No new contradiction or material counterexample has appeared since review.",
+    "A maintainer has assigned or approved the canonical evidence-record identifier.",
+    "The change is implemented in a separate pull request and receives human review."
+  ],
+  "validation_commands": [
+    "python scripts/build_evidence_register.py --check",
+    "python scripts/build_research_intelligence.py --check",
+    "python scripts/build_evidence_quality_programme.py --check",
+    "python scripts/build_evidence_intelligence.py --check",
+    "python scripts/build_public_api.py --check",
+    "python scripts/build_promotion_plans.py --check"
+  ],
+  "rollback_rules": [
+    "Canonical promotions must be isolated in a dedicated pull request or squash commit.",
+    "Rollback uses a revert of that isolated commit rather than manual partial edits.",
+    "All source and generated files named by the plan must be restored together.",
+    "The accepted review and evidence packet remain preserved even when a promotion is reverted.",
+    "A rollback must record the superseding evidence or defect that caused the reversion."
+  ],
+  "publication_rules": [
+    "A generated plan is an impact preview and implementation checklist, not an executable patch.",
+    "The planner must never write canonical claims, evidence, contradictions, missions, thresholds, release gates, tags, or releases.",
+    "Every plan requires a separate maintainer-reviewed pull request before canonical changes may occur.",
+    "Contradiction resolution is never implied by claim promotion and requires its own published criteria to pass.",
+    "Release readiness must be regenerated after the canonical change; the plan may not declare v1.4.0 publishable in advance.",
+    "Blocked plans remain public and may not be silently discarded."
+  ]
+}

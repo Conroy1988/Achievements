@@ -1,0 +1,25 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "status": "live",
+  "policy": "/Achievements/promotion-planner/",
+  "plan_schema": "/Achievements/api/promotion-plan-schema.json",
+  "source_review_queue": "/Achievements/api/mission-review-queue.json",
+  "count": 0,
+  "metrics": {
+    "plan_count": 0,
+    "ready_for_maintainer_review_count": 0,
+    "blocked_count": 0,
+    "affected_claim_count": 0,
+    "automatic_application_count": 0
+  },
+  "current_release_snapshot": {
+    "claims_below_confirmed": 8,
+    "coverage_score": 54.6,
+    "official_or_confirmed_claims": 5,
+    "open_contradictions": 6,
+    "operational_health_target": 100
+  },
+  "current_release_status": "blocked",
+  "plans": []
+}

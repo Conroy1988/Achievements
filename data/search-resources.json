@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5.0",
+  "schema_version": "1.6.0",
   "resources": [
     {
       "slug": "achievement-index",
@@ -143,6 +143,18 @@
         "mission review",
         "evidence packet queue",
         "adjudication queue"
+      ]
+    },
+    {
+      "slug": "promotion-planner",
+      "name": "Mission evidence promotion planner",
+      "category": "operations",
+      "summary": "Fail-closed canonical change plans with impact previews, validation steps, maintainer approval, and rollback instructions.",
+      "permalink": "/promotion-planner/",
+      "aliases": [
+        "canonical change plan",
+        "promotion impact",
+        "evidence promotion planner"
       ]
     },
     {

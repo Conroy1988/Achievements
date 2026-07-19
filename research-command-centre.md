@@ -19,6 +19,8 @@ The [mission execution intake](docs/mission-execution-intake.md) converts comple
 
 The [mission packet review queue](docs/mission-review-queue.md) tracks those packets through conflict disclosure, checklist review, disposition, and any fail-closed promotion proposal.
 
+The [mission evidence promotion planner](docs/promotion-planner.md) converts only accepted proposals into isolated canonical change plans with impact previews, validation steps, and rollback instructions. It never applies those plans automatically.
+
 <div
   id="research-command-centre"
   class="operations-app"

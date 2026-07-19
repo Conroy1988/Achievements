@@ -1,0 +1,101 @@
+{
+  "id": "PPL-2026-001",
+  "source_packet_id": "MISSION-DRAFT-ISSUE-1",
+  "source_review_id": "MRV-2026-001",
+  "source_review_path": "reviews/mission/MRV-2026-001.json",
+  "source_issue": "https://github.com/Conroy1988/Achievements/issues/1",
+  "mission_id": "MSN-001",
+  "achievement_slug": "pair-extraordinaire",
+  "claim_id": "CLM-005",
+  "claim_type": "trigger",
+  "current_level": "community-reported",
+  "proposed_level": "confirmed",
+  "contradiction_id": "CTR-004",
+  "applied_rule_ids": [
+    "ADJ-R02"
+  ],
+  "status": "ready-for-maintainer-review",
+  "blockers": [],
+  "preconditions": [
+    "Replace this template with generator output.",
+    "Confirm the accepted review still matches the packet.",
+    "Confirm public evidence remains accessible.",
+    "Confirm the proposed level is stronger than the current level.",
+    "Confirm no new counterexample defeats the proposal.",
+    "Assign the canonical evidence-record identifier.",
+    "Implement through a separate reviewed pull request."
+  ],
+  "source_operations": [
+    {
+      "path": "data/evidence-register.json",
+      "operation": "create-or-update",
+      "rationale": "Add the accepted mission evidence as a canonical privacy-safe record."
+    },
+    {
+      "path": "data/claims.json",
+      "operation": "update",
+      "rationale": "Apply the reviewed claim level and link the accepted evidence record."
+    },
+    {
+      "path": "data/achievements.json",
+      "operation": "update",
+      "rationale": "Keep the catalogue evidence label aligned with the claim register."
+    },
+    {
+      "path": "data/contradictions.json",
+      "operation": "reassess",
+      "rationale": "Preserve or update the linked contradiction only against its own resolution criteria."
+    },
+    {
+      "path": "CHANGELOG.md",
+      "operation": "record",
+      "rationale": "Record the evidence-backed canonical classification change."
+    }
+  ],
+  "generated_outputs": [
+    "api/evidence.json",
+    "api/claims.json",
+    "api/achievements.json",
+    "api/contradictions.json",
+    "api/coverage.json",
+    "api/evidence-intelligence.json",
+    "api/release-readiness.json",
+    "docs/evidence-register.md",
+    "docs/claim-register.md",
+    "docs/contradiction-ledger.md",
+    "docs/evidence-coverage.md",
+    "docs/evidence-intelligence-dashboard.md",
+    "docs/evidence-quality-release-gate.md"
+  ],
+  "validation_commands": [
+    "python scripts/build_evidence_register.py --check",
+    "python scripts/build_research_intelligence.py --check",
+    "python scripts/build_evidence_quality_programme.py --check",
+    "python scripts/build_evidence_intelligence.py --check",
+    "python scripts/build_public_api.py --check",
+    "python scripts/build_promotion_plans.py --check"
+  ],
+  "release_gate_impact": {
+    "coverage_score": "recalculate-after-canonical-change",
+    "claims_below_confirmed": -1,
+    "official_or_confirmed_claims": 1,
+    "open_contradictions": 0,
+    "publication_status": "must-be-regenerated"
+  },
+  "rollback": {
+    "strategy": "revert-isolated-canonical-promotion-commit",
+    "isolated_commit_required": true,
+    "restore_paths": [
+      "data/evidence-register.json",
+      "data/claims.json",
+      "data/achievements.json",
+      "data/contradictions.json",
+      "data/evidence-quality-programme.json",
+      "CHANGELOG.md"
+    ],
+    "preserve_review_record": true
+  },
+  "maintainer_approval_required": true,
+  "separate_pull_request_required": true,
+  "automatic_application": false
+}

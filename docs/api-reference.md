@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, research missions, intake and review contracts, analytics, adjudication, release readiness, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research missions, intake, review and promotion contracts, analytics, adjudication, release readiness, schema, and repository health.
 permalink: /api/
 ---
 
@@ -49,6 +49,8 @@ https://conroy1988.github.io/Achievements/api/
 | [`mission-submission-schema.json`](../api/mission-submission-schema.json) | Closed mission-packet contract with relationship, safeguard, and timing requirements |
 | [`mission-review-queue.json`](../api/mission-review-queue.json) | Human-review queue and packet disposition state |
 | [`mission-review-schema.json`](../api/mission-review-schema.json) | Closed review-record contract with conflict and promotion controls |
+| [`promotion-plans.json`](../api/promotion-plans.json) | Fail-closed canonical change plans generated from accepted promotion proposals |
+| [`promotion-plan-schema.json`](../api/promotion-plan-schema.json) | Closed promotion-plan contract with impact, validation, approval, and rollback requirements |
 | [`command-centre.json`](../api/command-centre.json) | Static research metrics, targets, and public routes |
 
 ## Evidence-quality programme endpoints
@@ -63,7 +65,7 @@ https://conroy1988.github.io/Achievements/api/
 | [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
 | [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
 
-The discovery index now exposes **36 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-three auxiliary endpoints.
+The discovery index now exposes **38 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-five auxiliary endpoints.
 
 ## Response obligations
 
@@ -80,6 +82,8 @@ Acquisition missions are bounded research instructions. They prohibit artificial
 Mission intake packets must preserve the published mission, task, claim, contradiction, evidence-key, timing, safeguard, privacy, and human-review boundaries. Automated acceptance is not an evidence promotion.
 
 Mission review records classify packets only. Promotion proposals require the mission's published target, the applicable adjudication rule, two reviewers, one unconflicted reviewer, and a fully passing checklist. The queue always reports zero automatic canonical mutations.
+
+Promotion plans are impact previews, not patches. They must preserve the source review, identify every affected source and generated file, require a separate maintainer-reviewed pull request, and report zero automatic applications.
 
 The profile-auditor rules are expressly non-authoritative. They describe public signals, not badge detection.
 
@@ -98,6 +102,7 @@ python scripts/build_evidence_intelligence.py
 python scripts/build_acquisition_missions.py
 python scripts/build_mission_intake.py
 python scripts/build_mission_review_queue.py
+python scripts/build_promotion_plans.py
 ```
 
 Generated endpoints must not be edited independently. Update the canonical source, run its builder, then commit the source and output together.
@@ -105,7 +110,7 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 ## Versioning
 
 - The core catalogue envelope remains `1.1.0`.
-- Research, observation, mission, intake, review, adjudication, analytics, and evidence-operations endpoints carry independent schema and API versions.
+- Research, observation, mission, intake, review, planning, adjudication, analytics, and evidence-operations endpoints carry independent schema and API versions.
 - A breaking envelope change increments the relevant major version.
 - Release tags describe encyclopedia releases rather than GitHub's achievement system.
 
@@ -121,6 +126,7 @@ The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](.
 
 ## Related material
 
+- [Mission evidence promotion planner](promotion-planner.md)
 - [Mission packet review queue](mission-review-queue.md)
 - [Mission execution intake](mission-execution-intake.md)
 - [Targeted evidence acquisition missions](targeted-evidence-missions.md)
