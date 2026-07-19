@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "resources": [
+    {
+      "slug": "achievement-index",
+      "name": "Achievement index",
+      "category": "catalogue",
+      "summary": "Canonical navigation for all active and retired GitHub achievement guides.",
+      "permalink": "/docs/achievement-index.html",
+      "aliases": ["all achievements", "badge list", "achievement catalogue"]
+    },
+    {
+      "slug": "verification-methodology",
+      "name": "Verification methodology",
+      "category": "methodology",
+      "summary": "How claims, observations, reproductions, dates, and contradictions are evaluated.",
+      "permalink": "/docs/verification-methodology.html",
+      "aliases": ["how claims are checked", "research method", "verification process"]
+    },
+    {
+      "slug": "evidence-strength-levels",
+      "name": "Evidence strength levels",
+      "category": "methodology",
+      "summary": "Definitions for official, confirmed, observed, community-reported, and unknown claims.",
+      "permalink": "/docs/evidence-strength-levels.html",
+      "aliases": ["evidence labels", "confidence levels", "claim strength"]
+    },
+    {
+      "slug": "source-quality-policy",
+      "name": "Source quality policy",
+      "category": "governance",
+      "summary": "Rules for evaluating official, institutional, archived, GitHub-hosted, and external sources.",
+      "permalink": "/docs/source-quality-policy.html",
+      "aliases": ["source rules", "reference quality", "citation policy"]
+    },
+    {
+      "slug": "achievement-data-reference",
+      "name": "Achievement data reference",
+      "category": "data",
+      "summary": "Machine-readable dataset fields, JSON Schema, validation guarantees, and consumer guidance.",
+      "permalink": "/data/",
+      "aliases": ["JSON dataset", "API data", "achievement schema"]
+    },
+    {
+      "slug": "repository-health-dashboard",
+      "name": "Repository health dashboard",
+      "category": "operations",
+      "summary": "Current verification freshness, automation state, source resilience, release, and backlog health.",
+      "permalink": "/health/",
+      "aliases": ["project status", "CI health", "maintenance dashboard"]
+    },
+    {
+      "slug": "frequently-asked-questions",
+      "name": "Frequently asked questions",
+      "category": "help",
+      "summary": "Answers about achievement delays, evidence confidence, privacy, and responsible participation.",
+      "permalink": "/faq/",
+      "aliases": ["FAQ", "common questions", "help"]
+    },
+    {
+      "slug": "contribution-guide",
+      "name": "Contribution guide",
+      "category": "contributing",
+      "summary": "How to submit corrections, evidence, reproductions, accessibility improvements, and research.",
+      "permalink": "/contribute/",
+      "aliases": ["how to contribute", "submit correction", "contributor help"]
+    }
+  ]
+}
