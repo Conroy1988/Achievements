@@ -12,7 +12,7 @@ The encyclopedia provides two structured submission routes. Use the general obse
 - [Open the general evidence observation form](https://github.com/Conroy1988/Achievements/issues/new?template=evidence-observation.yml)
 - [Open the targeted mission evidence form](https://github.com/Conroy1988/Achievements/issues/new?template=mission-evidence.yml)
 
-The [mission execution intake guide](docs/mission-execution-intake.md) lists every mission, required evidence key, scheduled hold, and review boundary.
+The [mission execution intake guide](docs/mission-execution-intake.md) lists every mission, required evidence key, scheduled hold, and intake boundary. Passing packets then enter the [mission packet review queue](docs/mission-review-queue.md).
 
 ## What happens after submission
 
@@ -23,7 +23,9 @@ The [mission execution intake guide](docs/mission-execution-intake.md) lists eve
 5. Blocked submissions receive a correction report and do not create repository changes.
 6. Passing submissions generate a privacy-screened draft evidence record or mission packet.
 7. The workflow creates or updates a **draft pull request** for human review.
-8. Only a maintainer-reviewed change can alter canonical evidence, mission state, contradictions, or claims.
+8. Mission packets are assigned a separate review record with a checklist, reviewer identities, conflict disclosures, rationale, and disposition.
+9. Promotion proposals require the published mission target, the applicable adjudication rule, at least two reviewers, one unconflicted reviewer, and a fully passing checklist.
+10. Only a separate maintainer-reviewed change can alter canonical evidence, mission state, contradictions, thresholds, claims, or releases.
 
 > [!CAUTION]
 > Automated screening is a safety control, not a guarantee. Do not submit sensitive information in the first place.
@@ -51,6 +53,8 @@ The [mission execution intake guide](docs/mission-execution-intake.md) lists eve
 
 - General evidence observations: [`/api/submission-schema.json`](api/submission-schema.json)
 - Targeted mission packets: [`/api/mission-submission-schema.json`](api/mission-submission-schema.json)
+- Mission review queue: [`/api/mission-review-queue.json`](api/mission-review-queue.json)
+- Mission review record schema: [`/api/mission-review-schema.json`](api/mission-review-schema.json)
 - Active mission requirements: [`/api/acquisition-missions.json`](api/acquisition-missions.json)
 
 ## Responsible research
