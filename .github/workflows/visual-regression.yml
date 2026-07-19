@@ -1,0 +1,67 @@
+name: Visual regression
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.html'
+      - 'assets/**'
+      - '_config.yml'
+      - 'Gemfile'
+      - 'package.json'
+      - 'scripts/visual_regression.mjs'
+      - '.github/workflows/visual-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  initialise-baselines:
+    name: Generate visual baselines
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-27/visual-regression'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out Phase 27 branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Build GitHub Pages site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install visual-test dependencies
+        run: npm install --no-package-lock
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python -m http.server 4173 --directory _site > /tmp/visual-server.log 2>&1 &
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/visual-server.log
+          exit 1
+      - name: Capture baseline screenshots
+        run: npm run visual:update
+      - name: Commit baselines
+        run: |
+          if git diff --quiet -- tests/visual/baselines; then
+            echo "No baseline changes were generated."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/visual/baselines
+          git commit -m "Phase 27: record visual regression baselines"
+          git push
