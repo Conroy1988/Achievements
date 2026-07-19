@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://conroy1988.github.io/Achievements/api/evidence.schema.json",
+  "title": "GitHub Achievement Encyclopedia evidence register",
+  "type": "object",
+  "required": ["schema_version", "privacy_policy", "records"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "privacy_policy": {
+      "type": "string",
+      "const": "docs/evidence-register-policy.md"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/record"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "id",
+        "achievement_slug",
+        "claim",
+        "evidence_level",
+        "observed_at",
+        "submitted_at",
+        "source_urls",
+        "archive_urls",
+        "reproduction_status",
+        "contradictory_evidence",
+        "reviewer_decision",
+        "privacy_status",
+        "guide_path",
+        "guide_section",
+        "notes"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^EVD-[0-9]{4}-[0-9]{3}$"},
+        "achievement_slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "claim": {"type": "string", "minLength": 20},
+        "evidence_level": {
+          "enum": ["official", "confirmed", "observed", "community-reported", "unknown"]
+        },
+        "observed_at": {"type": "string", "format": "date"},
+        "submitted_at": {"type": "string", "format": "date"},
+        "source_urls": {"type": "array", "items": {"type": "string", "format": "uri"}, "uniqueItems": true},
+        "archive_urls": {"type": "array", "items": {"type": "string", "format": "uri"}, "uniqueItems": true},
+        "reproduction_status": {
+          "enum": [
+            "reproduced",
+            "partially-reproduced",
+            "observed-not-fully-reproduced",
+            "awaiting-independent-reproduction",
+            "historical-confirmation",
+            "not-reproducible"
+          ]
+        },
+        "contradictory_evidence": {"type": "array", "items": {"type": "string", "minLength": 5}},
+        "reviewer_decision": {
+          "enum": ["accepted", "accepted-with-limitations", "provisional", "rejected", "needs-review"]
+        },
+        "privacy_status": {
+          "enum": ["public-no-personal-data", "public-no-financial-data", "redacted", "withheld"]
+        },
+        "guide_path": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.md$"},
+        "guide_section": {"type": "string", "minLength": 3},
+        "notes": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    }
+  }
+}
