@@ -1,0 +1,105 @@
+name: Evidence observation
+description: Submit a dated, privacy-safe reproduction or observation for an existing research task.
+title: "[Evidence] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit only legitimate, privacy-safe observations. Do not include credentials, private repository data, financial details, private communications, or unnecessary personal identifiers. Automated screening does not replace human review.
+  - type: input
+    id: task
+    attributes:
+      label: Research task ID
+      description: Use an open RSH-### identifier from the contributor research hub.
+      placeholder: RSH-001
+    validations:
+      required: true
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+      description: Use the linked CLM-### identifier from the claim register.
+      placeholder: CLM-003
+    validations:
+      required: true
+  - type: input
+    id: achievement
+    attributes:
+      label: Achievement
+      description: Enter the canonical achievement slug.
+      placeholder: quickdraw
+    validations:
+      required: true
+  - type: input
+    id: observation-date
+    attributes:
+      label: Observation date
+      description: Use YYYY-MM-DD.
+      placeholder: "2026-07-19"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Awarded
+        - Not awarded
+        - Inconclusive
+    validations:
+      required: true
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: Repository visibility
+      options:
+        - Public
+        - Not applicable
+    validations:
+      required: true
+  - type: input
+    id: qualifying-time
+    attributes:
+      label: Qualifying event time (UTC)
+      description: Optional. Use ISO UTC such as 2026-07-19T12:34:00Z.
+  - type: input
+    id: visible-time
+    attributes:
+      label: First badge visibility time (UTC)
+      description: Optional. Use ISO UTC such as 2026-07-19T12:40:00Z.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source URLs
+      description: One public HTTPS URL per line. Do not submit private links.
+      placeholder: https://github.com/example/repository/pull/123
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and controls
+      description: Describe account roles, repository settings, merge method, timing method, and other controlled conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations and failed attempts
+      description: State confounding factors, missing observations, negative results, and limits on interpretation.
+    validations:
+      required: true
+  - type: dropdown
+    id: privacy
+    attributes:
+      label: Privacy declaration
+      options:
+        - I confirm that this submission contains no credentials, private repository data, unnecessary personal identifiers, or financial details.
+    validations:
+      required: true
+  - type: dropdown
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - I consent to this observation being reviewed and published in privacy-safe form.
+    validations:
+      required: true

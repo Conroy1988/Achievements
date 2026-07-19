@@ -8,9 +8,15 @@ permalink: /site-map/
 
 Use this page as the central route into the GitHub Achievement Encyclopedia.
 
+## Public tools
+
+- [Research command centre](research-command-centre.md)
+- [GitHub achievement profile auditor](profile-auditor.md)
+- [Search and filter the encyclopedia](search.md)
+- [Repository health dashboard](docs/health-dashboard.md)
+
 ## Achievement guides
 
-- [Search and filter the encyclopedia](search.md)
 - [Achievement index](docs/achievement-index.md)
 - [Pull Shark](achievements/pull-shark.md)
 - [Quickdraw](docs/quickdraw.md)
@@ -19,59 +25,55 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Pair Extraordinaire](achievements/pair-extraordinaire.md)
 - [Public Sponsor](achievements/public-sponsor.md)
 - [Starstruck](achievements/starstruck.md)
+- [Retired achievements](docs/retired-achievements.md)
 
-## Research intelligence
+## Research operations
 
-- [Research intelligence system](docs/research-intelligence.md)
+- [Achievement reproduction laboratory](docs/reproduction-lab.md)
+- [Submit achievement evidence](evidence-submission.md)
+- [Contributor research hub](docs/research-hub.md)
 - [Claim-level evidence register](docs/claim-register.md)
 - [Contradiction and dispute ledger](docs/contradiction-ledger.md)
 - [Evidence-coverage matrix](docs/evidence-coverage.md)
 - [Research priority board](docs/research-priorities.md)
 - [Official-document change-impact map](docs/change-impact-map.md)
-- [Machine-readable claims](api/claims.json)
-- [Machine-readable contradictions](api/contradictions.json)
-- [Machine-readable coverage](api/coverage.json)
-- [Machine-readable priorities](api/priorities.json)
-- [Machine-readable change impact](api/change-impact.json)
-
-## Research, data, and verification
-
-- [Contributor research hub](docs/research-hub.md)
-- [Machine-readable research queue](api/research-queue.json)
 - [Public evidence register](docs/evidence-register.md)
 - [Evidence register policy](docs/evidence-register-policy.md)
-- [Machine-readable evidence records](api/evidence.json)
 - [Achievement verification timelines](docs/verification-timelines.md)
-- [Machine-readable timelines](api/timelines.json)
 - [Official documentation monitor](docs/official-document-monitor.md)
-- [Monitor configuration](data/official-document-monitor.json)
-- [Repository health dashboard](docs/health-dashboard.md)
-- [Unified repository audit](docs/repository-audit.md)
-- [Public data API reference](docs/api-reference.md)
-- [API discovery index](api/index.json)
-- [Public achievement catalogue](api/achievements.json)
-- [Machine-readable health status](api/status.json)
-- [Achievement data reference](docs/data-reference.md)
-- [Canonical source dataset](data/achievements.json)
-- [Achievement JSON Schema](api/schema.json)
 - [Verification methodology](docs/verification-methodology.md)
 - [Source quality policy](docs/source-quality-policy.md)
 - [Evidence strength levels](docs/evidence-strength-levels.md)
 - [Achievement claim lifecycle](docs/claim-lifecycle.md)
-- [Retired achievements](docs/retired-achievements.md)
+
+## Data and automation
+
+- [Public data API reference](docs/api-reference.md)
+- [API discovery index](api/index.json)
+- [Public achievement catalogue](api/achievements.json)
+- [Research queue](api/research-queue.json)
+- [Reproduction protocols](api/lab-protocols.json)
+- [Profile auditor rules](api/auditor-rules.json)
+- [Evidence submission schema](api/submission-schema.json)
+- [Research command snapshot](api/command-centre.json)
+- [Machine-readable health status](api/status.json)
+- [Achievement data reference](docs/data-reference.md)
+- [Canonical source dataset](data/achievements.json)
+- [Achievement JSON Schema](api/schema.json)
+- [Unified repository audit](docs/repository-audit.md)
 
 ## Project help
 
 - [Frequently asked questions](faq.md)
 - [Contribute](contribute.md)
-- [Submit achievement evidence](evidence-submission.md)
 - [Contribution guidelines](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 
 ## Evidence labels
 
 - **Official** — stated by GitHub in maintained documentation.
-- **Verified** — repeatedly reproduced with dated evidence.
-- **Observed** — supported by credible reports but not fully reproduced.
-- **Unverified** — plausible but currently unsupported.
-- **Retired** — no longer obtainable by new qualifying activity.
+- **Confirmed** — reproduced with sufficient dated evidence.
+- **Observed** — supported by credible observations without full reproduction.
+- **Community-reported** — third-party reporting without adequate independent confirmation.
+- **Unknown** — insufficient evidence for a reliable claim.
+- **Retired** — no longer obtainable through new qualifying activity.

@@ -1,6 +1,6 @@
 {
   "api_version": "1.0.0",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "count": 6,
   "records": [
     {
@@ -82,7 +82,10 @@
       "evidence_ids": [
         "EVD-2026-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-009",
+        "RSH-010"
+      ],
       "positions": [
         "A valid Co-authored-by trailer should preserve attribution.",
         "Squash merges, rewritten commits, and email matching can prevent the final merged history from retaining qualifying attribution."

@@ -1,0 +1,98 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 13,
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://conroy1988.github.io/Achievements/api/submission-schema.json",
+    "title": "GitHub Achievement Encyclopedia evidence observation",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "research_task_id",
+      "claim_id",
+      "achievement_slug",
+      "observation_date",
+      "result",
+      "repository_visibility",
+      "environment_and_controls",
+      "limitations",
+      "privacy_declaration",
+      "consent"
+    ],
+    "properties": {
+      "research_task_id": {
+        "type": "string",
+        "pattern": "^RSH-[0-9]{3}$"
+      },
+      "claim_id": {
+        "type": "string",
+        "pattern": "^CLM-[0-9]{3}$"
+      },
+      "achievement_slug": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "observation_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "result": {
+        "type": "string",
+        "enum": [
+          "awarded",
+          "not-awarded",
+          "inconclusive"
+        ]
+      },
+      "repository_visibility": {
+        "type": "string",
+        "enum": [
+          "public",
+          "not-applicable"
+        ]
+      },
+      "qualifying_event_time_utc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "first_badge_visibility_time_utc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "source_urls": {
+        "type": "array",
+        "maxItems": 10,
+        "items": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      },
+      "environment_and_controls": {
+        "type": "string",
+        "minLength": 20,
+        "maxLength": 4000
+      },
+      "limitations": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 4000
+      },
+      "privacy_declaration": {
+        "type": "boolean",
+        "const": true
+      },
+      "consent": {
+        "type": "boolean",
+        "const": true
+      }
+    }
+  }
+}

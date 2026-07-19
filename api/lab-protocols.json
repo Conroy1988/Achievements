@@ -1,0 +1,244 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 5,
+  "protocols": [
+    {
+      "id": "LAB-001",
+      "title": "Quickdraw timing boundary matrix",
+      "achievement_slug": "quickdraw",
+      "research_task_ids": [
+        "RSH-001"
+      ],
+      "status": "ready",
+      "objective": "Measure whether issue and pull-request closure intervals produce Quickdraw under legitimate public-repository use.",
+      "ethics": [
+        "Use substantive issues or pull requests only.",
+        "Do not flood repositories, create spam, or repeat tests after a maintainer asks you to stop."
+      ],
+      "prerequisites": [
+        "Two independent consenting GitHub accounts.",
+        "A public test repository with normal issue and pull-request functionality."
+      ],
+      "variables": [
+        "Object type: issue or pull request.",
+        "Elapsed time between creation and closure.",
+        "Who creates and who closes the object.",
+        "Repository visibility and branch-protection state."
+      ],
+      "steps": [
+        "Record the account's visible achievement state before the test.",
+        "Create one legitimate issue or pull request and record the UTC creation timestamp.",
+        "Close it at the planned interval and record the UTC closure timestamp.",
+        "Check profile visibility at bounded intervals without repeatedly changing repository state.",
+        "Record the first visible award time or the observation cutoff."
+      ],
+      "required_observations": [
+        "creation_time_utc",
+        "closure_time_utc",
+        "first_visible_time_utc",
+        "object_type",
+        "repository_visibility",
+        "result"
+      ],
+      "stop_conditions": [
+        "Stop after the planned observation window.",
+        "Stop immediately if repository maintainers object."
+      ],
+      "privacy_rules": [
+        "Remove unnecessary usernames from public evidence.",
+        "Never submit tokens, private repository links, or private communications."
+      ]
+    },
+    {
+      "id": "LAB-002",
+      "title": "YOLO review-state matrix",
+      "achievement_slug": "yolo",
+      "research_task_ids": [
+        "RSH-002"
+      ],
+      "status": "ready",
+      "objective": "Separate the effects of no review, comment-only review, requested changes, and approval on YOLO qualification.",
+      "ethics": [
+        "Use substantive pull requests in repositories where self-merge is permitted.",
+        "Do not weaken production branch protection merely to obtain an achievement."
+      ],
+      "prerequisites": [
+        "Two independent consenting GitHub accounts.",
+        "A public test repository with documented merge and review settings."
+      ],
+      "variables": [
+        "Review state.",
+        "Merge method.",
+        "Branch-protection rules.",
+        "Author and merger identity."
+      ],
+      "steps": [
+        "Record current visible achievement state and repository rules.",
+        "Create a substantive pull request for one planned review state.",
+        "Apply only the planned review state and record its exact type.",
+        "Merge using the planned method where repository policy permits.",
+        "Record first-visible award time or observation cutoff."
+      ],
+      "required_observations": [
+        "review_state",
+        "merge_method",
+        "branch_rules",
+        "author_identity_relation",
+        "merger_identity_relation",
+        "result"
+      ],
+      "stop_conditions": [
+        "Do not bypass required reviews or administrator safeguards.",
+        "Stop when the planned matrix cell is complete."
+      ],
+      "privacy_rules": [
+        "Publish only public repository metadata.",
+        "Remove email addresses and authentication material."
+      ]
+    },
+    {
+      "id": "LAB-003",
+      "title": "Pair Extraordinaire attribution and tier matrix",
+      "achievement_slug": "pair-extraordinaire",
+      "research_task_ids": [
+        "RSH-009",
+        "RSH-010"
+      ],
+      "status": "ready",
+      "objective": "Test whether final merged history preserves qualifying co-author attribution and observe tier boundaries without artificial activity.",
+      "ethics": [
+        "Every co-author must have made a real contribution.",
+        "Do not add false Co-authored-by trailers or meaningless commits."
+      ],
+      "prerequisites": [
+        "Two independent consenting contributors.",
+        "A public repository with legitimate collaborative work."
+      ],
+      "variables": [
+        "Merge method.",
+        "Co-author email linkage.",
+        "Final commit trailer preservation.",
+        "Qualifying merged pull-request count."
+      ],
+      "steps": [
+        "Record the pre-test visible achievement and qualifying-count estimate.",
+        "Create a substantive co-authored commit with a valid trailer.",
+        "Merge using the planned method.",
+        "Inspect the final commit history for both authors.",
+        "Record award visibility and any relevant tier boundary."
+      ],
+      "required_observations": [
+        "merge_method",
+        "trailer_preserved",
+        "email_linked",
+        "final_commit_authors",
+        "qualifying_count_before",
+        "qualifying_count_after",
+        "result"
+      ],
+      "stop_conditions": [
+        "Stop if attribution would be false or misleading.",
+        "Do not create extra pull requests solely to move a counter."
+      ],
+      "privacy_rules": [
+        "Use public noreply emails where possible.",
+        "Do not publish private contributor email addresses."
+      ]
+    },
+    {
+      "id": "LAB-004",
+      "title": "Galaxy Brain accepted-answer trigger",
+      "achievement_slug": "galaxy-brain",
+      "research_task_ids": [
+        "RSH-011",
+        "RSH-004"
+      ],
+      "status": "ready",
+      "objective": "Verify accepted-answer progress and distinguish it from other Discussion moderation states.",
+      "ethics": [
+        "Use genuine questions and useful answers.",
+        "The repository maintainer must decide acceptance independently."
+      ],
+      "prerequisites": [
+        "Two independent consenting accounts.",
+        "A public repository with GitHub Discussions and answer marking enabled."
+      ],
+      "variables": [
+        "Moderation state.",
+        "Accepted-answer count.",
+        "Time between acceptance and profile visibility."
+      ],
+      "steps": [
+        "Record accepted-answer count and visible achievement state.",
+        "Post a genuine answer to a suitable Discussion.",
+        "Have the maintainer mark the answer using the planned state.",
+        "Record acceptance and first-visible-award timestamps.",
+        "Repeat only through normal community participation."
+      ],
+      "required_observations": [
+        "discussion_url",
+        "moderation_state",
+        "accepted_count_before",
+        "accepted_count_after",
+        "accepted_time_utc",
+        "first_visible_time_utc",
+        "result"
+      ],
+      "stop_conditions": [
+        "Do not ask maintainers to mark incorrect answers as accepted.",
+        "Stop if the Discussion is removed or participation is unwelcome."
+      ],
+      "privacy_rules": [
+        "Use public Discussion URLs only.",
+        "Do not publish private moderation messages."
+      ]
+    },
+    {
+      "id": "LAB-005",
+      "title": "Public Sponsor visibility trigger",
+      "achievement_slug": "public-sponsor",
+      "research_task_ids": [
+        "RSH-012"
+      ],
+      "status": "ready",
+      "objective": "Test public sponsorship visibility conditions without collecting or publishing financial data.",
+      "ethics": [
+        "Sponsorship must be genuine and voluntarily chosen.",
+        "Never reimburse, coordinate, or fabricate sponsorship activity for testing."
+      ],
+      "prerequisites": [
+        "A consenting sponsor account eligible for GitHub Sponsors.",
+        "A genuine sponsorship the participant independently wishes to make."
+      ],
+      "variables": [
+        "Public or private sponsorship visibility.",
+        "Activation state.",
+        "Profile visibility delay.",
+        "Account and regional eligibility limitations."
+      ],
+      "steps": [
+        "Record the pre-sponsorship visible achievement state.",
+        "Create or identify a genuine sponsorship and record only its public visibility state.",
+        "Record activation time without recording payment details.",
+        "Observe profile award visibility at bounded intervals.",
+        "If visibility changes, record the change and relevant non-financial settings."
+      ],
+      "required_observations": [
+        "sponsorship_visibility",
+        "activation_time_utc",
+        "first_visible_time_utc",
+        "region_limitations_noted",
+        "result"
+      ],
+      "stop_conditions": [
+        "Do not collect payment method, amount, billing address, or transaction identifiers.",
+        "Stop if the participant withdraws consent."
+      ],
+      "privacy_rules": [
+        "Financial information is prohibited.",
+        "Publish only the minimum public sponsorship state needed for review."
+      ]
+    }
+  ]
+}

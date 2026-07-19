@@ -1,0 +1,29 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 1,
+  "metrics": {
+    "achievement_count": 9,
+    "active_achievement_count": 7,
+    "claim_count": 13,
+    "weak_claim_count": 10,
+    "unassigned_gap_count": 0,
+    "research_task_count": 12,
+    "open_research_task_count": 12,
+    "open_contradiction_count": 6,
+    "reproduction_protocol_count": 5
+  },
+  "targets": {
+    "operational_health": 100,
+    "minimum_evidence_coverage": 70,
+    "unassigned_gap_count": 0,
+    "maximum_open_contradictions": 3,
+    "minimum_confirmed_active_triggers": 5
+  },
+  "routes": {
+    "command_centre": "/Achievements/research-command-centre/",
+    "profile_auditor": "/Achievements/profile-auditor/",
+    "reproduction_lab": "/Achievements/reproduction-lab/",
+    "research_hub": "/Achievements/research-hub/"
+  }
+}

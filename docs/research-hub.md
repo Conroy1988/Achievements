@@ -9,9 +9,9 @@ permalink: /research-hub/
 
 This hub converts known evidence gaps into bounded research tasks. Contributions must follow the evidence register policy and may document failed or contradictory results.
 
-**Open tasks:** 8  
+**Open tasks:** 12  
 **Good first research tasks:** 3  
-**Schema version:** `1.0.0`
+**Schema version:** `1.1.0`
 
 | Task | Achievement | Type | Priority | Difficulty | Status |
 |---|---|---|---|---|---|
@@ -20,6 +20,10 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 | `RSH-003` | Pull Shark | threshold-verification | high | advanced | open |
 | `RSH-004` | Galaxy Brain | threshold-verification | high | advanced | open |
 | `RSH-005` | Starstruck | edge-case-research | high | advanced | open |
+| `RSH-009` | Pair Extraordinaire | independent-reproduction | high | advanced | open |
+| `RSH-010` | Pair Extraordinaire | threshold-verification | high | advanced | open |
+| `RSH-011` | Galaxy Brain | independent-reproduction | high | intermediate | open |
+| `RSH-012` | Public Sponsor | independent-reproduction | high | intermediate | open |
 | `RSH-006` | Arctic Code Vault Contributor | source-replacement — good first issue | medium | beginner | open |
 | `RSH-007` | Mars 2020 Contributor | source-replacement — good first issue | medium | beginner | open |
 | `RSH-008` | Cross-achievement | cross-achievement-observation — good first issue | medium | beginner | open |
@@ -115,6 +119,78 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 - Document counterexamples as well as successful attribution.
 
 **Related evidence records:** `EVD-2026-006`
+
+### RSH-009 — Reproduce Pair Extraordinaire merge attribution
+
+**Achievement:** Pair Extraordinaire  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Which merge methods, email-matching conditions, and final-history states preserve qualifying Pair Extraordinaire co-author attribution?
+
+**Acceptance criteria**
+
+- Test merge commit, squash merge, and rebase merge where repository policy permits.
+- Record the exact Co-authored-by trailer and whether its email is linked to the observed account.
+- Inspect final merged commit attribution rather than relying only on the pull-request interface.
+- Provide dated results from at least two independent accounts and include failed reproductions.
+
+**Related evidence records:** `EVD-2026-004`
+
+### RSH-010 — Verify Pair Extraordinaire tier thresholds
+
+**Achievement:** Pair Extraordinaire  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Can the listed Pair Extraordinaire tier thresholds be independently reproduced using qualifying merged pull requests with preserved co-author attribution?
+
+**Acceptance criteria**
+
+- Record qualifying count immediately before and after each observed tier boundary.
+- Confirm final merged history retains the co-author identity used for counting.
+- Separate base-award evidence from bronze, silver, and gold tier evidence.
+- Do not manufacture meaningless pull requests or misattribute co-authorship.
+
+**Related evidence records:** `EVD-2026-004`
+
+### RSH-011 — Reproduce the Galaxy Brain accepted-answer trigger
+
+**Achievement:** Galaxy Brain  
+**Priority:** `high`  
+**Difficulty:** `intermediate`  
+**Target evidence:** `confirmed`
+
+**Research question:** Does a genuine GitHub Discussion answer being marked accepted reliably create Galaxy Brain progress, and how long does profile visibility take?
+
+**Acceptance criteria**
+
+- Use genuine Discussion questions and answers moderated by the repository maintainer.
+- Record answer, acceptance, and first-visible-award timestamps.
+- Distinguish accepted answers from verified answers, labels, reactions, and other moderation states.
+- Provide observations from at least two independent accounts.
+
+**Related evidence records:** `EVD-2026-005`
+
+### RSH-012 — Reproduce the Public Sponsor visibility trigger
+
+**Achievement:** Public Sponsor  
+**Priority:** `high`  
+**Difficulty:** `intermediate`  
+**Target evidence:** `confirmed`
+
+**Research question:** Which sponsorship visibility and account conditions are required for Public Sponsor to appear without exposing financial information?
+
+**Acceptance criteria**
+
+- Record only public sponsorship state, activation date, and profile-award visibility; exclude payment details.
+- Compare public and private sponsorship visibility where the participant can safely do so.
+- Record account, region, and processing limitations without publishing sensitive eligibility data.
+- Provide dated observations from at least two independent accounts.
+
+**Related evidence records:** `EVD-2026-007`
 
 ### RSH-006 — Locate durable Arctic Code Vault sources
 

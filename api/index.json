@@ -16,11 +16,20 @@
   "endpoints": {
     "achievement_template": "/Achievements/api/achievements/{slug}.json",
     "achievements": "/Achievements/api/achievements.json",
+    "auditor_rules": "/Achievements/api/auditor-rules.json",
+    "change_impact": "/Achievements/api/change-impact.json",
+    "claims": "/Achievements/api/claims.json",
+    "command_centre": "/Achievements/api/command-centre.json",
+    "contradictions": "/Achievements/api/contradictions.json",
+    "coverage": "/Achievements/api/coverage.json",
     "evidence": "/Achievements/api/evidence.json",
     "index": "/Achievements/api/index.json",
+    "lab_protocols": "/Achievements/api/lab-protocols.json",
+    "priorities": "/Achievements/api/priorities.json",
     "research_queue": "/Achievements/api/research-queue.json",
     "schema": "/Achievements/api/schema.json",
     "status": "/Achievements/api/status.json",
+    "submission_schema": "/Achievements/api/submission-schema.json",
     "timelines": "/Achievements/api/timelines.json"
   }
 }

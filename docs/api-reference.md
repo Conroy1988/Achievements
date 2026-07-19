@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, timelines, research tasks, intelligence, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research operations, profile auditing, schema, and repository health.
 permalink: /api/
 ---
 
 ## Public data API
 
-The encyclopedia publishes a versioned, read-only JSON API through GitHub Pages.
+The encyclopedia publishes a read-only static JSON API through GitHub Pages.
 
 Base path:
 
@@ -19,119 +19,74 @@ https://conroy1988.github.io/Achievements/api/
 
 | Endpoint | Purpose |
 |---|---|
-| [`index.json`](../api/index.json) | API version, core endpoint discovery, and achievement slugs |
+| [`index.json`](../api/index.json) | Core API version, endpoint discovery, and achievement slugs |
 | [`achievements.json`](../api/achievements.json) | Complete nine-record achievement catalogue |
 | `achievements/{slug}.json` | One achievement record |
-| [`evidence.json`](../api/evidence.json) | Privacy-safe evidence records and review state |
-| [`timelines.json`](../api/timelines.json) | Verification timelines and page-level review dates |
-| [`research-queue.json`](../api/research-queue.json) | Contributor research tasks and acceptance criteria |
 | [`schema.json`](../api/schema.json) | JSON Schema draft 2020-12 achievement contract |
 | [`status.json`](../api/status.json) | Generated repository health and workflow state |
 
-Example individual endpoint:
-
-```text
-https://conroy1988.github.io/Achievements/api/achievements/pull-shark.json
-```
-
-## Research intelligence endpoints
+## Evidence and research endpoints
 
 | Endpoint | Purpose |
 |---|---|
+| [`evidence.json`](../api/evidence.json) | Privacy-safe evidence records and review state |
+| [`timelines.json`](../api/timelines.json) | Verification timelines and page-level review dates |
+| [`research-queue.json`](../api/research-queue.json) | Twelve bounded contributor research tasks |
 | [`claims.json`](../api/claims.json) | Atomic claims with evidence and task relationships |
 | [`contradictions.json`](../api/contradictions.json) | Competing interpretations and resolution criteria |
-| [`coverage.json`](../api/coverage.json) | Claim and achievement coverage scores and unassigned gaps |
+| [`coverage.json`](../api/coverage.json) | Claim and achievement coverage scores and ownership gaps |
 | [`priorities.json`](../api/priorities.json) | Deterministically ranked research tasks with score components |
 | [`change-impact.json`](../api/change-impact.json) | Official-document changes mapped to claims, disputes, and tasks |
 
-These supplemental endpoints are generated and drift-checked by the research-intelligence contract. They will enter the core discovery envelope at the next formal API minor release.
+## Evidence-operations endpoints
 
-## Achievement responses
+| Endpoint | Purpose |
+|---|---|
+| [`lab-protocols.json`](../api/lab-protocols.json) | Ethical, privacy-safe reproduction protocols |
+| [`auditor-rules.json`](../api/auditor-rules.json) | Read-only public-signal rules and explicit limitations |
+| [`submission-schema.json`](../api/submission-schema.json) | Structured evidence-observation contract |
+| [`command-centre.json`](../api/command-centre.json) | Static research metrics, targets, and public routes |
 
-`achievements.json` contains:
+The discovery index now exposes **25 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twelve auxiliary endpoints.
 
-- `api_version` — version of the endpoint envelope;
-- `dataset_schema_version` — version of the achievement data contract;
-- `count` — number of achievement records; and
-- `achievements` — the validated record array.
+## Response obligations
 
-Each `achievements/{slug}.json` response contains the API and dataset versions plus one achievement record.
+Consumers must preserve uncertainty. Evidence level, reproduction state, reviewer decision, task state, dispute status, coverage score, privacy status, and limitations are separate fields and must not be flattened into one confidence label.
 
-## Research responses
-
-`evidence.json` contains the register schema version, privacy-policy route, record count, and evidence records.
-
-`timelines.json` contains the timeline scope, schema version, count, and one timeline for each achievement.
-
-`research-queue.json` contains the queue schema version, count, and bounded contributor research tasks.
-
-`claims.json` and `contradictions.json` preserve claim and dispute identities. `coverage.json`, `priorities.json`, and `change-impact.json` are deterministic projections generated from the canonical datasets.
-
-Evidence classification, reviewer decision, reproduction state, timeline precision, claim state, dispute status, task status, and acceptance criteria are separate fields. Consumers should not flatten them into a single confidence label.
-
-## Status response
-
-`status.json` is refreshed by the repository health workflow. It includes the generated timestamp, overall health, release, audit, backlog, workflow, verification, source, Markdown, and visual-baseline state.
-
-Unlike the catalogue and research endpoints, status data changes as repository operations change.
-
-## Versioning
-
-The API envelope and dataset schemas are versioned independently:
-
-- a backward-compatible endpoint addition increments the API minor version at formal discovery publication;
-- a breaking envelope change increments the API major version;
-- achievement field compatibility follows `dataset_schema_version`;
-- research endpoints carry their own schema versions; and
-- release tags describe encyclopedia releases rather than GitHub's achievement system.
+The profile-auditor rules are expressly non-authoritative. They describe public signals, not badge detection.
 
 ## Generation and drift control
 
-Core catalogue, individual, schema, and discovery endpoints are generated by:
-
 ```bash
 python scripts/build_public_api.py
-```
-
-Research endpoints are generated by their domain-specific builders:
-
-```bash
 python scripts/build_evidence_register.py
 python scripts/build_verification_timelines.py
 python scripts/build_research_hub.py
 python scripts/build_research_intelligence.py
+python scripts/build_evidence_operations.py
 ```
 
-Committed files are verified by the unified audit and specialised workflows. Validation fails when an endpoint is missing, malformed, stale, manually drifted, or inconsistent with its canonical dataset.
+Generated endpoints must not be edited independently. Update the canonical source, run its builder, then commit the source and output together.
 
-Generated endpoints must not be edited independently. Update the relevant source dataset, pass its contract, then regenerate the public output.
+## Versioning
 
-## Evidence obligations
-
-Structured delivery does not convert community-reported information into official information. Consumers should preserve classifications, dates, reviewer decisions, reproduction state, limitations, dispute status, score components, and task status.
+- The core catalogue envelope remains `1.1.0`.
+- Research and evidence-operations endpoints carry independent schema and API versions.
+- A breaking envelope change increments the relevant major version.
+- Release tags describe encyclopedia releases rather than GitHub's achievement system.
 
 ## Release baselines
 
 - [`v1.1.0`](releases/v1.1.0.md) introduced the initial achievement and health API.
-- [`v1.2.0`](releases/v1.2.0.md) adds evidence, timeline, and contributor-research discovery.
-
-The immutable `v1.2.0` source baseline is commit `614308f84ba6fde634109cb4da0300a398aa4f7e`. The tag resolves exactly to that commit.
-
-Tagged releases are immutable source baselines. The health endpoint remains operational data and continues to refresh after release publication.
+- [`v1.2.0`](releases/v1.2.0.md) introduced evidence, timeline, and contributor-research discovery.
+- [`v1.3.0`](releases/v1.3.0.md) introduces research intelligence, reproduction protocols, automated triage, the profile auditor, and the command centre.
 
 ## Related material
 
+- [Research command centre](../research-command-centre.md)
+- [GitHub achievement profile auditor](../profile-auditor.md)
+- [Achievement reproduction laboratory](reproduction-lab.md)
+- [Submit achievement evidence](../evidence-submission.md)
 - [Research intelligence system](research-intelligence.md)
-- [Claim-level evidence register](claim-register.md)
-- [Contradiction and dispute ledger](contradiction-ledger.md)
-- [Evidence-coverage matrix](evidence-coverage.md)
-- [Research priority board](research-priorities.md)
-- [Official-document change-impact map](change-impact-map.md)
-- [v1.2.0 release record](releases/v1.2.0.md)
-- [Public evidence register](evidence-register.md)
-- [Achievement verification timelines](verification-timelines.md)
-- [Contributor research hub](research-hub.md)
-- [Achievement data reference](data-reference.md)
-- [Evidence strength levels](evidence-strength-levels.md)
 - [Repository health dashboard](health-dashboard.md)
 - [Unified repository audit](repository-audit.md)

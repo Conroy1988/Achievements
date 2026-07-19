@@ -16,13 +16,39 @@ AUXILIARY_ENDPOINTS = {
     "evidence": Path("evidence.json"),
     "timelines": Path("timelines.json"),
     "research_queue": Path("research-queue.json"),
+    "claims": Path("claims.json"),
+    "contradictions": Path("contradictions.json"),
+    "coverage": Path("coverage.json"),
+    "priorities": Path("priorities.json"),
+    "change_impact": Path("change-impact.json"),
+    "lab_protocols": Path("lab-protocols.json"),
+    "auditor_rules": Path("auditor-rules.json"),
+    "submission_schema": Path("submission-schema.json"),
+    "command_centre": Path("command-centre.json"),
+}
+AUXILIARY_COLLECTIONS = {
+    "evidence": "records",
+    "timelines": "timelines",
+    "research_queue": "tasks",
+    "claims": "claims",
+    "contradictions": "records",
+    "priorities": "priorities",
+    "change_impact": "documents",
+    "lab_protocols": "protocols",
+    "auditor_rules": "rules",
 }
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build or verify the static achievement API.")
+    parser = argparse.ArgumentParser(
+        description="Build or verify the static achievement API."
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--check", action="store_true", help="fail when committed API files differ from generated output")
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="fail when committed API files differ from generated output",
+    )
     return parser.parse_args()
 
 
@@ -60,7 +86,9 @@ def expected_documents() -> dict[Path, object]:
     }
 
     for achievement in achievements:
-        if not isinstance(achievement, dict) or not isinstance(achievement.get("slug"), str):
+        if not isinstance(achievement, dict) or not isinstance(
+            achievement.get("slug"), str
+        ):
             raise ValueError("Every achievement must define a string slug")
         slug = achievement["slug"]
         if slug in slugs:
@@ -79,7 +107,10 @@ def expected_documents() -> dict[Path, object]:
         "schema": f"{PUBLIC_BASE}/schema.json",
         "status": f"{PUBLIC_BASE}/status.json",
     }
-    endpoints.update({name: f"{PUBLIC_BASE}/{path.as_posix()}" for name, path in AUXILIARY_ENDPOINTS.items()})
+    endpoints.update({
+        name: f"{PUBLIC_BASE}/{path.as_posix()}"
+        for name, path in AUXILIARY_ENDPOINTS.items()
+    })
     documents[Path("index.json")] = {
         "api_version": API_VERSION,
         "dataset_schema_version": dataset.get("schema_version"),
@@ -100,7 +131,14 @@ def validate_status(output: Path, errors: list[str]) -> None:
     except (OSError, ValueError, json.JSONDecodeError) as error:
         errors.append(f"api/status.json is invalid: {error}")
         return
-    for field in ("schema_version", "repository", "generated_at", "health", "workflows", "metrics"):
+    for field in (
+        "schema_version",
+        "repository",
+        "generated_at",
+        "health",
+        "workflows",
+        "metrics",
+    ):
         if field not in status:
             errors.append(f"api/status.json is missing {field}")
     if status.get("repository") != "Conroy1988/Achievements":
@@ -118,15 +156,25 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
         except (OSError, ValueError, json.JSONDecodeError) as error:
             errors.append(f"Invalid auxiliary endpoint {path.relative_to(ROOT)}: {error}")
             continue
-        for field in ("api_version", "schema_version", "count"):
+        for field in ("api_version", "schema_version"):
             if field not in payload:
                 errors.append(f"{path.relative_to(ROOT)} is missing {field}")
-        if name == "evidence" and not isinstance(payload.get("records"), list):
-            errors.append("api/evidence.json is missing records")
-        if name == "timelines" and not isinstance(payload.get("timelines"), list):
-            errors.append("api/timelines.json is missing timelines")
-        if name == "research_queue" and not isinstance(payload.get("tasks"), list):
-            errors.append("api/research-queue.json is missing tasks")
+        collection = AUXILIARY_COLLECTIONS.get(name)
+        if collection and not isinstance(payload.get(collection), list):
+            errors.append(f"{path.relative_to(ROOT)} is missing {collection}")
+        if name == "coverage":
+            for field in (
+                "overall_coverage_score",
+                "unassigned_gap_count",
+                "achievements",
+                "claims",
+            ):
+                if field not in payload:
+                    errors.append(f"{path.relative_to(ROOT)} is missing {field}")
+        if name == "submission_schema" and not isinstance(payload.get("schema"), dict):
+            errors.append("api/submission-schema.json is missing schema")
+        if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
+            errors.append("api/command-centre.json is missing metrics")
 
 
 def write_documents(output: Path, documents: dict[Path, object]) -> None:
@@ -139,7 +187,10 @@ def write_documents(output: Path, documents: dict[Path, object]) -> None:
         destination.write_text(serialise(value), encoding="utf-8")
 
 
-def check_documents(output: Path, documents: dict[Path, object]) -> list[str]:
+def check_documents(
+    output: Path,
+    documents: dict[Path, object],
+) -> list[str]:
     errors: list[str] = []
     expected_paths = set(documents)
     for relative, value in documents.items():
@@ -181,7 +232,11 @@ def main() -> int:
             print("Public API validation failed:")
             print("\n".join(f"- {error}" for error in errors))
             return 1
-        print(f"Public API matches the canonical dataset across {len(documents)} generated endpoints, three research endpoints, and status.json.")
+        print(
+            "Public API matches the canonical dataset across "
+            f"{len(documents)} generated endpoints, "
+            f"{len(AUXILIARY_ENDPOINTS)} auxiliary endpoints, and status.json."
+        )
         return 0
 
     write_documents(output, documents)
@@ -192,7 +247,10 @@ def main() -> int:
         print("Public API generated, but auxiliary validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print(f"Generated {len(documents)} static API endpoints from 9 achievement records.")
+    print(
+        f"Generated {len(documents)} static API endpoints "
+        "from 9 achievement records."
+    )
     return 0
 
 
