@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+import argparse
 import re
 import subprocess
 import sys
@@ -27,6 +28,14 @@ def changed_markdown_files() -> list[Path]:
         if path.suffix == ".md" and path.exists():
             files.append(path)
     return sorted(files)
+
+
+def all_markdown_files() -> list[Path]:
+    return sorted(
+        path
+        for path in ROOT.rglob("*.md")
+        if not any(part in SKIP_PARTS for part in path.relative_to(ROOT).parts)
+    )
 
 
 def candidates(source: Path, raw_target: str) -> list[Path]:
@@ -55,16 +64,27 @@ def candidates(source: Path, raw_target: str) -> list[Path]:
     return result
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Validate repository-relative Markdown links.")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="validate every Markdown file instead of only files changed by the latest commit",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
-    sources = changed_markdown_files()
+    args = parse_args()
+    sources = all_markdown_files() if args.all else changed_markdown_files()
+    mode = "full repository" if args.all else "changed-file"
+
     if not sources:
-        print("No changed Markdown files require link validation.")
+        print(f"No Markdown files require {mode} link validation.")
         return 0
 
     failures: list[str] = []
     for source in sources:
-        if any(part in SKIP_PARTS for part in source.parts):
-            continue
         text = source.read_text(encoding="utf-8")
         for match in LINK_PATTERN.finditer(text):
             checked = candidates(source, match.group(1))
@@ -73,11 +93,11 @@ def main() -> int:
                 failures.append(f"{source.relative_to(ROOT)}:{line}: {match.group(1)}")
 
     if failures:
-        print("Unresolved repository-relative links introduced by this change:")
+        print(f"Unresolved repository-relative links found during {mode} validation:")
         print("\n".join(f"- {failure}" for failure in failures))
         return 1
 
-    print("All links in changed Markdown files resolved successfully.")
+    print(f"All links passed {mode} validation across {len(sources)} Markdown files.")
     return 0
 
 

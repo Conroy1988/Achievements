@@ -24,12 +24,13 @@ Install Node.js, Ruby, and Bundler before running the complete documentation che
 
 ```bash
 python scripts/check_links.py
+python scripts/check_links.py --all
 npx --yes markdownlint-cli2@0.18.1 "**/*.md"
 bundle install
 JEKYLL_ENV=production bundle exec jekyll build --trace
 ```
 
-The Markdown rules are defined in `.markdownlint-cli2.yaml`. Jekyll dependencies are declared in `Gemfile`. Continuous integration checks changed Markdown files so legacy style debt does not block focused contributions; contributors may use the command above for a full local audit. Validation failures should be corrected rather than broadly suppressed.
+The first link command validates Markdown changed by the latest commit. The `--all` command validates the complete repository baseline and is used by scheduled and main-branch CI. The Markdown rules are defined in `.markdownlint-cli2.yaml`. Jekyll dependencies are declared in `Gemfile`. Continuous integration checks changed Markdown files so legacy style debt does not block focused contributions; contributors may use the command above for a full local audit. Validation failures should be corrected rather than broadly suppressed.
 
 ## Evidence expectations
 
