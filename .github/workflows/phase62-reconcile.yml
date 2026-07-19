@@ -27,7 +27,22 @@ jobs:
         with:
           python-version: '3.12'
       - name: Apply source reconciliation and regenerate outputs
-        run: python scripts/phase62_apply.py
+        id: reconcile
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python scripts/phase62_apply.py 2>&1 | tee phase62-reconcile.log
+      - name: Upload reconciliation diagnostics
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: phase62-reconciliation-diagnostics
+          path: phase62-reconcile.log
+          if-no-files-found: error
+          retention-days: 7
+      - name: Fail on reconciliation error
+        if: steps.reconcile.outcome != 'success'
+        run: exit 1
       - name: Commit reconciled sources and outputs
         run: |
           if git diff --quiet; then
