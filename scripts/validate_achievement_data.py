@@ -15,7 +15,7 @@ DATA_PATH = ROOT / "data" / "achievements.json"
 SCHEMA_PATH = ROOT / "data" / "achievement.schema.json"
 INDEX_PATH = ROOT / "docs" / "achievement-index.md"
 INDEX_ROW = re.compile(
-    r"^\| \[([^\]]+)\]\(([^)]+\.md)\) \| ([^|]+?) \| (Yes|No) \| [^|]+ \|$",
+    r"^\| \[([^\]]+)\]\(([^)]+\.md)\) \| ([^|]+?) \| ([^|]+?) \| [^|]+ \|$",
     re.MULTILINE,
 )
 PERMALINK = re.compile(r"^permalink:\s*(\S+)\s*$", re.MULTILINE)
@@ -56,23 +56,27 @@ def parse_args() -> argparse.Namespace:
 
 def index_records() -> dict[str, dict[str, object]]:
     text = INDEX_PATH.read_text(encoding="utf-8").split("## Evidence labels", 1)[0]
-    result: dict[str, dict[str, object]] = {}
-    for name, target, action, tiered in INDEX_ROW.findall(text):
+    records: dict[str, dict[str, object]] = {}
+    for name, target, action, state in INDEX_ROW.findall(text):
         resolved = (INDEX_PATH.parent / target).resolve().relative_to(ROOT).as_posix()
-        result[name] = {
+        state = state.strip()
+        records[name] = {
             "guide_path": resolved,
             "primary_action": action.strip(),
-            "tiered": tiered == "Yes",
+            "tiered": state == "Yes",
+            "status": "retired" if state == "Retired" else "active",
         }
-    return result
+    return records
 
 
-def valid_url(value: str) -> bool:
+def valid_url(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
     parsed = urlsplit(value)
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
 
 
-def validate_schema_document(schema: object, errors: list[str]) -> None:
+def validate_schema(schema: object, errors: list[str]) -> None:
     if not isinstance(schema, dict):
         errors.append("Schema root must be an object.")
         return
@@ -99,48 +103,39 @@ def validate_item(item: object, position: int, errors: list[str]) -> None:
     if missing:
         return
 
-    slug = item["slug"]
-    name = item["name"]
-    guide_path = item["guide_path"]
-    if not isinstance(slug, str) or not SLUG.fullmatch(slug):
+    if not isinstance(item["slug"], str) or not SLUG.fullmatch(item["slug"]):
         errors.append(f"{prefix} has an invalid slug.")
-    if not isinstance(name, str) or not name.strip():
+    if not isinstance(item["name"], str) or not item["name"].strip():
         errors.append(f"{prefix} has an invalid name.")
     if item["status"] not in {"active", "retired", "restricted"}:
         errors.append(f"{prefix} has an invalid status.")
     if not isinstance(item["tiered"], bool):
         errors.append(f"{prefix} tiered must be boolean.")
-    if not isinstance(item["primary_action"], str) or not item["primary_action"].strip():
-        errors.append(f"{prefix} has no primary action.")
-    if not isinstance(item["trigger"], str) or not item["trigger"].strip():
-        errors.append(f"{prefix} has no trigger.")
+    for field in ("category", "primary_action", "trigger", "permalink"):
+        if not isinstance(item[field], str) or not item[field].strip():
+            errors.append(f"{prefix} has an invalid {field} value.")
+
+    guide_path = item["guide_path"]
     if not isinstance(guide_path, str) or not guide_path.endswith(".md"):
         errors.append(f"{prefix} has an invalid guide path.")
-        return
-
-    full_path = ROOT / guide_path
-    if not full_path.exists():
-        errors.append(f"{prefix} guide does not exist: {guide_path}.")
     else:
-        text = full_path.read_text(encoding="utf-8")
-        match = PERMALINK.search(text)
-        if match and match.group(1) != item["permalink"]:
-            errors.append(
-                f"{prefix} permalink differs from guide front matter: "
-                f"{item['permalink']} != {match.group(1)}."
-            )
-        verified, verification_error = read_verification_date(Path(guide_path))
-        if verification_error or verified is None:
-            errors.append(f"{prefix} guide verification metadata is invalid: {verification_error}.")
-        elif verified.isoformat() != item["last_verified"]:
-            errors.append(
-                f"{prefix} last_verified differs from guide: "
-                f"{item['last_verified']} != {verified.isoformat()}."
-            )
+        full_path = ROOT / guide_path
+        if not full_path.exists():
+            errors.append(f"{prefix} guide does not exist: {guide_path}.")
+        else:
+            text = full_path.read_text(encoding="utf-8")
+            permalink_match = PERMALINK.search(text)
+            if permalink_match and permalink_match.group(1) != item["permalink"]:
+                errors.append(f"{prefix} permalink differs from guide front matter.")
+            verified, verification_error = read_verification_date(Path(guide_path))
+            if verification_error or verified is None:
+                errors.append(f"{prefix} guide verification metadata is invalid: {verification_error}.")
+            elif verified.isoformat() != item["last_verified"]:
+                errors.append(f"{prefix} last_verified differs from the guide.")
 
     try:
-        parsed_date = date.fromisoformat(item["last_verified"])
-        if parsed_date > date.today():
+        verified_date = date.fromisoformat(item["last_verified"])
+        if verified_date > date.today():
             errors.append(f"{prefix} has a future last_verified date.")
     except (TypeError, ValueError):
         errors.append(f"{prefix} last_verified is not an ISO date.")
@@ -148,19 +143,20 @@ def validate_item(item: object, position: int, errors: list[str]) -> None:
     evidence = item["evidence"]
     if not isinstance(evidence, dict) or set(evidence) != {"trigger", "tiers"}:
         errors.append(f"{prefix} evidence must contain trigger and tiers only.")
-    elif any(value not in EVIDENCE_LEVELS for value in evidence.values()):
+    elif any(level not in EVIDENCE_LEVELS for level in evidence.values()):
         errors.append(f"{prefix} contains an unsupported evidence level.")
 
     tiers = item["tiers"]
     if not isinstance(tiers, list):
         errors.append(f"{prefix} tiers must be an array.")
     elif item["tiered"]:
-        if [tier.get("name") for tier in tiers if isinstance(tier, dict)] != ["Base", "Bronze", "Silver", "Gold"]:
-            errors.append(f"{prefix} tiered progression must be Base, Bronze, Silver, Gold.")
+        names = [tier.get("name") for tier in tiers if isinstance(tier, dict)]
         thresholds = [tier.get("threshold") for tier in tiers if isinstance(tier, dict)]
+        if names != ["Base", "Bronze", "Silver", "Gold"]:
+            errors.append(f"{prefix} tier progression must be Base, Bronze, Silver, Gold.")
         if len(thresholds) != 4 or any(not isinstance(value, int) or value < 1 for value in thresholds):
             errors.append(f"{prefix} has invalid tier thresholds.")
-        elif thresholds != sorted(thresholds) or len(set(thresholds)) != len(thresholds):
+        elif thresholds != sorted(thresholds) or len(set(thresholds)) != 4:
             errors.append(f"{prefix} tier thresholds must be unique and increasing.")
     elif tiers:
         errors.append(f"{prefix} is not tiered but defines tiers.")
@@ -173,9 +169,9 @@ def validate_item(item: object, position: int, errors: list[str]) -> None:
     if not isinstance(sources, dict) or set(sources) != {"official", "community"}:
         errors.append(f"{prefix} sources must contain official and community arrays.")
     else:
-        for source_kind, values in sources.items():
-            if not isinstance(values, list) or any(not isinstance(value, str) or not valid_url(value) for value in values):
-                errors.append(f"{prefix} {source_kind} sources contain an invalid URL.")
+        for kind, values in sources.items():
+            if not isinstance(values, list) or any(not valid_url(value) for value in values):
+                errors.append(f"{prefix} {kind} sources contain an invalid URL.")
 
     limitations = item["known_limitations"]
     if not isinstance(limitations, list) or not limitations or any(
@@ -218,7 +214,7 @@ def main() -> int:
         print(f"Achievement data validation could not start: {error}")
         return 1
 
-    validate_schema_document(schema, errors)
+    validate_schema(schema, errors)
     if not isinstance(data, dict):
         errors.append("Dataset root must be an object.")
         achievements: list[object] = []
@@ -237,13 +233,13 @@ def main() -> int:
     for position, item in enumerate(achievements, start=1):
         validate_item(item, position, errors)
 
-    dict_items = [item for item in achievements if isinstance(item, dict)]
+    items = [item for item in achievements if isinstance(item, dict)]
     for key in ("slug", "name", "guide_path"):
-        values = [item.get(key) for item in dict_items]
+        values = [item.get(key) for item in items]
         if len(values) != len(set(values)):
             errors.append(f"Achievement {key} values must be unique.")
 
-    dataset_by_name = {str(item.get("name")): item for item in dict_items}
+    dataset_by_name = {str(item.get("name")): item for item in items}
     if set(dataset_by_name) != set(index):
         errors.append(
             "Dataset and achievement index names differ: "
@@ -253,11 +249,11 @@ def main() -> int:
     for name in sorted(set(dataset_by_name) & set(index)):
         item = dataset_by_name[name]
         expected = index[name]
-        for field in ("guide_path", "primary_action", "tiered"):
+        for field in ("guide_path", "primary_action", "tiered", "status"):
             if item.get(field) != expected[field]:
                 errors.append(f"{name} {field} differs from the achievement index.")
 
-    statuses = [item.get("status") for item in dict_items]
+    statuses = [item.get("status") for item in items]
     if statuses.count("active") != 7 or statuses.count("retired") != 2:
         errors.append("Dataset must contain 7 active and 2 retired achievements.")
 
