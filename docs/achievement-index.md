@@ -6,20 +6,20 @@ This index distinguishes currently earnable achievements from retired or limited
 
 | Achievement | Primary action | Tiered | Guide status |
 |---|---|---:|---|
-| Pull Shark | Have pull requests merged | Yes | Published |
-| Quickdraw | Close an issue or pull request shortly after opening it | No | Published |
-| YOLO | Merge a pull request without review | No | Published |
-| Pair Extraordinaire | Co-author commits in merged pull requests | Yes | Published |
-| Galaxy Brain | Receive accepted answers in GitHub Discussions | Yes | Published |
-| Starstruck | Own a repository that receives stars | Yes | Published |
-| Public Sponsor | Publicly sponsor open-source work through GitHub Sponsors | No | Published |
+| [Pull Shark](achievements/pull-shark.md) | Have pull requests merged | Yes | Standardised |
+| [Quickdraw](quickdraw.md) | Close an issue or pull request shortly after opening it | No | Standardised |
+| [YOLO](achievements/yolo.md) | Merge a pull request without review | No | Standardised |
+| [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | Co-author commits in merged pull requests | Yes | Standardised |
+| [Galaxy Brain](achievements/galaxy-brain.md) | Receive accepted answers in GitHub Discussions | Yes | Standardised |
+| [Starstruck](achievements/starstruck.md) | Own a repository that receives stars | Yes | Standardised |
+| [Public Sponsor](achievements/public-sponsor.md) | Publicly sponsor open-source work through GitHub Sponsors | No | Standardised |
 
 ## Retired or restricted achievements
 
-| Achievement | Historical trigger | Current status |
-|---|---|---|
-| Arctic Code Vault Contributor | Contributed to qualifying repositories included in the 2020 archive | Retired |
-| Mars 2020 Contributor | Contributed to repositories used by the Mars 2020 mission | Retired |
+| Achievement | Historical trigger | Current status | Guide status |
+|---|---|---|---|
+| [Arctic Code Vault Contributor](arctic-code-vault-contributor.md) | Contributed to qualifying repositories included in the 2020 archive | Retired | Standardised |
+| [Mars 2020 Contributor](mars-2020-contributor.md) | Contributed to repositories used by the Mars 2020 mission | Retired | Standardised |
 
 ## Evidence labels
 
@@ -29,10 +29,14 @@ This index distinguishes currently earnable achievements from retired or limited
 - **Community-reported:** reported by third parties without adequate independent confirmation.
 - **Unknown:** insufficient evidence for a reliable claim.
 
-## Contribution priorities
+## Phase 13 status
 
-1. Add precise verification dates to achievement guides.
-2. Separate official rules from community-reported tier thresholds.
-3. Record awarding delays and known attribution conditions.
+All seven active guides and both retired guides now follow the achievement guide standard. Numerical claims not published by GitHub remain explicitly classified, each guide includes a verification date, and the index provides a canonical route to every guide.
+
+## Ongoing maintenance priorities
+
+1. Reverify achievement behaviour when GitHub changes profile or contribution systems.
+2. Preserve the distinction between official rules and community-reported thresholds.
+3. Record awarding delays and attribution conditions with dated evidence.
 4. Add accessible screenshots only when they materially improve verification.
 5. Correct outdated claims through traceable pull requests.

@@ -1,46 +1,43 @@
 # Achievement Guide Audit
 
-This audit establishes the Phase 13 upgrade order for the seven active guides listed in the achievement index.
+This audit records the completed Phase 13 standardisation programme for the GitHub Achievement Encyclopedia.
 
 ## Audit criteria
 
 A guide is assessed against the required sections in [Achievement Guide Standard](achievement-guide-standard.md): summary, trigger, progression, eligibility, timing, verification, evidence status, edge cases, troubleshooting, responsible participation, history, references, and last-verified date.
 
-## Current audit
+## Completed audit
 
-| Guide | Published | Tiered | Standardisation priority | Primary gaps to resolve |
-|---|---:|---:|---|---|
-| Pull Shark | Yes | Yes | Critical | Evidence labels for thresholds, eligibility detail, award timing, troubleshooting, history, references, last-verified date |
-| Quickdraw | Yes | No | High | Precise timing evidence, eligibility conditions, edge cases, troubleshooting, references, last-verified date |
-| YOLO | Yes | No | High | Review-state definition, merge-method edge cases, evidence status, troubleshooting, references, last-verified date |
-| Pair Extraordinaire | Yes | Yes | Critical | Co-author attribution rules, tier evidence, eligibility conditions, timing, troubleshooting, references |
-| Galaxy Brain | Yes | Yes | Critical | Accepted-answer mechanics, tier evidence, discussion eligibility, timing, edge cases, references |
-| Starstruck | Yes | Yes | Critical | Ownership and transfer conditions, tier evidence, repository visibility, timing, edge cases, references |
-| Public Sponsor | Yes | No | High | Public-status requirements, sponsorship lifecycle, privacy limits, timing, references, last-verified date |
+| Guide | Status | Tiered | Standardised | Verification date |
+|---|---|---:|---:|---|
+| Pull Shark | Active | Yes | Yes | 19 July 2026 |
+| Pair Extraordinaire | Active | Yes | Yes | 19 July 2026 |
+| Galaxy Brain | Active | Yes | Yes | 19 July 2026 |
+| Starstruck | Active | Yes | Yes | 19 July 2026 |
+| Quickdraw | Active | No | Yes | 19 July 2026 |
+| YOLO | Active | No | Yes | 19 July 2026 |
+| Public Sponsor | Active | No | Yes | 19 July 2026 |
+| Arctic Code Vault Contributor | Retired | No | Yes | 19 July 2026 |
+| Mars 2020 Contributor | Retired | No | Yes | 19 July 2026 |
 
-## Upgrade sequence
+## Completed pull-request sequence
 
-1. Pull Shark
-2. Pair Extraordinaire
-3. Galaxy Brain
-4. Starstruck
-5. Quickdraw
-6. YOLO
-7. Public Sponsor
+1. Defined the guide standard and baseline audit.
+2. Standardised all seven active achievement guides through focused pull requests.
+3. Added standardised historical guides for both retired achievements.
+4. Reconciled the canonical achievement index and navigation.
+5. Recorded Phase 13 completion and future maintenance requirements.
 
-Tiered guides are prioritised because they carry more numerical claims and therefore require clearer evidence classification.
+## Evidence controls retained
 
-## Pull request boundaries
+- Official GitHub documentation takes precedence over community reports.
+- Undocumented thresholds remain labelled community-reported.
+- Screenshots support observations but do not independently prove causation.
+- Conflicting evidence remains visible until resolved.
+- Private repository data, billing information, and personal account details must be redacted.
 
-Each guide should be upgraded through its own focused pull request. A guide pull request should:
+## Phase 13 completion status
 
-- limit changes to that guide and directly related index links;
-- preserve unresolved uncertainty rather than guessing;
-- identify which claims are official and which remain community-reported;
-- pass repository link validation;
-- include a verification date;
-- avoid unrelated visual or wording changes.
+**Complete as of 19 July 2026.**
 
-## Phase 13 completion criteria
-
-Phase 13 is complete when all seven active guides conform to the standard, the achievement index links to every guide, and each guide has a current verification date and explicit evidence classifications.
+All indexed achievement guides conform to the standard, carry explicit evidence classifications and verification dates, and are reachable through the canonical index. Future changes are maintenance or new-scope work rather than unfinished Phase 13 standardisation.
