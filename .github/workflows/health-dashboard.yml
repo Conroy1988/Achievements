@@ -1,0 +1,108 @@
+name: Repository health dashboard
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_health_dashboard.py'
+      - 'scripts/build_source_inventory.py'
+      - 'scripts/check_verification_dates.py'
+      - 'docs/health-dashboard.md'
+      - 'api/status.json'
+      - '.github/workflows/health-dashboard.yml'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '41 6 * * 1'
+
+permissions:
+  contents: read
+  actions: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  validate:
+    name: Generate health preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Generate preview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/build_health_dashboard.py \
+            --markdown _artifacts/health-dashboard.md \
+            --json _artifacts/status.json
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-health-preview
+          path: _artifacts
+          retention-days: 14
+
+  initialise:
+    name: Record Phase 29 baseline
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-29/health-dashboard'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Check out Phase 29 branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Generate initial public dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [[ -f docs/health-dashboard.md && -f api/status.json ]]; then
+            echo 'Health baseline already exists.'
+            exit 0
+          fi
+          python scripts/build_health_dashboard.py
+      - name: Commit baseline
+        run: |
+          if [[ -z "$(git status --porcelain -- docs/health-dashboard.md api/status.json)" ]]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/health-dashboard.md api/status.json
+          git commit -m 'Phase 29: record repository health baseline'
+          git push
+
+  publish:
+    name: Refresh public health dashboard
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Generate public dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_health_dashboard.py
+      - name: Commit refreshed dashboard
+        run: |
+          if [[ -z "$(git status --porcelain -- docs/health-dashboard.md api/status.json)" ]]; then
+            echo 'Dashboard is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/health-dashboard.md api/status.json
+          git commit -m 'Refresh repository health dashboard'
+          git push
