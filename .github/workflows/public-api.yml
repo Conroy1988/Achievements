@@ -45,3 +45,41 @@ jobs:
             public-api-validation.log
           if-no-files-found: warn
           retention-days: 30
+
+  initialise:
+    name: Generate Phase 39 API discovery
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-39/v1.2.0-research-release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out Phase 39 branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Generate expanded API once
+        run: |
+          if python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('api/index.json')
+          if not path.exists():
+              raise SystemExit(1)
+          endpoints = json.loads(path.read_text())['endpoints']
+          raise SystemExit(0 if {'evidence', 'timelines', 'research_queue'} <= set(endpoints) else 1)
+          PY
+          then
+            echo 'Expanded API discovery already exists.'
+            exit 0
+          fi
+          python scripts/build_public_api.py
+      - name: Commit generated API
+        run: |
+          if [[ -z "$(git status --porcelain -- api)" ]]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add api
+          git commit -m 'Phase 39: regenerate expanded public API'
+          git push
