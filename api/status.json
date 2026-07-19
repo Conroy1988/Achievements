@@ -1,22 +1,22 @@
 {
   "api_status": "live",
-  "generated_at": "2026-07-19T11:16:06Z",
+  "generated_at": "2026-07-19T11:31:02Z",
   "health": {
     "label": "Healthy",
     "score": 86
   },
-  "latest_successful_audit": "2026-07-19T11:03:13Z",
+  "latest_successful_audit": "2026-07-19T11:16:58Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
     },
     "guides": 9,
-    "markdown_files": 183,
+    "markdown_files": 185,
     "source_stability": {
       "High": 18,
-      "Medium": 17
+      "Medium": 22
     },
-    "sources": 35,
+    "sources": 40,
     "visual_baselines": 10
   },
   "open": {
