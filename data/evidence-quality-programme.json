@@ -1,0 +1,332 @@
+{
+  "schema_version": "1.0.0",
+  "programme_date": "2026-07-19",
+  "policy": "docs/evidence-adjudication-engine.md",
+  "phases": [
+    {"number": 52, "name": "Event-linked evidence collector", "status": "complete"},
+    {"number": 53, "name": "Threshold boundary programme", "status": "complete"},
+    {"number": 54, "name": "Evidence adjudication engine", "status": "complete"},
+    {"number": 55, "name": "Contradiction resolution programme", "status": "complete"},
+    {"number": 56, "name": "Evidence quality release gate", "status": "implemented-release-blocked"}
+  ],
+  "event_evidence": [
+    {
+      "id": "EVT-2026-001",
+      "achievement_slug": "quickdraw",
+      "claim_ids": ["CLM-003"],
+      "event_type": "issue-closure",
+      "event_url": "https://github.com/Conroy1988/Achievements/issues/1",
+      "subject_login": "Conroy1988",
+      "created_at": "2026-07-18T18:40:37Z",
+      "completed_at": "2026-07-18T18:40:41Z",
+      "elapsed_seconds": 4,
+      "public_facts": [
+        "The issue was opened and closed by the same public account.",
+        "The public timestamps show a four-second creation-to-closure interval."
+      ],
+      "award_link": "participant-reported-visible",
+      "adjudication_status": "candidate-observed",
+      "independent_account_count": 1,
+      "limitations": [
+        "The participant report is not an independently captured public achievement-detail record.",
+        "A four-second result does not establish the maximum qualifying time window."
+      ]
+    },
+    {
+      "id": "EVT-2026-002",
+      "achievement_slug": "yolo",
+      "claim_ids": ["CLM-004"],
+      "event_type": "pull-request-merge",
+      "event_url": "https://github.com/Conroy1988/Achievements/pull/2",
+      "subject_login": "Conroy1988",
+      "created_at": "2026-07-18T18:41:27Z",
+      "completed_at": "2026-07-18T18:41:41Z",
+      "elapsed_seconds": 14,
+      "public_facts": [
+        "The pull request was authored by Conroy1988 and merged into main.",
+        "The public discussion timeline contains no issue comments, inline review comments, or review submissions."
+      ],
+      "award_link": "participant-reported-visible-within-ten-minutes",
+      "adjudication_status": "candidate-observed",
+      "independent_account_count": 1,
+      "limitations": [
+        "The public connector output does not identify the merging actor.",
+        "One no-review event does not resolve comment-only, changes-requested, or approved-review controls."
+      ]
+    },
+    {
+      "id": "EVT-2026-003",
+      "achievement_slug": "pull-shark",
+      "claim_ids": ["CLM-001", "CLM-002"],
+      "event_type": "pull-request-merge",
+      "event_url": "https://github.com/Conroy1988/Achievements/pull/231",
+      "subject_login": "Conroy1988",
+      "created_at": "2026-07-19T18:11:55Z",
+      "completed_at": "2026-07-19T18:13:54Z",
+      "elapsed_seconds": 119,
+      "public_facts": [
+        "The pull request was authored by Conroy1988 and merged into main.",
+        "The change added ten files and more than one thousand lines of substantive evidence infrastructure."
+      ],
+      "award_link": "participant-reported-not-visible-as-of-2026-07-19",
+      "adjudication_status": "negative-inconclusive",
+      "independent_account_count": 1,
+      "limitations": [
+        "Absence from the visible profile may reflect processing delay rather than non-qualification.",
+        "The event does not expose GitHub's internal attributed Pull Shark count."
+      ]
+    },
+    {
+      "id": "EVT-2026-004",
+      "achievement_slug": "pull-shark",
+      "claim_ids": ["CLM-001", "CLM-002"],
+      "event_type": "pull-request-merge",
+      "event_url": "https://github.com/Team-Killing-Bastards/TKB-Discord-Bot/pull/12",
+      "subject_login": "Conroy1988",
+      "created_at": "2026-07-19T18:14:39Z",
+      "completed_at": "2026-07-19T18:15:47Z",
+      "elapsed_seconds": 68,
+      "public_facts": [
+        "The pull request was authored by Conroy1988 and merged into the organisation repository's main branch.",
+        "The pull request delivered a substantive HTTPS reverse-proxy security upgrade."
+      ],
+      "award_link": "participant-reported-not-visible-as-of-2026-07-19",
+      "adjudication_status": "negative-inconclusive",
+      "independent_account_count": 1,
+      "limitations": [
+        "The observation does not prove how organisation-owned repositories are counted internally.",
+        "The profile state was reported before a full processing-delay window elapsed."
+      ]
+    },
+    {
+      "id": "EVT-2026-005",
+      "achievement_slug": "pull-shark",
+      "claim_ids": ["CLM-001", "CLM-002"],
+      "event_type": "pull-request-merge",
+      "event_url": "https://github.com/Conroy1988/uk-fire-command/pull/37",
+      "subject_login": "Conroy1988",
+      "created_at": "2026-07-19T15:59:05Z",
+      "completed_at": "2026-07-19T16:06:29Z",
+      "elapsed_seconds": 444,
+      "public_facts": [
+        "The pull request was authored by Conroy1988 and merged into main.",
+        "The change fixed development LAN access and stale PWA caching."
+      ],
+      "award_link": "participant-reported-not-visible-as-of-2026-07-19",
+      "adjudication_status": "negative-inconclusive",
+      "independent_account_count": 1,
+      "limitations": [
+        "One public merge cannot establish a cumulative tier boundary.",
+        "The profile state was reported before the scheduled 72-hour follow-up."
+      ]
+    }
+  ],
+  "boundary_programmes": [
+    {
+      "id": "BND-001",
+      "achievement_slug": "pull-shark",
+      "claim_id": "CLM-002",
+      "reported_boundaries": [2, 16, 128, 1024],
+      "unit": "qualifying merged pull requests",
+      "observation_ids": ["OBS-2026-007", "OBS-2026-008"],
+      "status": "blocked-missing-attributed-counts",
+      "next_evidence": "Capture independently attributed exact counts immediately below and at each visible tier transition."
+    },
+    {
+      "id": "BND-002",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_id": "CLM-006",
+      "reported_boundaries": [1, 10, 24, 48],
+      "unit": "qualifying merged pull requests",
+      "observation_ids": ["OBS-2026-006"],
+      "status": "blocked-missing-coauthor-counts",
+      "next_evidence": "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
+    },
+    {
+      "id": "BND-003",
+      "achievement_slug": "galaxy-brain",
+      "claim_id": "CLM-008",
+      "reported_boundaries": [2, 8, 16, 32],
+      "unit": "accepted answers",
+      "observation_ids": ["OBS-2026-009", "OBS-2026-010"],
+      "status": "blocked-missing-accepted-answer-counts",
+      "next_evidence": "Capture exact accepted-answer totals and public tier states around each proposed transition."
+    },
+    {
+      "id": "BND-004",
+      "achievement_slug": "starstruck",
+      "claim_id": "CLM-010",
+      "reported_boundaries": [16, 128, 512, 4096],
+      "unit": "repository stars",
+      "observation_ids": ["OBS-2026-001", "OBS-2026-002", "OBS-2026-003"],
+      "status": "bracketed-not-confirmed",
+      "current_bracket": {
+        "lower_display": "2.1k stars with x3",
+        "upper_display": "5.1k stars with x4",
+        "reported_x4_boundary": 4096
+      },
+      "next_evidence": "Obtain exact unrounded star totals immediately below and above the x4 transition with ownership and timing controls."
+    },
+    {
+      "id": "BND-005",
+      "achievement_slug": "quickdraw",
+      "claim_id": "CLM-003",
+      "reported_boundaries": [300],
+      "unit": "seconds after creation",
+      "event_ids": ["EVT-2026-001"],
+      "status": "one-sided-observation",
+      "next_evidence": "Run independent positive and negative controls immediately around the proposed five-minute boundary."
+    }
+  ],
+  "adjudication_rules": [
+    {
+      "id": "ADJ-R01",
+      "transition": "community-reported-to-observed",
+      "requirements": [
+        "At least two independent public observations, or one public event linked by GitHub to its achievement detail.",
+        "Material timestamps and attribution are retained.",
+        "No unresolved contradiction directly defeats the promoted statement."
+      ]
+    },
+    {
+      "id": "ADJ-R02",
+      "transition": "observed-to-confirmed",
+      "requirements": [
+        "Controlled reproduction on at least two independent accounts.",
+        "Positive and relevant negative controls are documented.",
+        "Two reviewers agree and disclose conflicts.",
+        "Processing delay is measured rather than assumed."
+      ]
+    },
+    {
+      "id": "ADJ-R03",
+      "transition": "any-to-official",
+      "requirements": [
+        "A maintained or preserved GitHub-owned source explicitly states the material contract."
+      ]
+    },
+    {
+      "id": "ADJ-R04",
+      "transition": "attestation-limits",
+      "requirements": [
+        "Participant attestation alone cannot promote a claim.",
+        "A badge sighting alone cannot prove an exact threshold or qualifying event."
+      ]
+    },
+    {
+      "id": "ADJ-R05",
+      "transition": "negative-and-inconclusive-evidence",
+      "requirements": [
+        "Negative and inconclusive observations remain visible.",
+        "They may narrow a claim but cannot be silently discarded or treated as proof of non-qualification."
+      ]
+    }
+  ],
+  "adjudication_decisions": [
+    {
+      "id": "ADJ-D001",
+      "claim_id": "CLM-003",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "The four-second public issue event and participant-reported award are useful but lack an independent public achievement-detail capture and boundary controls."
+    },
+    {
+      "id": "ADJ-D002",
+      "claim_id": "CLM-004",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "The no-review PR event and participant report are not sufficient to establish merger identity, causality, or the effect of alternate formal review states."
+    },
+    {
+      "id": "ADJ-D003",
+      "claim_id": "CLM-002",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "Visible x3 and x4 tiers lack exact attributed qualifying counts."
+    },
+    {
+      "id": "ADJ-D004",
+      "claim_id": "CLM-006",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "The x4 sighting lacks final-history co-author counts and merge-method controls."
+    },
+    {
+      "id": "ADJ-D005",
+      "claim_id": "CLM-008",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "The x2 and x4 sightings lack exact accepted-answer totals."
+    },
+    {
+      "id": "ADJ-D006",
+      "claim_id": "CLM-010",
+      "decision": "defer",
+      "current_level": "community-reported",
+      "proposed_level": "observed",
+      "reason": "The x3-to-x4 bracket is informative, but rounded star displays and ownership edge cases prevent exact threshold confirmation."
+    }
+  ],
+  "contradiction_assessments": [
+    {
+      "contradiction_id": "CTR-001",
+      "outcome": "narrowed",
+      "basis_ids": ["EVT-2026-001", "BND-005"],
+      "remaining_question": "What is the maximum qualifying interval and do issue closure and pull-request closure behave identically?"
+    },
+    {
+      "contradiction_id": "CTR-002",
+      "outcome": "narrowed",
+      "basis_ids": ["EVT-2026-002"],
+      "remaining_question": "Do comment-only and changes-requested review objects prevent the award, and must the author also be the merger?"
+    },
+    {
+      "contradiction_id": "CTR-003",
+      "outcome": "still-disputed",
+      "basis_ids": ["BND-001", "EVT-2026-003", "EVT-2026-004", "EVT-2026-005"],
+      "remaining_question": "Which merged PRs GitHub attributes internally and where each exact tier boundary lies."
+    },
+    {
+      "contradiction_id": "CTR-004",
+      "outcome": "still-disputed",
+      "basis_ids": ["BND-002"],
+      "remaining_question": "How squash, rebase, merge commits, email matching, and rewritten history affect final attribution."
+    },
+    {
+      "contradiction_id": "CTR-005",
+      "outcome": "still-disputed",
+      "basis_ids": ["BND-003"],
+      "remaining_question": "Exact accepted-answer totals immediately around each displayed tier."
+    },
+    {
+      "contradiction_id": "CTR-006",
+      "outcome": "narrowed",
+      "basis_ids": ["BND-004"],
+      "remaining_question": "The exact star boundaries and persistence across ownership transfer, forks, archival, and falling counts."
+    }
+  ],
+  "release_gate": {
+    "candidate_version": "v1.4.0",
+    "status": "blocked",
+    "current_snapshot": {
+      "coverage_score": 54.6,
+      "official_or_confirmed_claims": 5,
+      "claims_below_confirmed": 8,
+      "open_contradictions": 6,
+      "operational_health_target": 100
+    },
+    "required_snapshot": {
+      "minimum_coverage_score": 70.0,
+      "minimum_official_or_confirmed_claims": 8,
+      "maximum_claims_below_confirmed": 5,
+      "maximum_open_contradictions": 3,
+      "required_operational_health": 100
+    },
+    "publication_rule": "Do not create the v1.4.0 tag or GitHub Release until every evidence and operational gate passes from the merged main branch."
+  }
+}
