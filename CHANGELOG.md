@@ -10,6 +10,9 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 - Evidence road-to-100 campaign with claim-specific gates for confirmed and official status.
 - Archived GitHub documentation as preserved primary evidence for retired and historical achievement contracts.
+- Validated public observation corpus containing dated GitHub-owned profile, tier, and repository observations.
+- Fail-closed corpus generator, API endpoint, public documentation, and dedicated GitHub Actions validation.
+- Explicit observation limitations preventing public badge sightings from being mistaken for exact trigger or threshold proof.
 
 ### Changed
 
@@ -17,6 +20,8 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than their broad triggers.
 - Search navigation now exposes the evidence road-to-100 campaign.
+- Public API discovery expanded to include the observation corpus as its twenty-sixth JSON file.
+- Site navigation and API guidance now expose the public observation substrate.
 
 ## v1.3.0 — 2026-07-19
 
