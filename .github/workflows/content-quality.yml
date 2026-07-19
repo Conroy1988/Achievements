@@ -23,8 +23,18 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Run markdownlint
-        run: npx --yes markdownlint-cli2@0.18.1
+        with:
+          fetch-depth: 2
+      - name: Run markdownlint on changed files
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only --diff-filter=ACMR HEAD^ HEAD -- '*.md')
+          if (( ${#files[@]} == 0 )); then
+            echo "No changed Markdown files to validate."
+            exit 0
+          fi
+          printf 'Validating %s\n' "${files[@]}"
+          npx --yes markdownlint-cli2@0.18.1 "${files[@]}"
 
   jekyll:
     name: Jekyll build
