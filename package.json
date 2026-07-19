@@ -1,0 +1,14 @@
+{
+  "name": "github-achievement-encyclopedia-visual-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "visual:test": "node scripts/visual_regression.mjs",
+    "visual:update": "node scripts/visual_regression.mjs --update"
+  },
+  "devDependencies": {
+    "pixelmatch": "7.1.0",
+    "playwright": "1.53.2",
+    "pngjs": "7.0.0"
+  }
+}
