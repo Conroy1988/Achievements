@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-07-19T23:39:31Z",
+  "source_classification": "github-owned-live-product-fragment",
+  "endpoint_template": "https://github.com/users/{login}/achievements/{slug}/detail?hovercard=1",
+  "records": [
+    {
+      "id": "GAF-2026-001",
+      "achievement_slug": "quickdraw",
+      "subject_login": "Schweinepriester",
+      "detail_url": "https://github.com/users/Schweinepriester/achievements/quickdraw/detail?hovercard=1",
+      "displayed_tier": "base",
+      "criterion_text": "Closed within 5 minutes of opening",
+      "milestones": [5],
+      "milestone_unit": "minutes",
+      "claim_ids": ["CLM-003"],
+      "resolves_contradiction_ids": ["CTR-001"],
+      "normalized_text_sha256": "31c53dfa3d0204a5c0ce7f593687facca5d72ba21f2130db7806cf03f9fdeb1b",
+      "event_urls": ["https://github.com/Schweinepriester/achievement-testarea/pull/5"],
+      "limitations": [
+        "The fragment does not separately enumerate issue and pull-request object types.",
+        "Award-processing delay remains separate from the qualifying interval."
+      ]
+    },
+    {
+      "id": "GAF-2026-002",
+      "achievement_slug": "yolo",
+      "subject_login": "Schweinepriester",
+      "detail_url": "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1",
+      "displayed_tier": "base",
+      "criterion_text": "Merged without a review",
+      "milestones": [],
+      "milestone_unit": null,
+      "claim_ids": ["CLM-004"],
+      "resolves_contradiction_ids": [],
+      "normalized_text_sha256": "cd8ad4e09c19927d3f2634a8c1e8b2859d433f355d800f2f38183e556028b1b1",
+      "event_urls": ["https://github.com/Schweinepriester/achievement-testarea/pull/4"],
+      "limitations": [
+        "The fragment does not enumerate alternate formal review-state edge cases.",
+        "The tagline suggests self-merge semantics but exposes no structured merging-actor field."
+      ]
+    },
+    {
+      "id": "GAF-2026-003",
+      "achievement_slug": "pair-extraordinaire",
+      "subject_login": "Schweinepriester",
+      "detail_url": "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1",
+      "displayed_tier": "x3",
+      "criterion_text": "coauthored commits on merged pull requests",
+      "milestones": [],
+      "milestone_unit": null,
+      "claim_ids": ["CLM-005"],
+      "resolves_contradiction_ids": [],
+      "normalized_text_sha256": "cb797108153cf4a4b64fde20c4394c2925f7585e6397bfbfec554670a6837e10",
+      "event_urls": [
+        "https://github.com/Fyrd/caniuse/pull/6271",
+        "https://github.com/Fyrd/caniuse/pull/7306"
+      ],
+      "limitations": [
+        "The fragment does not publish numerical tier thresholds.",
+        "Squash, rebase, email-mismatch and rewritten-history behaviour remain undocumented."
+      ]
+    },
+    {
+      "id": "GAF-2026-004",
+      "achievement_slug": "pull-shark",
+      "subject_login": "ljharb",
+      "detail_url": "https://github.com/users/ljharb/achievements/pull-shark/detail?hovercard=1",
+      "displayed_tier": "x4",
+      "criterion_text": "opened pull requests that have been merged",
+      "milestones": [2, 16, 128, 1024],
+      "milestone_unit": "merged pull requests",
+      "claim_ids": ["CLM-001", "CLM-002"],
+      "resolves_contradiction_ids": ["CTR-003"],
+      "normalized_text_sha256": "ea1beea37817b3272e4f627734deb87ea122bbcb91f146dc3418a4b8674fdb73",
+      "event_urls": [
+        "https://github.com/dcneiner/In-Field-Labels-jQuery-Plugin/pull/7",
+        "https://github.com/paulmillr/es6-shim/pull/40",
+        "https://github.com/paulmillr/es6-shim/pull/139",
+        "https://github.com/compat-table/compat-table/pull/1807"
+      ],
+      "limitations": [
+        "The fragment does not document every internal attribution filter.",
+        "Processing delay and visibility remain separate from the milestone table."
+      ]
+    },
+    {
+      "id": "GAF-2026-005",
+      "achievement_slug": "galaxy-brain",
+      "subject_login": "ljharb",
+      "detail_url": "https://github.com/users/ljharb/achievements/galaxy-brain/detail?hovercard=1",
+      "displayed_tier": "x4",
+      "criterion_text": "answered discussions",
+      "milestones": [2, 8, 16, 32],
+      "milestone_unit": "accepted answers",
+      "claim_ids": ["CLM-007", "CLM-008"],
+      "resolves_contradiction_ids": ["CTR-005"],
+      "normalized_text_sha256": "e37d3a2261a0189873086dbe9d71a2ab00ea40ee9bfa2a27f569464f48c35353",
+      "event_urls": [
+        "https://github.com/npm/rfcs/discussions/172",
+        "https://github.com/npm/rfcs/discussions/270",
+        "https://github.com/npm/feedback/discussions/314",
+        "https://github.com/npm/feedback/discussions/536"
+      ],
+      "limitations": [
+        "The fragment does not define accepted-answer revocation persistence.",
+        "Other moderation labels and profile-processing delay remain separate questions."
+      ]
+    },
+    {
+      "id": "GAF-2026-006",
+      "achievement_slug": "starstruck",
+      "subject_login": "Schweinepriester",
+      "detail_url": "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1",
+      "displayed_tier": "x4",
+      "criterion_text": "created a repository that has many stars",
+      "milestones": [16, 128, 512, 4096],
+      "milestone_unit": "repository stars",
+      "claim_ids": ["CLM-009", "CLM-010"],
+      "resolves_contradiction_ids": [],
+      "normalized_text_sha256": "56fda9adcb675b5bfe5e317fc4ed5be1aef4e208c856494cfb78040fe7f8240e",
+      "event_urls": ["https://github.com/Schweinepriester/github-profile-achievements"],
+      "limitations": [
+        "The fragment does not publish repository-transfer or organization-ownership behaviour.",
+        "Persistence after archival, forks, transfers or falling star counts remains undocumented."
+      ]
+    }
+  ]
+}
