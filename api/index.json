@@ -34,6 +34,8 @@
     "mission_review_schema": "/Achievements/api/mission-review-schema.json",
     "mission_submission_schema": "/Achievements/api/mission-submission-schema.json",
     "priorities": "/Achievements/api/priorities.json",
+    "promotion_plan_schema": "/Achievements/api/promotion-plan-schema.json",
+    "promotion_plans": "/Achievements/api/promotion-plans.json",
     "public_observations": "/Achievements/api/public-observations.json",
     "release_readiness": "/Achievements/api/release-readiness.json",
     "research_queue": "/Achievements/api/research-queue.json",
