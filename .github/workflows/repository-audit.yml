@@ -1,0 +1,62 @@
+name: Unified repository audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '53 5 * * 1'
+
+permissions:
+  contents: read
+  actions: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  audit:
+    name: Complete repository audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Ruby and GitHub Pages dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser dependencies
+        run: npm install --no-package-lock
+      - name: Install Chromium
+        run: |
+          if ! npx playwright install --with-deps chromium > /tmp/playwright-install.log 2>&1; then
+            cat /tmp/playwright-install.log
+            exit 1
+          fi
+          tail -n 12 /tmp/playwright-install.log
+      - name: Run one authoritative audit command
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/repository_audit.py \
+            --markdown repository-audit.md \
+            --json repository-audit.json \
+            --artifacts audit-artifacts
+      - name: Upload consolidated audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-audit
+          path: |
+            repository-audit.md
+            repository-audit.json
+            audit-artifacts
+            search-test-results
+            visual-results
+          if-no-files-found: warn
+          retention-days: 30
