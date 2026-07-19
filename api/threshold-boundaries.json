@@ -1,0 +1,99 @@
+{
+  "api_version": "1.0.0",
+  "count": 5,
+  "generated_from": "data/evidence-quality-programme.json",
+  "programmes": [
+    {
+      "achievement_slug": "pull-shark",
+      "claim_id": "CLM-002",
+      "id": "BND-001",
+      "next_evidence": "Capture independently attributed exact counts immediately below and at each visible tier transition.",
+      "observation_ids": [
+        "OBS-2026-007",
+        "OBS-2026-008"
+      ],
+      "reported_boundaries": [
+        2,
+        16,
+        128,
+        1024
+      ],
+      "status": "blocked-missing-attributed-counts",
+      "unit": "qualifying merged pull requests"
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "claim_id": "CLM-006",
+      "id": "BND-002",
+      "next_evidence": "Capture final-history co-author attribution and visible tier state around each merge-method boundary.",
+      "observation_ids": [
+        "OBS-2026-006"
+      ],
+      "reported_boundaries": [
+        1,
+        10,
+        24,
+        48
+      ],
+      "status": "blocked-missing-coauthor-counts",
+      "unit": "qualifying merged pull requests"
+    },
+    {
+      "achievement_slug": "galaxy-brain",
+      "claim_id": "CLM-008",
+      "id": "BND-003",
+      "next_evidence": "Capture exact accepted-answer totals and public tier states around each proposed transition.",
+      "observation_ids": [
+        "OBS-2026-009",
+        "OBS-2026-010"
+      ],
+      "reported_boundaries": [
+        2,
+        8,
+        16,
+        32
+      ],
+      "status": "blocked-missing-accepted-answer-counts",
+      "unit": "accepted answers"
+    },
+    {
+      "achievement_slug": "starstruck",
+      "claim_id": "CLM-010",
+      "current_bracket": {
+        "lower_display": "2.1k stars with x3",
+        "reported_x4_boundary": 4096,
+        "upper_display": "5.1k stars with x4"
+      },
+      "id": "BND-004",
+      "next_evidence": "Obtain exact unrounded star totals immediately below and above the x4 transition with ownership and timing controls.",
+      "observation_ids": [
+        "OBS-2026-001",
+        "OBS-2026-002",
+        "OBS-2026-003"
+      ],
+      "reported_boundaries": [
+        16,
+        128,
+        512,
+        4096
+      ],
+      "status": "bracketed-not-confirmed",
+      "unit": "repository stars"
+    },
+    {
+      "achievement_slug": "quickdraw",
+      "claim_id": "CLM-003",
+      "event_ids": [
+        "EVT-2026-001"
+      ],
+      "id": "BND-005",
+      "next_evidence": "Run independent positive and negative controls immediately around the proposed five-minute boundary.",
+      "reported_boundaries": [
+        300
+      ],
+      "status": "one-sided-observation",
+      "unit": "seconds after creation"
+    }
+  ],
+  "schema_version": "1.0.0"
+}
