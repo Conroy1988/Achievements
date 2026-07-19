@@ -1,0 +1,66 @@
+name: Evidence quality programme
+
+on:
+  pull_request:
+    paths:
+      - 'data/evidence-quality-programme.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'data/public-observations.json'
+      - 'api/coverage.json'
+      - 'scripts/build_evidence_quality_programme.py'
+      - 'api/event-linked-evidence.json'
+      - 'api/threshold-boundaries.json'
+      - 'api/adjudication.json'
+      - 'api/contradiction-assessments.json'
+      - 'api/release-readiness.json'
+      - 'docs/event-linked-evidence.md'
+      - 'docs/threshold-boundary-programme.md'
+      - 'docs/evidence-adjudication-engine.md'
+      - 'docs/contradiction-resolution-programme.md'
+      - 'docs/evidence-quality-release-gate.md'
+      - '.github/workflows/evidence-quality-programme.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/evidence-quality-programme.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'data/public-observations.json'
+      - 'api/coverage.json'
+      - 'scripts/build_evidence_quality_programme.py'
+      - 'api/event-linked-evidence.json'
+      - 'api/threshold-boundaries.json'
+      - 'api/adjudication.json'
+      - 'api/contradiction-assessments.json'
+      - 'api/release-readiness.json'
+      - 'docs/event-linked-evidence.md'
+      - 'docs/threshold-boundary-programme.md'
+      - 'docs/evidence-adjudication-engine.md'
+      - 'docs/contradiction-resolution-programme.md'
+      - 'docs/evidence-quality-release-gate.md'
+      - '.github/workflows/evidence-quality-programme.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate evidence quality programme
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Validate programme and generated outputs
+        run: |
+          python scripts/build_evidence_quality_programme.py --check --report evidence-quality-programme-report.md
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: evidence-quality-programme-validation
+          path: evidence-quality-programme-report.md
+          if-no-files-found: warn
+          retention-days: 30
