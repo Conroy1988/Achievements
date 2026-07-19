@@ -1,0 +1,76 @@
+name: Evidence register
+
+on:
+  pull_request:
+    paths:
+      - 'data/evidence-register.json'
+      - 'data/evidence-record.schema.json'
+      - 'docs/evidence-register.md'
+      - 'docs/evidence-register-policy.md'
+      - 'api/evidence.json'
+      - 'scripts/build_evidence_register.py'
+      - '.github/workflows/evidence-register.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/evidence-register.json'
+      - 'data/evidence-record.schema.json'
+      - 'docs/evidence-register.md'
+      - 'docs/evidence-register-policy.md'
+      - 'api/evidence.json'
+      - 'scripts/build_evidence_register.py'
+      - '.github/workflows/evidence-register.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate public evidence register
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Validate records and generated outputs
+        run: python scripts/build_evidence_register.py --check --report evidence-register-report.md
+      - name: Upload evidence validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: evidence-register-validation
+          path: evidence-register-report.md
+          if-no-files-found: warn
+          retention-days: 30
+
+  initialise:
+    name: Generate Phase 35 register outputs
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-35/public-evidence-register'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out Phase 35 branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Generate register outputs
+        run: |
+          if [[ -f docs/evidence-register.md && -f api/evidence.json ]]; then
+            echo 'Evidence outputs already exist.'
+            exit 0
+          fi
+          python scripts/build_evidence_register.py
+      - name: Commit generated outputs
+        run: |
+          if [[ -z "$(git status --porcelain -- docs/evidence-register.md api/evidence.json)" ]]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidence-register.md api/evidence.json
+          git commit -m 'Phase 35: generate public evidence register'
+          git push
