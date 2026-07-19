@@ -7,9 +7,9 @@ description: Live operational health, verification freshness, automation status,
 
 ## Repository health dashboard
 
-**Overall health:** 86/100 — **Healthy**
+**Overall health:** 88/100 — **Healthy**
 
-Generated at **2026-07-19 12:21:53 UTC** from repository data and the GitHub API.
+Generated at **2026-07-19 12:36:32 UTC** from repository data and the GitHub API.
 
 ## Current operating state
 
@@ -20,11 +20,11 @@ Generated at **2026-07-19 12:21:53 UTC** from repository data and the GitHub API
 | Review due soon | 0 |
 | Overdue guides | 0 |
 | Invalid verification records | 0 |
-| Tracked Markdown files | 185 |
+| Tracked Markdown files | 187 |
 | External source URLs | 40 |
 | Visual baselines | 10 |
 | Open issues | 0 |
-| Open pull requests | 1 |
+| Open pull requests | 0 |
 
 ## Automation status
 
@@ -36,7 +36,7 @@ Generated at **2026-07-19 12:21:53 UTC** from repository data and the GitHub API
 | Verification release | Success |
 | Visual regression | Success |
 
-Latest successful tracked audit: **2026-07-19 11:40:43 UTC**.
+Latest successful tracked audit: **2026-07-19 12:22:43 UTC**.
 
 ## Source resilience
 
