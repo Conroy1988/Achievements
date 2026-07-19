@@ -100,7 +100,7 @@ try {
   const missionBoardHref = await page.locator('[data-result-slug="targeted-evidence-missions"] h3 a').getAttribute('href');
   assert.equal(missionBoardHref, '/Achievements/targeted-evidence-missions/');
 
-  await page.locator('#search-query').fill('mission packet');
+  await page.locator('#search-query').fill('mission triage');
   await expectCount(page, 1, 'mission intake query');
   const missionIntakeHref = await page.locator('[data-result-slug="mission-execution-intake"] h3 a').getAttribute('href');
   assert.equal(missionIntakeHref, '/Achievements/mission-execution-intake/');
