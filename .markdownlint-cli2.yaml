@@ -1,15 +1,17 @@
 config:
-  default: true
-  MD013: false
-  MD024:
-    siblings_only: true
-  MD033:
-    allowed_elements:
-      - details
-      - summary
-      - kbd
-      - br
-  MD041: false
+  default: false
+  MD001: true
+  MD003:
+    style: atx
+  MD009: true
+  MD010: true
+  MD012: true
+  MD022: true
+  MD023: true
+  MD025: true
+  MD031: true
+  MD032: true
+  MD040: true
 ignores:
   - "_site/**"
   - "vendor/**"
