@@ -10,10 +10,10 @@
       "declared_priority": "critical",
       "status": "open",
       "good_first_issue": false,
-      "score": 95,
+      "score": 85,
       "score_components": {
         "declared_priority": 40,
-        "evidence_weakness": 25,
+        "evidence_weakness": 15,
         "open_dispute": 20,
         "active_scope": 10,
         "good_first_issue": 0,
@@ -34,10 +34,10 @@
       "declared_priority": "critical",
       "status": "open",
       "good_first_issue": false,
-      "score": 95,
+      "score": 85,
       "score_components": {
         "declared_priority": 40,
-        "evidence_weakness": 25,
+        "evidence_weakness": 15,
         "open_dispute": 20,
         "active_scope": 10,
         "good_first_issue": 0,
@@ -125,30 +125,6 @@
       "rank": 5
     },
     {
-      "task_id": "RSH-009",
-      "title": "Reproduce Pair Extraordinaire merge attribution",
-      "achievement_slug": "pair-extraordinaire",
-      "declared_priority": "high",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 75,
-      "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 25,
-        "open_dispute": 10,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-005"
-      ],
-      "contradiction_ids": [
-        "CTR-004"
-      ],
-      "rank": 6
-    },
-    {
       "task_id": "RSH-010",
       "title": "Verify Pair Extraordinaire tier thresholds",
       "achievement_slug": "pair-extraordinaire",
@@ -166,6 +142,30 @@
       },
       "claim_ids": [
         "CLM-006"
+      ],
+      "contradiction_ids": [
+        "CTR-004"
+      ],
+      "rank": 6
+    },
+    {
+      "task_id": "RSH-009",
+      "title": "Reproduce Pair Extraordinaire merge attribution",
+      "achievement_slug": "pair-extraordinaire",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 65,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 15,
+        "open_dispute": 10,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-005"
       ],
       "contradiction_ids": [
         "CTR-004"

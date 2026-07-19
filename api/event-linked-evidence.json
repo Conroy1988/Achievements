@@ -1,6 +1,6 @@
 {
   "api_version": "1.0.0",
-  "count": 5,
+  "count": 11,
   "events": [
     {
       "achievement_slug": "quickdraw",
@@ -124,10 +124,155 @@
         "The change fixed development LAN access and stale PWA caching."
       ],
       "subject_login": "Conroy1988"
+    },
+    {
+      "achievement_slug": "quickdraw",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-003"
+      ],
+      "completed_at": "2016-01-26T12:41:20Z",
+      "created_at": "2016-01-26T12:41:15Z",
+      "elapsed_seconds": 5,
+      "event_type": "pull-request-close-and-merge",
+      "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
+      "id": "EVT-2026-006",
+      "independent_account_count": 2,
+      "limitations": [
+        "The anonymous achievement fragment does not expose the contributing event.",
+        "The event does not establish the maximum qualifying interval."
+      ],
+      "public_facts": [
+        "The pull request was authored by Schweinepriester and merged into master five seconds after creation.",
+        "The pull request has no submitted formal reviews and the account publicly displays Quickdraw."
+      ],
+      "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "quickdraw",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-003"
+      ],
+      "completed_at": "2023-11-17T14:10:08Z",
+      "created_at": "2023-11-17T14:09:59Z",
+      "elapsed_seconds": 9,
+      "event_type": "pull-request-close-and-merge",
+      "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
+      "id": "EVT-2026-007",
+      "independent_account_count": 2,
+      "limitations": [
+        "The anonymous achievement fragment does not expose the contributing event.",
+        "The event does not establish issue equivalence or the maximum interval."
+      ],
+      "public_facts": [
+        "The pull request was authored by kmcclosk and merged into main nine seconds after creation.",
+        "The pull request has no submitted formal reviews and the account publicly displays Quickdraw."
+      ],
+      "subject_login": "kmcclosk"
+    },
+    {
+      "achievement_slug": "yolo",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "completed_at": "2016-01-26T12:41:20Z",
+      "created_at": "2016-01-26T12:41:15Z",
+      "elapsed_seconds": 5,
+      "event_type": "pull-request-merge-without-formal-review",
+      "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
+      "id": "EVT-2026-008",
+      "independent_account_count": 2,
+      "limitations": [
+        "The normalized pull-request record does not expose the merging actor.",
+        "Comment-only, changes-requested, dismissed, and approved states are not tested."
+      ],
+      "public_facts": [
+        "The account authored the merged pull request and no formal review was submitted.",
+        "The account publicly displays YOLO."
+      ],
+      "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "yolo",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "completed_at": "2023-11-17T14:10:08Z",
+      "created_at": "2023-11-17T14:09:59Z",
+      "elapsed_seconds": 9,
+      "event_type": "pull-request-merge-without-formal-review",
+      "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
+      "id": "EVT-2026-009",
+      "independent_account_count": 2,
+      "limitations": [
+        "The normalized pull-request record does not expose the merging actor.",
+        "Alternate formal review states are not tested."
+      ],
+      "public_facts": [
+        "The account authored the merged pull request and no formal review was submitted.",
+        "The account publicly displays YOLO."
+      ],
+      "subject_login": "kmcclosk"
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "completed_at": "2025-11-26T18:41:59Z",
+      "created_at": "2025-11-26T18:41:38Z",
+      "elapsed_seconds": 21,
+      "event_type": "coauthored-commit-in-merged-pull-request",
+      "event_url": "https://github.com/devflash101/POC/pull/11",
+      "id": "EVT-2026-010",
+      "independent_account_count": 2,
+      "limitations": [
+        "The exact attributed qualifying count is not public.",
+        "The merge-commit example does not establish squash or rebase behaviour."
+      ],
+      "public_facts": [
+        "The pull request merged into main and retained an account-linked Rongronggg9 co-author trailer in its one-commit history.",
+        "Rongronggg9 publicly displays Pair Extraordinaire x4."
+      ],
+      "subject_login": "Rongronggg9"
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "adjudication_status": "accepted",
+      "award_link": "public-profile-visible-no-contributing-fragment",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "completed_at": "2026-02-06T06:16:48Z",
+      "created_at": "2026-01-31T02:01:50Z",
+      "elapsed_seconds": 533698,
+      "event_type": "coauthored-final-merge-commit",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/7466",
+      "id": "EVT-2026-011",
+      "independent_account_count": 2,
+      "limitations": [
+        "The exact attributed qualifying count is not public.",
+        "The example does not resolve every squash, rebase, email-matching, or history-rewrite case."
+      ],
+      "public_facts": [
+        "The pull request merged into main and the final merge commit contains an account-linked Schweinepriester co-author trailer.",
+        "Schweinepriester publicly displays Pair Extraordinaire x3."
+      ],
+      "subject_login": "Schweinepriester"
     }
   ],
   "generated_from": "data/evidence-quality-programme.json",
   "metrics": {
+    "accepted": 6,
     "candidate-observed": 2,
     "negative-inconclusive": 3
   },

@@ -16,9 +16,9 @@ This register links each canonical achievement to a dated, privacy-safe evidence
 | Record | Achievement | Evidence | Reproduction | Decision | Observed |
 |---|---|---|---|---|---|
 | `EVD-2026-001` | [Pull Shark](../docs/achievements/pull-shark.md) | confirmed | reproduced | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-002` | [Quickdraw](../docs/quickdraw.md) | community-reported | awaiting-independent-reproduction | provisional | 2026-07-19 |
-| `EVD-2026-003` | [YOLO](../docs/achievements/yolo.md) | community-reported | awaiting-independent-reproduction | provisional | 2026-07-19 |
-| `EVD-2026-004` | [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | community-reported | partially-reproduced | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-002` | [Quickdraw](../docs/quickdraw.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-003` | [YOLO](../docs/achievements/yolo.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-004` | [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-005` | [Galaxy Brain](../docs/achievements/galaxy-brain.md) | official | official-trigger-description | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-006` | [Starstruck](../docs/achievements/starstruck.md) | observed | observed-not-fully-reproduced | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-007` | [Public Sponsor](../docs/achievements/public-sponsor.md) | official | officially-documented-trigger | accepted-with-limitations | 2026-07-19 |
@@ -41,39 +41,39 @@ The trigger is confirmed; the complete tier table remains community-reported.
 
 ### EVD-2026-002 — Quickdraw
 
-**Claim:** An issue or pull request is closed within the short community-observed qualifying window after creation.
+**Claim:** Closing an issue or pull request very shortly after creation can award Quickdraw.
 
 **Guide location:** `docs/quickdraw.md` — Qualifying time window
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 4 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-GitHub does not publish the exact qualifying time window.
+Two independent public pull requests were merged within five and nine seconds and both accounts publicly display Quickdraw. The exact maximum interval and direct contributing-event link remain unresolved.
 
 ### EVD-2026-003 — YOLO
 
-**Claim:** The account merges its own pull request without an approving review.
+**Claim:** A pull request authored by the account and merged without a submitted formal review can award YOLO.
 
 **Guide location:** `docs/achievements/yolo.md` — Review-state requirement
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 4 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Comments and approving reviews are distinct GitHub objects.
+Two independent authored pull requests were merged with zero submitted formal reviews and both accounts publicly display YOLO. Merger identity and alternate review-state controls remain unresolved.
 
 ### EVD-2026-004 — Pair Extraordinaire
 
-**Claim:** A correctly attributed co-authored commit is incorporated into a merged pull request.
+**Claim:** A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.
 
 **Guide location:** `achievements/pair-extraordinaire.md` — Co-author attribution
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 1 public source(s), 0 archive source(s)  
+**Sources:** 7 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-GitHub documents co-authorship syntax but not the complete achievement contract or tiers.
+Two independent public accounts have account-linked co-author attribution preserved in merged pull-request history and publicly display Pair Extraordinaire. Exact counts and rewrite edge cases remain unresolved.
 
 ### EVD-2026-005 — Galaxy Brain
 

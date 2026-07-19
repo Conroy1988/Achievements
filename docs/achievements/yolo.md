@@ -6,7 +6,7 @@ YOLO is an active, non-tiered GitHub profile achievement associated with merging
 
 ## Trigger
 
-The observed qualifying event is a pull request merged without an approval, requested-changes review, or comment review being submitted through GitHub's pull-request review system.
+Two independent public reconstructions associate YOLO with pull requests authored by the awarded account and merged with no submitted formal review. This supports the broad unreviewed-merge trigger at observed level; merger identity and alternate formal review states remain unresolved.
 
 ## Progression or tiers
 
@@ -35,8 +35,8 @@ The merge event appears immediately in the pull request, while profile-achieveme
 ## Evidence status
 
 - GitHub officially documents pull-request merges, reviews, branch protection, and rulesets.
-- The unreviewed-merge association is strongly observed.
-- GitHub does not publish a complete eligibility specification for the badge.
+- Two independent public event/profile pairs support the authored, unreviewed-merge association at observed level.
+- GitHub does not publish a complete eligibility specification, and the public records do not expose merger identity or every alternate review state.
 
 ## Known limitations and edge cases
 
@@ -67,9 +67,10 @@ YOLO was introduced with GitHub profile achievements. GitHub has not published a
 - [Merging a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
 - [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
+- [Public reconstruction corpus]({{ site.baseurl }}/public-reconstruction-corpus/)
 
 ## Last verified
 
-**19 July 2026.** Scope: current merge, review, and protection controls; profile-achievement presentation; and the evidence status of the unreviewed-merge trigger.
+**19 July 2026.** Scope: two independent public authored/unreviewed merge reconstructions, current review and protection controls, profile-achievement presentation, and unresolved merger-identity and alternate-review semantics.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

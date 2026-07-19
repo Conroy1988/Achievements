@@ -22,55 +22,71 @@
     {
       "id": "EVD-2026-002",
       "achievement_slug": "quickdraw",
-      "claim": "An issue or pull request is closed within the short community-observed qualifying window after creation.",
-      "evidence_level": "community-reported",
+      "claim": "Closing an issue or pull request very shortly after creation can award Quickdraw.",
+      "evidence_level": "observed",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
+      "source_urls": [
+        "https://github.com/Schweinepriester/Fira/pull/1",
+        "https://github.com/Schweinepriester?achievement=quickdraw&tab=achievements",
+        "https://github.com/tronicapp/tronic-track/pull/1",
+        "https://github.com/kmcclosk?achievement=quickdraw&tab=achievements"
+      ],
       "archive_urls": [],
-      "reproduction_status": "awaiting-independent-reproduction",
+      "reproduction_status": "two-independent-public-reconstructions",
       "contradictory_evidence": [],
-      "reviewer_decision": "provisional",
+      "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/quickdraw.md",
       "guide_section": "Qualifying time window",
-      "notes": "GitHub does not publish the exact qualifying time window."
+      "notes": "Two independent public pull requests were merged within five and nine seconds and both accounts publicly display Quickdraw. The exact maximum interval and direct contributing-event link remain unresolved."
     },
     {
       "id": "EVD-2026-003",
       "achievement_slug": "yolo",
-      "claim": "The account merges its own pull request without an approving review.",
-      "evidence_level": "community-reported",
+      "claim": "A pull request authored by the account and merged without a submitted formal review can award YOLO.",
+      "evidence_level": "observed",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
+      "source_urls": [
+        "https://github.com/Schweinepriester/Fira/pull/1",
+        "https://github.com/Schweinepriester?achievement=yolo&tab=achievements",
+        "https://github.com/tronicapp/tronic-track/pull/1",
+        "https://github.com/kmcclosk?achievement=yolo&tab=achievements"
+      ],
       "archive_urls": [],
-      "reproduction_status": "awaiting-independent-reproduction",
+      "reproduction_status": "two-independent-public-reconstructions",
       "contradictory_evidence": [],
-      "reviewer_decision": "provisional",
+      "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/yolo.md",
       "guide_section": "Review-state requirement",
-      "notes": "Comments and approving reviews are distinct GitHub objects."
+      "notes": "Two independent authored pull requests were merged with zero submitted formal reviews and both accounts publicly display YOLO. Merger identity and alternate review-state controls remain unresolved."
     },
     {
       "id": "EVD-2026-004",
       "achievement_slug": "pair-extraordinaire",
-      "claim": "A correctly attributed co-authored commit is incorporated into a merged pull request.",
-      "evidence_level": "community-reported",
+      "claim": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
+      "evidence_level": "observed",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
-        "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
+        "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors",
+        "https://github.com/devflash101/POC/pull/11",
+        "https://github.com/devflash101/POC/commit/113d443b2e745314c68f33db8d7e6518d14a4d2f",
+        "https://github.com/Rongronggg9?achievement=pair-extraordinaire&tab=achievements",
+        "https://github.com/Fyrd/caniuse/pull/7466",
+        "https://github.com/Fyrd/caniuse/commit/188bc05673b7c6bf83077982cbed0c2ec15df532",
+        "https://github.com/Schweinepriester?achievement=pair-extraordinaire&tab=achievements"
       ],
       "archive_urls": [],
-      "reproduction_status": "partially-reproduced",
+      "reproduction_status": "two-independent-public-reconstructions",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "achievements/pair-extraordinaire.md",
       "guide_section": "Co-author attribution",
-      "notes": "GitHub documents co-authorship syntax but not the complete achievement contract or tiers."
+      "notes": "Two independent public accounts have account-linked co-author attribution preserved in merged pull-request history and publicly display Pair Extraordinaire. Exact counts and rewrite edge cases remain unresolved."
     },
     {
       "id": "EVD-2026-005",

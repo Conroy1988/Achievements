@@ -9,17 +9,17 @@ permalink: /evidence-intelligence/
 
 This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the formal release gate.
 
-**Evidence coverage:** 54.6/100  
-**Event-linked records:** 5  
+**Evidence coverage:** 60.4/100  
+**Event-linked records:** 11  
 **Boundary investigations:** 5  
-**Deferred adjudications:** 6  
+**Deferred adjudications:** 7  
 **Release status:** `blocked`
 
 ## Distance to the evidence-quality release
 
 | Gate | Remaining gap |
 |---|---:|
-| Coverage | 15.4 points |
+| Coverage | 9.6 points |
 | Official or confirmed claims | 3 claims |
 | Claims below confirmed | 3 promotions |
 | Open contradictions | 3 resolutions |
@@ -28,29 +28,25 @@ This dashboard combines the public evidence-operation endpoints into one read-on
 
 | Rank | Achievement | Pressure | Coverage | Events | Boundaries | Deferred | Contradiction |
 |---:|---|---:|---:|---:|---:|---:|---|
-| 1 | Pair Extraordinaire | 72 | 25.0 | 0 | 1 | 1 | still-disputed |
-| 2 | Pull Shark | 67 | 55.0 | 3 | 1 | 1 | still-disputed |
-| 3 | Quickdraw | 64 | 25.0 | 1 | 1 | 1 | narrowed |
-| 4 | Starstruck | 58 | 37.5 | 0 | 1 | 1 | narrowed |
-| 5 | Galaxy Brain | 55 | 62.5 | 0 | 1 | 1 | still-disputed |
-| 6 | YOLO | 54 | 25.0 | 1 | 0 | 1 | narrowed |
+| 1 | Pull Shark | 67 | 55.0 | 3 | 1 | 1 | still-disputed |
+| 2 | Pair Extraordinaire | 58 | 37.5 | 2 | 1 | 2 | narrowed |
+| 3 | Starstruck | 58 | 37.5 | 0 | 1 | 1 | narrowed |
+| 4 | Galaxy Brain | 55 | 62.5 | 0 | 1 | 1 | still-disputed |
+| 5 | Quickdraw | 52 | 50.0 | 3 | 1 | 1 | narrowed |
+| 6 | YOLO | 42 | 50.0 | 3 | 0 | 1 | narrowed |
 | 7 | Arctic Code Vault Contributor | 0 | 100.0 | 0 | 0 | 0 | none |
 | 8 | Mars 2020 Contributor | 0 | 100.0 | 0 | 0 | 0 | none |
 | 9 | Public Sponsor | 0 | 100.0 | 0 | 0 | 0 | none |
 
 ## Immediate evidence requirements
 
-### Pair Extraordinaire
-
-- Capture final-history co-author attribution and visible tier state around each merge-method boundary.
-
 ### Pull Shark
 
 - Capture independently attributed exact counts immediately below and at each visible tier transition.
 
-### Quickdraw
+### Pair Extraordinaire
 
-- Run independent positive and negative controls immediately around the proposed five-minute boundary.
+- Capture final-history co-author attribution and visible tier state around each merge-method boundary.
 
 ### Starstruck
 
@@ -59,6 +55,10 @@ This dashboard combines the public evidence-operation endpoints into one read-on
 ### Galaxy Brain
 
 - Capture exact accepted-answer totals and public tier states around each proposed transition.
+
+### Quickdraw
+
+- Run independent positive and negative controls immediately around the proposed five-minute boundary.
 
 ## Pressure-score contract
 

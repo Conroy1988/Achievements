@@ -1,8 +1,8 @@
 {
   "api_version": "1.0.0",
   "schema_version": "1.1.0",
-  "overall_coverage_score": 54.6,
-  "overall_rating": "fragile",
+  "overall_coverage_score": 60.4,
+  "overall_rating": "developing",
   "claim_count": 13,
   "achievement_count": 9,
   "unassigned_gap_count": 0,
@@ -24,8 +24,8 @@
       "achievement_name": "Quickdraw",
       "achievement_status": "active",
       "claim_count": 1,
-      "coverage_score": 25.0,
-      "rating": "critical",
+      "coverage_score": 50.0,
+      "rating": "fragile",
       "open_disputes": [
         "CTR-001"
       ],
@@ -36,8 +36,8 @@
       "achievement_name": "YOLO",
       "achievement_status": "active",
       "claim_count": 1,
-      "coverage_score": 25.0,
-      "rating": "critical",
+      "coverage_score": 50.0,
+      "rating": "fragile",
       "open_disputes": [
         "CTR-002"
       ],
@@ -48,7 +48,7 @@
       "achievement_name": "Pair Extraordinaire",
       "achievement_status": "active",
       "claim_count": 2,
-      "coverage_score": 25.0,
+      "coverage_score": 37.5,
       "rating": "critical",
       "open_disputes": [
         "CTR-004"
@@ -139,42 +139,42 @@
       "claim_id": "CLM-003",
       "achievement_slug": "quickdraw",
       "claim_type": "trigger",
-      "evidence_level": "community-reported",
+      "evidence_level": "observed",
       "open_disputes": [
         "CTR-001"
       ],
       "research_task_ids": [
         "RSH-001"
       ],
-      "coverage_score": 25,
+      "coverage_score": 50,
       "unassigned_gap": false
     },
     {
       "claim_id": "CLM-004",
       "achievement_slug": "yolo",
       "claim_type": "trigger",
-      "evidence_level": "community-reported",
+      "evidence_level": "observed",
       "open_disputes": [
         "CTR-002"
       ],
       "research_task_ids": [
         "RSH-002"
       ],
-      "coverage_score": 25,
+      "coverage_score": 50,
       "unassigned_gap": false
     },
     {
       "claim_id": "CLM-005",
       "achievement_slug": "pair-extraordinaire",
       "claim_type": "trigger",
-      "evidence_level": "community-reported",
+      "evidence_level": "observed",
       "open_disputes": [
         "CTR-004"
       ],
       "research_task_ids": [
         "RSH-009"
       ],
-      "coverage_score": 25,
+      "coverage_score": 50,
       "unassigned_gap": false
     },
     {

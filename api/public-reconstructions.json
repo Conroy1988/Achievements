@@ -1,12 +1,34 @@
 {
+  "api_version": "1.0.0",
   "schema_version": "1.0.0",
-  "policy": "docs/public-reconstruction-corpus.md",
-  "observed_at": "2026-07-19",
+  "status": "live",
+  "policy": "/Achievements/public-reconstruction-corpus/",
+  "count": 6,
+  "metrics": {
+    "record_count": 6,
+    "independent_subject_count": 3,
+    "achievement_count": 3,
+    "claim_count": 3,
+    "privacy_safe_count": 6,
+    "automatic_canonical_mutation_count": 0
+  },
+  "by_achievement": {
+    "pair-extraordinaire": 2,
+    "quickdraw": 2,
+    "yolo": 2
+  },
+  "by_claim": {
+    "CLM-003": 2,
+    "CLM-004": 2,
+    "CLM-005": 2
+  },
   "records": [
     {
       "id": "RCN-2026-001",
       "achievement_slug": "quickdraw",
-      "claim_ids": ["CLM-003"],
+      "claim_ids": [
+        "CLM-003"
+      ],
       "subject_login": "Schweinepriester",
       "event_type": "pull-request-close-and-merge",
       "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
@@ -30,7 +52,9 @@
     {
       "id": "RCN-2026-002",
       "achievement_slug": "quickdraw",
-      "claim_ids": ["CLM-003"],
+      "claim_ids": [
+        "CLM-003"
+      ],
       "subject_login": "kmcclosk",
       "event_type": "pull-request-close-and-merge",
       "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
@@ -54,7 +78,9 @@
     {
       "id": "RCN-2026-003",
       "achievement_slug": "yolo",
-      "claim_ids": ["CLM-004"],
+      "claim_ids": [
+        "CLM-004"
+      ],
       "subject_login": "Schweinepriester",
       "event_type": "pull-request-merge-without-formal-review",
       "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
@@ -79,7 +105,9 @@
     {
       "id": "RCN-2026-004",
       "achievement_slug": "yolo",
-      "claim_ids": ["CLM-004"],
+      "claim_ids": [
+        "CLM-004"
+      ],
       "subject_login": "kmcclosk",
       "event_type": "pull-request-merge-without-formal-review",
       "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
@@ -104,7 +132,9 @@
     {
       "id": "RCN-2026-005",
       "achievement_slug": "pair-extraordinaire",
-      "claim_ids": ["CLM-005"],
+      "claim_ids": [
+        "CLM-005"
+      ],
       "subject_login": "Rongronggg9",
       "event_type": "coauthored-commit-in-merged-pull-request",
       "event_url": "https://github.com/devflash101/POC/pull/11",
@@ -130,7 +160,9 @@
     {
       "id": "RCN-2026-006",
       "achievement_slug": "pair-extraordinaire",
-      "claim_ids": ["CLM-005"],
+      "claim_ids": [
+        "CLM-005"
+      ],
       "subject_login": "Schweinepriester",
       "event_type": "coauthored-final-merge-commit",
       "event_url": "https://github.com/Fyrd/caniuse/pull/7466",

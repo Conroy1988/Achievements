@@ -1,0 +1,23 @@
+Public reconstructions passed: 6 records, automatic mutations 0.
+Evidence register passed with 9 records.
+Research intelligence passed: 13 claims, 6 contradictions, 5 API outputs.
+Evidence quality programme passed: phases 52-56 validated; v1.4.0 remains blocked.
+Evidence intelligence passed: 9 achievements, 11 events, 5 boundary programmes.
+Acquisition missions passed: 7 missions targeting 10 claims.
+Mission intake passed: 7 missions and 17 schema fields.
+Mission review queue passed: 0 packets, 0 reviews.
+Promotion planner passed: 0 plan(s), automatic applications 0.
+Evidence operations passed: 12 tasks, 5 protocols, 4 API outputs.
+Generated 12 static API endpoints from 9 achievement records.
++ python scripts/build_public_reconstructions.py
++ python scripts/build_evidence_register.py
++ python scripts/build_research_intelligence.py
++ python scripts/build_evidence_quality_programme.py
++ python scripts/build_evidence_intelligence.py
++ python scripts/build_acquisition_missions.py
++ python scripts/build_mission_intake.py
++ python scripts/build_mission_review_queue.py
++ python scripts/build_promotion_plans.py
++ python scripts/build_evidence_operations.py
++ python scripts/build_public_api.py
+Phase 62 reconciliation complete: coverage 60.4, release remains blocked.

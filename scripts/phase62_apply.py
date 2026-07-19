@@ -163,7 +163,7 @@ def reconstruction_events() -> list[dict]:
         {
             "id": "EVT-2026-011", "achievement_slug": "pair-extraordinaire", "claim_ids": ["CLM-005"],
             "event_type": "coauthored-final-merge-commit", "event_url": "https://github.com/Fyrd/caniuse/pull/7466",
-            "subject_login": "Schweinepriester", "created_at": "2026-01-31T02:01:50Z", "completed_at": "2026-02-06T06:16:48Z", "elapsed_seconds": 447898,
+            "subject_login": "Schweinepriester", "created_at": "2026-01-31T02:01:50Z", "completed_at": "2026-02-06T06:16:48Z", "elapsed_seconds": 533698,
             "public_facts": ["The pull request merged into main and the final merge commit contains an account-linked Schweinepriester co-author trailer.", "Schweinepriester publicly displays Pair Extraordinaire x3."],
             "award_link": "public-profile-visible-no-contributing-fragment", "adjudication_status": "accepted", "independent_account_count": 2,
             "limitations": ["The exact attributed qualifying count is not public.", "The example does not resolve every squash, rebase, email-matching, or history-rewrite case."]
@@ -281,7 +281,7 @@ def update_public_surfaces() -> None:
         '- [Public observations](api/public-observations.json)',
         '- [Public observations](api/public-observations.json)\n- [Public reconstructions](api/public-reconstructions.json)')
     replace_once("research-command-centre.md",
-        'The [mission evidence promotion planner](docs/promotion-planner.md) converts only accepted promotion proposals into isolated canonical-change previews with impact and rollback instructions; it never applies them.',
+        'The [mission evidence promotion planner](docs/promotion-planner.md) converts only accepted proposals into isolated canonical change plans with impact previews, validation steps, and rollback instructions. It never applies those plans automatically.',
         'The [mission evidence promotion planner](docs/promotion-planner.md) converts only accepted promotion proposals into isolated canonical-change previews with impact and rollback instructions; it never applies them.\n\nThe [public reconstruction corpus](docs/public-reconstruction-corpus.md) preserves exact independent event/profile pairs that strengthen broad triggers while leaving causal, timing, threshold, and edge-case limitations explicit.')
 
     resources = load("data/search-resources.json")

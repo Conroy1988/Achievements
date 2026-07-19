@@ -1,24 +1,6 @@
 {
   "achievements": [
     {
-      "achievement_name": "Pair Extraordinaire",
-      "achievement_slug": "pair-extraordinaire",
-      "achievement_status": "active",
-      "boundary_programme_count": 1,
-      "candidate_observed_event_count": 0,
-      "claim_count": 2,
-      "contradiction_outcome": "still-disputed",
-      "coverage_rating": "critical",
-      "coverage_score": 25.0,
-      "deferred_adjudication_count": 1,
-      "event_count": 0,
-      "negative_inconclusive_event_count": 0,
-      "next_evidence": [
-        "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
-      ],
-      "pressure_score": 72
-    },
-    {
       "achievement_name": "Pull Shark",
       "achievement_slug": "pull-shark",
       "achievement_status": "active",
@@ -37,22 +19,22 @@
       "pressure_score": 67
     },
     {
-      "achievement_name": "Quickdraw",
-      "achievement_slug": "quickdraw",
+      "achievement_name": "Pair Extraordinaire",
+      "achievement_slug": "pair-extraordinaire",
       "achievement_status": "active",
       "boundary_programme_count": 1,
-      "candidate_observed_event_count": 1,
-      "claim_count": 1,
+      "candidate_observed_event_count": 0,
+      "claim_count": 2,
       "contradiction_outcome": "narrowed",
       "coverage_rating": "critical",
-      "coverage_score": 25.0,
-      "deferred_adjudication_count": 1,
-      "event_count": 1,
+      "coverage_score": 37.5,
+      "deferred_adjudication_count": 2,
+      "event_count": 2,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [
-        "Run independent positive and negative controls immediately around the proposed five-minute boundary."
+        "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
       ],
-      "pressure_score": 64
+      "pressure_score": 58
     },
     {
       "achievement_name": "Starstruck",
@@ -91,6 +73,24 @@
       "pressure_score": 55
     },
     {
+      "achievement_name": "Quickdraw",
+      "achievement_slug": "quickdraw",
+      "achievement_status": "active",
+      "boundary_programme_count": 1,
+      "candidate_observed_event_count": 1,
+      "claim_count": 1,
+      "contradiction_outcome": "narrowed",
+      "coverage_rating": "fragile",
+      "coverage_score": 50.0,
+      "deferred_adjudication_count": 1,
+      "event_count": 3,
+      "negative_inconclusive_event_count": 0,
+      "next_evidence": [
+        "Run independent positive and negative controls immediately around the proposed five-minute boundary."
+      ],
+      "pressure_score": 52
+    },
+    {
       "achievement_name": "YOLO",
       "achievement_slug": "yolo",
       "achievement_status": "active",
@@ -98,13 +98,13 @@
       "candidate_observed_event_count": 1,
       "claim_count": 1,
       "contradiction_outcome": "narrowed",
-      "coverage_rating": "critical",
-      "coverage_score": 25.0,
+      "coverage_rating": "fragile",
+      "coverage_score": 50.0,
       "deferred_adjudication_count": 1,
-      "event_count": 1,
+      "event_count": 3,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [],
-      "pressure_score": 54
+      "pressure_score": 42
     },
     {
       "achievement_name": "Arctic Code Vault Contributor",
@@ -160,12 +160,12 @@
     "achievement_count": 9,
     "active_achievement_count": 7,
     "boundary_programme_count": 5,
-    "deferred_adjudication_count": 6,
-    "event_count": 5,
-    "narrowed_contradiction_count": 3,
-    "overall_coverage_score": 54.6,
+    "deferred_adjudication_count": 7,
+    "event_count": 11,
+    "narrowed_contradiction_count": 4,
+    "overall_coverage_score": 60.4,
     "release_status": "blocked",
-    "still_disputed_contradiction_count": 3
+    "still_disputed_contradiction_count": 2
   },
   "pressure_formula": {
     "boundary_programme_points": 10,
@@ -181,7 +181,7 @@
   "release_gaps": {
     "claims_to_promote_to_confirmed_or_official": 3,
     "contradictions_to_resolve": 3,
-    "coverage_points_needed": 15.4,
+    "coverage_points_needed": 9.6,
     "official_or_confirmed_claims_needed": 3
   },
   "schema_version": "1.0.0",

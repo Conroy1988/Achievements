@@ -6,7 +6,7 @@ Quickdraw is an active, non-tiered GitHub profile achievement associated with cl
 
 ## Trigger
 
-The reported qualifying event is opening an issue or pull request and closing it within a short interval. GitHub does not publish the precise timing window in its general profile documentation.
+Two independent public reconstructions associate Quickdraw with pull requests merged five and nine seconds after creation. This supports the broad rapid-close trigger at observed level, while GitHub still does not publish the precise maximum timing window in its general profile documentation.
 
 ## Progression or tiers
 
@@ -34,8 +34,8 @@ The item can show as closed immediately while the profile achievement appears la
 ## Evidence status
 
 - GitHub officially documents opening and closing issues and pull requests.
-- The association with a rapid close is strongly observed.
-- The exact timing window remains community-reported or unknown.
+- Two independent public event/profile pairs support the rapid-close association at observed level.
+- The exact maximum timing window, issue equivalence, and first-visible award delay remain community-reported or unknown.
 
 ## Known limitations and edge cases
 
@@ -65,9 +65,10 @@ Quickdraw was introduced with GitHub profile achievements. Complete trigger and 
 - [Closing an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/administering-issues/closing-an-issue)
 - [Closing a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/closing-a-pull-request)
 - [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
+- [Public reconstruction corpus]({{ site.baseurl }}/public-reconstruction-corpus/)
 
 ## Last verified
 
-**19 July 2026.** Scope: current issue and pull-request closure controls, profile-achievement presentation, and uncertainty around the reported timing window.
+**19 July 2026.** Scope: two independent public rapid-close reconstructions, current issue and pull-request closure controls, profile-achievement presentation, and the unresolved maximum timing window.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

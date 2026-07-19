@@ -32,6 +32,8 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Generated mission packet review queue with explicit pending, accepted, deferred, retained-inconclusive, needs-correction, and rejected states.
 - Six mission-review tests covering the empty launch state, valid proposals, reviewer minimums, checklist failures, relationship drift, and mutation blocking.
 - Dedicated mission packet review workflow and public queue/schema endpoints.
+- Six-record public reconstruction corpus linking exact public pull-request, review, co-author, and profile state across three independent achievement triggers.
+- Dedicated reconstruction validator, API endpoint, public guide, search route, and drift-controlled workflow.
 - Closed promotion-plan policy and JSON Schema covering canonical source edits, generated outputs, release-gate impact, validation, approval, and rollback.
 - Deterministic promotion planner that converts only accepted review proposals into isolated maintainer-review plans.
 - Six promotion-planner tests covering empty state, valid plans, non-accepted proposals, duplicate claims, stale transitions, and automatic-mutation blocking.
@@ -42,7 +44,7 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
-- Public API discovery expanded from 26 to 38 JSON files.
+- Public API discovery expanded from 26 to 39 JSON files.
 - Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, mission packet review, and promotion planning.
 - Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
@@ -50,12 +52,13 @@ The project uses semantic versioning for tagged documentation releases in accord
 - General evidence observations and mission-controlled evidence now use separate issue forms, schemas, triage rules, and draft packet paths.
 - Search discovery now includes the targeted mission board, mission execution intake, mission packet review queue, and promotion planner.
 - Promotion proposals now require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
+- Quickdraw, YOLO, and Pair Extraordinaire broad trigger claims advanced from community-reported to observed using two independent public reconstructions per claim; exact timing, alternate review states, attribution rewrites, and all tier thresholds remain unresolved.
 - Accepted promotion proposals now produce impact previews with exact source paths, generated outputs, release-gate direction, validation steps, and rollback scope.
 
 ### Integrity
 
-- No canonical claim level changed during Phases 52–61.
-- Evidence coverage remains 54.6/100.
+- Three broad trigger claims changed from community-reported to observed in Phase 62; no claim was promoted to confirmed or official.
+- Evidence coverage increases from 54.6 to 60.4 without changing weights or closing a contradiction.
 - Research-pressure values are prioritisation aids, not evidence-confidence scores.
 - Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission and mission submission.
 - Automated mission acceptance creates only a draft review packet and cannot promote evidence, resolve contradictions, or change mission state.
