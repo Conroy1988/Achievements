@@ -10,16 +10,17 @@ NAVIGATION = ROOT / "docs" / "achievement-guide-navigation.md"
 LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
-def achievement_labels(path: Path) -> set[str]:
+def catalogue_text(path: Path) -> str:
     text = path.read_text(encoding="utf-8")
-    labels: set[str] = set()
-    for label, target in LINK_PATTERN.findall(text):
-        lowered = target.lower()
-        if "achievement-guide-standard" in lowered:
-            continue
-        if any(token in lowered for token in ("achievements/", "pull-shark", "quickdraw")):
-            labels.add(label.strip())
-    return labels
+    stop_heading = "## Evidence labels" if path == INDEX else "## Project references"
+    return text.split(stop_heading, 1)[0]
+
+
+def achievement_labels(path: Path) -> set[str]:
+    return {
+        label.strip()
+        for label, _target in LINK_PATTERN.findall(catalogue_text(path))
+    }
 
 
 def main() -> int:
