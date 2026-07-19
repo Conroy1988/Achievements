@@ -1,6 +1,6 @@
 {
   "api_version": "1.0.0",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "count": 13,
   "claims": [
     {
@@ -70,7 +70,9 @@
       "evidence_ids": [
         "EVD-2026-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-009"
+      ],
       "status": "provisional",
       "last_reviewed": "2026-07-19"
     },
@@ -83,7 +85,9 @@
       "evidence_ids": [
         "EVD-2026-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-010"
+      ],
       "status": "provisional",
       "last_reviewed": "2026-07-19"
     },
@@ -96,7 +100,9 @@
       "evidence_ids": [
         "EVD-2026-005"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-011"
+      ],
       "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
@@ -154,7 +160,9 @@
       "evidence_ids": [
         "EVD-2026-007"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-012"
+      ],
       "status": "provisional",
       "last_reviewed": "2026-07-19"
     },

@@ -1,6 +1,6 @@
 {
   "api_version": "1.0.0",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "count": 6,
   "documents": [
     {
@@ -45,7 +45,11 @@
         "RSH-003",
         "RSH-004",
         "RSH-005",
-        "RSH-007"
+        "RSH-007",
+        "RSH-009",
+        "RSH-010",
+        "RSH-011",
+        "RSH-012"
       ],
       "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
     },
@@ -63,7 +67,10 @@
       "contradiction_ids": [
         "CTR-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-009",
+        "RSH-010"
+      ],
       "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
     },
     {
@@ -99,7 +106,8 @@
         "CTR-005"
       ],
       "research_task_ids": [
-        "RSH-004"
+        "RSH-004",
+        "RSH-011"
       ],
       "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
     },
@@ -133,7 +141,9 @@
         "CLM-011"
       ],
       "contradiction_ids": [],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-012"
+      ],
       "review_action": "Re-run mapped claim, contradiction, guide, and API reviews when the monitored fingerprint changes."
     }
   ]

@@ -1,6 +1,11 @@
 {
-  "schema_version": "1.0.0",
-  "statuses": ["open", "in-progress", "blocked", "resolved"],
+  "schema_version": "1.1.0",
+  "statuses": [
+    "open",
+    "in-progress",
+    "blocked",
+    "resolved"
+  ],
   "tasks": [
     {
       "id": "RSH-001",
@@ -11,7 +16,9 @@
       "priority": "critical",
       "difficulty": "advanced",
       "good_first_issue": false,
-      "related_evidence_ids": ["EVD-2026-002"],
+      "related_evidence_ids": [
+        "EVD-2026-002"
+      ],
       "research_question": "What is the shortest and longest reproducible issue or pull-request close interval that awards Quickdraw under normal public-repository use?",
       "acceptance_criteria": [
         "Provide dated observations from at least two independent accounts.",
@@ -30,7 +37,9 @@
       "priority": "critical",
       "difficulty": "advanced",
       "good_first_issue": false,
-      "related_evidence_ids": ["EVD-2026-003"],
+      "related_evidence_ids": [
+        "EVD-2026-003"
+      ],
       "research_question": "Which pull-request review states prevent or permit YOLO when the author merges their own pull request?",
       "acceptance_criteria": [
         "Test no review, comment-only review, requested-changes review, and approving review where repository rules permit.",
@@ -49,7 +58,9 @@
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
-      "related_evidence_ids": ["EVD-2026-001"],
+      "related_evidence_ids": [
+        "EVD-2026-001"
+      ],
       "research_question": "Can each currently listed Pull Shark tier threshold be independently reproduced with attribution and processing-delay controls?",
       "acceptance_criteria": [
         "Provide dated account-level observations for every threshold being claimed.",
@@ -68,7 +79,9 @@
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
-      "related_evidence_ids": ["EVD-2026-005"],
+      "related_evidence_ids": [
+        "EVD-2026-005"
+      ],
       "research_question": "Do the listed accepted-answer thresholds consistently award the corresponding Galaxy Brain tiers?",
       "acceptance_criteria": [
         "Use genuine GitHub Discussion answers accepted by repository maintainers.",
@@ -87,7 +100,9 @@
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
-      "related_evidence_ids": ["EVD-2026-006"],
+      "related_evidence_ids": [
+        "EVD-2026-006"
+      ],
       "research_question": "How do repository transfer, organization ownership, forks, archived repositories, and falling star counts affect Starstruck attribution?",
       "acceptance_criteria": [
         "Use only legitimate repository history and public metadata.",
@@ -106,7 +121,9 @@
       "priority": "medium",
       "difficulty": "beginner",
       "good_first_issue": true,
-      "related_evidence_ids": ["EVD-2026-008"],
+      "related_evidence_ids": [
+        "EVD-2026-008"
+      ],
       "research_question": "Which official or well-preserved public sources best document the 2020 qualification event and its historical scope?",
       "acceptance_criteria": [
         "Provide an official or high-stability public source.",
@@ -125,7 +142,9 @@
       "priority": "medium",
       "difficulty": "beginner",
       "good_first_issue": true,
-      "related_evidence_ids": ["EVD-2026-009"],
+      "related_evidence_ids": [
+        "EVD-2026-009"
+      ],
       "research_question": "Which official or high-stability sources document the mission-linked contribution qualification and its limitations?",
       "acceptance_criteria": [
         "Provide a public source from GitHub, NASA, JPL, or another authoritative maintainer.",
@@ -153,6 +172,90 @@
         "Remove unnecessary account identifiers from submitted evidence."
       ],
       "target_evidence_level": "observed"
+    },
+    {
+      "id": "RSH-009",
+      "title": "Reproduce Pair Extraordinaire merge attribution",
+      "achievement_slug": "pair-extraordinaire",
+      "task_type": "independent-reproduction",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-004"
+      ],
+      "research_question": "Which merge methods, email-matching conditions, and final-history states preserve qualifying Pair Extraordinaire co-author attribution?",
+      "acceptance_criteria": [
+        "Test merge commit, squash merge, and rebase merge where repository policy permits.",
+        "Record the exact Co-authored-by trailer and whether its email is linked to the observed account.",
+        "Inspect final merged commit attribution rather than relying only on the pull-request interface.",
+        "Provide dated results from at least two independent accounts and include failed reproductions."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-010",
+      "title": "Verify Pair Extraordinaire tier thresholds",
+      "achievement_slug": "pair-extraordinaire",
+      "task_type": "threshold-verification",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-004"
+      ],
+      "research_question": "Can the listed Pair Extraordinaire tier thresholds be independently reproduced using qualifying merged pull requests with preserved co-author attribution?",
+      "acceptance_criteria": [
+        "Record qualifying count immediately before and after each observed tier boundary.",
+        "Confirm final merged history retains the co-author identity used for counting.",
+        "Separate base-award evidence from bronze, silver, and gold tier evidence.",
+        "Do not manufacture meaningless pull requests or misattribute co-authorship."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-011",
+      "title": "Reproduce the Galaxy Brain accepted-answer trigger",
+      "achievement_slug": "galaxy-brain",
+      "task_type": "independent-reproduction",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "intermediate",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-005"
+      ],
+      "research_question": "Does a genuine GitHub Discussion answer being marked accepted reliably create Galaxy Brain progress, and how long does profile visibility take?",
+      "acceptance_criteria": [
+        "Use genuine Discussion questions and answers moderated by the repository maintainer.",
+        "Record answer, acceptance, and first-visible-award timestamps.",
+        "Distinguish accepted answers from verified answers, labels, reactions, and other moderation states.",
+        "Provide observations from at least two independent accounts."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-012",
+      "title": "Reproduce the Public Sponsor visibility trigger",
+      "achievement_slug": "public-sponsor",
+      "task_type": "independent-reproduction",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "intermediate",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-007"
+      ],
+      "research_question": "Which sponsorship visibility and account conditions are required for Public Sponsor to appear without exposing financial information?",
+      "acceptance_criteria": [
+        "Record only public sponsorship state, activation date, and profile-award visibility; exclude payment details.",
+        "Compare public and private sponsorship visibility where the participant can safely do so.",
+        "Record account, region, and processing limitations without publishing sensitive eligibility data.",
+        "Provide dated observations from at least two independent accounts."
+      ],
+      "target_evidence_level": "confirmed"
     }
   ]
 }

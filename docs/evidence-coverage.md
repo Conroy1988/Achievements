@@ -1,29 +1,28 @@
 ---
 layout: default
 title: Evidence coverage matrix
-description: Claim-level coverage scoring, open disputes, and unassigned research gaps.
+description: Deterministic claim and achievement evidence-coverage scoring with explicit gaps.
 permalink: /evidence-coverage/
 ---
 
 ## Evidence coverage matrix
 
-Coverage scores measure documentation strength, not the probability that a claim is true.
+**Overall coverage:** 44.2/100 — **fragile**  
+**Unassigned gaps:** 0  
+**Claims:** 13
 
-**Overall score:** 44.2/100 — **fragile**  
-**Unassigned gaps:** 4
+The score measures evidence strength and applies a dispute penalty. Assigning a research task removes an ownership gap but does not inflate evidence confidence.
 
-| Achievement | Claims | Score | Rating | Disputes | Gaps |
-|---|---:|---:|---|---|---|
-| Pull Shark | 2 | 55.0 | fragile | `CTR-003` | — |
-| Quickdraw | 1 | 25.0 | critical | `CTR-001` | — |
-| YOLO | 1 | 25.0 | critical | `CTR-002` | — |
-| Pair Extraordinaire | 2 | 25.0 | critical | `CTR-004` | `CLM-005`, `CLM-006` |
-| Galaxy Brain | 2 | 42.5 | fragile | `CTR-005` | `CLM-007` |
-| Starstruck | 2 | 37.5 | critical | `CTR-006` | — |
-| Public Sponsor | 1 | 35.0 | critical | — | `CLM-011` |
-| Arctic Code Vault Contributor | 1 | 85.0 | robust | — | — |
-| Mars 2020 Contributor | 1 | 85.0 | robust | — | — |
-
-Scores use official 100, confirmed 85, observed 60, community-reported 35, unknown 0, and a ten-point open-dispute penalty.
+| Achievement | Coverage | Rating | Open disputes | Unassigned gaps |
+|---|---:|---|---:|---:|
+| Pull Shark | 55.0 | fragile | 1 | 0 |
+| Quickdraw | 25.0 | critical | 1 | 0 |
+| YOLO | 25.0 | critical | 1 | 0 |
+| Pair Extraordinaire | 25.0 | critical | 1 | 0 |
+| Galaxy Brain | 42.5 | fragile | 1 | 0 |
+| Starstruck | 37.5 | critical | 1 | 0 |
+| Public Sponsor | 35.0 | critical | 0 | 0 |
+| Arctic Code Vault Contributor | 85.0 | robust | 0 | 0 |
+| Mars 2020 Contributor | 85.0 | robust | 0 | 0 |
 
 Machine-readable coverage is published at [`/api/coverage.json`](../api/coverage.json).

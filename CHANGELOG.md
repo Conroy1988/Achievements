@@ -6,18 +6,35 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 ## Unreleased
 
+No unreleased changes are currently recorded.
+
+## v1.3.0 — 2026-07-19
+
 ### Added
 
 - Claim-level evidence register covering thirteen canonical trigger, tier, and historical claims.
 - Contradiction and dispute ledger with six explicit ambiguities and measurable resolution criteria.
 - Evidence-coverage matrix with transparent confidence weights, dispute penalties, and unassigned-gap detection.
-- Deterministic research priority board exposing every score component for the eight open contributor tasks.
+- Deterministic research priority board exposing every score component.
 - Official-document change-impact map connecting monitored GitHub pages to claims, disputes, achievements, and research work.
-- Five supplemental machine-readable research-intelligence endpoints and a dedicated scheduled validation workflow.
+- Four new research tasks covering every previously unassigned weak claim.
+- Five ethical, privacy-safe reproduction-laboratory protocols.
+- Structured evidence observation form with automated validation, privacy screening, draft evidence records, and draft pull-request creation.
+- Read-only GitHub achievement profile auditor using public API signals with explicit uncertainty.
+- Public research command centre combining health, evidence coverage, contradictions, protocols, and research priorities.
+- Four evidence-operations API endpoints and expanded API discovery.
+- Dedicated evidence-operations and evidence-triage workflows.
 
 ### Changed
 
-- Public navigation and API documentation now expose the complete research-intelligence layer.
+- Contributor research queue expanded from eight to twelve tasks.
+- Weak claims now fail validation when they lack an assigned research task.
+- Public navigation, search resources, and API documentation expose the complete evidence-operations layer.
+- Source inventory and health refresh automation were corrected to maintain a 100/100 operational score.
+
+### Verification
+
+- Recorded the evidence-operations release in [`docs/releases/v1.3.0.md`](docs/releases/v1.3.0.md).
 
 ## v1.2.0 — 2026-07-19
 

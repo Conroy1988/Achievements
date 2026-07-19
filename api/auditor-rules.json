@@ -1,0 +1,136 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 9,
+  "scope_statement": "Read-only public-signal analysis. The auditor does not detect profile badges and does not access private data.",
+  "rules": [
+    {
+      "achievement_slug": "pull-shark",
+      "name": "Pull Shark",
+      "signal": "public-merged-pull-request-count",
+      "method": "GitHub issue search for public merged pull requests authored by the username.",
+      "confidence": "approximate",
+      "tier_thresholds": [
+        2,
+        16,
+        128,
+        1024
+      ],
+      "limitations": [
+        "Search results can omit private activity and may not match GitHub's internal attribution rules.",
+        "The result is a progress signal, not proof that the badge is visible."
+      ]
+    },
+    {
+      "achievement_slug": "quickdraw",
+      "name": "Quickdraw",
+      "signal": "manual-verification-required",
+      "method": "No reliable aggregate public API exposes qualifying close intervals and resulting badge visibility.",
+      "confidence": "unknown",
+      "tier_thresholds": [],
+      "limitations": [
+        "Issue and pull-request timestamps can be inspected individually, but the exact award contract is unpublished.",
+        "The auditor does not encourage repeated artificial issue activity."
+      ]
+    },
+    {
+      "achievement_slug": "yolo",
+      "name": "YOLO",
+      "signal": "manual-verification-required",
+      "method": "Public APIs do not provide a reliable account-level badge result linked to review state.",
+      "confidence": "unknown",
+      "tier_thresholds": [],
+      "limitations": [
+        "Review objects, branch rules, and merger identity require case-level inspection.",
+        "Absence of an approval is not sufficient proof of award visibility."
+      ]
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "name": "Pair Extraordinaire",
+      "signal": "manual-verification-required",
+      "method": "Public APIs do not expose a complete account-level count of qualifying co-authored merged pull requests.",
+      "confidence": "unknown",
+      "tier_thresholds": [
+        1,
+        10,
+        24,
+        48
+      ],
+      "limitations": [
+        "Final merged history and linked email attribution must be inspected.",
+        "Private and rewritten history is unavailable."
+      ]
+    },
+    {
+      "achievement_slug": "galaxy-brain",
+      "name": "Galaxy Brain",
+      "signal": "manual-verification-required",
+      "method": "GitHub's public REST API does not provide a complete account-level accepted-answer count.",
+      "confidence": "unknown",
+      "tier_thresholds": [
+        2,
+        8,
+        16,
+        32
+      ],
+      "limitations": [
+        "Accepted and verified states must not be conflated.",
+        "GraphQL access would require a user token and is intentionally not requested."
+      ]
+    },
+    {
+      "achievement_slug": "starstruck",
+      "name": "Starstruck",
+      "signal": "maximum-owned-repository-stars",
+      "method": "Maximum stargazer count among up to the first 100 public repositories owned by the username.",
+      "confidence": "approximate",
+      "tier_thresholds": [
+        16,
+        128,
+        512,
+        4096
+      ],
+      "limitations": [
+        "Organization-owned, transferred, private, and repositories beyond the first 100 may be omitted.",
+        "Current stars do not prove when or whether an award was granted."
+      ]
+    },
+    {
+      "achievement_slug": "public-sponsor",
+      "name": "Public Sponsor",
+      "signal": "manual-verification-required",
+      "method": "Public sponsorship badge visibility is not available through the unauthenticated REST user response.",
+      "confidence": "unknown",
+      "tier_thresholds": [],
+      "limitations": [
+        "The auditor never requests financial or sponsorship account data.",
+        "Users must inspect their own public profile and sponsorship visibility settings."
+      ]
+    },
+    {
+      "achievement_slug": "arctic-code-vault-contributor",
+      "name": "Arctic Code Vault Contributor",
+      "signal": "historical-manual-verification",
+      "method": "Historical qualification depends on the 2020 archive snapshot and visible profile history.",
+      "confidence": "historical",
+      "tier_thresholds": [],
+      "limitations": [
+        "The event is retired and cannot be reproduced through new activity.",
+        "Public API metadata does not expose the complete archived qualification list."
+      ]
+    },
+    {
+      "achievement_slug": "mars-2020-contributor",
+      "name": "Mars 2020 Contributor",
+      "signal": "historical-manual-verification",
+      "method": "Historical qualification depends on contributions to mission-linked repositories and visible profile history.",
+      "confidence": "historical",
+      "tier_thresholds": [],
+      "limitations": [
+        "The achievement is retired.",
+        "The complete internal qualification list is not a current public API contract."
+      ]
+    }
+  ]
+}

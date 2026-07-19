@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "resources": [
     {
       "slug": "achievement-index",
@@ -7,7 +7,11 @@
       "category": "catalogue",
       "summary": "Canonical navigation for all active and retired GitHub achievement guides.",
       "permalink": "/docs/achievement-index.html",
-      "aliases": ["all achievements", "badge list", "achievement catalogue"]
+      "aliases": [
+        "all achievements",
+        "badge list",
+        "achievement catalogue"
+      ]
     },
     {
       "slug": "verification-methodology",
@@ -15,7 +19,11 @@
       "category": "methodology",
       "summary": "How claims, observations, reproductions, dates, and contradictions are evaluated.",
       "permalink": "/docs/verification-methodology.html",
-      "aliases": ["how claims are checked", "research method", "verification process"]
+      "aliases": [
+        "how claims are checked",
+        "research method",
+        "verification process"
+      ]
     },
     {
       "slug": "evidence-strength-levels",
@@ -23,7 +31,11 @@
       "category": "methodology",
       "summary": "Definitions for official, confirmed, observed, community-reported, and unknown claims.",
       "permalink": "/docs/evidence-strength-levels.html",
-      "aliases": ["evidence labels", "confidence levels", "claim strength"]
+      "aliases": [
+        "evidence labels",
+        "confidence levels",
+        "claim strength"
+      ]
     },
     {
       "slug": "public-evidence-register",
@@ -31,7 +43,11 @@
       "category": "research",
       "summary": "Privacy-safe evidence records with classification, reproduction, review, and limitation fields.",
       "permalink": "/evidence-register/",
-      "aliases": ["evidence records", "claim register", "research evidence"]
+      "aliases": [
+        "evidence records",
+        "claim register",
+        "research evidence"
+      ]
     },
     {
       "slug": "verification-timelines",
@@ -39,7 +55,11 @@
       "category": "research",
       "summary": "Dated review history and explicit historical limitations for every canonical achievement.",
       "permalink": "/verification-timelines/",
-      "aliases": ["review history", "achievement timeline", "last reviewed"]
+      "aliases": [
+        "review history",
+        "achievement timeline",
+        "last reviewed"
+      ]
     },
     {
       "slug": "official-document-monitor",
@@ -47,15 +67,71 @@
       "category": "research",
       "summary": "Reviewed fingerprints for official GitHub documentation and affected achievement guides.",
       "permalink": "/official-doc-monitor/",
-      "aliases": ["GitHub docs changes", "official source monitor", "documentation watcher"]
+      "aliases": [
+        "GitHub docs changes",
+        "official source monitor",
+        "documentation watcher"
+      ]
     },
     {
       "slug": "contributor-research-hub",
       "name": "Contributor research hub",
       "category": "contributing",
-      "summary": "Bounded reproduction, source, threshold, edge-case, and observation tasks with acceptance criteria.",
+      "summary": "Twelve bounded reproduction, source, threshold, edge-case, and observation tasks with acceptance criteria.",
       "permalink": "/research-hub/",
-      "aliases": ["research tasks", "good first research issue", "evidence gaps"]
+      "aliases": [
+        "research tasks",
+        "good first research issue",
+        "evidence gaps"
+      ]
+    },
+    {
+      "slug": "reproduction-laboratory",
+      "name": "Achievement reproduction laboratory",
+      "category": "research",
+      "summary": "Ethical, privacy-safe protocols for controlled GitHub achievement reproduction.",
+      "permalink": "/reproduction-lab/",
+      "aliases": [
+        "test protocols",
+        "achievement experiments",
+        "reproduction matrix"
+      ]
+    },
+    {
+      "slug": "evidence-submission",
+      "name": "Submit achievement evidence",
+      "category": "contributing",
+      "summary": "Structured evidence observations with privacy screening, draft records, and mandatory human review.",
+      "permalink": "/evidence-submission/",
+      "aliases": [
+        "submit observation",
+        "evidence form",
+        "automated triage"
+      ]
+    },
+    {
+      "slug": "profile-auditor",
+      "name": "GitHub achievement profile auditor",
+      "category": "tools",
+      "summary": "Read-only public-signal analysis with explicit uncertainty and no private-data access.",
+      "permalink": "/profile-auditor/",
+      "aliases": [
+        "achievement checker",
+        "profile analysis",
+        "badge progress"
+      ]
+    },
+    {
+      "slug": "research-command-centre",
+      "name": "Research command centre",
+      "category": "operations",
+      "summary": "Live operational health, evidence coverage, contradictions, protocols, and research priorities.",
+      "permalink": "/research-command-centre/",
+      "aliases": [
+        "research dashboard",
+        "evidence status",
+        "command center"
+      ]
     },
     {
       "slug": "source-quality-policy",
@@ -63,7 +139,11 @@
       "category": "governance",
       "summary": "Rules for evaluating official, institutional, archived, GitHub-hosted, and external sources.",
       "permalink": "/docs/source-quality-policy.html",
-      "aliases": ["source rules", "reference quality", "citation policy"]
+      "aliases": [
+        "source rules",
+        "reference quality",
+        "citation policy"
+      ]
     },
     {
       "slug": "achievement-data-reference",
@@ -71,7 +151,11 @@
       "category": "data",
       "summary": "Machine-readable dataset fields, JSON Schema, validation guarantees, and consumer guidance.",
       "permalink": "/data/",
-      "aliases": ["JSON dataset", "API data", "achievement schema"]
+      "aliases": [
+        "JSON dataset",
+        "API data",
+        "achievement schema"
+      ]
     },
     {
       "slug": "repository-health-dashboard",
@@ -79,7 +163,11 @@
       "category": "operations",
       "summary": "Current verification freshness, automation state, source resilience, release, and backlog health.",
       "permalink": "/health/",
-      "aliases": ["project status", "CI health", "maintenance dashboard"]
+      "aliases": [
+        "project status",
+        "CI health",
+        "maintenance dashboard"
+      ]
     },
     {
       "slug": "frequently-asked-questions",
@@ -87,7 +175,11 @@
       "category": "help",
       "summary": "Answers about achievement delays, evidence confidence, privacy, and responsible participation.",
       "permalink": "/faq/",
-      "aliases": ["FAQ", "common questions", "help"]
+      "aliases": [
+        "FAQ",
+        "common questions",
+        "help"
+      ]
     },
     {
       "slug": "contribution-guide",
@@ -95,7 +187,11 @@
       "category": "contributing",
       "summary": "How to submit corrections, evidence, reproductions, accessibility improvements, and research.",
       "permalink": "/contribute/",
-      "aliases": ["how to contribute", "submit correction", "contributor help"]
+      "aliases": [
+        "how to contribute",
+        "submit correction",
+        "contributor help"
+      ]
     }
   ]
 }

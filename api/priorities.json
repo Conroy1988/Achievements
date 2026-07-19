@@ -1,7 +1,7 @@
 {
   "api_version": "1.0.0",
-  "schema_version": "1.0.0",
-  "count": 8,
+  "schema_version": "1.1.0",
+  "count": 12,
   "priorities": [
     {
       "task_id": "RSH-001",
@@ -125,6 +125,76 @@
       "rank": 5
     },
     {
+      "task_id": "RSH-009",
+      "title": "Reproduce Pair Extraordinaire merge attribution",
+      "achievement_slug": "pair-extraordinaire",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 75,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 10,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "contradiction_ids": [
+        "CTR-004"
+      ],
+      "rank": 6
+    },
+    {
+      "task_id": "RSH-010",
+      "title": "Verify Pair Extraordinaire tier thresholds",
+      "achievement_slug": "pair-extraordinaire",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 75,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 10,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-006"
+      ],
+      "contradiction_ids": [
+        "CTR-004"
+      ],
+      "rank": 7
+    },
+    {
+      "task_id": "RSH-012",
+      "title": "Reproduce the Public Sponsor visibility trigger",
+      "achievement_slug": "public-sponsor",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 65,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 25,
+        "open_dispute": 0,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-011"
+      ],
+      "contradiction_ids": [],
+      "rank": 8
+    },
+    {
       "task_id": "RSH-008",
       "title": "Document award-processing delay observations",
       "achievement_slug": null,
@@ -142,7 +212,29 @@
       },
       "claim_ids": [],
       "contradiction_ids": [],
-      "rank": 6
+      "rank": 9
+    },
+    {
+      "task_id": "RSH-011",
+      "title": "Reproduce the Galaxy Brain accepted-answer trigger",
+      "achievement_slug": "galaxy-brain",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 55,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 15,
+        "open_dispute": 0,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-007"
+      ],
+      "contradiction_ids": [],
+      "rank": 10
     },
     {
       "task_id": "RSH-006",
@@ -164,7 +256,7 @@
         "CLM-012"
       ],
       "contradiction_ids": [],
-      "rank": 7
+      "rank": 11
     },
     {
       "task_id": "RSH-007",
@@ -186,7 +278,7 @@
         "CLM-013"
       ],
       "contradiction_ids": [],
-      "rank": 8
+      "rank": 12
     }
   ]
 }

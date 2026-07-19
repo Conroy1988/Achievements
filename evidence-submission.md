@@ -1,53 +1,44 @@
 ---
 layout: default
-title: Submit GitHub achievement evidence
-permalink: /submit-evidence/
-description: Structured template for submitting reproducible, privacy-safe evidence about GitHub achievement triggers, tiers, delays, and retired behaviour.
+title: Submit achievement evidence
+description: Structured, privacy-safe evidence submission with automated screening and mandatory human review.
+permalink: /evidence-submission/
 ---
 
 ## Submit achievement evidence
 
-Use this structure when reporting a new finding, correction, failed reproduction, or tier observation.
+Evidence observations are submitted through a structured GitHub issue form and processed by an automated triage workflow.
 
-## Submission template
+[Open the evidence observation form](https://github.com/Conroy1988/Achievements/issues/new?template=evidence-observation.yml)
 
-```markdown
-### Achievement
+## What happens after submission
 
-### Claim being tested
+1. The issue is checked against the claim and research-task registers.
+2. Required dates, result state, repository visibility, controls, and limitations are validated.
+3. Automated screening looks for credentials, email addresses, secret-like values, payment-card-like numbers, and other prohibited material.
+4. Blocked submissions receive a correction report and do not create repository changes.
+5. Passing submissions generate a privacy-screened draft evidence record.
+6. The workflow creates or updates a **draft pull request** for human review.
+7. Only a maintainer-reviewed change can alter the canonical evidence register.
 
-### Observation date
+> [!CAUTION]
+> Automated screening is a safety control, not a guarantee. Do not submit sensitive information in the first place.
 
-### GitHub account and repository context
+## Required information
 
-### Qualifying action or reproduction steps
+- Research task ID and linked claim ID
+- Canonical achievement slug
+- Observation date and result
+- Public repository visibility where applicable
+- UTC event and first-visible timestamps where available
+- Public HTTPS sources
+- Environment, controls, limitations, and failed attempts
+- Explicit privacy declaration and publication consent
 
-### Result observed
+## Evidence contract
 
-### Public evidence URLs
+The machine-readable submission contract is published at [`/api/submission-schema.json`](api/submission-schema.json).
 
-### Screenshots or archived evidence
+## Responsible research
 
-### Alternative explanations considered
-
-### Privacy redactions applied
-
-### Suggested evidence status
-Official / Verified / Observed / Unverified / Retired
-```
-
-## Minimum acceptance standard
-
-A useful report identifies the exact claim, date, account context, action taken, result observed, and evidence location. Reports should be reproducible by another contributor wherever practical.
-
-## Privacy
-
-Remove email addresses, private repository names, payment details, access tokens, unrelated usernames, and other personal information. Crop screenshots to the minimum relevant area.
-
-## Failed reproductions
-
-Failed tests are valuable. Record the same details and explain which expected result did not occur. Do not repeat activity excessively merely to force an achievement.
-
-## Review outcome
-
-Maintainers may accept the evidence, request more context, classify it as observed, or reject it when the claim cannot be separated from alternative explanations.
+Evidence may document a successful award, a failed reproduction, or an inconclusive result. Negative results are valuable when the environment and limitations are recorded precisely.

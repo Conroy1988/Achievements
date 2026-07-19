@@ -1,11 +1,11 @@
 {
   "api_version": "1.0.0",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "overall_coverage_score": 44.2,
   "overall_rating": "fragile",
   "claim_count": 13,
   "achievement_count": 9,
-  "unassigned_gap_count": 4,
+  "unassigned_gap_count": 0,
   "achievements": [
     {
       "achievement_slug": "pull-shark",
@@ -53,10 +53,7 @@
       "open_disputes": [
         "CTR-004"
       ],
-      "unassigned_gaps": [
-        "CLM-005",
-        "CLM-006"
-      ]
+      "unassigned_gaps": []
     },
     {
       "achievement_slug": "galaxy-brain",
@@ -68,9 +65,7 @@
       "open_disputes": [
         "CTR-005"
       ],
-      "unassigned_gaps": [
-        "CLM-007"
-      ]
+      "unassigned_gaps": []
     },
     {
       "achievement_slug": "starstruck",
@@ -92,9 +87,7 @@
       "coverage_score": 35.0,
       "rating": "critical",
       "open_disputes": [],
-      "unassigned_gaps": [
-        "CLM-011"
-      ]
+      "unassigned_gaps": []
     },
     {
       "achievement_slug": "arctic-code-vault-contributor",
@@ -178,9 +171,11 @@
       "open_disputes": [
         "CTR-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-009"
+      ],
       "coverage_score": 25,
-      "unassigned_gap": true
+      "unassigned_gap": false
     },
     {
       "claim_id": "CLM-006",
@@ -190,9 +185,11 @@
       "open_disputes": [
         "CTR-004"
       ],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-010"
+      ],
       "coverage_score": 25,
-      "unassigned_gap": true
+      "unassigned_gap": false
     },
     {
       "claim_id": "CLM-007",
@@ -200,9 +197,11 @@
       "claim_type": "trigger",
       "evidence_level": "observed",
       "open_disputes": [],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-011"
+      ],
       "coverage_score": 60,
-      "unassigned_gap": true
+      "unassigned_gap": false
     },
     {
       "claim_id": "CLM-008",
@@ -252,9 +251,11 @@
       "claim_type": "trigger",
       "evidence_level": "community-reported",
       "open_disputes": [],
-      "research_task_ids": [],
+      "research_task_ids": [
+        "RSH-012"
+      ],
       "coverage_score": 35,
-      "unassigned_gap": true
+      "unassigned_gap": false
     },
     {
       "claim_id": "CLM-012",
