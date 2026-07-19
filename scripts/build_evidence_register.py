@@ -213,7 +213,7 @@ def main() -> int:
         return 1
 
     outputs = {
-        MARKDOWN_PATH: markdown(register, achievements) + "\n",
+        MARKDOWN_PATH: markdown(register, achievements),
         API_PATH: api_payload(register),
     }
     if args.check:
