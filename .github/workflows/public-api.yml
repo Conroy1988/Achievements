@@ -1,0 +1,70 @@
+name: Public data API
+
+on:
+  pull_request:
+    paths:
+      - 'data/*.json'
+      - 'api/**'
+      - 'scripts/build_public_api.py'
+      - '.github/workflows/public-api.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/*.json'
+      - 'api/**'
+      - 'scripts/build_public_api.py'
+      - '.github/workflows/public-api.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate static API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate canonical achievement data
+        run: python scripts/validate_achievement_data.py --report achievement-data-report.md
+      - name: Detect generated API drift
+        run: python scripts/build_public_api.py --check
+      - name: Upload API validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-api-validation
+          path: achievement-data-report.md
+          if-no-files-found: warn
+          retention-days: 30
+
+  initialise:
+    name: Generate Phase 33 API endpoints
+    if: github.event_name == 'pull_request' && github.head_ref == 'phase-33/public-api-v1.1.0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out Phase 33 branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Build missing static endpoints
+        run: |
+          if [[ -f api/index.json && -f api/achievements.json && -f api/schema.json ]]; then
+            echo 'Public API baseline already exists.'
+            exit 0
+          fi
+          python scripts/build_public_api.py
+      - name: Commit generated endpoints
+        run: |
+          if [[ -z "$(git status --porcelain -- api)" ]]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add api
+          git commit -m 'Phase 33: generate static achievement API'
+          git push
