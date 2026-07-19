@@ -67,10 +67,9 @@ def plan_id(review_id: str) -> str:
     return "PPL-" + review_id.removeprefix("MRV-")
 
 
-def source_operations(claim: dict, queue_item: dict) -> list[dict]:
+def source_operations(claim: dict, queue_item: dict, guide_path: str) -> list[dict]:
     claim_type = claim["claim_type"]
     evidence_key = "trigger" if claim_type == "trigger" else "tiers"
-    guide_path = f"docs/achievements/{queue_item['achievement_slug']}.md"
     return [
         {
             "path": "data/evidence-register.json",
@@ -124,7 +123,12 @@ def release_impact(current: str, proposed: str, order: list[str]) -> dict:
     }
 
 
-def build_plans(policy: dict, queue_payload: dict, claims_payload: dict) -> tuple[list[dict], list[str]]:
+def build_plans(
+    policy: dict,
+    queue_payload: dict,
+    claims_payload: dict,
+    achievements_payload: dict | None = None,
+) -> tuple[list[dict], list[str]]:
     errors: list[str] = []
     queue = queue_payload.get("queue")
     if not isinstance(queue, list):
@@ -133,6 +137,11 @@ def build_plans(policy: dict, queue_payload: dict, claims_payload: dict) -> tupl
     if metrics.get("automatic_canonical_mutation_count") != 0:
         errors.append("mission review queue reports automatic canonical mutation")
     claim_map = {item["id"]: item for item in claims_payload.get("claims", [])}
+    achievement_map = {
+        item["slug"]: item
+        for item in (achievements_payload or {}).get("achievements", [])
+        if isinstance(item, dict) and isinstance(item.get("slug"), str)
+    }
     order = policy["evidence_level_order"]
     plans: list[dict] = []
     planned_claims: set[str] = set()
@@ -155,6 +164,9 @@ def build_plans(policy: dict, queue_payload: dict, claims_payload: dict) -> tupl
         claim = claim_map.get(claim_id)
         if not claim or claim_id != item.get("claim_id"):
             errors.append(f"{packet_id}: promotion target claim is missing or mismatched")
+            continue
+        if claim.get("achievement_slug") != item.get("achievement_slug"):
+            errors.append(f"{packet_id}: claim achievement does not match the queue item")
             continue
         if claim_id in planned_claims:
             errors.append(f"{packet_id}: duplicate active promotion proposal for {claim_id}")
@@ -197,7 +209,19 @@ def build_plans(policy: dict, queue_payload: dict, claims_payload: dict) -> tupl
         if not PLAN_ID.fullmatch(pid):
             errors.append(f"{packet_id}: derived promotion plan id is invalid")
             continue
-        operations = source_operations(claim, item)
+        achievement = achievement_map.get(item["achievement_slug"])
+        if achievements_payload is not None and not achievement:
+            errors.append(f"{packet_id}: achievement is missing from the canonical catalogue")
+            continue
+        guide_path = (
+            achievement.get("guide_path")
+            if achievement
+            else f"docs/achievements/{item['achievement_slug']}.md"
+        )
+        if not isinstance(guide_path, str) or not guide_path:
+            errors.append(f"{packet_id}: canonical guide path is missing")
+            continue
+        operations = source_operations(claim, item, guide_path)
         restore_paths = list(dict.fromkeys([entry["path"] for entry in operations]))
         plans.append({
             "id": pid,
@@ -336,13 +360,14 @@ def main() -> int:
         schema = load(DATA / "promotion-plan.schema.json")
         queue_payload = load(API / "mission-review-queue.json")
         claims_payload = load(DATA / "claims.json")
+        achievements_payload = load(DATA / "achievements.json")
         release_readiness = load(API / "release-readiness.json")
     except (OSError, ValueError, json.JSONDecodeError) as error:
         print(error)
         return 1
 
     errors = validate_policy(policy)
-    plans, plan_errors = build_plans(policy, queue_payload, claims_payload)
+    plans, plan_errors = build_plans(policy, queue_payload, claims_payload, achievements_payload)
     errors.extend(plan_errors)
     report = [
         "# Promotion planner validation",
