@@ -1,0 +1,40 @@
+{
+  "api_status": "live",
+  "generated_at": "2026-07-19T10:28:55Z",
+  "health": {
+    "label": "Watch",
+    "score": 84
+  },
+  "latest_successful_audit": "2026-07-19T10:02:36Z",
+  "metrics": {
+    "freshness": {
+      "Fresh": 9
+    },
+    "guides": 9,
+    "markdown_files": 179,
+    "source_stability": {
+      "High": 18,
+      "Medium": 16
+    },
+    "sources": 34,
+    "visual_baselines": 10
+  },
+  "open": {
+    "issues": 0,
+    "pull_requests": 2
+  },
+  "release": {
+    "published_at": "2026-07-19T10:02:33Z",
+    "tag": "v1.0.0",
+    "url": "https://github.com/Conroy1988/Achievements/releases/tag/v1.0.0"
+  },
+  "repository": "Conroy1988/Achievements",
+  "schema_version": "1.0.0",
+  "workflows": {
+    "Content quality": "success",
+    "Link check": "success",
+    "Source inventory": "unknown",
+    "Verification release": "success",
+    "Visual regression": "success"
+  }
+}
