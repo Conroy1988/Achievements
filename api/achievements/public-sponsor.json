@@ -1,0 +1,35 @@
+{
+  "achievement": {
+    "aliases": [
+      "sponsor badge",
+      "GitHub Sponsors achievement"
+    ],
+    "category": "sponsors",
+    "evidence": {
+      "tiers": "not-applicable",
+      "trigger": "community-reported"
+    },
+    "guide_path": "docs/achievements/public-sponsor.md",
+    "known_limitations": [
+      "Sponsorship privacy settings can prevent public attribution.",
+      "Regional, account, and payment eligibility can change."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Public Sponsor",
+    "permalink": "/achievements/public-sponsor/",
+    "primary_action": "Publicly sponsor open-source work through GitHub Sponsors",
+    "slug": "public-sponsor",
+    "sources": {
+      "community": [],
+      "official": [
+        "https://docs.github.com/en/sponsors"
+      ]
+    },
+    "status": "active",
+    "tiered": false,
+    "tiers": [],
+    "trigger": "The account creates an active and publicly visible sponsorship through GitHub Sponsors."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

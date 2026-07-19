@@ -5,6 +5,9 @@ on:
     paths:
       - 'CHANGELOG.md'
       - 'docs/releases/**'
+      - 'api/**'
+      - 'scripts/build_public_api.py'
+      - 'scripts/repository_audit.py'
       - '.github/workflows/verification-release.yml'
   push:
     branches:
@@ -12,11 +15,17 @@ on:
     paths:
       - 'CHANGELOG.md'
       - 'docs/releases/**'
+      - 'api/**'
+      - 'scripts/build_public_api.py'
+      - 'scripts/repository_audit.py'
       - '.github/workflows/verification-release.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
+  actions: read
+  issues: read
+  pull-requests: read
 
 jobs:
   validate:
@@ -43,51 +52,49 @@ jobs:
               exit 1
             fi
           done
-      - name: Validate repository-wide Markdown
-        run: npx --yes markdownlint-cli2@0.18.1 "**/*.md"
-      - name: Validate achievement catalogue
-        run: python scripts/check_achievement_catalog.py
-      - name: Validate verification freshness
-        run: python scripts/check_verification_dates.py --strict-staleness --output verification-date-report.md
-      - name: Validate full link baseline
-        run: python scripts/check_links.py --all
-      - name: Build source inventory
-        run: python scripts/build_source_inventory.py --csv source-inventory.csv --markdown source-inventory.md
-      - name: Build GitHub Pages site
-        uses: actions/jekyll-build-pages@v1
+      - name: Set up Ruby and GitHub Pages dependencies
+        uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: '3.3'
+          bundler-cache: true
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Install visual-test dependencies
+      - name: Install browser dependencies
         run: npm install --no-package-lock
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Start local site
         run: |
-          python -m http.server 4173 --directory _site > /tmp/release-site.log 2>&1 &
-          for attempt in {1..20}; do
-            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
-              exit 0
-            fi
-            sleep 1
-          done
-          cat /tmp/release-site.log
-          exit 1
-      - name: Compare visual baselines
-        run: npm run visual:test
+          if ! npx playwright install --with-deps chromium > /tmp/playwright-install.log 2>&1; then
+            cat /tmp/playwright-install.log
+            exit 1
+          fi
+          tail -n 12 /tmp/playwright-install.log
+      - name: Run unified release audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/repository_audit.py \
+            --markdown verification-release-audit.md \
+            --json verification-release-audit.json \
+            --artifacts verification-release-artifacts
+      - name: Validate public API drift
+        run: |
+          set +e
+          python scripts/build_public_api.py --check 2>&1 | tee public-api-validation.log
+          status=${PIPESTATUS[0]}
+          exit "$status"
       - name: Upload release evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: verification-release-evidence
           path: |
-            verification-date-report.md
-            source-inventory.csv
-            source-inventory.md
+            verification-release-audit.md
+            verification-release-audit.json
+            verification-release-artifacts
+            public-api-validation.log
+            search-test-results
             visual-results
           if-no-files-found: warn
           retention-days: 90

@@ -1,0 +1,33 @@
+{
+  "achievement": {
+    "aliases": [
+      "self merge badge",
+      "merge without review"
+    ],
+    "category": "pull-request-review",
+    "evidence": {
+      "tiers": "not-applicable",
+      "trigger": "community-reported"
+    },
+    "guide_path": "docs/achievements/yolo.md",
+    "known_limitations": [
+      "Comments and formal approving reviews are different GitHub objects.",
+      "Protected branches may correctly prevent the qualifying sequence."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "YOLO",
+    "permalink": "/achievements/yolo/",
+    "primary_action": "Merge a pull request without review",
+    "slug": "yolo",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "active",
+    "tiered": false,
+    "tiers": [],
+    "trigger": "The account merges its own pull request without an approving review."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

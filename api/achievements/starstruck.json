@@ -1,0 +1,54 @@
+{
+  "achievement": {
+    "aliases": [
+      "repository star badge",
+      "star achievement"
+    ],
+    "category": "repositories",
+    "evidence": {
+      "tiers": "community-reported",
+      "trigger": "observed"
+    },
+    "guide_path": "docs/achievements/starstruck.md",
+    "known_limitations": [
+      "Repository ownership and transfer edge cases are not fully documented.",
+      "Star counts can fall after a tier is awarded."
+    ],
+    "last_verified": "2026-07-19",
+    "name": "Starstruck",
+    "permalink": "/achievements/starstruck/",
+    "primary_action": "Own a repository that receives stars",
+    "slug": "starstruck",
+    "sources": {
+      "community": [],
+      "official": []
+    },
+    "status": "active",
+    "tiered": true,
+    "tiers": [
+      {
+        "name": "Base",
+        "threshold": 16,
+        "unit": "repository stars"
+      },
+      {
+        "name": "Bronze",
+        "threshold": 128,
+        "unit": "repository stars"
+      },
+      {
+        "name": "Silver",
+        "threshold": 512,
+        "unit": "repository stars"
+      },
+      {
+        "name": "Gold",
+        "threshold": 4096,
+        "unit": "repository stars"
+      }
+    ],
+    "trigger": "A repository associated with the account reaches a community-reported star threshold."
+  },
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0"
+}

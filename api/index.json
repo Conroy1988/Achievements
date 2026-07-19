@@ -1,0 +1,23 @@
+{
+  "achievement_count": 9,
+  "achievement_slugs": [
+    "pull-shark",
+    "quickdraw",
+    "yolo",
+    "pair-extraordinaire",
+    "galaxy-brain",
+    "starstruck",
+    "public-sponsor",
+    "arctic-code-vault-contributor",
+    "mars-2020-contributor"
+  ],
+  "api_version": "1.0.0",
+  "dataset_schema_version": "1.0.0",
+  "endpoints": {
+    "achievement_template": "/Achievements/api/achievements/{slug}.json",
+    "achievements": "/Achievements/api/achievements.json",
+    "index": "/Achievements/api/index.json",
+    "schema": "/Achievements/api/schema.json",
+    "status": "/Achievements/api/status.json"
+  }
+}

@@ -8,6 +8,26 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 No unreleased changes are currently recorded.
 
+## v1.1.0 — 2026-07-19
+
+### Added
+
+- Generated repository health dashboard and machine-readable operational status.
+- Validated nine-record achievement dataset and JSON Schema contract.
+- Accessible search and filtering across achievements and major project references.
+- Single-command, 12-control repository audit with Markdown and JSON reporting.
+- Static public API with discovery, aggregate, individual achievement, schema, and health endpoints.
+
+### Changed
+
+- Search matching now uses exact token and alias semantics with project-base-aware result links.
+- Formal release verification now uses the unified repository audit and public API drift validation.
+- Repository navigation now exposes health, audit, data, search, and API surfaces directly.
+
+### Verification
+
+- Recorded the feature and API release in [`docs/releases/v1.1.0.md`](docs/releases/v1.1.0.md).
+
 ## v1.0.0 — 2026-07-19
 
 ### Added
