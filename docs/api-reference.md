@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, research operations, profile auditing, public observations, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research operations, adjudication, release readiness, schema, and repository health.
 permalink: /api/
 ---
 
@@ -31,7 +31,7 @@ https://conroy1988.github.io/Achievements/api/
 |---|---|
 | [`evidence.json`](../api/evidence.json) | Privacy-safe evidence records and review state |
 | [`timelines.json`](../api/timelines.json) | Verification timelines and page-level review dates |
-| [`research-queue.json`](../api/research-queue.json) | Twelve bounded contributor research tasks |
+| [`research-queue.json`](../api/research-queue.json) | Bounded contributor research tasks |
 | [`claims.json`](../api/claims.json) | Atomic claims with evidence and task relationships |
 | [`contradictions.json`](../api/contradictions.json) | Competing interpretations and resolution criteria |
 | [`coverage.json`](../api/coverage.json) | Claim and achievement coverage scores and ownership gaps |
@@ -48,13 +48,25 @@ https://conroy1988.github.io/Achievements/api/
 | [`submission-schema.json`](../api/submission-schema.json) | Structured evidence-observation contract |
 | [`command-centre.json`](../api/command-centre.json) | Static research metrics, targets, and public routes |
 
-The discovery index now exposes **26 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and thirteen auxiliary endpoints.
+## Evidence-quality programme endpoints
+
+| Endpoint | Purpose |
+|---|---|
+| [`event-linked-evidence.json`](../api/event-linked-evidence.json) | Public GitHub events linked to claims, including negative and inconclusive observations |
+| [`threshold-boundaries.json`](../api/threshold-boundaries.json) | Proposed boundaries, current brackets, blockers, and required next evidence |
+| [`adjudication.json`](../api/adjudication.json) | Fail-closed promotion rules and current human-review decisions |
+| [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
+| [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
+
+The discovery index now exposes **31 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and eighteen auxiliary endpoints.
 
 ## Response obligations
 
 Consumers must preserve uncertainty. Evidence level, reproduction state, reviewer decision, task state, dispute status, coverage score, observation scope, privacy status, and limitations are separate fields and must not be flattened into one confidence label.
 
 Public observations establish only the platform state visible at the cited URL and date. They do not automatically prove causality, an exact threshold, a qualifying event, or an immutable historical count.
+
+Event-linked records retain participant reports, negative results, processing-delay uncertainty, and public-event limitations. They do not modify canonical claim levels automatically.
 
 The profile-auditor rules are expressly non-authoritative. They describe public signals, not badge detection.
 
@@ -68,6 +80,7 @@ python scripts/build_research_hub.py
 python scripts/build_research_intelligence.py
 python scripts/build_evidence_operations.py
 python scripts/build_public_observations.py
+python scripts/build_evidence_quality_programme.py
 ```
 
 Generated endpoints must not be edited independently. Update the canonical source, run its builder, then commit the source and output together.
@@ -75,7 +88,7 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 ## Versioning
 
 - The core catalogue envelope remains `1.1.0`.
-- Research, observation, and evidence-operations endpoints carry independent schema and API versions.
+- Research, observation, adjudication, and evidence-operations endpoints carry independent schema and API versions.
 - A breaking envelope change increments the relevant major version.
 - Release tags describe encyclopedia releases rather than GitHub's achievement system.
 
@@ -87,8 +100,15 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 
 The immutable `v1.3.0` source baseline is commit `4869e71b392fc8a8f6d20835cdabe123c0c95e6f`. The tag resolves exactly to that commit.
 
+The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](../api/release-readiness.json) reports every evidence and operational gate as passing from merged `main`.
+
 ## Related material
 
+- [Event-linked evidence](event-linked-evidence.md)
+- [Threshold boundary programme](threshold-boundary-programme.md)
+- [Evidence adjudication engine](evidence-adjudication-engine.md)
+- [Contradiction resolution programme](contradiction-resolution-programme.md)
+- [Evidence quality release gate](evidence-quality-release-gate.md)
 - [Public observation corpus](public-observation-corpus.md)
 - [Evidence road to 100](evidence-road-to-100.md)
 - [Research command centre](../research-command-centre.md)
