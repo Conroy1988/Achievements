@@ -105,9 +105,14 @@ try {
   const missionIntakeHref = await page.locator('[data-result-slug="mission-execution-intake"] h3 a').getAttribute('href');
   assert.equal(missionIntakeHref, '/Achievements/mission-execution-intake/');
 
+  await page.locator('#search-query').fill('adjudication queue');
+  await expectCount(page, 1, 'mission review query');
+  const missionReviewHref = await page.locator('[data-result-slug="mission-review-queue"] h3 a').getAttribute('href');
+  assert.equal(missionReviewHref, '/Achievements/mission-review-queue/');
+
   const liveRegion = await page.locator('#search-count').getAttribute('aria-live');
   assert.equal(liveRegion, 'polite');
-  console.log('Search page passed dynamic catalogue counts, achievement, research, routing, filter, mission-intake, and accessibility checks.');
+  console.log('Search page passed dynamic catalogue counts, achievement, research, routing, filters, mission intake, mission review, and accessibility checks.');
 } catch (error) {
   const pages = browser.contexts().flatMap((context) => context.pages());
   if (pages[0]) {
