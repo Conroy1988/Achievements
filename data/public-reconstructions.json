@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "policy": "docs/public-reconstruction-corpus.md",
+  "observed_at": "2026-07-19",
+  "records": [
+    {
+      "id": "RCN-2026-001",
+      "achievement_slug": "quickdraw",
+      "claim_ids": ["CLM-003"],
+      "subject_login": "Schweinepriester",
+      "event_type": "pull-request-close-and-merge",
+      "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
+      "profile_url": "https://github.com/Schweinepriester?achievement=quickdraw&tab=achievements",
+      "created_at": "2016-01-26T12:41:15Z",
+      "completed_at": "2016-01-26T12:41:20Z",
+      "elapsed_seconds": 5,
+      "public_controls": {
+        "merged": true,
+        "base_branch": "master",
+        "formal_review_count": 0,
+        "achievement_visible": true
+      },
+      "supports": "A pull request closed and merged very shortly after creation can coexist with a visible Quickdraw award.",
+      "limitations": [
+        "The anonymous achievement page does not expose the contributing event link.",
+        "The reconstruction does not establish the maximum qualifying interval."
+      ],
+      "privacy_status": "public-identifiers-only"
+    },
+    {
+      "id": "RCN-2026-002",
+      "achievement_slug": "quickdraw",
+      "claim_ids": ["CLM-003"],
+      "subject_login": "kmcclosk",
+      "event_type": "pull-request-close-and-merge",
+      "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
+      "profile_url": "https://github.com/kmcclosk?achievement=quickdraw&tab=achievements",
+      "created_at": "2023-11-17T14:09:59Z",
+      "completed_at": "2023-11-17T14:10:08Z",
+      "elapsed_seconds": 9,
+      "public_controls": {
+        "merged": true,
+        "base_branch": "main",
+        "formal_review_count": 0,
+        "achievement_visible": true
+      },
+      "supports": "A second independent pull request closed and merged very shortly after creation coexists with a visible Quickdraw award.",
+      "limitations": [
+        "The anonymous achievement page does not expose the contributing event link.",
+        "The reconstruction does not establish the maximum qualifying interval."
+      ],
+      "privacy_status": "public-identifiers-only"
+    },
+    {
+      "id": "RCN-2026-003",
+      "achievement_slug": "yolo",
+      "claim_ids": ["CLM-004"],
+      "subject_login": "Schweinepriester",
+      "event_type": "pull-request-merge-without-formal-review",
+      "event_url": "https://github.com/Schweinepriester/Fira/pull/1",
+      "profile_url": "https://github.com/Schweinepriester?achievement=yolo&tab=achievements",
+      "created_at": "2016-01-26T12:41:15Z",
+      "completed_at": "2016-01-26T12:41:20Z",
+      "elapsed_seconds": 5,
+      "public_controls": {
+        "authored_by_subject": true,
+        "merged": true,
+        "base_branch": "master",
+        "formal_review_count": 0,
+        "achievement_visible": true
+      },
+      "supports": "A pull request authored by the account and merged without a submitted formal review can coexist with a visible YOLO award.",
+      "limitations": [
+        "The normalized public pull-request record does not expose the merging actor.",
+        "The reconstruction does not test comment-only, changes-requested, dismissed-review, or approved-review states."
+      ],
+      "privacy_status": "public-identifiers-only"
+    },
+    {
+      "id": "RCN-2026-004",
+      "achievement_slug": "yolo",
+      "claim_ids": ["CLM-004"],
+      "subject_login": "kmcclosk",
+      "event_type": "pull-request-merge-without-formal-review",
+      "event_url": "https://github.com/tronicapp/tronic-track/pull/1",
+      "profile_url": "https://github.com/kmcclosk?achievement=yolo&tab=achievements",
+      "created_at": "2023-11-17T14:09:59Z",
+      "completed_at": "2023-11-17T14:10:08Z",
+      "elapsed_seconds": 9,
+      "public_controls": {
+        "authored_by_subject": true,
+        "merged": true,
+        "base_branch": "main",
+        "formal_review_count": 0,
+        "achievement_visible": true
+      },
+      "supports": "A second independent pull request authored by the account and merged without a submitted formal review coexists with a visible YOLO award.",
+      "limitations": [
+        "The normalized public pull-request record does not expose the merging actor.",
+        "The reconstruction does not test alternate formal review states."
+      ],
+      "privacy_status": "public-identifiers-only"
+    },
+    {
+      "id": "RCN-2026-005",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_ids": ["CLM-005"],
+      "subject_login": "Rongronggg9",
+      "event_type": "coauthored-commit-in-merged-pull-request",
+      "event_url": "https://github.com/devflash101/POC/pull/11",
+      "commit_url": "https://github.com/devflash101/POC/commit/113d443b2e745314c68f33db8d7e6518d14a4d2f",
+      "profile_url": "https://github.com/Rongronggg9?achievement=pair-extraordinaire&tab=achievements",
+      "created_at": "2025-11-26T18:41:38Z",
+      "completed_at": "2025-11-26T18:41:59Z",
+      "elapsed_seconds": 21,
+      "public_controls": {
+        "merged": true,
+        "base_branch": "main",
+        "account_linked_coauthor_trailer": true,
+        "attributed_commit_retained_in_final_history": true,
+        "displayed_tier": "x4"
+      },
+      "supports": "An account-linked co-authored commit retained in a merged pull request can coexist with a visible Pair Extraordinaire award.",
+      "limitations": [
+        "The public profile does not expose the exact qualifying count.",
+        "This merge-commit case does not establish squash or rebase behaviour."
+      ],
+      "privacy_status": "public-identifiers-only"
+    },
+    {
+      "id": "RCN-2026-006",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_ids": ["CLM-005"],
+      "subject_login": "Schweinepriester",
+      "event_type": "coauthored-final-merge-commit",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/7466",
+      "commit_url": "https://github.com/Fyrd/caniuse/commit/188bc05673b7c6bf83077982cbed0c2ec15df532",
+      "profile_url": "https://github.com/Schweinepriester?achievement=pair-extraordinaire&tab=achievements",
+      "created_at": "2026-01-31T02:01:50Z",
+      "completed_at": "2026-02-06T06:16:48Z",
+      "elapsed_seconds": 447898,
+      "public_controls": {
+        "merged": true,
+        "base_branch": "main",
+        "account_linked_coauthor_trailer": true,
+        "attribution_present_in_final_merge_commit": true,
+        "displayed_tier": "x3"
+      },
+      "supports": "A second independent account-linked co-author attribution preserved in the final merged commit coexists with a visible Pair Extraordinaire award.",
+      "limitations": [
+        "The public profile does not expose the exact qualifying count.",
+        "This example does not resolve every squash, rebase, email-matching, or rewritten-history case."
+      ],
+      "privacy_status": "public-identifiers-only"
+    }
+  ]
+}
