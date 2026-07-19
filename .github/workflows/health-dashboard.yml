@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scripts/build_health_dashboard.py \
+          python -m scripts.build_health_dashboard \
             --markdown _artifacts/health-dashboard.md \
             --json _artifacts/status.json
       - name: Upload preview
@@ -65,7 +65,7 @@ jobs:
             echo 'Health baseline already exists.'
             exit 0
           fi
-          python scripts/build_health_dashboard.py
+          python -m scripts.build_health_dashboard
       - name: Commit baseline
         run: |
           if [[ -z "$(git status --porcelain -- docs/health-dashboard.md api/status.json)" ]]; then
@@ -94,7 +94,7 @@ jobs:
       - name: Generate public dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/build_health_dashboard.py
+        run: python -m scripts.build_health_dashboard
       - name: Commit refreshed dashboard
         run: |
           if [[ -z "$(git status --porcelain -- docs/health-dashboard.md api/status.json)" ]]; then
