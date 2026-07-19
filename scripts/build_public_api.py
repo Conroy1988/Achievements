@@ -10,8 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "data" / "achievements.json"
 SCHEMA = ROOT / "data" / "achievement.schema.json"
 DEFAULT_OUTPUT = ROOT / "api"
-API_VERSION = "1.0.0"
+API_VERSION = "1.1.0"
 PUBLIC_BASE = "/Achievements/api"
+AUXILIARY_ENDPOINTS = {
+    "evidence": Path("evidence.json"),
+    "timelines": Path("timelines.json"),
+    "research_queue": Path("research-queue.json"),
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -67,17 +72,19 @@ def expected_documents() -> dict[Path, object]:
             "achievement": achievement,
         }
 
+    endpoints = {
+        "index": f"{PUBLIC_BASE}/index.json",
+        "achievements": f"{PUBLIC_BASE}/achievements.json",
+        "achievement_template": f"{PUBLIC_BASE}/achievements/{{slug}}.json",
+        "schema": f"{PUBLIC_BASE}/schema.json",
+        "status": f"{PUBLIC_BASE}/status.json",
+    }
+    endpoints.update({name: f"{PUBLIC_BASE}/{path.as_posix()}" for name, path in AUXILIARY_ENDPOINTS.items()})
     documents[Path("index.json")] = {
         "api_version": API_VERSION,
         "dataset_schema_version": dataset.get("schema_version"),
         "achievement_count": len(achievements),
-        "endpoints": {
-            "index": f"{PUBLIC_BASE}/index.json",
-            "achievements": f"{PUBLIC_BASE}/achievements.json",
-            "achievement_template": f"{PUBLIC_BASE}/achievements/{{slug}}.json",
-            "schema": f"{PUBLIC_BASE}/schema.json",
-            "status": f"{PUBLIC_BASE}/status.json",
-        },
+        "endpoints": endpoints,
         "achievement_slugs": slugs,
     }
     return documents
@@ -98,6 +105,28 @@ def validate_status(output: Path, errors: list[str]) -> None:
             errors.append(f"api/status.json is missing {field}")
     if status.get("repository") != "Conroy1988/Achievements":
         errors.append("api/status.json identifies the wrong repository")
+
+
+def validate_auxiliary(output: Path, errors: list[str]) -> None:
+    for name, relative in AUXILIARY_ENDPOINTS.items():
+        path = output / relative
+        if not path.exists():
+            errors.append(f"Missing auxiliary API endpoint: {path.relative_to(ROOT)}")
+            continue
+        try:
+            payload = load_json(path)
+        except (OSError, ValueError, json.JSONDecodeError) as error:
+            errors.append(f"Invalid auxiliary endpoint {path.relative_to(ROOT)}: {error}")
+            continue
+        for field in ("api_version", "schema_version", "count"):
+            if field not in payload:
+                errors.append(f"{path.relative_to(ROOT)} is missing {field}")
+        if name == "evidence" and not isinstance(payload.get("records"), list):
+            errors.append("api/evidence.json is missing records")
+        if name == "timelines" and not isinstance(payload.get("timelines"), list):
+            errors.append("api/timelines.json is missing timelines")
+        if name == "research_queue" and not isinstance(payload.get("tasks"), list):
+            errors.append("api/research-queue.json is missing tasks")
 
 
 def write_documents(output: Path, documents: dict[Path, object]) -> None:
@@ -133,6 +162,7 @@ def check_documents(output: Path, documents: dict[Path, object]) -> list[str]:
             if relative not in expected_paths:
                 errors.append(f"Stale API endpoint: {path.relative_to(ROOT)}")
     validate_status(output, errors)
+    validate_auxiliary(output, errors)
     return errors
 
 
@@ -151,14 +181,15 @@ def main() -> int:
             print("Public API validation failed:")
             print("\n".join(f"- {error}" for error in errors))
             return 1
-        print(f"Public API matches the canonical dataset across {len(documents)} generated endpoints plus status.json.")
+        print(f"Public API matches the canonical dataset across {len(documents)} generated endpoints, three research endpoints, and status.json.")
         return 0
 
     write_documents(output, documents)
     errors: list[str] = []
     validate_status(output, errors)
+    validate_auxiliary(output, errors)
     if errors:
-        print("Public API generated, but status validation failed:")
+        print("Public API generated, but auxiliary validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
     print(f"Generated {len(documents)} static API endpoints from 9 achievement records.")
