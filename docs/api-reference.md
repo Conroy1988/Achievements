@@ -81,6 +81,8 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 - [`v1.2.0`](releases/v1.2.0.md) introduced evidence, timeline, and contributor-research discovery.
 - [`v1.3.0`](releases/v1.3.0.md) introduces research intelligence, reproduction protocols, automated triage, the profile auditor, and the command centre.
 
+The immutable `v1.3.0` source baseline is commit `4869e71b392fc8a8f6d20835cdabe123c0c95e6f`. The tag resolves exactly to that commit.
+
 ## Related material
 
 - [Research command centre](../research-command-centre.md)
