@@ -29,6 +29,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Research operations
 
+- [Evidence road to 100](docs/evidence-road-to-100.md)
 - [Achievement reproduction laboratory](docs/reproduction-lab.md)
 - [Submit achievement evidence](evidence-submission.md)
 - [Contributor research hub](docs/research-hub.md)
@@ -71,8 +72,8 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Evidence labels
 
-- **Official** — stated by GitHub in maintained documentation.
-- **Confirmed** — reproduced with sufficient dated evidence.
+- **Official** — stated by GitHub in current or preserved first-party documentation or product publications.
+- **Confirmed** — independently reproduced with sufficient dated evidence.
 - **Observed** — supported by credible observations without full reproduction.
 - **Community-reported** — third-party reporting without adequate independent confirmation.
 - **Unknown** — insufficient evidence for a reliable claim.

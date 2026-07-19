@@ -1,7 +1,7 @@
 {
   "api_version": "1.0.0",
   "schema_version": "1.1.0",
-  "count": 12,
+  "count": 10,
   "priorities": [
     {
       "task_id": "RSH-001",
@@ -173,28 +173,6 @@
       "rank": 7
     },
     {
-      "task_id": "RSH-012",
-      "title": "Reproduce the Public Sponsor visibility trigger",
-      "achievement_slug": "public-sponsor",
-      "declared_priority": "high",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 65,
-      "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 25,
-        "open_dispute": 0,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-011"
-      ],
-      "contradiction_ids": [],
-      "rank": 8
-    },
-    {
       "task_id": "RSH-008",
       "title": "Document award-processing delay observations",
       "achievement_slug": null,
@@ -212,19 +190,19 @@
       },
       "claim_ids": [],
       "contradiction_ids": [],
-      "rank": 9
+      "rank": 8
     },
     {
       "task_id": "RSH-011",
-      "title": "Reproduce the Galaxy Brain accepted-answer trigger",
+      "title": "Verify Galaxy Brain accepted-answer semantics and processing",
       "achievement_slug": "galaxy-brain",
       "declared_priority": "high",
       "status": "open",
       "good_first_issue": false,
-      "score": 55,
+      "score": 40,
       "score_components": {
         "declared_priority": 30,
-        "evidence_weakness": 15,
+        "evidence_weakness": 0,
         "open_dispute": 0,
         "active_scope": 10,
         "good_first_issue": 0,
@@ -234,51 +212,29 @@
         "CLM-007"
       ],
       "contradiction_ids": [],
+      "rank": 9
+    },
+    {
+      "task_id": "RSH-012",
+      "title": "Verify Public Sponsor visibility and processing edge cases",
+      "achievement_slug": "public-sponsor",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 40,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 0,
+        "open_dispute": 0,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-011"
+      ],
+      "contradiction_ids": [],
       "rank": 10
-    },
-    {
-      "task_id": "RSH-006",
-      "title": "Locate durable Arctic Code Vault sources",
-      "achievement_slug": "arctic-code-vault-contributor",
-      "declared_priority": "medium",
-      "status": "open",
-      "good_first_issue": true,
-      "score": 28,
-      "score_components": {
-        "declared_priority": 20,
-        "evidence_weakness": 5,
-        "open_dispute": 0,
-        "active_scope": 0,
-        "good_first_issue": 3,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-012"
-      ],
-      "contradiction_ids": [],
-      "rank": 11
-    },
-    {
-      "task_id": "RSH-007",
-      "title": "Locate durable Mars 2020 qualification sources",
-      "achievement_slug": "mars-2020-contributor",
-      "declared_priority": "medium",
-      "status": "open",
-      "good_first_issue": true,
-      "score": 28,
-      "score_components": {
-        "declared_priority": 20,
-        "evidence_weakness": 5,
-        "open_dispute": 0,
-        "active_scope": 0,
-        "good_first_issue": 3,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-013"
-      ],
-      "contradiction_ids": [],
-      "rank": 12
     }
   ]
 }

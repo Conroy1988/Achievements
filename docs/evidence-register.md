@@ -19,11 +19,11 @@ This register links each canonical achievement to a dated, privacy-safe evidence
 | `EVD-2026-002` | [Quickdraw](../docs/quickdraw.md) | community-reported | awaiting-independent-reproduction | provisional | 2026-07-19 |
 | `EVD-2026-003` | [YOLO](../docs/achievements/yolo.md) | community-reported | awaiting-independent-reproduction | provisional | 2026-07-19 |
 | `EVD-2026-004` | [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | community-reported | partially-reproduced | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-005` | [Galaxy Brain](../docs/achievements/galaxy-brain.md) | observed | observed-not-fully-reproduced | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-005` | [Galaxy Brain](../docs/achievements/galaxy-brain.md) | official | official-trigger-description | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-006` | [Starstruck](../docs/achievements/starstruck.md) | observed | observed-not-fully-reproduced | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-007` | [Public Sponsor](../docs/achievements/public-sponsor.md) | community-reported | partially-reproduced | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-008` | [Arctic Code Vault Contributor](../docs/arctic-code-vault-contributor.md) | confirmed | historical-confirmation | accepted | 2026-07-19 |
-| `EVD-2026-009` | [Mars 2020 Contributor](../docs/mars-2020-contributor.md) | confirmed | historical-confirmation | accepted | 2026-07-19 |
+| `EVD-2026-007` | [Public Sponsor](../docs/achievements/public-sponsor.md) | official | officially-documented-trigger | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-008` | [Arctic Code Vault Contributor](../docs/arctic-code-vault-contributor.md) | official | historical-official-documentation | accepted | 2026-07-19 |
+| `EVD-2026-009` | [Mars 2020 Contributor](../docs/mars-2020-contributor.md) | official | historical-official-documentation | accepted | 2026-07-19 |
 
 ## Record details
 
@@ -77,15 +77,15 @@ GitHub documents co-authorship syntax but not the complete achievement contract 
 
 ### EVD-2026-005 — Galaxy Brain
 
-**Claim:** An answer posted by the account in a GitHub Discussion is marked as accepted.
+**Claim:** A GitHub Discussion answer authored by the account is deemed helpful by another user.
 
 **Guide location:** `docs/achievements/galaxy-brain.md` — Accepted answers
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 2 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Accepted and verified answers are different moderation states.
+GitHub’s launch material directly ties Galaxy Brain to Discussion answers another user deems helpful. Exact current accepted-state semantics, processing delay, and tiers remain separate research questions.
 
 ### EVD-2026-006 — Starstruck
 
@@ -101,39 +101,39 @@ Ownership-transfer edge cases and the complete tier table are not officially doc
 
 ### EVD-2026-007 — Public Sponsor
 
-**Claim:** The account creates an active and publicly visible sponsorship through GitHub Sponsors.
+**Claim:** Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor.
 
 **Guide location:** `docs/achievements/public-sponsor.md` — Public sponsorship visibility
 
 **Privacy:** `public-no-financial-data`  
-**Sources:** 1 public source(s), 0 archive source(s)  
+**Sources:** 2 public source(s), 1 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-The official Sponsors documentation explains the product but not the achievement-award contract.
+Archived GitHub documentation directly states the sponsor-badge trigger. Visibility, cancellation, eligibility, and processing behaviour remain limitations rather than changes to the broad trigger.
 
 ### EVD-2026-008 — Arctic Code Vault Contributor
 
-**Claim:** The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.
+**Claim:** The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program.
 
 **Guide location:** `docs/arctic-code-vault-contributor.md` — 2020 archive qualification
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 1 public source(s), 1 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-The qualifying archival event is complete and cannot be reproduced through new activity.
+GitHub’s archived profile documentation states the default-branch commit criterion, while GitHub’s Archive Program publication documents the badge and 2020 vault.
 
 ### EVD-2026-009 — Mars 2020 Contributor
 
-**Claim:** The account contributed to qualifying open-source repositories used by the Mars 2020 mission.
+**Claim:** The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission.
 
 **Guide location:** `docs/mars-2020-contributor.md` — Mission-linked qualification
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 2 public source(s), 1 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-The mission-linked event is historical and not currently earnable.
+Current GitHub documentation publishes the qualifying repository/version/tag list. Archived documentation records commit authorship, co-authorship, tag, and verified-email attribution conditions.
 
 ## Using this register
 

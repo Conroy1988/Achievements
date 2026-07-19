@@ -133,7 +133,7 @@
     {
       "document_id": "github-sponsors",
       "url": "https://docs.github.com/en/sponsors",
-      "risk": "high",
+      "risk": "low",
       "affected_achievements": [
         "public-sponsor"
       ],

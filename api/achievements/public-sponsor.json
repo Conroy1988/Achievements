@@ -7,12 +7,12 @@
     "category": "sponsors",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "community-reported"
+      "trigger": "official"
     },
     "guide_path": "docs/achievements/public-sponsor.md",
     "known_limitations": [
-      "Sponsorship privacy settings can prevent public attribution.",
-      "Regional, account, and payment eligibility can change."
+      "Archived GitHub documentation states the broad trigger; public/private visibility and award-processing edge cases remain under study.",
+      "Regional, account, recipient, and payment eligibility can change independently of the achievement rule."
     ],
     "last_verified": "2026-07-19",
     "name": "Public Sponsor",
@@ -22,13 +22,14 @@
     "sources": {
       "community": [],
       "official": [
-        "https://docs.github.com/en/sponsors"
+        "https://docs.github.com/en/sponsors/sponsoring-open-source-contributors/sponsoring-an-open-source-contributor-through-github",
+        "https://github.blog/news-insights/company-news/open-source-goes-to-mars/"
       ]
     },
     "status": "active",
     "tiered": false,
     "tiers": [],
-    "trigger": "The account creates an active and publicly visible sponsorship through GitHub Sponsors."
+    "trigger": "Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

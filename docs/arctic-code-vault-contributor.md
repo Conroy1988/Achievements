@@ -2,61 +2,57 @@
 
 ## Summary
 
-Arctic Code Vault Contributor is a retired GitHub profile achievement connected to the GitHub Archive Program's 2020 Arctic Code Vault snapshot. It cannot be newly earned through current activity.
+Arctic Code Vault Contributor is a retired GitHub profile achievement connected to the 2020 GitHub Arctic Code Vault snapshot. It cannot be newly earned through current activity.
 
 ## Historical trigger
 
-The badge was associated with qualifying contributions to repositories included in GitHub's 2020 archive snapshot.
+GitHub's archived profile documentation states that the badge was awarded when the account authored a commit on the default branch of a repository archived in the 2020 Arctic Vault programme.
 
 ## Progression or tiers
 
-This achievement is not known to have tiers.
+This achievement is not documented as tiered.
 
 ## Eligibility conditions
 
-Eligibility depended on GitHub's historical archive selection and contribution-attribution rules. Repository inclusion alone did not necessarily prove that every contributor or every contribution qualified.
-
-## Award timing
-
-The achievement was awarded after the 2020 archive programme was processed. It is not an ongoing or repeatable award.
+- The repository had to be included in GitHub's 2020 Arctic archive programme.
+- The qualifying commit had to be on the repository's default branch.
+- Commit attribution had to resolve to the GitHub account during historical processing.
+- Present-day contributions do not qualify retroactively.
 
 ## Verification
 
-Confirm the badge on the profile's achievements section and compare the account's dated contribution history with repositories included in the archive. Historical verification should avoid exposing private contribution data.
+1. Confirm the profile badge and any repository links it exposes.
+2. Confirm the repository participated in the 2020 archive.
+3. Confirm the qualifying commit was on the historical default branch.
+4. Confirm author attribution using public history without exposing private data.
 
 ## Evidence status
 
-- The existence of the GitHub Arctic Code Vault and its 2020 archive is **Official**.
-- The badge's association with qualifying archived contributions is **Confirmed**.
-- Fine-grained eligibility edge cases remain **Observed** or **Unknown** unless supported by dated evidence.
+- The archive, badge, and default-branch authorship rule are **Official**.
+- Account deletion, repository renaming, transfer, and historical email-association edge cases remain limitations of retrospective verification.
 
 ## Known limitations and edge cases
 
-- The badge is retired and cannot be earned now.
-- Repository transfers, renamed repositories, deleted accounts, and changed email attribution can complicate retrospective verification.
-- A present-day contribution to a formerly archived repository does not qualify retroactively.
-
-## Troubleshooting
-
-1. Confirm that the badge is not hidden in profile achievement settings.
-2. Verify that the relevant contribution predates the archive snapshot.
-3. Check that the commit email was associated with the GitHub account at the relevant time.
-4. Treat missing historical attribution as unresolved unless primary evidence is available.
+- The event has ended and cannot be repeated.
+- Historical default branches may have been renamed.
+- Deleted repositories, accounts, or rewritten public history can remove evidence that once existed.
+- Current repository state does not necessarily reproduce the 2020 snapshot.
 
 ## Responsible participation
 
-Do not manufacture historical claims or alter repository history to imply eligibility. This guide documents a past programme rather than a route to obtaining a badge today.
+Do not alter repository history or manufacture historical claims. This guide documents a completed programme.
 
 ## History
 
-GitHub announced the Archive Program in 2019 and deposited a public-code snapshot in the Arctic Code Vault in 2020. The related profile achievement is now historical.
+GitHub deposited the public-code snapshot in the Arctic Code Vault in 2020 and introduced the profile badge to recognise developers whose work was included.
 
 ## References
 
+- [Archived GitHub profile documentation](https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile)
+- [GitHub Archive Program journey](https://github.blog/news-insights/company-news/github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/)
 - [GitHub Archive Program](https://archiveprogram.github.com/)
-- [GitHub profile achievements reference](https://docs.github.com/en/account-and-profile/reference/profile-reference#achievements)
 - [Achievement index](achievement-index.md)
 
 ## Last verified
 
-**19 July 2026** — verified as a retired historical achievement; current fine-grained eligibility rules are not fully published.
+**19 July 2026** — official historical trigger and retired status verified; retrospective attribution can still be limited by later repository and account changes.

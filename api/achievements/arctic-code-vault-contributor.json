@@ -7,12 +7,12 @@
     "category": "historical",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "confirmed"
+      "trigger": "official"
     },
     "guide_path": "docs/arctic-code-vault-contributor.md",
     "known_limitations": [
-      "The qualifying archival event is complete and cannot be repeated by new activity.",
-      "Historical attribution depends on the archived snapshot."
+      "The qualifying archival event is complete and cannot be repeated through new activity.",
+      "Historical attribution can still be complicated by deleted accounts, renamed repositories, and email association at the time of processing."
     ],
     "last_verified": "2026-07-19",
     "name": "Arctic Code Vault Contributor",
@@ -21,12 +21,15 @@
     "slug": "arctic-code-vault-contributor",
     "sources": {
       "community": [],
-      "official": []
+      "official": [
+        "https://github.blog/news-insights/company-news/github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/",
+        "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+      ]
     },
     "status": "retired",
     "tiered": false,
     "tiers": [],
-    "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot."
+    "trigger": "The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

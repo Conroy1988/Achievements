@@ -7,12 +7,12 @@
     "category": "historical",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "confirmed"
+      "trigger": "official"
     },
     "guide_path": "docs/mars-2020-contributor.md",
     "known_limitations": [
-      "The mission-linked qualifying event is historical and not currently earnable.",
-      "The complete internal qualification list is not maintained as a current public contract."
+      "The qualifying event has ended and cannot be repeated through new activity.",
+      "Attribution depended on the verified email associated with the account when GitHub determined eligible contributions."
     ],
     "last_verified": "2026-07-19",
     "name": "Mars 2020 Contributor",
@@ -21,12 +21,16 @@
     "slug": "mars-2020-contributor",
     "sources": {
       "community": [],
-      "official": []
+      "official": [
+        "https://docs.github.com/en/account-and-profile/reference/profile-reference",
+        "https://github.blog/news-insights/company-news/open-source-goes-to-mars/",
+        "https://web.archive.org/web/20220531023858/https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile"
+      ]
     },
     "status": "retired",
     "tiered": false,
     "tiers": [],
-    "trigger": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission."
+    "trigger": "The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

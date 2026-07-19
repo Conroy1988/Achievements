@@ -94,8 +94,8 @@
       "id": "CLM-007",
       "achievement_slug": "galaxy-brain",
       "claim_type": "trigger",
-      "statement": "An answer posted by the account in a GitHub Discussion is marked as accepted.",
-      "evidence_level": "observed",
+      "statement": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-005"
       ],
@@ -154,23 +154,23 @@
       "id": "CLM-011",
       "achievement_slug": "public-sponsor",
       "claim_type": "trigger",
-      "statement": "An active and publicly visible GitHub Sponsors sponsorship can award Public Sponsor.",
-      "evidence_level": "community-reported",
+      "statement": "Sponsoring an open-source contributor through GitHub Sponsors can award Public Sponsor.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-007"
       ],
       "research_task_ids": [
         "RSH-012"
       ],
-      "status": "provisional",
+      "status": "maintained-with-limitations",
       "last_reviewed": "2026-07-19"
     },
     {
       "id": "CLM-012",
       "achievement_slug": "arctic-code-vault-contributor",
       "claim_type": "historical-trigger",
-      "statement": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot.",
-      "evidence_level": "confirmed",
+      "statement": "The account authored a commit on the default branch of a repository archived in the 2020 GitHub Arctic Code Vault program.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-008"
       ],
@@ -184,8 +184,8 @@
       "id": "CLM-013",
       "achievement_slug": "mars-2020-contributor",
       "claim_type": "historical-trigger",
-      "statement": "The account contributed to qualifying open-source repositories used by the Mars 2020 mission.",
-      "evidence_level": "confirmed",
+      "statement": "The account authored or co-authored a commit present in the listed qualifying tag of a repository used by the Mars 2020 Helicopter Mission.",
+      "evidence_level": "official",
       "evidence_ids": [
         "EVD-2026-009"
       ],

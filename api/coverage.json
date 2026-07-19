@@ -1,7 +1,7 @@
 {
   "api_version": "1.0.0",
   "schema_version": "1.1.0",
-  "overall_coverage_score": 44.2,
+  "overall_coverage_score": 54.6,
   "overall_rating": "fragile",
   "claim_count": 13,
   "achievement_count": 9,
@@ -60,8 +60,8 @@
       "achievement_name": "Galaxy Brain",
       "achievement_status": "active",
       "claim_count": 2,
-      "coverage_score": 42.5,
-      "rating": "fragile",
+      "coverage_score": 62.5,
+      "rating": "developing",
       "open_disputes": [
         "CTR-005"
       ],
@@ -84,8 +84,8 @@
       "achievement_name": "Public Sponsor",
       "achievement_status": "active",
       "claim_count": 1,
-      "coverage_score": 35.0,
-      "rating": "critical",
+      "coverage_score": 100.0,
+      "rating": "robust",
       "open_disputes": [],
       "unassigned_gaps": []
     },
@@ -94,7 +94,7 @@
       "achievement_name": "Arctic Code Vault Contributor",
       "achievement_status": "retired",
       "claim_count": 1,
-      "coverage_score": 85.0,
+      "coverage_score": 100.0,
       "rating": "robust",
       "open_disputes": [],
       "unassigned_gaps": []
@@ -104,7 +104,7 @@
       "achievement_name": "Mars 2020 Contributor",
       "achievement_status": "retired",
       "claim_count": 1,
-      "coverage_score": 85.0,
+      "coverage_score": 100.0,
       "rating": "robust",
       "open_disputes": [],
       "unassigned_gaps": []
@@ -195,12 +195,12 @@
       "claim_id": "CLM-007",
       "achievement_slug": "galaxy-brain",
       "claim_type": "trigger",
-      "evidence_level": "observed",
+      "evidence_level": "official",
       "open_disputes": [],
       "research_task_ids": [
         "RSH-011"
       ],
-      "coverage_score": 60,
+      "coverage_score": 100,
       "unassigned_gap": false
     },
     {
@@ -249,36 +249,36 @@
       "claim_id": "CLM-011",
       "achievement_slug": "public-sponsor",
       "claim_type": "trigger",
-      "evidence_level": "community-reported",
+      "evidence_level": "official",
       "open_disputes": [],
       "research_task_ids": [
         "RSH-012"
       ],
-      "coverage_score": 35,
+      "coverage_score": 100,
       "unassigned_gap": false
     },
     {
       "claim_id": "CLM-012",
       "achievement_slug": "arctic-code-vault-contributor",
       "claim_type": "historical-trigger",
-      "evidence_level": "confirmed",
+      "evidence_level": "official",
       "open_disputes": [],
       "research_task_ids": [
         "RSH-006"
       ],
-      "coverage_score": 85,
+      "coverage_score": 100,
       "unassigned_gap": false
     },
     {
       "claim_id": "CLM-013",
       "achievement_slug": "mars-2020-contributor",
       "claim_type": "historical-trigger",
-      "evidence_level": "confirmed",
+      "evidence_level": "official",
       "open_disputes": [],
       "research_task_ids": [
         "RSH-007"
       ],
-      "coverage_score": 85,
+      "coverage_score": 100,
       "unassigned_gap": false
     }
   ]

@@ -117,7 +117,7 @@
       "title": "Locate durable Arctic Code Vault sources",
       "achievement_slug": "arctic-code-vault-contributor",
       "task_type": "source-replacement",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "difficulty": "beginner",
       "good_first_issue": true,
@@ -138,7 +138,7 @@
       "title": "Locate durable Mars 2020 qualification sources",
       "achievement_slug": "mars-2020-contributor",
       "task_type": "source-replacement",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "difficulty": "beginner",
       "good_first_issue": true,
@@ -217,9 +217,9 @@
     },
     {
       "id": "RSH-011",
-      "title": "Reproduce the Galaxy Brain accepted-answer trigger",
+      "title": "Verify Galaxy Brain accepted-answer semantics and processing",
       "achievement_slug": "galaxy-brain",
-      "task_type": "independent-reproduction",
+      "task_type": "edge-case-research",
       "status": "open",
       "priority": "high",
       "difficulty": "intermediate",
@@ -227,20 +227,20 @@
       "related_evidence_ids": [
         "EVD-2026-005"
       ],
-      "research_question": "Does a genuine GitHub Discussion answer being marked accepted reliably create Galaxy Brain progress, and how long does profile visibility take?",
+      "research_question": "How does GitHub’s official “answer deemed helpful” description map to current accepted-answer interface states, revocation behaviour, and profile-processing delay?",
       "acceptance_criteria": [
         "Use genuine Discussion questions and answers moderated by the repository maintainer.",
-        "Record answer, acceptance, and first-visible-award timestamps.",
+        "Record answer, acceptance, revocation where applicable, and first-visible-award timestamps.",
         "Distinguish accepted answers from verified answers, labels, reactions, and other moderation states.",
-        "Provide observations from at least two independent accounts."
+        "Provide observations from at least two independent accounts without publishing restricted content."
       ],
       "target_evidence_level": "confirmed"
     },
     {
       "id": "RSH-012",
-      "title": "Reproduce the Public Sponsor visibility trigger",
+      "title": "Verify Public Sponsor visibility and processing edge cases",
       "achievement_slug": "public-sponsor",
-      "task_type": "independent-reproduction",
+      "task_type": "edge-case-research",
       "status": "open",
       "priority": "high",
       "difficulty": "intermediate",
@@ -248,11 +248,11 @@
       "related_evidence_ids": [
         "EVD-2026-007"
       ],
-      "research_question": "Which sponsorship visibility and account conditions are required for Public Sponsor to appear without exposing financial information?",
+      "research_question": "How do sponsorship visibility, cancellation, account state, and processing delay affect an officially documented Public Sponsor award?",
       "acceptance_criteria": [
         "Record only public sponsorship state, activation date, and profile-award visibility; exclude payment details.",
-        "Compare public and private sponsorship visibility where the participant can safely do so.",
-        "Record account, region, and processing limitations without publishing sensitive eligibility data.",
+        "Compare public and private sponsorship visibility only where participants can do so safely and legitimately.",
+        "Record cancellation or visibility-change outcomes without exposing financial or eligibility data.",
         "Provide dated observations from at least two independent accounts."
       ],
       "target_evidence_level": "confirmed"

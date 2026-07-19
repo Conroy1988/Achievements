@@ -6,7 +6,17 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 ## Unreleased
 
-No unreleased changes are currently recorded.
+### Added
+
+- Evidence road-to-100 campaign with claim-specific gates for confirmed and official status.
+- Archived GitHub documentation as preserved primary evidence for retired and historical achievement contracts.
+
+### Changed
+
+- Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
+- Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
+- Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than their broad triggers.
+- Search navigation now exposes the evidence road-to-100 campaign.
 
 ## v1.3.0 — 2026-07-19
 
