@@ -9,7 +9,7 @@ description: Live operational health, verification freshness, automation status,
 
 **Overall health:** 100/100 — **Excellent**
 
-Generated at **2026-07-19 16:35:14 UTC** from repository data and the GitHub API.
+Generated at **2026-07-19 16:38:15 UTC** from repository data and the GitHub API.
 
 ## Current operating state
 
@@ -36,7 +36,7 @@ Generated at **2026-07-19 16:35:14 UTC** from repository data and the GitHub API
 | Verification release | Success |
 | Visual regression | Success |
 
-Latest successful tracked audit: **2026-07-19 16:35:05 UTC**.
+Latest successful tracked audit: **2026-07-19 16:36:00 UTC**.
 
 ## Source resilience
 
@@ -47,7 +47,7 @@ Latest successful tracked audit: **2026-07-19 16:35:05 UTC**.
 
 ## Release baseline
 
-Latest formal release: **[v1.2.0](https://github.com/Conroy1988/Achievements/releases/tag/v1.2.0)**.
+Latest formal release: **[v1.3.0](https://github.com/Conroy1988/Achievements/releases/tag/v1.3.0)**.
 
 ## Scoring model
 
