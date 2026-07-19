@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "timeline_scope": "Repository verification history and dated external events supported by the canonical guides. Unknown first-observation dates are not inferred.",
+  "timelines": [
+    {
+      "achievement_slug": "pull-shark",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The earliest public appearance and initial rollout date are not established by the current evidence set."],
+      "events": [
+        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "confirmed", "summary": "Canonical trigger wording and community-reported tier thresholds were reviewed."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-001 was accepted with documented tier limitations."}
+      ]
+    },
+    {
+      "achievement_slug": "quickdraw",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The exact qualifying time window and earliest award date remain undocumented by GitHub."],
+      "events": [
+        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "community-reported", "summary": "The guide retained a provisional short-window description rather than asserting a fixed threshold."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-002 was marked provisional and awaiting independent reproduction."}
+      ]
+    },
+    {
+      "achievement_slug": "yolo",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["GitHub does not publish an official achievement contract or original rollout date."],
+      "events": [
+        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "community-reported", "summary": "The distinction between comments and approving reviews was retained as a qualifying limitation."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-003 was marked provisional and awaiting independent reproduction."}
+      ]
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The original achievement rollout date and complete tier contract are not established by official documentation."],
+      "events": [
+        {"date": "2026-07-19", "type": "official-source-review", "evidence_level": "official", "summary": "GitHub's documented multiple-author commit syntax was linked as attribution context."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-004 was accepted with limitations around merge strategy and tier thresholds."}
+      ]
+    },
+    {
+      "achievement_slug": "galaxy-brain",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The initial rollout date and full tier thresholds are not officially documented."],
+      "events": [
+        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "observed", "summary": "Accepted answers were retained as distinct from other Discussion moderation states."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "observed", "summary": "Evidence record EVD-2026-005 was accepted with limitations and incomplete reproduction."}
+      ]
+    },
+    {
+      "achievement_slug": "starstruck",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The original rollout date, ownership edge cases, and complete tier table remain undocumented."],
+      "events": [
+        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "observed", "summary": "Repository ownership and falling star-count limitations were preserved."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "observed", "summary": "Evidence record EVD-2026-006 was accepted with limitations and incomplete reproduction."}
+      ]
+    },
+    {
+      "achievement_slug": "public-sponsor",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["GitHub documents Sponsors but does not publish a complete achievement-award contract or rollout date."],
+      "events": [
+        {"date": "2026-07-19", "type": "official-source-review", "evidence_level": "official", "summary": "GitHub Sponsors documentation was retained as product context rather than proof of the achievement trigger."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-007 was accepted with privacy and eligibility limitations."}
+      ]
+    },
+    {
+      "achievement_slug": "arctic-code-vault-contributor",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The complete archived qualification list and account-level award chronology are not reproduced in this repository."],
+      "events": [
+        {"date": "2020-01-01", "date_precision": "year", "type": "historical-qualification", "evidence_level": "confirmed", "summary": "The qualifying GitHub Arctic Code Vault archival event occurred during 2020; no more precise date is asserted here."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-008 was accepted as a historical, non-repeatable qualification."}
+      ]
+    },
+    {
+      "achievement_slug": "mars-2020-contributor",
+      "last_reviewed": "2026-07-19",
+      "history_limitations": ["The complete internal repository qualification list and account-level award chronology are not available as a current public contract."],
+      "events": [
+        {"date": "2020-01-01", "date_precision": "year", "type": "historical-qualification", "evidence_level": "confirmed", "summary": "The mission-linked qualification is associated with Mars 2020; no more precise achievement-award date is asserted here."},
+        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-009 was accepted as a historical, non-repeatable qualification."}
+      ]
+    }
+  ]
+}
