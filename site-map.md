@@ -11,6 +11,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 ## Public tools
 
 - [Research command centre](research-command-centre.md)
+- [Evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md)
 - [GitHub achievement profile auditor](profile-auditor.md)
 - [Search and filter the encyclopedia](search.md)
 - [Repository health dashboard](docs/health-dashboard.md)
@@ -30,6 +31,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 ## Research operations
 
 - [Evidence road to 100](docs/evidence-road-to-100.md)
+- [Evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md)
 - [Public observation corpus](docs/public-observation-corpus.md)
 - [Event-linked evidence collector](docs/event-linked-evidence.md)
 - [Threshold boundary programme](docs/threshold-boundary-programme.md)
@@ -61,6 +63,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Research queue](api/research-queue.json)
 - [Public observations](api/public-observations.json)
 - [Event-linked evidence](api/event-linked-evidence.json)
+- [Evidence intelligence](api/evidence-intelligence.json)
 - [Threshold boundaries](api/threshold-boundaries.json)
 - [Adjudication decisions](api/adjudication.json)
 - [Contradiction assessments](api/contradiction-assessments.json)
