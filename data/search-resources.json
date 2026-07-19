@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "resources": [
     {
       "slug": "achievement-index",
@@ -131,6 +131,18 @@
         "mission evidence form",
         "mission packet",
         "mission triage"
+      ]
+    },
+    {
+      "slug": "mission-review-queue",
+      "name": "Mission packet review queue",
+      "category": "operations",
+      "summary": "Human packet review with checklist validation, conflict disclosure, dispositions, and fail-closed promotion proposals.",
+      "permalink": "/mission-review-queue/",
+      "aliases": [
+        "mission review",
+        "evidence packet queue",
+        "adjudication queue"
       ]
     },
     {

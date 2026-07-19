@@ -17,6 +17,8 @@ The [targeted evidence acquisition missions](docs/targeted-evidence-missions.md)
 
 The [mission execution intake](docs/mission-execution-intake.md) converts completed, blocked, delayed, or inconclusive mission observations into privacy-screened draft packets for mandatory human review.
 
+The [mission packet review queue](docs/mission-review-queue.md) tracks those packets through conflict disclosure, checklist review, disposition, and any fail-closed promotion proposal.
+
 <div
   id="research-command-centre"
   class="operations-app"

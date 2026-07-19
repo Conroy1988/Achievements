@@ -1,0 +1,23 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "status": "live",
+  "policy": "/Achievements/mission-review-queue/",
+  "review_schema": "/Achievements/api/mission-review-schema.json",
+  "packet_directory": "triage/mission-drafts",
+  "review_directory": "reviews/mission",
+  "count": 0,
+  "metrics": {
+    "packet_count": 0,
+    "pending_review_count": 0,
+    "accepted_count": 0,
+    "deferred_count": 0,
+    "retained_inconclusive_count": 0,
+    "needs_correction_count": 0,
+    "rejected_count": 0,
+    "promotion_proposal_count": 0,
+    "automatic_canonical_mutation_count": 0
+  },
+  "by_status": {},
+  "queue": []
+}

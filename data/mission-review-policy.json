@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "policy_date": "2026-07-19",
+  "packet_directory": "triage/mission-drafts",
+  "review_directory": "reviews/mission",
+  "queue_endpoint": "api/mission-review-queue.json",
+  "schema_endpoint": "api/mission-review-schema.json",
+  "canonical_mutation_allowed": false,
+  "dispositions": {
+    "accept-evidence": {
+      "queue_status": "accepted",
+      "minimum_reviewers": 1,
+      "promotion_proposal_allowed": true
+    },
+    "defer": {
+      "queue_status": "deferred",
+      "minimum_reviewers": 1,
+      "promotion_proposal_allowed": false
+    },
+    "retain-inconclusive": {
+      "queue_status": "retained-inconclusive",
+      "minimum_reviewers": 1,
+      "promotion_proposal_allowed": false
+    },
+    "request-correction": {
+      "queue_status": "needs-correction",
+      "minimum_reviewers": 1,
+      "promotion_proposal_allowed": false
+    },
+    "reject": {
+      "queue_status": "rejected",
+      "minimum_reviewers": 1,
+      "promotion_proposal_allowed": false
+    }
+  },
+  "required_checklist": [
+    "relationship_valid",
+    "sources_public",
+    "required_evidence_complete",
+    "controls_credible",
+    "limitations_complete",
+    "privacy_safe",
+    "safeguards_compliant",
+    "timing_valid",
+    "contradictions_addressed",
+    "duplication_checked"
+  ],
+  "promotion_requirements": {
+    "observed": {
+      "rule_id": "ADJ-R01",
+      "minimum_reviewers": 2,
+      "minimum_unconflicted_reviewers": 1
+    },
+    "confirmed": {
+      "rule_id": "ADJ-R02",
+      "minimum_reviewers": 2,
+      "minimum_unconflicted_reviewers": 1
+    },
+    "official": {
+      "rule_id": "ADJ-R03",
+      "minimum_reviewers": 2,
+      "minimum_unconflicted_reviewers": 1
+    }
+  },
+  "conflict_values": [
+    "none",
+    "participant",
+    "repository-maintainer",
+    "claim-author",
+    "other-disclosed"
+  ],
+  "publication_rules": [
+    "A review record may classify a packet but cannot edit canonical claims, contradictions, thresholds, missions, or releases automatically.",
+    "Negative, delayed, blocked, and inconclusive evidence must remain reviewable and cannot be discarded silently.",
+    "A promotion proposal must match a published mission target and satisfy the referenced adjudication rule.",
+    "Every reviewer identity and conflict disclosure must be public in the review record.",
+    "Canonical changes require a separate maintainer-reviewed pull request after the review record is accepted."
+  ]
+}
