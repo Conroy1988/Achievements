@@ -7,6 +7,8 @@ permalink: /evidence-policy/
 
 ## Evidence register policy
 
+**Last policy review:** 19 July 2026
+
 The public evidence register makes the basis for achievement claims inspectable without publishing credentials, private repository data, billing information, personal correspondence, or unnecessary personal identifiers.
 
 ## Publication requirements
