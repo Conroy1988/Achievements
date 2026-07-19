@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "documents": [
     {
-      "id": "github-profile-personalisation",
-      "url": "https://docs.github.com/en/account-and-profile/concepts/personalizing-your-profile",
+      "id": "github-profile-reference",
+      "url": "https://docs.github.com/en/account-and-profile/reference/profile-reference",
       "affected_achievements": [
         "pull-shark",
         "quickdraw",
@@ -11,7 +11,8 @@
         "pair-extraordinaire",
         "galaxy-brain",
         "starstruck",
-        "public-sponsor"
+        "public-sponsor",
+        "mars-2020-contributor"
       ],
       "baseline_sha256": null,
       "baseline_checked_at": null
