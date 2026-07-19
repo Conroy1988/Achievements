@@ -9,7 +9,7 @@ permalink: /event-linked-evidence/
 
 This register links public GitHub events to achievement claims. A link is not automatically causal: participant reports, processing delay, hidden attribution, and missing controls remain explicit.
 
-**Events:** 5  
+**Events:** 11  
 **Candidate observations:** 2  
 **Negative or inconclusive:** 3
 
@@ -20,6 +20,12 @@ This register links public GitHub events to achievement claims. A link is not au
 | `EVT-2026-003` | pull-shark | [pull-request-merge](https://github.com/Conroy1988/Achievements/pull/231) | negative-inconclusive | 119 seconds |
 | `EVT-2026-004` | pull-shark | [pull-request-merge](https://github.com/Team-Killing-Bastards/TKB-Discord-Bot/pull/12) | negative-inconclusive | 68 seconds |
 | `EVT-2026-005` | pull-shark | [pull-request-merge](https://github.com/Conroy1988/uk-fire-command/pull/37) | negative-inconclusive | 444 seconds |
+| `EVT-2026-006` | quickdraw | [pull-request-close-and-merge](https://github.com/Schweinepriester/Fira/pull/1) | accepted | 5 seconds |
+| `EVT-2026-007` | quickdraw | [pull-request-close-and-merge](https://github.com/tronicapp/tronic-track/pull/1) | accepted | 9 seconds |
+| `EVT-2026-008` | yolo | [pull-request-merge-without-formal-review](https://github.com/Schweinepriester/Fira/pull/1) | accepted | 5 seconds |
+| `EVT-2026-009` | yolo | [pull-request-merge-without-formal-review](https://github.com/tronicapp/tronic-track/pull/1) | accepted | 9 seconds |
+| `EVT-2026-010` | pair-extraordinaire | [coauthored-commit-in-merged-pull-request](https://github.com/devflash101/POC/pull/11) | accepted | 21 seconds |
+| `EVT-2026-011` | pair-extraordinaire | [coauthored-final-merge-commit](https://github.com/Fyrd/caniuse/pull/7466) | accepted | 533698 seconds |
 
 ## Event records
 
@@ -107,6 +113,108 @@ This register links public GitHub events to achievement claims. A link is not au
 
 - One public merge cannot establish a cumulative tier boundary.
 - The profile state was reported before the scheduled 72-hour follow-up.
+
+### EVT-2026-006 — quickdraw
+
+**Claims:** `CLM-003`  
+**Account:** `Schweinepriester`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The pull request was authored by Schweinepriester and merged into master five seconds after creation.
+- The pull request has no submitted formal reviews and the account publicly displays Quickdraw.
+
+**Limitations**
+
+- The anonymous achievement fragment does not expose the contributing event.
+- The event does not establish the maximum qualifying interval.
+
+### EVT-2026-007 — quickdraw
+
+**Claims:** `CLM-003`  
+**Account:** `kmcclosk`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The pull request was authored by kmcclosk and merged into main nine seconds after creation.
+- The pull request has no submitted formal reviews and the account publicly displays Quickdraw.
+
+**Limitations**
+
+- The anonymous achievement fragment does not expose the contributing event.
+- The event does not establish issue equivalence or the maximum interval.
+
+### EVT-2026-008 — yolo
+
+**Claims:** `CLM-004`  
+**Account:** `Schweinepriester`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The account authored the merged pull request and no formal review was submitted.
+- The account publicly displays YOLO.
+
+**Limitations**
+
+- The normalized pull-request record does not expose the merging actor.
+- Comment-only, changes-requested, dismissed, and approved states are not tested.
+
+### EVT-2026-009 — yolo
+
+**Claims:** `CLM-004`  
+**Account:** `kmcclosk`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The account authored the merged pull request and no formal review was submitted.
+- The account publicly displays YOLO.
+
+**Limitations**
+
+- The normalized pull-request record does not expose the merging actor.
+- Alternate formal review states are not tested.
+
+### EVT-2026-010 — pair-extraordinaire
+
+**Claims:** `CLM-005`  
+**Account:** `Rongronggg9`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The pull request merged into main and retained an account-linked Rongronggg9 co-author trailer in its one-commit history.
+- Rongronggg9 publicly displays Pair Extraordinaire x4.
+
+**Limitations**
+
+- The exact attributed qualifying count is not public.
+- The merge-commit example does not establish squash or rebase behaviour.
+
+### EVT-2026-011 — pair-extraordinaire
+
+**Claims:** `CLM-005`  
+**Account:** `Schweinepriester`  
+**Award link:** `public-profile-visible-no-contributing-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The pull request merged into main and the final merge commit contains an account-linked Schweinepriester co-author trailer.
+- Schweinepriester publicly displays Pair Extraordinaire x3.
+
+**Limitations**
+
+- The exact attributed qualifying count is not public.
+- The example does not resolve every squash, rebase, email-matching, or history-rewrite case.
 
 ## Machine-readable data
 

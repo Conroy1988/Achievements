@@ -32,6 +32,7 @@ AUXILIARY_ENDPOINTS = {
     "promotion_plan_schema": Path("promotion-plan-schema.json"),
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
+    "public_reconstructions": Path("public-reconstructions.json"),
     "event_linked_evidence": Path("event-linked-evidence.json"),
     "evidence_intelligence": Path("evidence-intelligence.json"),
     "acquisition_missions": Path("acquisition-missions.json"),
@@ -51,6 +52,7 @@ AUXILIARY_COLLECTIONS = {
     "lab_protocols": "protocols",
     "auditor_rules": "rules",
     "public_observations": "observations",
+    "public_reconstructions": "records",
     "event_linked_evidence": "events",
     "evidence_intelligence": "achievements",
     "acquisition_missions": "missions",
@@ -201,6 +203,7 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             errors.append("api/command-centre.json is missing metrics")
         if name in {
             "public_observations",
+            "public_reconstructions",
             "event_linked_evidence",
             "contradiction_assessments",
             "evidence_intelligence",

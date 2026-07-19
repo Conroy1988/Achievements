@@ -3,19 +3,19 @@
   "decisions": [
     {
       "claim_id": "CLM-003",
-      "current_level": "community-reported",
+      "current_level": "observed",
       "decision": "defer",
       "id": "ADJ-D001",
-      "proposed_level": "observed",
-      "reason": "The four-second public issue event and participant-reported award are useful but lack an independent public achievement-detail capture and boundary controls."
+      "proposed_level": "confirmed",
+      "reason": "Two independent public reconstructions support the broad rapid-close association at observed level; controlled boundary reproduction and measured award timing are still required for confirmed status."
     },
     {
       "claim_id": "CLM-004",
-      "current_level": "community-reported",
+      "current_level": "observed",
       "decision": "defer",
       "id": "ADJ-D002",
-      "proposed_level": "observed",
-      "reason": "The no-review PR event and participant report are not sufficient to establish merger identity, causality, or the effect of alternate formal review states."
+      "proposed_level": "confirmed",
+      "reason": "Two independent authored and unreviewed merged pull requests support the broad YOLO association at observed level; merger identity and alternate review-state controls remain unresolved."
     },
     {
       "claim_id": "CLM-002",
@@ -48,11 +48,19 @@
       "id": "ADJ-D006",
       "proposed_level": "observed",
       "reason": "The x3-to-x4 bracket is informative, but rounded star displays and ownership edge cases prevent exact threshold confirmation."
+    },
+    {
+      "claim_id": "CLM-005",
+      "current_level": "observed",
+      "decision": "defer",
+      "id": "ADJ-D007",
+      "proposed_level": "confirmed",
+      "reason": "Two independent account-linked co-author reconstructions support the broad merged-pull-request association at observed level; controlled merge-method and rewrite tests remain required for confirmed status."
     }
   ],
   "generated_from": "data/evidence-quality-programme.json",
   "metrics": {
-    "defer": 6
+    "defer": 7
   },
   "rules": [
     {

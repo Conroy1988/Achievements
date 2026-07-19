@@ -14,7 +14,7 @@ The release is intentionally blocked. Phases 52–55 improve the research system
 
 | Gate | Current | Required | Result |
 |---|---:|---:|---|
-| Evidence coverage | 54.6 | ≥ 70.0 | FAIL |
+| Evidence coverage | 60.4 | ≥ 70.0 | FAIL |
 | Official or confirmed claims | 5 | ≥ 8 | FAIL |
 | Claims below confirmed | 8 | ≤ 5 | FAIL |
 | Open contradictions | 6 | ≤ 3 | FAIL |

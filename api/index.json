@@ -37,6 +37,7 @@
     "promotion_plan_schema": "/Achievements/api/promotion-plan-schema.json",
     "promotion_plans": "/Achievements/api/promotion-plans.json",
     "public_observations": "/Achievements/api/public-observations.json",
+    "public_reconstructions": "/Achievements/api/public-reconstructions.json",
     "release_readiness": "/Achievements/api/release-readiness.json",
     "research_queue": "/Achievements/api/research-queue.json",
     "schema": "/Achievements/api/schema.json",

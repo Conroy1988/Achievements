@@ -4,19 +4,23 @@
     {
       "basis_ids": [
         "EVT-2026-001",
-        "BND-005"
+        "BND-005",
+        "EVT-2026-006",
+        "EVT-2026-007"
       ],
       "contradiction_id": "CTR-001",
       "outcome": "narrowed",
-      "remaining_question": "What is the maximum qualifying interval and do issue closure and pull-request closure behave identically?"
+      "remaining_question": "What is the maximum qualifying interval, do issue and pull-request closure behave identically, and when does the award first become visible?"
     },
     {
       "basis_ids": [
-        "EVT-2026-002"
+        "EVT-2026-002",
+        "EVT-2026-008",
+        "EVT-2026-009"
       ],
       "contradiction_id": "CTR-002",
       "outcome": "narrowed",
-      "remaining_question": "Do comment-only and changes-requested review objects prevent the award, and must the author also be the merger?"
+      "remaining_question": "Do comment-only, changes-requested, dismissed, or approved review objects prevent the award, and must the author also be the merger?"
     },
     {
       "basis_ids": [
@@ -31,11 +35,13 @@
     },
     {
       "basis_ids": [
-        "BND-002"
+        "BND-002",
+        "EVT-2026-010",
+        "EVT-2026-011"
       ],
       "contradiction_id": "CTR-004",
-      "outcome": "still-disputed",
-      "remaining_question": "How squash, rebase, merge commits, email matching, and rewritten history affect final attribution."
+      "outcome": "narrowed",
+      "remaining_question": "How squash, rebase, email mismatch, and rewritten history affect final achievement attribution and exact tier counts."
     },
     {
       "basis_ids": [
@@ -57,8 +63,8 @@
   "count": 6,
   "generated_from": "data/evidence-quality-programme.json",
   "metrics": {
-    "narrowed": 3,
-    "still-disputed": 3
+    "narrowed": 4,
+    "still-disputed": 2
   },
   "schema_version": "1.0.0"
 }

@@ -7,7 +7,7 @@
     "category": "collaboration",
     "evidence": {
       "tiers": "community-reported",
-      "trigger": "community-reported"
+      "trigger": "observed"
     },
     "guide_path": "achievements/pair-extraordinaire.md",
     "known_limitations": [
@@ -49,7 +49,7 @@
         "unit": "qualifying merged pull requests"
       }
     ],
-    "trigger": "A correctly attributed co-authored commit is incorporated into a merged pull request."
+    "trigger": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

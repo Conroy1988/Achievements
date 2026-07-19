@@ -59,11 +59,11 @@
       "category": "issues-and-pull-requests",
       "tiered": false,
       "primary_action": "Close an issue or pull request shortly after opening it",
-      "trigger": "An issue or pull request is closed within the short community-observed qualifying window after creation.",
+      "trigger": "Closing an issue or pull request very shortly after creation can award Quickdraw.",
       "guide_path": "docs/quickdraw.md",
       "permalink": "/quickdraw/",
       "evidence": {
-        "trigger": "community-reported",
+        "trigger": "observed",
         "tiers": "not-applicable"
       },
       "tiers": [],
@@ -88,11 +88,11 @@
       "category": "pull-request-review",
       "tiered": false,
       "primary_action": "Merge a pull request without review",
-      "trigger": "The account merges its own pull request without an approving review.",
+      "trigger": "A pull request authored by the account and merged without a submitted formal review can award YOLO.",
       "guide_path": "docs/achievements/yolo.md",
       "permalink": "/achievements/yolo/",
       "evidence": {
-        "trigger": "community-reported",
+        "trigger": "observed",
         "tiers": "not-applicable"
       },
       "tiers": [],
@@ -117,11 +117,11 @@
       "category": "collaboration",
       "tiered": true,
       "primary_action": "Co-author commits in merged pull requests",
-      "trigger": "A correctly attributed co-authored commit is incorporated into a merged pull request.",
+      "trigger": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
       "guide_path": "achievements/pair-extraordinaire.md",
       "permalink": "/achievements/pair-extraordinaire/",
       "evidence": {
-        "trigger": "community-reported",
+        "trigger": "observed",
         "tiers": "community-reported"
       },
       "tiers": [

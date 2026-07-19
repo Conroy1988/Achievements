@@ -115,6 +115,11 @@ try {
   const promotionPlannerHref = await page.locator('[data-result-slug="promotion-planner"] h3 a').getAttribute('href');
   assert.equal(promotionPlannerHref, '/Achievements/promotion-planner/');
 
+  await page.locator('#search-query').fill('public event reconstruction');
+  await expectCount(page, 1, 'public reconstruction query');
+  const reconstructionHref = await page.locator('[data-result-slug="public-reconstruction-corpus"] h3 a').getAttribute('href');
+  assert.equal(reconstructionHref, '/Achievements/public-reconstruction-corpus/');
+
   const liveRegion = await page.locator('#search-count').getAttribute('aria-live');
   assert.equal(liveRegion, 'polite');
   console.log('Search page passed dynamic catalogue counts, achievement, research, routing, filters, mission intake, mission review, promotion planner, and accessibility checks.');

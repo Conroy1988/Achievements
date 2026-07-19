@@ -252,6 +252,18 @@
         "submit correction",
         "contributor help"
       ]
+    },
+    {
+      "slug": "public-reconstruction-corpus",
+      "name": "Public reconstruction corpus",
+      "category": "research",
+      "summary": "Independent public event/profile pairs for Quickdraw, YOLO, and Pair Extraordinaire with explicit causal and boundary limitations.",
+      "permalink": "/public-reconstruction-corpus/",
+      "aliases": [
+        "retrospective evidence",
+        "public event reconstruction",
+        "independent trigger observations"
+      ]
     }
   ]
 }

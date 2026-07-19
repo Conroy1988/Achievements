@@ -7,7 +7,7 @@
     "category": "pull-request-review",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "community-reported"
+      "trigger": "observed"
     },
     "guide_path": "docs/achievements/yolo.md",
     "known_limitations": [
@@ -26,7 +26,7 @@
     "status": "active",
     "tiered": false,
     "tiers": [],
-    "trigger": "The account merges its own pull request without an approving review."
+    "trigger": "A pull request authored by the account and merged without a submitted formal review can award YOLO."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"
