@@ -6,28 +6,29 @@ on:
       - '**/*.md'
       - '**/*.html'
       - 'assets/**'
+      - 'tests/visual/baselines/**'
       - '_config.yml'
       - 'Gemfile'
       - 'package.json'
       - 'scripts/visual_regression.mjs'
       - '.github/workflows/visual-regression.yml'
+  push:
+    branches:
+      - main
   workflow_dispatch:
+  schedule:
+    - cron: '43 6 * * 1'
 
 permissions:
   contents: read
 
 jobs:
-  initialise-baselines:
-    name: Generate visual baselines
-    if: github.event_name == 'pull_request' && github.head_ref == 'phase-27/visual-regression'
+  visual:
+    name: Compare visual baselines
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Check out Phase 27 branch
+      - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
       - name: Build GitHub Pages site
         uses: actions/jekyll-build-pages@v1
         with:
@@ -52,16 +53,13 @@ jobs:
           done
           cat /tmp/visual-server.log
           exit 1
-      - name: Capture baseline screenshots
-        run: npm run visual:update
-      - name: Commit baselines
-        run: |
-          if [[ -z "$(git status --porcelain -- tests/visual/baselines)" ]]; then
-            echo "No baseline changes were generated."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tests/visual/baselines
-          git commit -m "Phase 27: record visual regression baselines"
-          git push
+      - name: Compare screenshots
+        run: npm run visual:test
+      - name: Upload visual results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-results
+          path: visual-results
+          if-no-files-found: warn
+          retention-days: 14
