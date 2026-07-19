@@ -1,0 +1,39 @@
+name: Source inventory
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'scripts/build_source_inventory.py'
+      - '.github/workflows/source-inventory.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '11 7 1 * *'
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    name: Build source resilience inventory
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Build inventory
+        shell: bash
+        run: |
+          args=(--csv source-inventory.csv --markdown source-inventory.md)
+          if [[ "${{ github.event_name }}" != "pull_request" ]]; then
+            args+=(--check-availability)
+          fi
+          python scripts/build_source_inventory.py "${args[@]}"
+      - name: Upload source inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-inventory
+          path: |
+            source-inventory.csv
+            source-inventory.md
+          if-no-files-found: error
+          retention-days: 30
