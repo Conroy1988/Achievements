@@ -1,0 +1,244 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 10,
+  "policy": "/Achievements/public-observation-corpus/",
+  "metrics": {
+    "achievement_count": 6,
+    "observation_count": 10,
+    "tier_display_count": 8,
+    "metric_backed_count": 3
+  },
+  "by_achievement": {
+    "galaxy-brain": 2,
+    "pair-extraordinaire": 1,
+    "pull-shark": 2,
+    "quickdraw": 1,
+    "starstruck": 3,
+    "yolo": 1
+  },
+  "by_displayed_tier": {
+    "not-tiered": 2,
+    "x2": 1,
+    "x3": 2,
+    "x4": 5
+  },
+  "observations": [
+    {
+      "id": "OBS-2026-001",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "starstruck",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "subject_login": "Rongronggg9",
+      "profile_url": "https://github.com/Rongronggg9?achievement=starstruck&tab=achievements",
+      "displayed_tier": "x3",
+      "supporting_facts": [
+        {
+          "type": "owned-public-repository-stars",
+          "url": "https://github.com/Rongronggg9/RSS-to-Telegram-Bot",
+          "rendered_value": "2.1k stars"
+        }
+      ],
+      "evidence_scope": "tier-display-and-public-metric",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The rounded star display does not identify the exact award boundary.",
+        "The observation does not isolate repository-transfer, fork, or persistence behaviour."
+      ]
+    },
+    {
+      "id": "OBS-2026-002",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "starstruck",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "subject_login": "Schweinepriester",
+      "profile_url": "https://github.com/Schweinepriester?achievement=starstruck&tab=achievements",
+      "displayed_tier": "x4",
+      "supporting_facts": [
+        {
+          "type": "owned-public-repository-stars",
+          "url": "https://github.com/Schweinepriester/github-profile-achievements",
+          "rendered_value": "5.1k stars"
+        }
+      ],
+      "evidence_scope": "tier-display-and-public-metric",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The rounded star display brackets but does not prove the exact x4 boundary.",
+        "The observation does not test falling-star or ownership-transfer persistence."
+      ]
+    },
+    {
+      "id": "OBS-2026-003",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "starstruck",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "subject_login": "torvalds",
+      "profile_url": "https://github.com/torvalds?achievement=starstruck&tab=achievements",
+      "displayed_tier": "x4",
+      "supporting_facts": [
+        {
+          "type": "owned-public-repository-stars",
+          "url": "https://github.com/torvalds/linux",
+          "rendered_value": "240k stars"
+        }
+      ],
+      "evidence_scope": "tier-display-and-public-metric",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "A value far above the reported boundary proves neither its exact location nor lower tiers.",
+        "The observation does not isolate organization ownership, forks, transfers, or award timing."
+      ]
+    },
+    {
+      "id": "OBS-2026-004",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "quickdraw",
+      "claim_ids": [
+        "CLM-003"
+      ],
+      "subject_login": "Schweinepriester",
+      "profile_url": "https://github.com/Schweinepriester?achievement=quickdraw&tab=achievements",
+      "displayed_tier": "not-tiered",
+      "supporting_facts": [],
+      "evidence_scope": "award-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "Anonymous profile output does not expose the qualifying issue or pull request.",
+        "The observation does not establish the exact qualifying time window."
+      ]
+    },
+    {
+      "id": "OBS-2026-005",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "yolo",
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "subject_login": "Schweinepriester",
+      "profile_url": "https://github.com/Schweinepriester?achievement=yolo&tab=achievements",
+      "displayed_tier": "not-tiered",
+      "supporting_facts": [],
+      "evidence_scope": "award-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "Anonymous profile output does not expose the qualifying pull request or review state.",
+        "The observation cannot distinguish no review from comment-only or changes-requested review states."
+      ]
+    },
+    {
+      "id": "OBS-2026-006",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_ids": [
+        "CLM-005",
+        "CLM-006"
+      ],
+      "subject_login": "Rongronggg9",
+      "profile_url": "https://github.com/Rongronggg9?achievement=pair-extraordinaire&tab=achievements",
+      "displayed_tier": "x4",
+      "supporting_facts": [],
+      "evidence_scope": "tier-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The profile does not expose the qualifying commits or merge methods anonymously.",
+        "The displayed tier does not independently prove the numeric threshold sequence."
+      ]
+    },
+    {
+      "id": "OBS-2026-007",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "pull-shark",
+      "claim_ids": [
+        "CLM-001",
+        "CLM-002"
+      ],
+      "subject_login": "ljharb",
+      "profile_url": "https://github.com/ljharb?achievement=pull-shark&tab=achievements",
+      "displayed_tier": "x4",
+      "supporting_facts": [],
+      "evidence_scope": "tier-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The anonymous profile does not expose the complete attributed pull-request count.",
+        "The displayed tier does not independently prove each numeric boundary."
+      ]
+    },
+    {
+      "id": "OBS-2026-008",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "pull-shark",
+      "claim_ids": [
+        "CLM-001",
+        "CLM-002"
+      ],
+      "subject_login": "Schweinepriester",
+      "profile_url": "https://github.com/Schweinepriester?achievement=pull-shark&tab=achievements",
+      "displayed_tier": "x3",
+      "supporting_facts": [],
+      "evidence_scope": "tier-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The anonymous profile does not expose the complete attributed pull-request count.",
+        "The displayed tier cannot resolve author, merger, visibility, or processing-delay edge cases."
+      ]
+    },
+    {
+      "id": "OBS-2026-009",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "galaxy-brain",
+      "claim_ids": [
+        "CLM-007",
+        "CLM-008"
+      ],
+      "subject_login": "ljharb",
+      "profile_url": "https://github.com/ljharb?achievement=galaxy-brain&tab=achievements",
+      "displayed_tier": "x4",
+      "supporting_facts": [],
+      "evidence_scope": "tier-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The anonymous profile does not expose the accepted-answer count or source Discussions.",
+        "The displayed tier does not independently prove each numeric boundary."
+      ]
+    },
+    {
+      "id": "OBS-2026-010",
+      "observed_at": "2026-07-19",
+      "achievement_slug": "galaxy-brain",
+      "claim_ids": [
+        "CLM-007",
+        "CLM-008"
+      ],
+      "subject_login": "Schweinepriester",
+      "profile_url": "https://github.com/Schweinepriester?achievement=galaxy-brain&tab=achievements",
+      "displayed_tier": "x2",
+      "supporting_facts": [],
+      "evidence_scope": "tier-display-only",
+      "privacy_status": "public-identifiers-only",
+      "reviewer_decision": "accepted-as-observation",
+      "limitations": [
+        "The anonymous profile does not expose the accepted-answer count or source Discussions.",
+        "The displayed tier alone cannot establish the exact lower or upper tier boundary."
+      ]
+    }
+  ]
+}
