@@ -6,6 +6,13 @@ import { chromium } from 'playwright';
 
 const baseUrl = process.env.SEARCH_BASE_URL ?? 'http://127.0.0.1:4173/Achievements';
 const resultDir = path.join(process.cwd(), 'search-test-results');
+const [achievementData, resourceData] = await Promise.all([
+  fs.readFile(path.join(process.cwd(), 'data', 'achievements.json'), 'utf-8').then(JSON.parse),
+  fs.readFile(path.join(process.cwd(), 'data', 'search-resources.json'), 'utf-8').then(JSON.parse),
+]);
+const expectedAchievementCount = achievementData.achievements.length;
+const expectedReferenceCount = resourceData.resources.length;
+const expectedTotalCount = expectedAchievementCount + expectedReferenceCount;
 const browser = await chromium.launch({ headless: true });
 
 const snapshot = async (page, label) => {
@@ -34,9 +41,9 @@ try {
   assert(response?.ok(), `Search page returned ${response?.status() ?? 'no response'}`);
 
   await page.waitForFunction(() => document.getElementById('search-results')?.dataset.resultCount !== undefined);
-  await expectCount(page, 26, 'initial');
-  assert.equal(await page.locator('[data-result-type="achievement"]').count(), 9);
-  assert.equal(await page.locator('[data-result-type="reference"]').count(), 17);
+  await expectCount(page, expectedTotalCount, 'initial');
+  assert.equal(await page.locator('[data-result-type="achievement"]').count(), expectedAchievementCount);
+  assert.equal(await page.locator('[data-result-type="reference"]').count(), expectedReferenceCount);
 
   await page.locator('#search-query').fill('merged PR badge');
   await expectCount(page, 1, 'alias query');
@@ -45,24 +52,24 @@ try {
   assert.equal(pullSharkHref, '/Achievements/achievements/pull-shark/');
 
   await page.locator('#search-reset').click();
-  await expectCount(page, 26, 'reset after alias');
+  await expectCount(page, expectedTotalCount, 'reset after alias');
 
   await page.locator('#search-status').selectOption('retired');
   await expectCount(page, 2, 'retired filter');
   assert.equal(await page.locator('[data-result-type="achievement"]').count(), 2);
 
   await page.locator('#search-reset').click();
-  await expectCount(page, 26, 'reset after retired');
+  await expectCount(page, expectedTotalCount, 'reset after retired');
   await page.locator('#search-tiered').selectOption('yes');
   await expectCount(page, 4, 'tiered filter');
 
   await page.locator('#search-reset').click();
-  await expectCount(page, 26, 'reset after tiered');
+  await expectCount(page, expectedTotalCount, 'reset after tiered');
   await page.locator('#search-status').selectOption('reference');
-  await expectCount(page, 17, 'reference filter');
+  await expectCount(page, expectedReferenceCount, 'reference filter');
 
   await page.locator('#search-reset').click();
-  await expectCount(page, 26, 'reset after references');
+  await expectCount(page, expectedTotalCount, 'reset after references');
   await page.locator('#search-query').fill('verification methodology');
   await expectCount(page, 1, 'methodology query');
   await page.locator('[data-result-slug="verification-methodology"]').waitFor({ state: 'visible' });
@@ -88,9 +95,19 @@ try {
   const roadHref = await page.locator('[data-result-slug="evidence-road-to-100"] h3 a').getAttribute('href');
   assert.equal(roadHref, '/Achievements/evidence-road-to-100/');
 
+  await page.locator('#search-query').fill('mission board');
+  await expectCount(page, 1, 'mission board query');
+  const missionBoardHref = await page.locator('[data-result-slug="targeted-evidence-missions"] h3 a').getAttribute('href');
+  assert.equal(missionBoardHref, '/Achievements/targeted-evidence-missions/');
+
+  await page.locator('#search-query').fill('mission packet');
+  await expectCount(page, 1, 'mission intake query');
+  const missionIntakeHref = await page.locator('[data-result-slug="mission-execution-intake"] h3 a').getAttribute('href');
+  assert.equal(missionIntakeHref, '/Achievements/mission-execution-intake/');
+
   const liveRegion = await page.locator('#search-count').getAttribute('aria-live');
   assert.equal(liveRegion, 'polite');
-  console.log('Search page passed achievement, research, routing, filter, evidence-operation, campaign, and accessibility checks.');
+  console.log('Search page passed dynamic catalogue counts, achievement, research, routing, filter, mission-intake, and accessibility checks.');
 } catch (error) {
   const pages = browser.contexts().flatMap((context) => context.pages());
   if (pages[0]) {

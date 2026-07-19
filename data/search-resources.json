@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "resources": [
     {
       "slug": "achievement-index",
@@ -107,6 +107,30 @@
         "submit observation",
         "evidence form",
         "automated triage"
+      ]
+    },
+    {
+      "slug": "targeted-evidence-missions",
+      "name": "Targeted evidence acquisition missions",
+      "category": "research",
+      "summary": "Seven ranked, ethical missions with required evidence, controls, stop conditions, and scheduled holds.",
+      "permalink": "/targeted-evidence-missions/",
+      "aliases": [
+        "mission board",
+        "evidence missions",
+        "research execution"
+      ]
+    },
+    {
+      "slug": "mission-execution-intake",
+      "name": "Mission execution intake",
+      "category": "contributing",
+      "summary": "Mission-aware submission, relationship validation, privacy screening, scheduled-hold enforcement, and draft evidence packets.",
+      "permalink": "/mission-execution-intake/",
+      "aliases": [
+        "mission evidence form",
+        "mission packet",
+        "mission triage"
       ]
     },
     {

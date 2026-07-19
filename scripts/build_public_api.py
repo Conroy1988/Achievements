@@ -25,6 +25,7 @@ AUXILIARY_ENDPOINTS = {
     "lab_protocols": Path("lab-protocols.json"),
     "auditor_rules": Path("auditor-rules.json"),
     "submission_schema": Path("submission-schema.json"),
+    "mission_submission_schema": Path("mission-submission-schema.json"),
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
     "event_linked_evidence": Path("event-linked-evidence.json"),
@@ -162,8 +163,12 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             for field in ("overall_coverage_score", "unassigned_gap_count", "achievements", "claims"):
                 if field not in payload:
                     errors.append(f"{path.relative_to(ROOT)} is missing {field}")
-        if name == "submission_schema" and not isinstance(payload.get("schema"), dict):
-            errors.append("api/submission-schema.json is missing schema")
+        if name in {"submission_schema", "mission_submission_schema"} and not isinstance(payload.get("schema"), dict):
+            errors.append(f"api/{relative.name} is missing schema")
+        if name == "mission_submission_schema":
+            for field in ("mission_count", "form_url"):
+                if field not in payload:
+                    errors.append(f"api/mission-submission-schema.json is missing {field}")
         if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
             errors.append("api/command-centre.json is missing metrics")
         if name in {
