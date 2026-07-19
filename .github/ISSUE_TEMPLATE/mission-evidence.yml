@@ -1,0 +1,144 @@
+name: Mission evidence packet
+description: Submit privacy-safe evidence for a targeted acquisition mission.
+title: "[Mission Evidence] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit only evidence produced through legitimate GitHub activity. Artificial qualifying activity, spam, false attribution, star solicitation, answer farming, protection bypass, private data, credentials, and financial information are prohibited.
+  - type: input
+    id: mission
+    attributes:
+      label: Mission ID
+      description: Use an active MSN-### identifier from the targeted evidence mission board.
+      placeholder: MSN-001
+    validations:
+      required: true
+  - type: input
+    id: task
+    attributes:
+      label: Research task ID
+      description: Enter one RSH-### task linked to the selected mission.
+      placeholder: RSH-009
+    validations:
+      required: true
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+      description: Enter one linked CLM-### claim, or none for a cross-achievement mission.
+      placeholder: CLM-005
+    validations:
+      required: true
+  - type: input
+    id: contradiction
+    attributes:
+      label: Contradiction ID
+      description: Enter the linked CTR-### contradiction, or none where the mission has no contradiction.
+      placeholder: CTR-004
+    validations:
+      required: true
+  - type: input
+    id: achievement
+    attributes:
+      label: Achievement
+      description: Enter the canonical achievement slug, or cross-achievement for MSN-007.
+      placeholder: pair-extraordinaire
+    validations:
+      required: true
+  - type: input
+    id: observation-date
+    attributes:
+      label: Observation date
+      description: Use YYYY-MM-DD.
+      placeholder: "2026-07-22"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Awarded
+        - Not awarded
+        - Inconclusive
+        - Blocked
+        - Processing delayed
+    validations:
+      required: true
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: Repository visibility
+      options:
+        - Public
+        - Not applicable
+    validations:
+      required: true
+  - type: input
+    id: qualifying-time
+    attributes:
+      label: Qualifying event time (UTC)
+      description: Optional. Use ISO UTC such as 2026-07-22T19:00:00Z.
+  - type: input
+    id: visible-time
+    attributes:
+      label: First badge visibility time (UTC)
+      description: Optional. Use ISO UTC such as 2026-07-22T19:15:00Z.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source URLs
+      description: One public HTTPS URL per line. At least one URL is required.
+      placeholder: https://github.com/example/repository/pull/123
+    validations:
+      required: true
+  - type: textarea
+    id: required-evidence
+    attributes:
+      label: Required evidence values
+      description: Copy every required evidence key from the selected mission and provide one key:value pair per line.
+      placeholder: |
+        public_pull_request_url: https://github.com/example/repository/pull/123
+        final_commit_url: https://github.com/example/repository/commit/abc123
+        merge_method: squash
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and controls
+      description: Describe account roles, repository settings, timing method, merge or moderation state, and all controlled conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations and failed attempts
+      description: Record confounders, missing observations, failed reproductions, delays, and limits on interpretation.
+    validations:
+      required: true
+  - type: dropdown
+    id: safeguard
+    attributes:
+      label: Safeguard declaration
+      options:
+        - I confirm that no artificial qualifying activity, spam, false attribution, star solicitation, answer farming, or protection bypass was used.
+    validations:
+      required: true
+  - type: dropdown
+    id: privacy
+    attributes:
+      label: Privacy declaration
+      options:
+        - I confirm that this submission contains no credentials, private repository data, unnecessary personal identifiers, private communications, or financial details.
+    validations:
+      required: true
+  - type: dropdown
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - I consent to this mission evidence being reviewed and published in privacy-safe form.
+    validations:
+      required: true
