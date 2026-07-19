@@ -21,6 +21,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Research and verification
 
+- [Repository health dashboard](docs/health-dashboard.md)
 - [Verification methodology](docs/verification-methodology.md)
 - [Source quality policy](docs/source-quality-policy.md)
 - [Evidence strength levels](docs/evidence-strength-levels.md)
