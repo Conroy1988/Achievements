@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://conroy1988.github.io/Achievements/api/mission-review-schema.json",
+  "title": "GitHub Achievement Encyclopedia mission packet review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "packet_id",
+    "mission_id",
+    "source_packet",
+    "disposition",
+    "reviewed_at",
+    "reviewers",
+    "checklist",
+    "rationale",
+    "promotion_proposal",
+    "canonical_mutation"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^MRV-[0-9]{4}-[0-9]{3}$"},
+    "packet_id": {"type": "string", "pattern": "^MISSION-DRAFT-ISSUE-[0-9]+$"},
+    "mission_id": {"type": "string", "pattern": "^MSN-[0-9]{3}$"},
+    "source_packet": {"type": "string", "pattern": "^triage/mission-drafts/[A-Za-z0-9._-]+\\.json$"},
+    "disposition": {
+      "type": "string",
+      "enum": ["accept-evidence", "defer", "retain-inconclusive", "request-correction", "reject"]
+    },
+    "reviewed_at": {"type": "string", "format": "date-time"},
+    "reviewers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["login", "conflict", "notes"],
+        "properties": {
+          "login": {"type": "string", "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$"},
+          "conflict": {
+            "type": "string",
+            "enum": ["none", "participant", "repository-maintainer", "claim-author", "other-disclosed"]
+          },
+          "notes": {"type": "string", "minLength": 2, "maxLength": 1000}
+        }
+      }
+    },
+    "checklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relationship_valid",
+        "sources_public",
+        "required_evidence_complete",
+        "controls_credible",
+        "limitations_complete",
+        "privacy_safe",
+        "safeguards_compliant",
+        "timing_valid",
+        "contradictions_addressed",
+        "duplication_checked"
+      ],
+      "properties": {
+        "relationship_valid": {"type": "boolean"},
+        "sources_public": {"type": "boolean"},
+        "required_evidence_complete": {"type": "boolean"},
+        "controls_credible": {"type": "boolean"},
+        "limitations_complete": {"type": "boolean"},
+        "privacy_safe": {"type": "boolean"},
+        "safeguards_compliant": {"type": "boolean"},
+        "timing_valid": {"type": "boolean"},
+        "contradictions_addressed": {"type": "boolean"},
+        "duplication_checked": {"type": "boolean"}
+      }
+    },
+    "rationale": {"type": "string", "minLength": 40, "maxLength": 6000},
+    "promotion_proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_claim_id", "target_level", "applied_rule_ids"],
+      "properties": {
+        "target_claim_id": {"type": ["string", "null"], "pattern": "^CLM-[0-9]{3}$"},
+        "target_level": {"type": "string", "enum": ["none", "observed", "confirmed", "official"]},
+        "applied_rule_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^ADJ-R[0-9]{2}$"}
+        }
+      }
+    },
+    "canonical_mutation": {"const": false}
+  }
+}
