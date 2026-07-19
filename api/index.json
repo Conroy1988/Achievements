@@ -16,6 +16,7 @@
   "endpoints": {
     "achievement_template": "/Achievements/api/achievements/{slug}.json",
     "achievements": "/Achievements/api/achievements.json",
+    "acquisition_missions": "/Achievements/api/acquisition-missions.json",
     "adjudication": "/Achievements/api/adjudication.json",
     "auditor_rules": "/Achievements/api/auditor-rules.json",
     "change_impact": "/Achievements/api/change-impact.json",

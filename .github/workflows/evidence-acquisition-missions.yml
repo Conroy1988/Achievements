@@ -1,0 +1,52 @@
+name: Evidence acquisition missions
+
+on:
+  pull_request:
+    paths:
+      - 'data/acquisition-missions.json'
+      - 'data/research-queue.json'
+      - 'data/reproduction-protocols.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'api/evidence-intelligence.json'
+      - 'api/acquisition-missions.json'
+      - 'docs/targeted-evidence-missions.md'
+      - 'scripts/build_acquisition_missions.py'
+      - '.github/workflows/evidence-acquisition-missions.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/acquisition-missions.json'
+      - 'data/research-queue.json'
+      - 'data/reproduction-protocols.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'api/evidence-intelligence.json'
+      - 'api/acquisition-missions.json'
+      - 'docs/targeted-evidence-missions.md'
+      - 'scripts/build_acquisition_missions.py'
+      - '.github/workflows/evidence-acquisition-missions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate evidence acquisition missions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Validate generated mission queue
+        run: |
+          python scripts/build_acquisition_missions.py --check --report acquisition-missions-report.md
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: evidence-acquisition-mission-validation
+          path: acquisition-missions-report.md
+          if-no-files-found: warn
+          retention-days: 30

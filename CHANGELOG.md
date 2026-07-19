@@ -20,22 +20,27 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Five new evidence-quality API endpoints and a dedicated validation workflow.
 - Evidence intelligence dashboard combining coverage, event evidence, boundary work, adjudication, contradiction state, and release gaps.
 - Transparent per-achievement research-pressure formula with generated Markdown, JSON, and dedicated drift validation.
+- Seven targeted evidence acquisition missions covering the six highest-pressure achievements and cross-achievement processing delay.
+- Fail-closed mission validation with explicit prerequisites, controls, required evidence, stop conditions, and anti-spam safeguards.
+- Scheduled Pull Shark observation checkpoint for 22 July 2026 at 20:00 BST with a no-action-before rule.
 
 ### Changed
 
 - Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
 - Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
-- Public API discovery expanded from 26 to 32 JSON files.
-- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, and evidence intelligence.
+- Public API discovery expanded from 26 to 33 JSON files.
+- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, and acquisition missions.
 - Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
+- Evidence pressure rankings now map to bounded execution missions rather than additional infrastructure work.
 
 ### Integrity
 
-- No canonical claim level changed during Phases 52–57.
+- No canonical claim level changed during Phases 52–58.
 - Evidence coverage remains 54.6/100.
 - Research-pressure values are prioritisation aids, not evidence-confidence scores.
+- Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission.
 - `v1.4.0` remains blocked and no release tag is created.
 
 ## v1.3.0 — 2026-07-19
@@ -140,7 +145,7 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Evidence-led reference pages for the principal GitHub profile achievements.
 - GitHub Pages navigation, responsive cards, custom styling, sitemap, robots policy, and social-preview artwork.
 - Correction and evidence issue forms.
-- Pull-request template, accessibility checks, link checks, and public roadmap.
+- Pull-request template, accessibility checks, and public roadmap.
 - Historical reference for retired and restricted badges.
 
 ### Changed

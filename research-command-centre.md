@@ -13,6 +13,8 @@ The command centre joins repository health, claim coverage, contradictions, prot
 
 The generated [evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md) adds achievement-level pressure rankings and the exact remaining distance to the evidence-quality release gates.
 
+The [targeted evidence acquisition missions](docs/targeted-evidence-missions.md) convert those rankings into bounded work with prerequisites, controls, required evidence, and stop conditions.
+
 <div
   id="research-command-centre"
   class="operations-app"
