@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "resources": [
     {
       "slug": "achievement-index",
@@ -24,6 +24,38 @@
       "summary": "Definitions for official, confirmed, observed, community-reported, and unknown claims.",
       "permalink": "/docs/evidence-strength-levels.html",
       "aliases": ["evidence labels", "confidence levels", "claim strength"]
+    },
+    {
+      "slug": "public-evidence-register",
+      "name": "Public evidence register",
+      "category": "research",
+      "summary": "Privacy-safe evidence records with classification, reproduction, review, and limitation fields.",
+      "permalink": "/evidence-register/",
+      "aliases": ["evidence records", "claim register", "research evidence"]
+    },
+    {
+      "slug": "verification-timelines",
+      "name": "Achievement verification timelines",
+      "category": "research",
+      "summary": "Dated review history and explicit historical limitations for every canonical achievement.",
+      "permalink": "/verification-timelines/",
+      "aliases": ["review history", "achievement timeline", "last reviewed"]
+    },
+    {
+      "slug": "official-document-monitor",
+      "name": "Official documentation monitor",
+      "category": "research",
+      "summary": "Reviewed fingerprints for official GitHub documentation and affected achievement guides.",
+      "permalink": "/official-doc-monitor/",
+      "aliases": ["GitHub docs changes", "official source monitor", "documentation watcher"]
+    },
+    {
+      "slug": "contributor-research-hub",
+      "name": "Contributor research hub",
+      "category": "contributing",
+      "summary": "Bounded reproduction, source, threshold, edge-case, and observation tasks with acceptance criteria.",
+      "permalink": "/research-hub/",
+      "aliases": ["research tasks", "good first research issue", "evidence gaps"]
     },
     {
       "slug": "source-quality-policy",

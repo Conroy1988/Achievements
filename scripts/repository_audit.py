@@ -17,7 +17,6 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ARTIFACT_DIR = ROOT / "audit-artifacts"
 SEMVER_NOTE = re.compile(r"^v\d+\.\d+\.\d+\.md$")
 
 
@@ -131,7 +130,7 @@ def site_contract(artifact_dir: Path) -> AuditResult:
             errors.append(f"_config.yml does not define {key[:-1]}")
 
     layout = (ROOT / "_layouts" / "default.html").read_text(encoding="utf-8")
-    layout_requirements = {
+    requirements = {
         "language declaration": '<html lang="{{ site.lang',
         "responsive viewport": 'name="viewport"',
         "SEO metadata": "{% seo %}",
@@ -139,7 +138,7 @@ def site_contract(artifact_dir: Path) -> AuditResult:
         "main landmark": 'role="main"',
         "repository footer": "site.github.repository_url",
     }
-    for label, marker in layout_requirements.items():
+    for label, marker in requirements.items():
         if marker not in layout:
             errors.append(f"Default layout lacks {label}.")
 
@@ -155,7 +154,6 @@ def site_contract(artifact_dir: Path) -> AuditResult:
         for marker in ('role="search"', 'aria-live="polite"', '<label for="search-query">'):
             if marker not in text:
                 errors.append(f"Search page lacks required accessibility marker: {marker}")
-
     return internal_result("Site metadata and accessibility contract", "site", errors, artifact_dir)
 
 
@@ -179,6 +177,44 @@ def release_contract(artifact_dir: Path) -> AuditResult:
             if heading not in text:
                 errors.append(f"{note.relative_to(ROOT)} lacks {heading}.")
     return internal_result("Release policy compliance", "release", errors, artifact_dir)
+
+
+def official_monitor_contract(artifact_dir: Path) -> AuditResult:
+    errors: list[str] = []
+    config_path = ROOT / "data" / "official-document-monitor.json"
+    page_path = ROOT / "docs" / "official-document-monitor.md"
+    if not config_path.exists():
+        errors.append("Official documentation monitor configuration is missing.")
+        return internal_result("Official documentation baseline contract", "research", errors, artifact_dir)
+    try:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        errors.append(f"Monitor configuration is invalid JSON: {error}")
+        return internal_result("Official documentation baseline contract", "research", errors, artifact_dir)
+    documents = config.get("documents")
+    if not isinstance(documents, list) or len(documents) < 1:
+        errors.append("Monitor configuration must contain at least one document.")
+    else:
+        ids: set[str] = set()
+        for document in documents:
+            document_id = document.get("id")
+            if not isinstance(document_id, str) or not document_id:
+                errors.append("A monitored document lacks an id.")
+            elif document_id in ids:
+                errors.append(f"Duplicate monitored document id: {document_id}")
+            ids.add(document_id)
+            if not str(document.get("url", "")).startswith("https://docs.github.com/"):
+                errors.append(f"{document_id}: URL is not an official docs.github.com page.")
+            digest = document.get("baseline_sha256")
+            if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+                errors.append(f"{document_id}: baseline SHA-256 is missing or invalid.")
+            if not document.get("baseline_checked_at"):
+                errors.append(f"{document_id}: baseline check date is missing.")
+            if not isinstance(document.get("affected_achievements"), list) or not document["affected_achievements"]:
+                errors.append(f"{document_id}: affected achievements are missing.")
+    if not page_path.exists():
+        errors.append("Generated official documentation monitor page is missing.")
+    return internal_result("Official documentation baseline contract", "research", errors, artifact_dir)
 
 
 @contextmanager
@@ -227,30 +263,26 @@ def browser_results(artifact_dir: Path) -> list[AuditResult]:
     search_server_log = artifact_dir / "search-server.log"
     try:
         with static_server(serve, 4173, "/Achievements/search/", search_server_log):
-            results.append(
-                command_result(
-                    "Search browser behaviour",
-                    "browser",
-                    ["npm", "run", "search:test"],
-                    artifact_dir,
-                    env={"SEARCH_BASE_URL": "http://127.0.0.1:4173/Achievements"},
-                )
-            )
+            results.append(command_result(
+                "Search browser behaviour",
+                "browser",
+                ["npm", "run", "search:test"],
+                artifact_dir,
+                env={"SEARCH_BASE_URL": "http://127.0.0.1:4173/Achievements"},
+            ))
     except (OSError, RuntimeError) as error:
         results.append(internal_result("Search browser behaviour", "browser", [str(error)], artifact_dir))
 
     visual_server_log = artifact_dir / "visual-server.log"
     try:
         with static_server(site, 4174, "/", visual_server_log):
-            results.append(
-                command_result(
-                    "Visual regression",
-                    "browser",
-                    ["npm", "run", "visual:test"],
-                    artifact_dir,
-                    env={"VISUAL_BASE_URL": "http://127.0.0.1:4174"},
-                )
-            )
+            results.append(command_result(
+                "Visual regression",
+                "browser",
+                ["npm", "run", "visual:test"],
+                artifact_dir,
+                env={"VISUAL_BASE_URL": "http://127.0.0.1:4174"},
+            ))
     except (OSError, RuntimeError) as error:
         results.append(internal_result("Visual regression", "browser", [str(error)], artifact_dir))
     return results
@@ -260,7 +292,7 @@ def report_payload(results: list[AuditResult], started_at: datetime, duration: f
     passed = sum(result.status == "passed" for result in results)
     failed = len(results) - passed
     return {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "started_at": started_at.isoformat().replace("+00:00", "Z"),
         "duration_seconds": round(duration, 3),
@@ -314,12 +346,7 @@ def main() -> int:
 
     python = sys.executable
     results = [
-        command_result(
-            "Repository-wide Markdown",
-            "content",
-            ["npx", "--yes", "markdownlint-cli2@0.18.1", "**/*.md"],
-            artifact_dir,
-        ),
+        command_result("Repository-wide Markdown", "content", ["npx", "--yes", "markdownlint-cli2@0.18.1", "**/*.md"], artifact_dir),
         command_result("Achievement catalogue", "content", [python, "scripts/check_achievement_catalog.py"], artifact_dir),
         command_result(
             "Achievement data contract",
@@ -330,41 +357,40 @@ def main() -> int:
         command_result(
             "Verification freshness",
             "evidence",
-            [
-                python,
-                "scripts/check_verification_dates.py",
-                "--strict-staleness",
-                "--output",
-                str(artifact_dir / "verification-dates.md"),
-            ],
+            [python, "scripts/check_verification_dates.py", "--strict-staleness", "--output", str(artifact_dir / "verification-dates.md")],
             artifact_dir,
         ),
+        command_result(
+            "Public evidence register",
+            "research",
+            [python, "scripts/build_evidence_register.py", "--check", "--report", str(artifact_dir / "evidence-register.md")],
+            artifact_dir,
+        ),
+        command_result(
+            "Achievement verification timelines",
+            "research",
+            [python, "scripts/build_verification_timelines.py", "--check", "--report", str(artifact_dir / "verification-timelines.md")],
+            artifact_dir,
+        ),
+        command_result(
+            "Contributor research queue",
+            "research",
+            [python, "scripts/build_research_hub.py", "--check", "--report", str(artifact_dir / "research-hub.md")],
+            artifact_dir,
+        ),
+        official_monitor_contract(artifact_dir),
         command_result("Full repository links", "content", [python, "scripts/check_links.py", "--all"], artifact_dir),
         command_result(
             "Source resilience inventory",
             "sources",
-            [
-                python,
-                "scripts/build_source_inventory.py",
-                "--csv",
-                str(artifact_dir / "source-inventory.csv"),
-                "--markdown",
-                str(artifact_dir / "source-inventory.md"),
-            ],
+            [python, "scripts/build_source_inventory.py", "--csv", str(artifact_dir / "source-inventory.csv"), "--markdown", str(artifact_dir / "source-inventory.md")],
             artifact_dir,
         ),
+        command_result("Public API drift", "data", [python, "scripts/build_public_api.py", "--check"], artifact_dir),
         command_result(
             "Repository health generation",
             "operations",
-            [
-                python,
-                "-m",
-                "scripts.build_health_dashboard",
-                "--markdown",
-                str(artifact_dir / "health-dashboard.md"),
-                "--json",
-                str(artifact_dir / "status.json"),
-            ],
+            [python, "-m", "scripts.build_health_dashboard", "--markdown", str(artifact_dir / "health-dashboard.md"), "--json", str(artifact_dir / "status.json")],
             artifact_dir,
         ),
         site_contract(artifact_dir),
@@ -392,11 +418,7 @@ def main() -> int:
     json_path.parent.mkdir(parents=True, exist_ok=True)
     markdown_path.write_text(markdown_report(payload), encoding="utf-8")
     json_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-
-    print(
-        f"Repository audit {payload['status']}: "
-        f"{payload['summary']['passed']}/{payload['summary']['total']} controls passed."
-    )
+    print(f"Repository audit {payload['status']}: {payload['summary']['passed']}/{payload['summary']['total']} controls passed.")
     return 0 if payload["status"] == "passed" else 1
 
 

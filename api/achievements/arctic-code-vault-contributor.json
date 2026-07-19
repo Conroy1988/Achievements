@@ -28,6 +28,6 @@
     "tiers": [],
     "trigger": "The account contributed to a qualifying repository preserved in the 2020 GitHub Arctic Code Vault snapshot."
   },
-  "api_version": "1.0.0",
+  "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"
 }

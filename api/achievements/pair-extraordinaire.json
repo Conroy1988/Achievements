@@ -51,6 +51,6 @@
     ],
     "trigger": "A correctly attributed co-authored commit is incorporated into a merged pull request."
   },
-  "api_version": "1.0.0",
+  "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"
 }

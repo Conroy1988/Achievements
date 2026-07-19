@@ -49,6 +49,6 @@
     ],
     "trigger": "A substantive pull request attributable to the account is merged."
   },
-  "api_version": "1.0.0",
+  "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"
 }

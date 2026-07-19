@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Unified repository audit
-description: One command that executes and reports the encyclopedia's complete quality, evidence, data, site, release, search, and visual controls.
+description: One command that executes and reports the encyclopedia's complete quality, evidence, research, data, site, release, search, and visual controls.
 permalink: /audit/
 ---
 
@@ -23,8 +23,13 @@ The command runs every major control, preserves individual logs, and writes both
 | Catalogue | Achievement index and navigation consistency |
 | Data | Achievement dataset, schema, guide, and index agreement |
 | Evidence | Verification-date freshness with annual staleness enforcement |
+| Research | Public evidence-register alignment and output drift |
+| Research | Achievement verification-timeline chronology and coverage |
+| Research | Contributor research-queue references and acceptance criteria |
+| Research | Official GitHub documentation baseline integrity |
 | Navigation | Full repository internal-link baseline |
 | Sources | External-source resilience inventory |
+| API | Core and research endpoint discovery and drift |
 | Operations | Repository health dashboard generation |
 | Metadata | Required Jekyll configuration and SEO contract |
 | Accessibility | Language, viewport, landmarks, labelled navigation, visible focus, and reduced motion |
@@ -32,6 +37,8 @@ The command runs every major control, preserves individual logs, and writes both
 | Site | Production Jekyll build |
 | Search | Playwright alias, filter, routing, and live-region checks |
 | Visual | Desktop and mobile baseline comparison |
+
+The complete browser-enabled audit currently reports **17 controls** because metadata and accessibility are evaluated as one site contract.
 
 ## Reports
 
@@ -60,12 +67,18 @@ The browser option is intended only for rapid local diagnosis. Formal CI and rel
 
 The audit does not stop at the first failed control. It continues wherever safe, records all results, and exits non-zero when any control fails. Search and visual checks are marked failed when the production Jekyll build is unavailable rather than being reported as successful.
 
+The official-document contract validates committed reviewed baselines without performing network access. The separate scheduled monitor performs live comparisons and opens a review issue when a material fingerprint changes.
+
 ## Relationship to specialised workflows
 
 The unified audit is the authoritative whole-repository result. Existing focused workflows remain because they provide faster feedback and narrower diagnostics for ordinary pull requests.
 
 ## Related material
 
+- [Contributor research hub](research-hub.md)
+- [Public evidence register](evidence-register.md)
+- [Achievement verification timelines](verification-timelines.md)
+- [Official documentation monitor](official-document-monitor.md)
 - [Repository health dashboard](health-dashboard.md)
 - [Verification methodology](verification-methodology.md)
 - [Achievement data reference](data-reference.md)

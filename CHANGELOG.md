@@ -8,6 +8,27 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 No unreleased changes are currently recorded.
 
+## v1.2.0 — 2026-07-19
+
+### Added
+
+- Privacy-safe public evidence register with nine canonical evidence records and a static JSON endpoint.
+- Weekly official GitHub documentation monitor with reviewed content fingerprints and affected-guide mapping.
+- Achievement verification timelines with page-level last-reviewed dates and explicit history limitations.
+- Contributor research hub containing eight bounded tasks, three good-first research opportunities, and a structured issue form.
+- Research endpoints for evidence records, verification timelines, and the contributor queue.
+
+### Changed
+
+- Unified repository audit expanded from 12 to 17 controls, adding evidence, timeline, research-queue, official-baseline, and public-API contracts.
+- Public API discovery expanded to identify the research infrastructure endpoints.
+- All GitHub Actions dependencies upgraded where applicable and pinned to immutable commit SHAs.
+- Repository navigation and audit documentation now expose the complete research workflow.
+
+### Verification
+
+- Recorded the research infrastructure release in [`docs/releases/v1.2.0.md`](docs/releases/v1.2.0.md).
+
 ## v1.1.0 — 2026-07-19
 
 ### Added
