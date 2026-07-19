@@ -6,7 +6,7 @@
   <a href="https://github.com/Conroy1988/Achievements/actions/workflows/content-quality.yml"><img alt="Content quality" src="https://github.com/Conroy1988/Achievements/actions/workflows/content-quality.yml/badge.svg"></a>
   <a href="https://github.com/Conroy1988/Achievements/actions/workflows/repository-audit.yml"><img alt="Unified audit" src="https://github.com/Conroy1988/Achievements/actions/workflows/repository-audit.yml/badge.svg"></a>
   <a href="https://conroy1988.github.io/Achievements/"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-live-2ea44f?logo=github"></a>
-  <a href="docs/api-reference.md"><img alt="Public API" src="https://img.shields.io/badge/public%20API-v1.0-58a6ff"></a>
+  <a href="docs/api-reference.md"><img alt="Public API" src="https://img.shields.io/badge/public%20API-v1.1-58a6ff"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/licence-MIT-8957e5"></a>
   <a href="MAINTENANCE.md"><img alt="Maintenance status" src="https://img.shields.io/badge/status-maintained-238636"></a>
 </p>
@@ -14,19 +14,19 @@
 <p align="center">
   <strong>The evidence-led reference for GitHub profile achievements.</strong><br>
   Discover what each achievement means, how it is earned, which thresholds are verified,
-  what remains uncertain, and how the rules have changed over time.
+  what remains uncertain, and how every conclusion is reviewed.
 </p>
 
 <p align="center">
-  <a href="https://conroy1988.github.io/Achievements/"><strong>Explore the live encyclopedia</strong></a>
+  <a href="https://conroy1988.github.io/Achievements/"><strong>Explore the encyclopedia</strong></a>
   ·
   <a href="https://conroy1988.github.io/Achievements/search/">Search and filter</a>
   ·
-  <a href="docs/achievement-index.md">Browse every achievement</a>
+  <a href="docs/evidence-register.md">Inspect evidence</a>
+  ·
+  <a href="docs/research-hub.md">Join the research</a>
   ·
   <a href="docs/api-reference.md">Use the API</a>
-  ·
-  <a href="CONTRIBUTING.md">Contribute evidence</a>
 </p>
 
 ---
@@ -35,8 +35,8 @@
   <tr>
     <td align="center"><strong>7</strong><br><sub>Active achievements</sub></td>
     <td align="center"><strong>2</strong><br><sub>Retired achievements</sub></td>
-    <td align="center"><strong>13</strong><br><sub>Public API endpoints</sub></td>
-    <td align="center"><strong>12</strong><br><sub>Unified audit controls</sub></td>
+    <td align="center"><strong>16</strong><br><sub>Public API endpoints</sub></td>
+    <td align="center"><strong>17</strong><br><sub>Unified audit controls</sub></td>
   </tr>
 </table>
 
@@ -46,13 +46,13 @@ GitHub does not publish complete rules for every achievement or tier. That creat
 
 The **GitHub Achievement Encyclopedia** separates those sources instead of presenting every claim with equal certainty.
 
-| Evidence-led | Practical | Machine-readable |
+| Evidence-led | Research-ready | Machine-readable |
 |---|---|---|
-| Every material claim is classified and dated. | Each guide explains triggers, exclusions, delays, and legitimate qualification routes. | A validated dataset, JSON Schema, static API, and health endpoint expose the same evidence model to tools. |
-| [See the confidence model](docs/evidence-strength-levels.md) | [Search the encyclopedia](search.md) | [Open the API reference](docs/api-reference.md) |
+| Material claims are classified, dated, and linked to reviewable evidence records. | Known gaps become bounded tasks with reproducibility and privacy requirements. | Validated datasets and static JSON endpoints preserve classifications, dates, decisions, and limitations. |
+| [See the confidence model](docs/evidence-strength-levels.md) | [Open the research hub](docs/research-hub.md) | [Open the API reference](docs/api-reference.md) |
 
 > [!IMPORTANT]
-> Numerical thresholds that GitHub has not officially documented remain clearly labelled as community-reported or otherwise unconfirmed until they can be independently reproduced.
+> Numerical thresholds that GitHub has not officially documented remain clearly labelled as community-reported or otherwise unconfirmed until independently reproduced.
 
 ## Achievement catalogue
 
@@ -75,166 +75,126 @@ The **GitHub Achievement Encyclopedia** separates those sources instead of prese
 | **Arctic Code Vault Contributor** | Contributing to qualifying repositories included in the 2020 archive | Retired | [Open guide](docs/arctic-code-vault-contributor.md) |
 | **Mars 2020 Contributor** | Contributing to repositories used by the Mars 2020 mission | Retired | [Open guide](docs/mars-2020-contributor.md) |
 
-> [!TIP]
-> Use the [interactive search](search.md) for aliases and combined filters, or start with the [canonical achievement index](docs/achievement-index.md) for a compact non-JavaScript route to every guide.
+Use the [interactive search](search.md) for aliases and combined filters, or the [canonical index](docs/achievement-index.md) for a compact non-JavaScript route.
 
-## Evidence before certainty
-
-Every claim moves through the same evidence pipeline:
+## From claim to maintained conclusion
 
 ```mermaid
 flowchart LR
-    A[Achievement claim] --> B{Evidence available?}
-    B -->|GitHub documentation| C[Official]
-    B -->|Independent reproduction| D[Confirmed]
-    B -->|Dated account evidence| E[Observed]
-    B -->|Third-party reporting| F[Community-reported]
-    B -->|Not enough evidence| G[Unknown]
-    C --> H[Dated guide and dataset record]
-    D --> H
-    E --> H
-    F --> H
-    G --> H
-    H --> I[Reverification when behaviour changes]
+    A[Achievement claim] --> B[Evidence classification]
+    B --> C[Privacy-safe evidence record]
+    C --> D[Guide interpretation]
+    D --> E[Verification timeline]
+    D --> F{Evidence gap?}
+    F -->|Yes| G[Contributor research task]
+    F -->|No| H[Maintained conclusion]
+    G --> C
+    I[Official GitHub documentation] --> J[Scheduled fingerprint monitor]
+    J --> D
+    E --> K[17-control unified audit]
+    H --> K
+    K --> L[Published encyclopedia and API]
 ```
 
-| Level | Meaning | How to read it |
-|---|---|---|
-| **Official** | Directly documented by GitHub | Strongest available source |
-| **Confirmed** | Reproduced with sufficient dated evidence | Reliable, but not necessarily officially documented |
-| **Observed** | Seen in one or more accounts without full reproduction | Useful evidence with limited generalisability |
-| **Community-reported** | Reported by third parties without adequate independent confirmation | Treat as provisional |
-| **Unknown** | Insufficient evidence for a reliable claim | No confident conclusion stated |
+| Evidence level | Meaning |
+|---|---|
+| **Official** | Directly documented by GitHub |
+| **Confirmed** | Reproduced with sufficient dated evidence |
+| **Observed** | Supported by credible observations without full reproduction |
+| **Community-reported** | Third-party reporting without adequate independent confirmation |
+| **Unknown** | Insufficient evidence for a reliable claim |
 
-Read the full [evidence and confidence model](docs/evidence-strength-levels.md) and [verification methodology](docs/verification-methodology.md).
+## Research infrastructure
 
-## Choose your route
+| Surface | Purpose |
+|---|---|
+| [Public evidence register](docs/evidence-register.md) | One privacy-safe baseline record for every canonical achievement |
+| [Evidence register policy](docs/evidence-register-policy.md) | Publication, provenance, privacy, contradiction, and review rules |
+| [Official documentation monitor](docs/official-document-monitor.md) | Reviewed fingerprints for six official GitHub documentation pages |
+| [Verification timelines](docs/verification-timelines.md) | Dated review history and explicit historical gaps for all nine achievements |
+| [Contributor research hub](docs/research-hub.md) | Eight bounded tasks, including three good-first research opportunities |
+| [Structured research issue form](.github/ISSUE_TEMPLATE/research-task.yml) | Reproduction method, dated results, limitations, and research declarations |
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🏆 I want to understand an achievement</h3>
-      <p>Open the catalogue, choose an active or retired achievement, and follow its trigger, exclusions, timing notes, and evidence classification.</p>
-      <p><a href="docs/achievement-index.md"><strong>Browse achievement guides →</strong></a></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🔎 I want to find something quickly</h3>
-      <p>Search names, aliases, triggers, evidence labels, categories, verification freshness, and major project references.</p>
-      <p><a href="search.md"><strong>Search and filter →</strong></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🧪 I want to verify a claim</h3>
-      <p>Use the confidence model to distinguish official rules from reproduced behaviour, observations, and community reports.</p>
-      <p><a href="docs/evidence-strength-levels.md"><strong>Inspect the evidence model →</strong></a></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>⚙️ I need structured data</h3>
-      <p>Use static JSON endpoints for the complete catalogue, individual records, schema discovery, and repository health.</p>
-      <p><a href="docs/api-reference.md"><strong>Open the API reference →</strong></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📊 I want the current project state</h3>
-      <p>Review verification freshness, workflow conclusions, source resilience, release state, and maintenance backlog.</p>
-      <p><a href="docs/health-dashboard.md"><strong>Open repository health →</strong></a></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>📝 I found new evidence</h3>
-      <p>Submit a dated observation, reproduction, correction, source update, or accessibility improvement.</p>
-      <p><a href="CONTRIBUTING.md"><strong>Contribute to the project →</strong></a></p>
-    </td>
-  </tr>
-</table>
+## Public data API
+
+The static API exposes:
+
+- discovery and schema metadata;
+- the complete achievement catalogue;
+- one endpoint per achievement;
+- public evidence records;
+- verification timelines;
+- the contributor research queue; and
+- live repository-health state.
+
+Start with [`api/index.json`](api/index.json) or read the [API reference](docs/api-reference.md).
+
+> [!NOTE]
+> Structured delivery never strengthens a claim. Consumers should preserve evidence level, reviewer decision, reproduction state, dates, precision, limitations, and task status.
 
 ## Built for trust
 
-The encyclopedia is maintained as a documentation and data product, not a collection of untraceable tips.
-
 | Control | What it protects |
 |---|---|
-| **Repository-wide Markdown** | Consistent, readable documentation across repository-owned files |
-| **Catalogue consistency** | The index and navigation hub contain the same nine guides |
-| **Achievement data contract** | Dataset names, paths, tiers, dates, and guide metadata cannot drift |
-| **Verification freshness** | Missing, malformed, future, and stale verification dates are detected |
-| **Source resilience inventory** | External references remain visible, classified, and maintainable |
-| **Public API drift validation** | Generated endpoints remain exact products of the canonical dataset |
-| **Search browser tests** | Aliases, filters, routing, and accessible announcements behave correctly |
-| **Jekyll and visual validation** | The public site remains deployable and visually stable on desktop and mobile |
-| **Unified repository audit** | Twelve controls produce one authoritative Markdown and JSON result |
+| **Repository-wide Markdown** | Consistent documentation across repository-owned files |
+| **Catalogue and data contracts** | Names, routes, tiers, dates, and guide metadata cannot drift |
+| **Evidence and timeline contracts** | Claims, review dates, chronology, and privacy-safe outputs remain aligned |
+| **Official-document baseline contract** | Monitored GitHub documentation has reviewed, valid fingerprints |
+| **Contributor research contract** | Tasks remain bounded, referenced, and measurable |
+| **Source resilience inventory** | External references remain visible and maintainable |
+| **Public API drift validation** | Generated core and research endpoints remain canonical |
+| **Search, Jekyll, and visual checks** | The public experience remains functional and stable |
+| **Unified repository audit** | Seventeen controls produce one authoritative Markdown and JSON result |
 
-```mermaid
-flowchart TD
-    A[Research or correction] --> B[Evidence classification]
-    B --> C[Guide update]
-    C --> D[Canonical dataset]
-    D --> E[Static public API]
-    C --> F[Search index]
-    C --> G[Repository health]
-    E --> H[Unified audit]
-    F --> H
-    G --> H
-    H --> I[Reviewable pull request]
-    I --> J[Published encyclopedia and release]
+Run the complete audit locally with:
+
+```bash
+python scripts/repository_audit.py
 ```
 
 ## Project map
 
 | Area | Purpose |
 |---|---|
-| [`search.md`](search.md) | Accessible achievement and project-reference search |
-| [`docs/achievement-index.md`](docs/achievement-index.md) | Canonical catalogue of active and retired achievements |
-| [`data/achievements.json`](data/achievements.json) | Canonical machine-readable achievement records |
-| [`data/achievement.schema.json`](data/achievement.schema.json) | JSON Schema data contract |
-| [`docs/api-reference.md`](docs/api-reference.md) | Static public API documentation |
-| [`api/index.json`](api/index.json) | API discovery and endpoint index |
+| [`search.md`](search.md) | Accessible search and filtering |
+| [`docs/achievement-index.md`](docs/achievement-index.md) | Canonical achievement catalogue |
+| [`data/achievements.json`](data/achievements.json) | Canonical achievement records |
+| [`data/evidence-register.json`](data/evidence-register.json) | Canonical public evidence records |
+| [`data/verification-timelines.json`](data/verification-timelines.json) | Canonical review histories |
+| [`data/research-queue.json`](data/research-queue.json) | Canonical contributor research tasks |
+| [`docs/api-reference.md`](docs/api-reference.md) | Public API documentation |
+| [`docs/repository-audit.md`](docs/repository-audit.md) | Unified 17-control audit contract |
 | [`docs/health-dashboard.md`](docs/health-dashboard.md) | Generated operational health view |
-| [`docs/repository-audit.md`](docs/repository-audit.md) | Unified 12-control audit contract |
-| [`docs/evidence-strength-levels.md`](docs/evidence-strength-levels.md) | Shared confidence vocabulary |
-| [`docs/verification-methodology.md`](docs/verification-methodology.md) | Research and reproduction process |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution requirements and review expectations |
-| [`MAINTENANCE.md`](MAINTENANCE.md) | Review cadence, evidence ageing, and incident handling |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution requirements |
+| [`MAINTENANCE.md`](MAINTENANCE.md) | Review cadence and evidence ageing |
 | [`RELEASES.md`](RELEASES.md) | Semantic-version release policy |
 
 ## Project principles
 
 1. **Evidence before certainty.** Community observations are never presented as official fact.
 2. **No artificial engagement.** The project does not promote spam, fake contributions, or deceptive activity.
-3. **Dates matter.** GitHub behaviour changes; verification dates make evidence age visible.
+3. **Dates matter.** Verification and review dates make evidence age visible.
 4. **Corrections remain traceable.** Disputed or superseded claims are corrected through reviewable history.
 5. **Historical context is preserved.** Retired achievements remain documented without being presented as earnable.
-6. **Structured data retains uncertainty.** JSON delivery never strengthens a claim beyond its recorded evidence.
-7. **Privacy is non-negotiable.** Verification should not require private account, billing, repository, or analytics data.
+6. **Structured data retains uncertainty.** JSON delivery never strengthens a claim.
+7. **Privacy is non-negotiable.** Research excludes credentials, private repository data, billing details, and unnecessary personal identifiers.
 
 ## Contributing
 
-Corrections, dated observations, reproductions, source updates, accessibility improvements, achievement research, and data-contract changes are welcome.
+Corrections, dated observations, independent reproductions, contradictory evidence, source replacements, accessibility improvements, and data-contract changes are welcome.
 
-Before opening a pull request:
-
-1. Read the [contribution guidelines](CONTRIBUTING.md).
-2. Classify the evidence using the [confidence model](docs/evidence-strength-levels.md).
-3. Follow the [achievement guide standard](docs/achievement-guide-standard.md).
-4. Keep guide, dataset, schema, search, and API implications aligned.
-5. Include dates, sources, limitations, and reproduction details where applicable.
-6. Avoid artificial activity undertaken solely to manufacture engagement signals.
+Start with the [contributor research hub](docs/research-hub.md), then use the [structured research form](https://github.com/Conroy1988/Achievements/issues/new?template=research-task.yml) or follow the [contribution guidelines](CONTRIBUTING.md).
 
 > [!NOTE]
-> A useful contribution does not need to prove a claim. Well-documented contradictory evidence, uncertainty, and failed reproduction attempts can materially improve the reference.
+> A useful contribution does not need to prove a claim. Well-documented uncertainty and failed reproduction attempts can materially improve the reference.
 
 ## Maintenance and verification
 
-The project follows a defined maintenance cycle:
-
-- **Weekly:** unified repository audit, full links, verification freshness, health refresh, and visual comparison.
+- **Weekly:** unified audit, official-document monitoring, links, freshness, research contracts, health refresh, and visual comparison.
 - **Monthly:** issue, workflow, dependency, source availability, and evidence review.
 - **Quarterly:** source freshness and award-behaviour sampling.
-- **Annually:** complete guide, governance, accessibility, metadata, automation, dataset, and API review.
+- **Annually:** complete guide, governance, accessibility, metadata, automation, dataset, API, and research review.
 - **Event-driven:** immediate review after relevant GitHub product changes.
-
-See the [maintenance policy](MAINTENANCE.md) for evidence-ageing rules, incident handling, and phase reopening criteria.
 
 ---
 
@@ -247,11 +207,11 @@ See the [maintenance policy](MAINTENANCE.md) for evidence-ageing rules, incident
   ·
   <a href="https://conroy1988.github.io/Achievements/search/">Search</a>
   ·
+  <a href="docs/research-hub.md">Research</a>
+  ·
   <a href="docs/api-reference.md">API</a>
   ·
   <a href="docs/health-dashboard.md">Health</a>
-  ·
-  <a href="CONTRIBUTING.md">Contribute</a>
   ·
   <a href="LICENSE">MIT Licence</a>
 </p>
