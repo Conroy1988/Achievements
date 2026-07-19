@@ -6,13 +6,13 @@ This index distinguishes currently earnable achievements from retired or limited
 
 | Achievement | Primary action | Tiered | Guide status |
 |---|---|---:|---|
-| [Pull Shark](pull-shark.md) | Have pull requests merged | Yes | Standardised |
+| [Pull Shark](achievements/pull-shark.md) | Have pull requests merged | Yes | Standardised |
 | [Quickdraw](quickdraw.md) | Close an issue or pull request shortly after opening it | No | Standardised |
-| [YOLO](yolo.md) | Merge a pull request without review | No | Standardised |
-| [Pair Extraordinaire]({{ site.baseurl }}/achievements/pair-extraordinaire/) | Co-author commits in merged pull requests | Yes | Standardised |
-| [Galaxy Brain](galaxy-brain.md) | Receive accepted answers in GitHub Discussions | Yes | Standardised |
-| [Starstruck](starstruck.md) | Own a repository that receives stars | Yes | Standardised |
-| [Public Sponsor](public-sponsor.md) | Publicly sponsor open-source work through GitHub Sponsors | No | Standardised |
+| [YOLO](achievements/yolo.md) | Merge a pull request without review | No | Standardised |
+| [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | Co-author commits in merged pull requests | Yes | Standardised |
+| [Galaxy Brain](achievements/galaxy-brain.md) | Receive accepted answers in GitHub Discussions | Yes | Standardised |
+| [Starstruck](achievements/starstruck.md) | Own a repository that receives stars | Yes | Standardised |
+| [Public Sponsor](achievements/public-sponsor.md) | Publicly sponsor open-source work through GitHub Sponsors | No | Standardised |
 
 ## Retired or restricted achievements
 
