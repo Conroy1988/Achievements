@@ -1,0 +1,133 @@
+name: Verification release
+
+on:
+  pull_request:
+    paths:
+      - 'CHANGELOG.md'
+      - 'docs/releases/**'
+      - '.github/workflows/verification-release.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'CHANGELOG.md'
+      - 'docs/releases/**'
+      - '.github/workflows/verification-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate formal release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Validate release note names
+        shell: bash
+        run: |
+          shopt -s nullglob
+          notes=(docs/releases/v*.md)
+          if (( ${#notes[@]} == 0 )); then
+            echo "No versioned release notes were found."
+            exit 1
+          fi
+          for file in "${notes[@]}"; do
+            tag="$(basename "$file" .md)"
+            if [[ ! "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "Invalid semantic-version release note: $file"
+              exit 1
+            fi
+          done
+      - name: Validate repository-wide Markdown
+        run: npx --yes markdownlint-cli2@0.18.1 "**/*.md"
+      - name: Validate achievement catalogue
+        run: python scripts/check_achievement_catalog.py
+      - name: Validate verification freshness
+        run: python scripts/check_verification_dates.py --strict-staleness --output verification-date-report.md
+      - name: Validate full link baseline
+        run: python scripts/check_links.py --all
+      - name: Build source inventory
+        run: python scripts/build_source_inventory.py --csv source-inventory.csv --markdown source-inventory.md
+      - name: Build GitHub Pages site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install visual-test dependencies
+        run: npm install --no-package-lock
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python -m http.server 4173 --directory _site > /tmp/release-site.log 2>&1 &
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/release-site.log
+          exit 1
+      - name: Compare visual baselines
+        run: npm run visual:test
+      - name: Upload release evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-release-evidence
+          path: |
+            verification-date-report.md
+            source-inventory.csv
+            source-inventory.md
+            visual-results
+          if-no-files-found: warn
+          retention-days: 90
+
+  publish:
+    name: Publish GitHub Release
+    if: github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Publish newly merged release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BEFORE_SHA: ${{ github.event.before }}
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA" -- 'docs/releases/v*.md')
+          if (( ${#files[@]} == 0 )); then
+            echo "No new release note was merged; nothing to publish."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            tag="$(basename "$file" .md)"
+            if [[ ! "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "Refusing invalid release tag: $tag"
+              exit 1
+            fi
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+              echo "Release $tag already exists; tags are treated as immutable."
+              continue
+            fi
+            gh release create "$tag" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --title "GitHub Achievement Encyclopedia $tag" \
+              --notes-file "$file"
+          done
