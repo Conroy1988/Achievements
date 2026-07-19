@@ -57,3 +57,7 @@ The badge may not update immediately after the qualifying merge. Profile process
 - [Verification methodology](../docs/verification-methodology.md)
 - [Award delay troubleshooting](../docs/award-delay-troubleshooting.md)
 - [Evidence strength levels](../docs/evidence-strength-levels.md)
+
+## Last verified
+
+**19 July 2026** — reviewed qualifying merged-pull-request behaviour, community-reported tier thresholds, award delays, and responsible participation guidance.
