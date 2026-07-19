@@ -1,0 +1,173 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 8,
+  "tasks": [
+    {
+      "id": "RSH-001",
+      "title": "Independently reproduce the Quickdraw qualifying window",
+      "achievement_slug": "quickdraw",
+      "task_type": "independent-reproduction",
+      "status": "open",
+      "priority": "critical",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-002"
+      ],
+      "research_question": "What is the shortest and longest reproducible issue or pull-request close interval that awards Quickdraw under normal public-repository use?",
+      "acceptance_criteria": [
+        "Provide dated observations from at least two independent accounts.",
+        "Record creation, closure, and award-processing times without exposing private account data.",
+        "Separate issue and pull-request results where behaviour differs.",
+        "Document failed reproductions and possible confounding factors."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-002",
+      "title": "Independently reproduce the YOLO review-state trigger",
+      "achievement_slug": "yolo",
+      "task_type": "independent-reproduction",
+      "status": "open",
+      "priority": "critical",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-003"
+      ],
+      "research_question": "Which pull-request review states prevent or permit YOLO when the author merges their own pull request?",
+      "acceptance_criteria": [
+        "Test no review, comment-only review, requested-changes review, and approving review where repository rules permit.",
+        "Use legitimate test repositories and substantive changes.",
+        "Record branch-protection and merge-method conditions.",
+        "Provide dated results from at least two independent accounts."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-003",
+      "title": "Strengthen Pull Shark tier evidence",
+      "achievement_slug": "pull-shark",
+      "task_type": "threshold-verification",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-001"
+      ],
+      "research_question": "Can each currently listed Pull Shark tier threshold be independently reproduced with attribution and processing-delay controls?",
+      "acceptance_criteria": [
+        "Provide dated account-level observations for every threshold being claimed.",
+        "Distinguish merged pull-request count from author, committer, and merger identity.",
+        "Record processing delays and repository visibility.",
+        "Do not create meaningless pull requests solely to inflate counts."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-004",
+      "title": "Verify Galaxy Brain tier thresholds",
+      "achievement_slug": "galaxy-brain",
+      "task_type": "threshold-verification",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-005"
+      ],
+      "research_question": "Do the listed accepted-answer thresholds consistently award the corresponding Galaxy Brain tiers?",
+      "acceptance_criteria": [
+        "Use genuine GitHub Discussion answers accepted by repository maintainers.",
+        "Record accepted-answer count before and after each observed award.",
+        "Separate accepted answers from other verified or moderated answer states.",
+        "Include at least two independent observations for any threshold promoted to confirmed."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-005",
+      "title": "Verify Starstruck ownership edge cases",
+      "achievement_slug": "starstruck",
+      "task_type": "edge-case-research",
+      "status": "open",
+      "priority": "high",
+      "difficulty": "advanced",
+      "good_first_issue": false,
+      "related_evidence_ids": [
+        "EVD-2026-006"
+      ],
+      "research_question": "How do repository transfer, organization ownership, forks, archived repositories, and falling star counts affect Starstruck attribution?",
+      "acceptance_criteria": [
+        "Use only legitimate repository history and public metadata.",
+        "Record ownership state at the time of award and after any transfer.",
+        "Distinguish personal and organization-owned repositories.",
+        "Document counterexamples as well as successful attribution."
+      ],
+      "target_evidence_level": "confirmed"
+    },
+    {
+      "id": "RSH-006",
+      "title": "Locate durable Arctic Code Vault sources",
+      "achievement_slug": "arctic-code-vault-contributor",
+      "task_type": "source-replacement",
+      "status": "open",
+      "priority": "medium",
+      "difficulty": "beginner",
+      "good_first_issue": true,
+      "related_evidence_ids": [
+        "EVD-2026-008"
+      ],
+      "research_question": "Which official or well-preserved public sources best document the 2020 qualification event and its historical scope?",
+      "acceptance_criteria": [
+        "Provide an official or high-stability public source.",
+        "Add an archive URL when lawful and available.",
+        "Explain what the source proves and what it does not prove.",
+        "Avoid account-specific private evidence."
+      ],
+      "target_evidence_level": "official"
+    },
+    {
+      "id": "RSH-007",
+      "title": "Locate durable Mars 2020 qualification sources",
+      "achievement_slug": "mars-2020-contributor",
+      "task_type": "source-replacement",
+      "status": "open",
+      "priority": "medium",
+      "difficulty": "beginner",
+      "good_first_issue": true,
+      "related_evidence_ids": [
+        "EVD-2026-009"
+      ],
+      "research_question": "Which official or high-stability sources document the mission-linked contribution qualification and its limitations?",
+      "acceptance_criteria": [
+        "Provide a public source from GitHub, NASA, JPL, or another authoritative maintainer.",
+        "Add an archive URL when lawful and available.",
+        "Identify whether the source documents the badge, the repository list, or only mission use.",
+        "Do not infer a complete qualification list from partial examples."
+      ],
+      "target_evidence_level": "official"
+    },
+    {
+      "id": "RSH-008",
+      "title": "Document award-processing delay observations",
+      "achievement_slug": null,
+      "task_type": "cross-achievement-observation",
+      "status": "open",
+      "priority": "medium",
+      "difficulty": "beginner",
+      "good_first_issue": true,
+      "related_evidence_ids": [],
+      "research_question": "What processing delays are observed between a qualifying event and profile-award visibility across different achievements?",
+      "acceptance_criteria": [
+        "Submit dated qualifying-event and first-visible-award timestamps.",
+        "Identify the achievement and relevant repository visibility.",
+        "Do not present a maximum guarantee from a small sample.",
+        "Remove unnecessary account identifiers from submitted evidence."
+      ],
+      "target_evidence_level": "observed"
+    }
+  ]
+}

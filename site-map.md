@@ -22,6 +22,8 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Research, data, and verification
 
+- [Contributor research hub](docs/research-hub.md)
+- [Machine-readable research queue](api/research-queue.json)
 - [Public evidence register](docs/evidence-register.md)
 - [Evidence register policy](docs/evidence-register-policy.md)
 - [Machine-readable evidence records](api/evidence.json)

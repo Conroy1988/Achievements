@@ -1,0 +1,68 @@
+name: Achievement research task
+description: Propose or report reproducible work against a contributor research-hub task.
+title: "[Research]: "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a task listed in the contributor research hub. Do not include credentials, private repository details, billing information, or unnecessary personal identifiers.
+  - type: input
+    id: task-id
+    attributes:
+      label: Research task ID
+      description: Enter the RSH identifier from the research hub.
+      placeholder: RSH-001
+    validations:
+      required: true
+  - type: dropdown
+    id: contribution-type
+    attributes:
+      label: Contribution type
+      options:
+        - Planned reproduction
+        - Successful observation
+        - Failed reproduction
+        - Contradictory evidence
+        - Source replacement
+        - Methodology improvement
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and environment
+      description: Explain the legitimate test method, account/repository visibility, review or merge state, and relevant conditions. Redact unnecessary identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Dated results
+      description: Include observation dates, relevant counts or states, processing delays, and failed attempts. Avoid unsupported certainty.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Public sources or redacted evidence
+      description: Provide public HTTPS URLs and explain what each item proves. Do not submit private links.
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations and confounding factors
+      description: State what was not controlled, reproduced, or independently verified.
+    validations:
+      required: true
+  - type: checkboxes
+    id: declarations
+    attributes:
+      label: Research declarations
+      options:
+        - label: I did not create spam, fake engagement, fabricated activity, or meaningless contributions for this research.
+          required: true
+        - label: I removed credentials, financial details, private repository information, and unnecessary personal identifiers.
+          required: true
+        - label: I understand that a report may remain provisional or be rejected if it does not satisfy the task acceptance criteria.
+          required: true
