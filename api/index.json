@@ -30,6 +30,8 @@
     "evidence_intelligence": "/Achievements/api/evidence-intelligence.json",
     "index": "/Achievements/api/index.json",
     "lab_protocols": "/Achievements/api/lab-protocols.json",
+    "mission_review_queue": "/Achievements/api/mission-review-queue.json",
+    "mission_review_schema": "/Achievements/api/mission-review-schema.json",
     "mission_submission_schema": "/Achievements/api/mission-submission-schema.json",
     "priorities": "/Achievements/api/priorities.json",
     "public_observations": "/Achievements/api/public-observations.json",
