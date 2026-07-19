@@ -15,6 +15,8 @@ The generated [evidence intelligence dashboard](docs/evidence-intelligence-dashb
 
 The [targeted evidence acquisition missions](docs/targeted-evidence-missions.md) convert those rankings into bounded work with prerequisites, controls, required evidence, and stop conditions.
 
+The [mission execution intake](docs/mission-execution-intake.md) converts completed, blocked, delayed, or inconclusive mission observations into privacy-screened draft packets for mandatory human review.
+
 <div
   id="research-command-centre"
   class="operations-app"
