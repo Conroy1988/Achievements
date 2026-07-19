@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Validate all Markdown files
         run: |
           touch markdownlint-report.txt
@@ -38,7 +38,7 @@ jobs:
           exit "$status"
       - name: Upload Markdown report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: markdownlint-report
           path: markdownlint-report.txt
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Compare index and navigation hub
         run: python scripts/check_achievement_catalog.py
 
@@ -59,12 +59,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Validate dataset, schema, guides, and catalogue
         run: python scripts/validate_achievement_data.py --report achievement-data-report.md
       - name: Upload achievement data report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: achievement-data-report
           path: achievement-data-report.md
@@ -76,12 +76,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Generate verification date report
         run: python scripts/check_verification_dates.py --output verification-date-report.md
       - name: Upload verification date report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: verification-date-report
           path: verification-date-report.md
@@ -93,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Build with GitHub Pages
         uses: actions/jekyll-build-pages@v1
         with:
