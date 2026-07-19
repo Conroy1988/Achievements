@@ -16,7 +16,20 @@ Contributions should improve the accuracy, usability, accessibility, or maintain
 3. Distinguish official documentation from community-observed behaviour.
 4. Remove private information, tokens, billing details, and unrelated account data.
 5. Keep the change focused on one independently reviewable purpose.
-6. Run `python scripts/check_links.py` when changing Markdown links.
+6. Run the applicable local validation commands below.
+
+## Local validation
+
+Install Node.js, Ruby, and Bundler before running the complete documentation checks.
+
+```bash
+python scripts/check_links.py
+npx --yes markdownlint-cli2@0.18.1
+bundle install
+JEKYLL_ENV=production bundle exec jekyll build --trace
+```
+
+The Markdown rules are defined in `.markdownlint-cli2.yaml`. Jekyll dependencies are declared in `Gemfile`. Validation failures should be corrected rather than broadly suppressed.
 
 ## Evidence expectations
 
