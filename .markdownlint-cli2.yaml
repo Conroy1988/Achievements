@@ -10,8 +10,6 @@ config:
       - kbd
       - br
   MD041: false
-globs:
-  - "**/*.md"
 ignores:
   - "_site/**"
   - "vendor/**"
