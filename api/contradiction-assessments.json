@@ -1,0 +1,64 @@
+{
+  "api_version": "1.0.0",
+  "assessments": [
+    {
+      "basis_ids": [
+        "EVT-2026-001",
+        "BND-005"
+      ],
+      "contradiction_id": "CTR-001",
+      "outcome": "narrowed",
+      "remaining_question": "What is the maximum qualifying interval and do issue closure and pull-request closure behave identically?"
+    },
+    {
+      "basis_ids": [
+        "EVT-2026-002"
+      ],
+      "contradiction_id": "CTR-002",
+      "outcome": "narrowed",
+      "remaining_question": "Do comment-only and changes-requested review objects prevent the award, and must the author also be the merger?"
+    },
+    {
+      "basis_ids": [
+        "BND-001",
+        "EVT-2026-003",
+        "EVT-2026-004",
+        "EVT-2026-005"
+      ],
+      "contradiction_id": "CTR-003",
+      "outcome": "still-disputed",
+      "remaining_question": "Which merged PRs GitHub attributes internally and where each exact tier boundary lies."
+    },
+    {
+      "basis_ids": [
+        "BND-002"
+      ],
+      "contradiction_id": "CTR-004",
+      "outcome": "still-disputed",
+      "remaining_question": "How squash, rebase, merge commits, email matching, and rewritten history affect final attribution."
+    },
+    {
+      "basis_ids": [
+        "BND-003"
+      ],
+      "contradiction_id": "CTR-005",
+      "outcome": "still-disputed",
+      "remaining_question": "Exact accepted-answer totals immediately around each displayed tier."
+    },
+    {
+      "basis_ids": [
+        "BND-004"
+      ],
+      "contradiction_id": "CTR-006",
+      "outcome": "narrowed",
+      "remaining_question": "The exact star boundaries and persistence across ownership transfer, forks, archival, and falling counts."
+    }
+  ],
+  "count": 6,
+  "generated_from": "data/evidence-quality-programme.json",
+  "metrics": {
+    "narrowed": 3,
+    "still-disputed": 3
+  },
+  "schema_version": "1.0.0"
+}
