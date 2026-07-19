@@ -1,0 +1,63 @@
+name: Mission evidence promotion planner
+
+on:
+  pull_request:
+    paths:
+      - 'api/mission-review-queue.json'
+      - 'api/promotion-plans.json'
+      - 'api/promotion-plan-schema.json'
+      - 'data/claims.json'
+      - 'data/achievements.json'
+      - 'data/promotion-plan-policy.json'
+      - 'data/promotion-plan.schema.json'
+      - 'reviews/mission/**'
+      - 'plans/promotion/**'
+      - 'docs/promotion-planner.md'
+      - 'scripts/build_promotion_plans.py'
+      - 'tests/test_promotion_planner.py'
+      - '.github/workflows/promotion-planner.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'api/mission-review-queue.json'
+      - 'api/promotion-plans.json'
+      - 'api/promotion-plan-schema.json'
+      - 'data/claims.json'
+      - 'data/achievements.json'
+      - 'data/promotion-plan-policy.json'
+      - 'data/promotion-plan.schema.json'
+      - 'reviews/mission/**'
+      - 'plans/promotion/**'
+      - 'docs/promotion-planner.md'
+      - 'scripts/build_promotion_plans.py'
+      - 'tests/test_promotion_planner.py'
+      - '.github/workflows/promotion-planner.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate promotion plans
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Set up Python
+        uses: actions/setup-python@820762786026740c76f36085b0efc47a31fe5020 # v6
+        with:
+          python-version: '3.13'
+      - name: Validate planner and generated outputs
+        run: python scripts/build_promotion_plans.py --check --report promotion-planner-report.md
+      - name: Run promotion planner tests
+        run: python -m unittest tests.test_promotion_planner
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: promotion-planner-validation
+          path: promotion-planner-report.md
+          if-no-files-found: warn
+          retention-days: 30
