@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, research operations, adjudication, release readiness, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research operations, analytics, adjudication, release readiness, schema, and repository health.
 permalink: /api/
 ---
 
@@ -53,12 +53,13 @@ https://conroy1988.github.io/Achievements/api/
 | Endpoint | Purpose |
 |---|---|
 | [`event-linked-evidence.json`](../api/event-linked-evidence.json) | Public GitHub events linked to claims, including negative and inconclusive observations |
+| [`evidence-intelligence.json`](../api/evidence-intelligence.json) | Deterministic per-achievement pressure scores and remaining release-gate gaps |
 | [`threshold-boundaries.json`](../api/threshold-boundaries.json) | Proposed boundaries, current brackets, blockers, and required next evidence |
 | [`adjudication.json`](../api/adjudication.json) | Fail-closed promotion rules and current human-review decisions |
 | [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
 | [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
 
-The discovery index now exposes **31 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and eighteen auxiliary endpoints.
+The discovery index now exposes **32 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and nineteen auxiliary endpoints.
 
 ## Response obligations
 
@@ -67,6 +68,8 @@ Consumers must preserve uncertainty. Evidence level, reproduction state, reviewe
 Public observations establish only the platform state visible at the cited URL and date. They do not automatically prove causality, an exact threshold, a qualifying event, or an immutable historical count.
 
 Event-linked records retain participant reports, negative results, processing-delay uncertainty, and public-event limitations. They do not modify canonical claim levels automatically.
+
+Evidence-intelligence pressure scores prioritise unresolved work. They are not confidence scores and do not predict whether a community-reported claim is true.
 
 The profile-auditor rules are expressly non-authoritative. They describe public signals, not badge detection.
 
@@ -81,6 +84,7 @@ python scripts/build_research_intelligence.py
 python scripts/build_evidence_operations.py
 python scripts/build_public_observations.py
 python scripts/build_evidence_quality_programme.py
+python scripts/build_evidence_intelligence.py
 ```
 
 Generated endpoints must not be edited independently. Update the canonical source, run its builder, then commit the source and output together.
@@ -88,7 +92,7 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 ## Versioning
 
 - The core catalogue envelope remains `1.1.0`.
-- Research, observation, adjudication, and evidence-operations endpoints carry independent schema and API versions.
+- Research, observation, adjudication, analytics, and evidence-operations endpoints carry independent schema and API versions.
 - A breaking envelope change increments the relevant major version.
 - Release tags describe encyclopedia releases rather than GitHub's achievement system.
 
@@ -104,6 +108,7 @@ The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](.
 
 ## Related material
 
+- [Evidence intelligence dashboard](evidence-intelligence-dashboard.md)
 - [Event-linked evidence](event-linked-evidence.md)
 - [Threshold boundary programme](threshold-boundary-programme.md)
 - [Evidence adjudication engine](evidence-adjudication-engine.md)

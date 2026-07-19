@@ -26,6 +26,7 @@
     "coverage": "/Achievements/api/coverage.json",
     "event_linked_evidence": "/Achievements/api/event-linked-evidence.json",
     "evidence": "/Achievements/api/evidence.json",
+    "evidence_intelligence": "/Achievements/api/evidence-intelligence.json",
     "index": "/Achievements/api/index.json",
     "lab_protocols": "/Achievements/api/lab-protocols.json",
     "priorities": "/Achievements/api/priorities.json",

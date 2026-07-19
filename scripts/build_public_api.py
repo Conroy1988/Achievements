@@ -28,6 +28,7 @@ AUXILIARY_ENDPOINTS = {
     "command_centre": Path("command-centre.json"),
     "public_observations": Path("public-observations.json"),
     "event_linked_evidence": Path("event-linked-evidence.json"),
+    "evidence_intelligence": Path("evidence-intelligence.json"),
     "threshold_boundaries": Path("threshold-boundaries.json"),
     "adjudication": Path("adjudication.json"),
     "contradiction_assessments": Path("contradiction-assessments.json"),
@@ -45,6 +46,7 @@ AUXILIARY_COLLECTIONS = {
     "auditor_rules": "rules",
     "public_observations": "observations",
     "event_linked_evidence": "events",
+    "evidence_intelligence": "achievements",
     "threshold_boundaries": "programmes",
     "contradiction_assessments": "assessments",
 }
@@ -162,7 +164,12 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             errors.append("api/submission-schema.json is missing schema")
         if name == "command_centre" and not isinstance(payload.get("metrics"), dict):
             errors.append("api/command-centre.json is missing metrics")
-        if name in {"public_observations", "event_linked_evidence", "contradiction_assessments"} and not isinstance(payload.get("metrics"), dict):
+        if name in {
+            "public_observations",
+            "event_linked_evidence",
+            "contradiction_assessments",
+            "evidence_intelligence",
+        } and not isinstance(payload.get("metrics"), dict):
             errors.append(f"api/{relative.name} is missing metrics")
         if name == "adjudication":
             if not isinstance(payload.get("rules"), list) or not isinstance(payload.get("decisions"), list):
