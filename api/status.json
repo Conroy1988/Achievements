@@ -1,9 +1,9 @@
 {
   "api_status": "live",
-  "generated_at": "2026-07-19T10:28:55Z",
+  "generated_at": "2026-07-19T10:32:10Z",
   "health": {
-    "label": "Watch",
-    "score": 84
+    "label": "Healthy",
+    "score": 86
   },
   "latest_successful_audit": "2026-07-19T10:02:36Z",
   "metrics": {
@@ -11,17 +11,17 @@
       "Fresh": 9
     },
     "guides": 9,
-    "markdown_files": 179,
+    "markdown_files": 180,
     "source_stability": {
       "High": 18,
-      "Medium": 16
+      "Medium": 17
     },
-    "sources": 34,
+    "sources": 35,
     "visual_baselines": 10
   },
   "open": {
     "issues": 0,
-    "pull_requests": 2
+    "pull_requests": 1
   },
   "release": {
     "published_at": "2026-07-19T10:02:33Z",
