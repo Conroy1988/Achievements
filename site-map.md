@@ -23,6 +23,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 ## Research and verification
 
 - [Repository health dashboard](docs/health-dashboard.md)
+- [Unified repository audit](docs/repository-audit.md)
 - [Machine-readable health status](api/status.json)
 - [Achievement data reference](docs/data-reference.md)
 - [Canonical achievement dataset](data/achievements.json)
