@@ -1,0 +1,138 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "count": 17,
+  "mission_count": 7,
+  "form_url": "https://github.com/Conroy1988/Achievements/issues/new?template=mission-evidence.yml",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://conroy1988.github.io/Achievements/api/mission-submission-schema.json",
+    "title": "GitHub Achievement Encyclopedia mission evidence submission",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "mission_id",
+      "research_task_id",
+      "claim_id",
+      "contradiction_id",
+      "achievement_slug",
+      "observation_date",
+      "result",
+      "repository_visibility",
+      "source_urls",
+      "required_evidence",
+      "environment_and_controls",
+      "limitations",
+      "safeguard_acknowledgement",
+      "privacy_declaration",
+      "consent"
+    ],
+    "properties": {
+      "mission_id": {
+        "type": "string",
+        "pattern": "^MSN-[0-9]{3}$"
+      },
+      "research_task_id": {
+        "type": "string",
+        "pattern": "^RSH-[0-9]{3}$"
+      },
+      "claim_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^CLM-[0-9]{3}$"
+      },
+      "contradiction_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^CTR-[0-9]{3}$"
+      },
+      "achievement_slug": {
+        "type": "string",
+        "pattern": "^(?:[a-z0-9]+(?:-[a-z0-9]+)*|cross-achievement)$"
+      },
+      "observation_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "result": {
+        "type": "string",
+        "enum": [
+          "awarded",
+          "not-awarded",
+          "inconclusive",
+          "blocked",
+          "processing-delayed"
+        ]
+      },
+      "repository_visibility": {
+        "type": "string",
+        "enum": [
+          "public",
+          "not-applicable"
+        ]
+      },
+      "qualifying_event_time_utc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "first_badge_visibility_time_utc": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date-time"
+      },
+      "source_urls": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 10,
+        "items": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      },
+      "required_evidence": {
+        "type": "object",
+        "minProperties": 1,
+        "propertyNames": {
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "additionalProperties": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "environment_and_controls": {
+        "type": "string",
+        "minLength": 20,
+        "maxLength": 4000
+      },
+      "limitations": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 4000
+      },
+      "safeguard_acknowledgement": {
+        "type": "boolean",
+        "const": true
+      },
+      "privacy_declaration": {
+        "type": "boolean",
+        "const": true
+      },
+      "consent": {
+        "type": "boolean",
+        "const": true
+      }
+    }
+  }
+}
