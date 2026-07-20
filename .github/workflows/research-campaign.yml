@@ -1,6 +1,6 @@
 name: Research campaign
 
-# The published v1.4.0 gate is historical; this workflow validates only the live v1.5.0 campaign.
+# The published v1.4.0 gate is historical; this workflow validates the live v1.5.0 lifecycle and generated control plane.
 on:
   pull_request:
     paths:
