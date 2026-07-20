@@ -1,0 +1,42 @@
+name: Phase 65 research hub spacing
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.head_ref == 'agent/phase-65-v1.5-campaign-reset' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Phase 65 branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: agent/phase-65-v1.5-campaign-reset
+      - name: Correct canonical research hub spacing
+        run: python scripts/fix_phase65_research_hub_spacing.py
+      - name: Regenerate and validate research hub
+        run: |
+          python scripts/build_research_hub.py
+          python scripts/build_research_hub.py --check
+      - name: Remove cleanup infrastructure
+        run: |
+          rm -f scripts/fix_phase65_research_hub_spacing.py
+          rm -f .github/workflows/phase-65-research-hub-spacing.yml
+          rm -f research-hub-report.md
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+      - name: Commit research hub spacing correction
+        run: |
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Correct Phase 65 research hub spacing'
+          git push origin HEAD:agent/phase-65-v1.5-campaign-reset
