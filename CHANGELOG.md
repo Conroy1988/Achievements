@@ -18,8 +18,6 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Activated the YOLO submitted-review-state mission and separated the blocked Pair tier-boundary mission from merge-attribution work.
 - Rewired evidence intelligence and promotion planning to the live campaign rather than the historical release gate.
 
-### Changed
-
 - Narrowed the remaining YOLO, Pair Extraordinaire, and Starstruck contradiction backlog with five privacy-safe GitHub-owned event records.
 - Distinguished requested reviewers from submitted reviews for YOLO.
 - Confirmed two independent squash-merge attribution-preservation cases for Pair Extraordinaire while retaining exact tier thresholds as community-reported.
