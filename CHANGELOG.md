@@ -11,7 +11,7 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Narrowed the remaining YOLO, Pair Extraordinaire, and Starstruck contradiction backlog with five privacy-safe GitHub-owned event records.
 - Distinguished requested reviewers from submitted reviews for YOLO.
 - Confirmed two independent squash-merge attribution-preservation cases for Pair Extraordinaire while retaining exact tier thresholds as community-reported.
-- Confirmed creator attribution on two currently organization-owned Starstruck repositories while retaining transfer-timing and persistence limitations.
+- Confirmed creator attribution on two currently organisation-owned Starstruck repositories while retaining transfer-timing and persistence limitations.
 - Re-scoped the remaining research tasks to the unresolved formal-review, rebase, exact-boundary, transfer-timing, fork, archival, falling-count, and revocation controls.
 
 ## v1.4.0 — 2026-07-20
