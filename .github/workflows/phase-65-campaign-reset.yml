@@ -24,18 +24,29 @@ jobs:
           fetch-depth: 0
       - name: Apply canonical campaign reset
         run: python scripts/apply_phase65_campaign_reset.py
-      - name: Regenerate campaign and dependent outputs
+      - name: Build research hub
+        run: python scripts/build_research_hub.py
+      - name: Build research intelligence
+        run: python scripts/build_research_intelligence.py
+      - name: Build historical release baseline
+        run: python scripts/build_evidence_quality_programme.py
+      - name: Build live research campaign
+        run: python scripts/build_research_campaign.py
+      - name: Build evidence intelligence
+        run: python scripts/build_evidence_intelligence.py
+      - name: Build acquisition missions
+        run: python scripts/build_acquisition_missions.py
+      - name: Build mission intake
+        run: python scripts/build_mission_intake.py
+      - name: Build promotion planner
+        run: python scripts/build_promotion_plans.py
+      - name: Build public API
+        run: python scripts/build_public_api.py
+      - name: Build command centre when available
         run: |
-          python scripts/build_research_hub.py
-          python scripts/build_research_intelligence.py
-          python scripts/build_evidence_quality_programme.py
-          python scripts/build_research_campaign.py
-          python scripts/build_evidence_intelligence.py
-          python scripts/build_acquisition_missions.py
-          python scripts/build_mission_intake.py
-          python scripts/build_promotion_plans.py
-          python scripts/build_public_api.py
-          if [[ -f scripts/build_command_centre.py ]]; then python scripts/build_command_centre.py; fi
+          if [[ -f scripts/build_command_centre.py ]]; then
+            python scripts/build_command_centre.py
+          fi
       - name: Validate generated campaign stack
         run: |
           python scripts/build_research_hub.py --check
