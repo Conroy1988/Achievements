@@ -28,7 +28,7 @@ jobs:
         run: |
           python scripts/collect_live_backlog_evidence.py || test -f research/live-backlog-sweep.json
           python scripts/enrich_pair_merge_evidence.py
-          python scripts/collect_starstruck_transfer_candidates.py
+          python -m scripts.collect_starstruck_transfer_candidates
       - name: Commit evidence snapshot
         run: |
           git add -f research/live-backlog-sweep.json
