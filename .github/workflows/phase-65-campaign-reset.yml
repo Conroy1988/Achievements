@@ -1,0 +1,68 @@
+name: Phase 65 campaign reset
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.head_ref == 'agent/phase-65-v1.5-campaign-reset' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Phase 65 branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: agent/phase-65-v1.5-campaign-reset
+          fetch-depth: 0
+      - name: Apply canonical campaign reset
+        run: python scripts/apply_phase65_campaign_reset.py
+      - name: Regenerate campaign and dependent outputs
+        run: |
+          python scripts/build_research_hub.py
+          python scripts/build_research_intelligence.py
+          python scripts/build_evidence_quality_programme.py
+          python scripts/build_research_campaign.py
+          python scripts/build_evidence_intelligence.py
+          python scripts/build_acquisition_missions.py
+          python scripts/build_mission_intake.py
+          python scripts/build_promotion_plans.py
+          python scripts/build_public_api.py
+          if [[ -f scripts/build_command_centre.py ]]; then python scripts/build_command_centre.py; fi
+      - name: Validate generated campaign stack
+        run: |
+          python scripts/build_research_hub.py --check
+          python scripts/build_research_intelligence.py --check
+          python scripts/build_evidence_quality_programme.py --check
+          python scripts/build_research_campaign.py --check
+          python scripts/build_evidence_intelligence.py --check
+          python scripts/build_acquisition_missions.py --check
+          python scripts/build_mission_intake.py --check
+          python scripts/build_promotion_plans.py --check
+          python scripts/build_public_api.py --check
+      - name: Remove temporary migration infrastructure
+        run: |
+          rm -f scripts/apply_phase65_campaign_reset.py
+          rm -f .github/workflows/phase-65-campaign-reset.yml
+          rm -f research-hub-report.md research-intelligence-report.md evidence-quality-programme-report.md
+          rm -f research-campaign-report.md evidence-intelligence-report.md acquisition-missions-report.md
+          rm -f mission-intake-report.md promotion-planner-report.md
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+      - name: Commit Phase 65 campaign reset
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Phase 65 outputs are already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Phase 65: establish v1.5.0 research campaign'
+          git push origin HEAD:agent/phase-65-v1.5-campaign-reset
