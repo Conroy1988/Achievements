@@ -1,0 +1,79 @@
+name: Timeline backlog sync
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.head_ref == 'agent/resolve-evidence-backlogs' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out backlog branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: agent/resolve-evidence-backlogs
+          fetch-depth: 0
+      - name: Synchronise verification timelines
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/verification-timelines.json')
+          value = json.loads(path.read_text(encoding='utf-8'))
+          rows = {row['achievement_slug']: row for row in value['timelines']}
+
+          rows['yolo'].update({
+              'last_reviewed': '2026-07-20',
+              'history_limitations': ['Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, automated, and differing-merger review states remain unresolved.'],
+              'events': [
+                  {'date': '2026-07-19', 'type': 'guide-verification', 'evidence_level': 'official', 'summary': "GitHub's live achievement fragment established the broad 'Merged without a review' trigger."},
+                  {'date': '2026-07-19', 'type': 'evidence-baseline', 'evidence_level': 'official', 'summary': "Evidence record EVD-2026-003 was reconciled against GitHub's first-party product fragment."},
+                  {'date': '2026-07-20', 'type': 'review-request-boundary', 'evidence_level': 'observed', 'summary': 'A GitHub-linked qualifying pull request had a requested reviewer but zero submitted reviews, separating review requests from submitted review objects.'}
+              ]
+          })
+
+          rows['pair-extraordinaire'].update({
+              'last_reviewed': '2026-07-20',
+              'history_limitations': ['Exact numerical tier boundaries, rebase or fast-forward behavior, stripped trailers, email mismatch, later history rewrites, and private-repository behavior remain unresolved.'],
+              'events': [
+                  {'date': '2026-07-19', 'type': 'official-source-review', 'evidence_level': 'official', 'summary': "GitHub's multiple-author commit syntax and live Pair Extraordinaire trigger fragment were linked as attribution evidence."},
+                  {'date': '2026-07-19', 'type': 'evidence-baseline', 'evidence_level': 'official', 'summary': 'Evidence record EVD-2026-004 retained numerical tier limitations while the broad trigger advanced to official.'},
+                  {'date': '2026-07-20', 'type': 'squash-attribution-boundary', 'evidence_level': 'observed', 'summary': 'Two independent GitHub-linked squash merges retained account-linked Co-authored-by trailers in their final commits.'}
+              ]
+          })
+
+          rows['starstruck'].update({
+              'last_reviewed': '2026-07-20',
+              'history_limitations': ['Transfer timing, forks, archival, falling star counts, deletion, restoration, and award or tier revocation remain unresolved.'],
+              'events': [
+                  {'date': '2026-07-19', 'type': 'official-fragment-review', 'evidence_level': 'official', 'summary': "GitHub's live x4 fragment established the 16, 128, 512, and 4096 star milestones."},
+                  {'date': '2026-07-19', 'type': 'evidence-baseline', 'evidence_level': 'official', 'summary': "Evidence record EVD-2026-006 was reconciled against GitHub's first-party trigger and milestone history."},
+                  {'date': '2026-07-20', 'type': 'organization-ownership-boundary', 'evidence_level': 'observed', 'summary': 'Two GitHub-owned fragments retained personal creator attribution for repositories currently owned by organizations.'}
+              ]
+          })
+
+          path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          PY
+          python scripts/build_verification_timelines.py
+      - name: Remove temporary workflow
+        run: rm -f .github/workflows/timeline-backlog-sync.yml
+      - name: Commit timeline sync
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Synchronise backlog verification timelines'
+          git push origin HEAD:agent/resolve-evidence-backlogs
