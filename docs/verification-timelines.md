@@ -40,29 +40,31 @@ Repository verification history and dated external events supported by the canon
 
 ### YOLO
 
-**Last reviewed:** 2026-07-19
+**Last reviewed:** 2026-07-20
 
 | Date | Event | Evidence | Summary |
 |---|---|---|---|
-| 19 July 2026 | guide-verification | community-reported | The distinction between comments and approving reviews was retained as a qualifying limitation. |
-| 19 July 2026 | evidence-baseline | community-reported | Evidence record EVD-2026-003 was marked provisional and awaiting independent reproduction. |
+| 19 July 2026 | guide-verification | official | GitHub's live achievement fragment established the broad 'Merged without a review' trigger. |
+| 19 July 2026 | evidence-baseline | official | Evidence record EVD-2026-003 was reconciled against GitHub's first-party product fragment. |
+| 20 July 2026 | review-request-boundary | observed | A GitHub-linked qualifying pull request had a requested reviewer but zero submitted reviews, separating review requests from submitted review objects. |
 
 **Known history limitations**
 
-- GitHub does not publish an official achievement contract or original rollout date.
+- Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, automated, and differing-merger review states remain unresolved.
 
 ### Pair Extraordinaire
 
-**Last reviewed:** 2026-07-19
+**Last reviewed:** 2026-07-20
 
 | Date | Event | Evidence | Summary |
 |---|---|---|---|
-| 19 July 2026 | official-source-review | official | GitHub's documented multiple-author commit syntax was linked as attribution context. |
-| 19 July 2026 | evidence-baseline | community-reported | Evidence record EVD-2026-004 was accepted with limitations around merge strategy and tier thresholds. |
+| 19 July 2026 | official-source-review | official | GitHub's multiple-author commit syntax and live Pair Extraordinaire trigger fragment were linked as attribution evidence. |
+| 19 July 2026 | evidence-baseline | official | Evidence record EVD-2026-004 retained numerical tier limitations while the broad trigger advanced to official. |
+| 20 July 2026 | squash-attribution-boundary | observed | Two independent GitHub-linked squash merges retained account-linked Co-authored-by trailers in their final commits. |
 
 **Known history limitations**
 
-- The original achievement rollout date and complete tier contract are not established by official documentation.
+- Exact numerical tier boundaries, rebase or fast-forward behavior, stripped trailers, email mismatch, later history rewrites, and private-repository behavior remain unresolved.
 
 ### Galaxy Brain
 
@@ -79,16 +81,17 @@ Repository verification history and dated external events supported by the canon
 
 ### Starstruck
 
-**Last reviewed:** 2026-07-19
+**Last reviewed:** 2026-07-20
 
 | Date | Event | Evidence | Summary |
 |---|---|---|---|
-| 19 July 2026 | guide-verification | observed | Repository ownership and falling star-count limitations were preserved. |
-| 19 July 2026 | evidence-baseline | observed | Evidence record EVD-2026-006 was accepted with limitations and incomplete reproduction. |
+| 19 July 2026 | official-fragment-review | official | GitHub's live x4 fragment established the 16, 128, 512, and 4096 star milestones. |
+| 19 July 2026 | evidence-baseline | official | Evidence record EVD-2026-006 was reconciled against GitHub's first-party trigger and milestone history. |
+| 20 July 2026 | organization-ownership-boundary | observed | Two GitHub-owned fragments retained personal creator attribution for repositories currently owned by organizations. |
 
 **Known history limitations**
 
-- The original rollout date, ownership edge cases, and complete tier table remain undocumented.
+- Transfer timing, forks, archival, falling star counts, deletion, restoration, and award or tier revocation remain unresolved.
 
 ### Public Sponsor
 
