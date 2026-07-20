@@ -7,7 +7,7 @@
     "category": "collaboration",
     "evidence": {
       "tiers": "community-reported",
-      "trigger": "observed"
+      "trigger": "official"
     },
     "guide_path": "achievements/pair-extraordinaire.md",
     "known_limitations": [
@@ -22,7 +22,8 @@
     "sources": {
       "community": [],
       "official": [
-        "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
+        "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors",
+        "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1"
       ]
     },
     "status": "active",
@@ -49,7 +50,7 @@
         "unit": "qualifying merged pull requests"
       }
     ],
-    "trigger": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire."
+    "trigger": "Participate in coauthored commits on merged pull requests."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

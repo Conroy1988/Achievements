@@ -7,7 +7,7 @@
     "category": "pull-request-review",
     "evidence": {
       "tiers": "not-applicable",
-      "trigger": "observed"
+      "trigger": "official"
     },
     "guide_path": "docs/achievements/yolo.md",
     "known_limitations": [
@@ -21,12 +21,14 @@
     "slug": "yolo",
     "sources": {
       "community": [],
-      "official": []
+      "official": [
+        "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1"
+      ]
     },
     "status": "active",
     "tiered": false,
     "tiers": [],
-    "trigger": "A pull request authored by the account and merged without a submitted formal review can award YOLO."
+    "trigger": "Merge a pull request without a review."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

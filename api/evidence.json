@@ -7,69 +7,73 @@
     {
       "id": "EVD-2026-001",
       "achievement_slug": "pull-shark",
-      "claim": "A substantive pull request attributable to the account is merged.",
-      "evidence_level": "confirmed",
+      "claim": "GitHub's live product fragment explicitly documents the material Pull Shark contract.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
+      "source_urls": [
+        "https://github.com/users/ljharb/achievements/pull-shark/detail?hovercard=1"
+      ],
       "archive_urls": [],
-      "reproduction_status": "reproduced",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/pull-shark.md",
       "guide_section": "Trigger and attribution",
-      "notes": "The trigger is confirmed; the complete tier table remains community-reported."
+      "notes": "GitHub's live x4 detail fragment states the merged-pull-request trigger and the 2nd, 16th, 128th, and 1024th milestones."
     },
     {
       "id": "EVD-2026-002",
       "achievement_slug": "quickdraw",
-      "claim": "Closing an issue or pull request very shortly after creation can award Quickdraw.",
-      "evidence_level": "observed",
+      "claim": "GitHub's live product fragment explicitly documents the material Quickdraw contract.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
         "https://github.com/Schweinepriester/Fira/pull/1",
         "https://github.com/Schweinepriester?achievement=quickdraw&tab=achievements",
         "https://github.com/tronicapp/tronic-track/pull/1",
-        "https://github.com/kmcclosk?achievement=quickdraw&tab=achievements"
+        "https://github.com/kmcclosk?achievement=quickdraw&tab=achievements",
+        "https://github.com/users/Schweinepriester/achievements/quickdraw/detail?hovercard=1"
       ],
       "archive_urls": [],
-      "reproduction_status": "two-independent-public-reconstructions",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/quickdraw.md",
       "guide_section": "Qualifying time window",
-      "notes": "Two independent public pull requests were merged within five and nine seconds and both accounts publicly display Quickdraw. The exact maximum interval and direct contributing-event link remain unresolved."
+      "notes": "GitHub's live detail fragment links a qualifying pull request and states that it was closed within five minutes of opening."
     },
     {
       "id": "EVD-2026-003",
       "achievement_slug": "yolo",
-      "claim": "A pull request authored by the account and merged without a submitted formal review can award YOLO.",
-      "evidence_level": "observed",
+      "claim": "GitHub's live product fragment explicitly documents the material YOLO contract.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
         "https://github.com/Schweinepriester/Fira/pull/1",
         "https://github.com/Schweinepriester?achievement=yolo&tab=achievements",
         "https://github.com/tronicapp/tronic-track/pull/1",
-        "https://github.com/kmcclosk?achievement=yolo&tab=achievements"
+        "https://github.com/kmcclosk?achievement=yolo&tab=achievements",
+        "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1"
       ],
       "archive_urls": [],
-      "reproduction_status": "two-independent-public-reconstructions",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/yolo.md",
       "guide_section": "Review-state requirement",
-      "notes": "Two independent authored pull requests were merged with zero submitted formal reviews and both accounts publicly display YOLO. Merger identity and alternate review-state controls remain unresolved."
+      "notes": "GitHub's live detail fragment links a qualifying pull request and states that it was merged without a review."
     },
     {
       "id": "EVD-2026-004",
       "achievement_slug": "pair-extraordinaire",
-      "claim": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
-      "evidence_level": "observed",
+      "claim": "GitHub's live product fragment explicitly documents the material Pair Extraordinaire contract.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
@@ -79,53 +83,57 @@
         "https://github.com/Rongronggg9?achievement=pair-extraordinaire&tab=achievements",
         "https://github.com/Fyrd/caniuse/pull/7466",
         "https://github.com/Fyrd/caniuse/commit/188bc05673b7c6bf83077982cbed0c2ec15df532",
-        "https://github.com/Schweinepriester?achievement=pair-extraordinaire&tab=achievements"
+        "https://github.com/Schweinepriester?achievement=pair-extraordinaire&tab=achievements",
+        "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1"
       ],
       "archive_urls": [],
-      "reproduction_status": "two-independent-public-reconstructions",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "achievements/pair-extraordinaire.md",
       "guide_section": "Co-author attribution",
-      "notes": "Two independent public accounts have account-linked co-author attribution preserved in merged pull-request history and publicly display Pair Extraordinaire. Exact counts and rewrite edge cases remain unresolved."
+      "notes": "GitHub's live detail fragment states that Pair Extraordinaire recognises coauthored commits on merged pull requests; numerical tier counts remain unpublished."
     },
     {
       "id": "EVD-2026-005",
       "achievement_slug": "galaxy-brain",
-      "claim": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
+      "claim": "GitHub's live product fragment explicitly documents the material Galaxy Brain contract.",
       "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
       "source_urls": [
         "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
-        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions",
+        "https://github.com/users/ljharb/achievements/galaxy-brain/detail?hovercard=1"
       ],
       "archive_urls": [],
-      "reproduction_status": "official-trigger-description",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/galaxy-brain.md",
       "guide_section": "Accepted answers",
-      "notes": "GitHub’s launch material directly ties Galaxy Brain to Discussion answers another user deems helpful. Exact current accepted-state semantics, processing delay, and tiers remain separate research questions."
+      "notes": "GitHub's live x4 detail fragment publishes accepted-answer milestones at 2, 8, 16, and 32."
     },
     {
       "id": "EVD-2026-006",
       "achievement_slug": "starstruck",
-      "claim": "A repository associated with the account reaches a community-reported star threshold.",
-      "evidence_level": "observed",
+      "claim": "GitHub's live product fragment explicitly documents the material Starstruck contract.",
+      "evidence_level": "official",
       "observed_at": "2026-07-19",
       "submitted_at": "2026-07-19",
-      "source_urls": [],
+      "source_urls": [
+        "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1"
+      ],
       "archive_urls": [],
-      "reproduction_status": "observed-not-fully-reproduced",
+      "reproduction_status": "github-owned-live-product-fragment",
       "contradictory_evidence": [],
       "reviewer_decision": "accepted-with-limitations",
       "privacy_status": "public-no-personal-data",
       "guide_path": "docs/achievements/starstruck.md",
       "guide_section": "Repository ownership and star thresholds",
-      "notes": "Ownership-transfer edge cases and the complete tier table are not officially documented."
+      "notes": "GitHub's live x4 detail fragment states the repository-creation trigger and star milestones at 16, 128, 512, and 4096."
     },
     {
       "id": "EVD-2026-007",

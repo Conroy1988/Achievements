@@ -264,6 +264,18 @@
         "public event reconstruction",
         "independent trigger observations"
       ]
+    },
+    {
+      "slug": "official-achievement-fragments",
+      "name": "Official GitHub achievement fragments",
+      "category": "research",
+      "summary": "GitHub-owned live achievement criteria and complete Pull Shark, Galaxy Brain, and Starstruck milestone histories.",
+      "permalink": "/official-achievement-fragments/",
+      "aliases": [
+        "first party achievement criteria",
+        "official tier history",
+        "GitHub badge fragment"
+      ]
     }
   ]
 }

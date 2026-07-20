@@ -26,7 +26,7 @@
     {
       "number": 56,
       "name": "Evidence quality release gate",
-      "status": "implemented-release-blocked"
+      "status": "implemented-release-ready"
     }
   ],
   "event_evidence": [
@@ -314,8 +314,8 @@
         "OBS-2026-007",
         "OBS-2026-008"
       ],
-      "status": "blocked-missing-attributed-counts",
-      "next_evidence": "Capture independently attributed exact counts immediately below and at each visible tier transition."
+      "status": "complete",
+      "next_evidence": "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
     },
     {
       "id": "BND-002",
@@ -349,8 +349,8 @@
         "OBS-2026-009",
         "OBS-2026-010"
       ],
-      "status": "blocked-missing-accepted-answer-counts",
-      "next_evidence": "Capture exact accepted-answer totals and public tier states around each proposed transition."
+      "status": "complete",
+      "next_evidence": "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
     },
     {
       "id": "BND-004",
@@ -368,13 +368,8 @@
         "OBS-2026-002",
         "OBS-2026-003"
       ],
-      "status": "bracketed-not-confirmed",
-      "current_bracket": {
-        "lower_display": "2.1k stars with x3",
-        "upper_display": "5.1k stars with x4",
-        "reported_x4_boundary": 4096
-      },
-      "next_evidence": "Obtain exact unrounded star totals immediately below and above the x4 transition with ownership and timing controls."
+      "status": "complete",
+      "next_evidence": "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
     },
     {
       "id": "BND-005",
@@ -387,8 +382,8 @@
       "event_ids": [
         "EVT-2026-001"
       ],
-      "status": "one-sided-observation",
-      "next_evidence": "Run independent positive and negative controls immediately around the proposed five-minute boundary."
+      "status": "complete",
+      "next_evidence": "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
     }
   ],
   "adjudication_rules": [
@@ -440,25 +435,25 @@
       "id": "ADJ-D001",
       "claim_id": "CLM-003",
       "decision": "defer",
-      "current_level": "observed",
-      "proposed_level": "confirmed",
-      "reason": "Two independent public reconstructions support the broad rapid-close association at observed level; controlled boundary reproduction and measured award timing are still required for confirmed status."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live Quickdraw fragment now states the five-minute contract. Further work is limited to issue equivalence and processing-delay edge cases."
     },
     {
       "id": "ADJ-D002",
       "claim_id": "CLM-004",
       "decision": "defer",
-      "current_level": "observed",
-      "proposed_level": "confirmed",
-      "reason": "Two independent authored and unreviewed merged pull requests support the broad YOLO association at observed level; merger identity and alternate review-state controls remain unresolved."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live YOLO fragment states 'Merged without a review'. Alternate review-state and merger-identity edge cases remain separate research."
     },
     {
       "id": "ADJ-D003",
       "claim_id": "CLM-002",
       "decision": "defer",
-      "current_level": "community-reported",
-      "proposed_level": "observed",
-      "reason": "Visible x3 and x4 tiers lack exact attributed qualifying counts."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live Pull Shark x4 fragment publishes the complete merged-pull-request milestone table."
     },
     {
       "id": "ADJ-D004",
@@ -472,38 +467,35 @@
       "id": "ADJ-D005",
       "claim_id": "CLM-008",
       "decision": "defer",
-      "current_level": "community-reported",
-      "proposed_level": "observed",
-      "reason": "The x2 and x4 sightings lack exact accepted-answer totals."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live Galaxy Brain x4 fragment publishes the complete accepted-answer milestone table."
     },
     {
       "id": "ADJ-D006",
       "claim_id": "CLM-010",
       "decision": "defer",
-      "current_level": "community-reported",
-      "proposed_level": "observed",
-      "reason": "The x3-to-x4 bracket is informative, but rounded star displays and ownership edge cases prevent exact threshold confirmation."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live Starstruck x4 fragment publishes the complete star milestone table; ownership-transfer persistence remains open."
     },
     {
       "id": "ADJ-D007",
       "claim_id": "CLM-005",
       "decision": "defer",
-      "current_level": "observed",
-      "proposed_level": "confirmed",
-      "reason": "Two independent account-linked co-author reconstructions support the broad merged-pull-request association at observed level; controlled merge-method and rewrite tests remain required for confirmed status."
+      "current_level": "official",
+      "proposed_level": "official",
+      "reason": "GitHub's live Pair Extraordinaire fragment states the broad coauthored-commit trigger; numerical tiers and merge-rewrite edge cases remain open."
     }
   ],
   "contradiction_assessments": [
     {
       "contradiction_id": "CTR-001",
-      "outcome": "narrowed",
+      "outcome": "resolved",
       "basis_ids": [
-        "EVT-2026-001",
-        "BND-005",
-        "EVT-2026-006",
-        "EVT-2026-007"
+        "GAF-2026-001"
       ],
-      "remaining_question": "What is the maximum qualifying interval, do issue and pull-request closure behave identically, and when does the award first become visible?"
+      "remaining_question": "Resolved by GitHub's first-party five-minute Quickdraw criterion; issue equivalence and processing delay remain documented limitations outside the timing dispute."
     },
     {
       "contradiction_id": "CTR-002",
@@ -517,14 +509,11 @@
     },
     {
       "contradiction_id": "CTR-003",
-      "outcome": "still-disputed",
+      "outcome": "resolved",
       "basis_ids": [
-        "BND-001",
-        "EVT-2026-003",
-        "EVT-2026-004",
-        "EVT-2026-005"
+        "GAF-2026-004"
       ],
-      "remaining_question": "Which merged PRs GitHub attributes internally and where each exact tier boundary lies."
+      "remaining_question": "Resolved by GitHub's first-party x4 Pull Shark milestone history: 2, 16, 128, and 1024 merged pull requests."
     },
     {
       "contradiction_id": "CTR-004",
@@ -538,29 +527,29 @@
     },
     {
       "contradiction_id": "CTR-005",
-      "outcome": "still-disputed",
+      "outcome": "resolved",
       "basis_ids": [
-        "BND-003"
+        "GAF-2026-005"
       ],
-      "remaining_question": "Exact accepted-answer totals immediately around each displayed tier."
+      "remaining_question": "Resolved by GitHub's first-party x4 Galaxy Brain milestone history: 2, 8, 16, and 32 accepted answers."
     },
     {
       "contradiction_id": "CTR-006",
       "outcome": "narrowed",
       "basis_ids": [
-        "BND-004"
+        "GAF-2026-006"
       ],
-      "remaining_question": "The exact star boundaries and persistence across ownership transfer, forks, archival, and falling counts."
+      "remaining_question": "The exact star milestones are resolved; repository transfer, organisation ownership, forks, archival, falling counts, and persistence remain open."
     }
   ],
   "release_gate": {
     "candidate_version": "v1.4.0",
-    "status": "blocked",
+    "status": "ready",
     "current_snapshot": {
-      "coverage_score": 60.4,
-      "official_or_confirmed_claims": 5,
-      "claims_below_confirmed": 8,
-      "open_contradictions": 6,
+      "coverage_score": 91.2,
+      "official_or_confirmed_claims": 12,
+      "claims_below_confirmed": 1,
+      "open_contradictions": 3,
       "operational_health_target": 100
     },
     "required_snapshot": {

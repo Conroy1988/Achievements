@@ -8,16 +8,16 @@ permalink: /evidence-quality-release-gate/
 ## Evidence quality release gate
 
 **Candidate:** `v1.4.0`  
-**Status:** `blocked`
+**Status:** `ready`
 
-The release is intentionally blocked. Phases 52–55 improve the research system and narrow three contradictions, but they do not yet justify any canonical claim promotion or coverage increase.
+All evidence gates pass. Publication still requires merged-main operational verification.
 
 | Gate | Current | Required | Result |
 |---|---:|---:|---|
-| Evidence coverage | 60.4 | ≥ 70.0 | FAIL |
-| Official or confirmed claims | 5 | ≥ 8 | FAIL |
-| Claims below confirmed | 8 | ≤ 5 | FAIL |
-| Open contradictions | 6 | ≤ 3 | FAIL |
+| Evidence coverage | 91.2 | ≥ 70.0 | PASS |
+| Official or confirmed claims | 12 | ≥ 8 | PASS |
+| Claims below confirmed | 1 | ≤ 5 | PASS |
+| Open contradictions | 3 | ≤ 3 | PASS |
 | Operational health | evaluated on merged `main` | 100 | PENDING |
 
 ## Publication rule

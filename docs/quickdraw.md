@@ -6,7 +6,7 @@ Quickdraw is an active, non-tiered GitHub profile achievement associated with cl
 
 ## Trigger
 
-Two independent public reconstructions associate Quickdraw with pull requests merged five and nine seconds after creation. This supports the broad rapid-close trigger at observed level, while GitHub still does not publish the precise maximum timing window in its general profile documentation.
+GitHub's live Quickdraw detail fragment links a qualifying pull request and states: **Closed within 5 minutes of opening**. This establishes the pull-request timing contract at official level.
 
 ## Progression or tiers
 
@@ -34,8 +34,8 @@ The item can show as closed immediately while the profile achievement appears la
 ## Evidence status
 
 - GitHub officially documents opening and closing issues and pull requests.
-- Two independent public event/profile pairs support the rapid-close association at observed level.
-- The exact maximum timing window, issue equivalence, and first-visible award delay remain community-reported or unknown.
+- GitHub's live product fragment officially states the five-minute pull-request criterion.
+- Issue equivalence and first-visible award-processing delay remain limitations outside the resolved timing contract.
 
 ## Known limitations and edge cases
 
@@ -58,7 +58,7 @@ Use a legitimate short-lived issue or pull request, such as immediately correcti
 
 ## History
 
-Quickdraw was introduced with GitHub profile achievements. Complete trigger and timing details have not been publicly documented by GitHub.
+Quickdraw was introduced with GitHub profile achievements. GitHub's live achievement fragment now exposes the five-minute criterion and a linked qualifying pull request.
 
 ## References
 
@@ -66,9 +66,10 @@ Quickdraw was introduced with GitHub profile achievements. Complete trigger and 
 - [Closing a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/closing-a-pull-request)
 - [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
 - [Public reconstruction corpus]({{ site.baseurl }}/public-reconstruction-corpus/)
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
 
 ## Last verified
 
-**19 July 2026.** Scope: two independent public rapid-close reconstructions, current issue and pull-request closure controls, profile-achievement presentation, and the unresolved maximum timing window.
+**19 July 2026.** Scope: GitHub's first-party five-minute Quickdraw fragment, linked qualifying pull request, two independent public reconstructions, and remaining issue-equivalence and processing-delay limitations.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

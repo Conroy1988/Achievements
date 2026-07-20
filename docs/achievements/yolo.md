@@ -6,7 +6,7 @@ YOLO is an active, non-tiered GitHub profile achievement associated with merging
 
 ## Trigger
 
-Two independent public reconstructions associate YOLO with pull requests authored by the awarded account and merged with no submitted formal review. This supports the broad unreviewed-merge trigger at observed level; merger identity and alternate formal review states remain unresolved.
+GitHub's live YOLO detail fragment links a qualifying pull request and states: **Merged without a review**. This establishes the broad unreviewed-merge contract at official level; alternate review states and structured merger identity remain edge-case research.
 
 ## Progression or tiers
 
@@ -35,8 +35,8 @@ The merge event appears immediately in the pull request, while profile-achieveme
 ## Evidence status
 
 - GitHub officially documents pull-request merges, reviews, branch protection, and rulesets.
-- Two independent public event/profile pairs support the authored, unreviewed-merge association at observed level.
-- GitHub does not publish a complete eligibility specification, and the public records do not expose merger identity or every alternate review state.
+- GitHub's live product fragment officially states `Merged without a review`.
+- Alternate review states and structured merger identity remain unresolved implementation edge cases.
 
 ## Known limitations and edge cases
 
@@ -59,7 +59,7 @@ Use a low-risk repository and a legitimate, reviewable change where an unreviewe
 
 ## History
 
-YOLO was introduced with GitHub profile achievements. GitHub has not published a complete public trigger specification or historical change log for the achievement.
+YOLO was introduced with GitHub profile achievements. GitHub's live detail fragment now exposes the broad no-review contract and linked qualifying pull request.
 
 ## References
 
@@ -68,9 +68,10 @@ YOLO was introduced with GitHub profile achievements. GitHub has not published a
 - [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - [GitHub profile reference](https://docs.github.com/en/account-and-profile/reference/profile-reference)
 - [Public reconstruction corpus]({{ site.baseurl }}/public-reconstruction-corpus/)
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
 
 ## Last verified
 
-**19 July 2026.** Scope: two independent public authored/unreviewed merge reconstructions, current review and protection controls, profile-achievement presentation, and unresolved merger-identity and alternate-review semantics.
+**19 July 2026.** Scope: GitHub's first-party `Merged without a review` fragment, linked qualifying pull request, current review controls, and unresolved alternate-review and merger-identity edge cases.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

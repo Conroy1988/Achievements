@@ -1,129 +1,8 @@
 {
   "api_version": "1.0.0",
   "schema_version": "1.1.0",
-  "count": 10,
+  "count": 7,
   "priorities": [
-    {
-      "task_id": "RSH-001",
-      "title": "Independently reproduce the Quickdraw qualifying window",
-      "achievement_slug": "quickdraw",
-      "declared_priority": "critical",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 85,
-      "score_components": {
-        "declared_priority": 40,
-        "evidence_weakness": 15,
-        "open_dispute": 20,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-003"
-      ],
-      "contradiction_ids": [
-        "CTR-001"
-      ],
-      "rank": 1
-    },
-    {
-      "task_id": "RSH-002",
-      "title": "Independently reproduce the YOLO review-state trigger",
-      "achievement_slug": "yolo",
-      "declared_priority": "critical",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 85,
-      "score_components": {
-        "declared_priority": 40,
-        "evidence_weakness": 15,
-        "open_dispute": 20,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-004"
-      ],
-      "contradiction_ids": [
-        "CTR-002"
-      ],
-      "rank": 2
-    },
-    {
-      "task_id": "RSH-003",
-      "title": "Strengthen Pull Shark tier evidence",
-      "achievement_slug": "pull-shark",
-      "declared_priority": "high",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 80,
-      "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 25,
-        "open_dispute": 15,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-002"
-      ],
-      "contradiction_ids": [
-        "CTR-003"
-      ],
-      "rank": 3
-    },
-    {
-      "task_id": "RSH-004",
-      "title": "Verify Galaxy Brain tier thresholds",
-      "achievement_slug": "galaxy-brain",
-      "declared_priority": "high",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 80,
-      "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 25,
-        "open_dispute": 15,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-008"
-      ],
-      "contradiction_ids": [
-        "CTR-005"
-      ],
-      "rank": 4
-    },
-    {
-      "task_id": "RSH-005",
-      "title": "Verify Starstruck ownership edge cases",
-      "achievement_slug": "starstruck",
-      "declared_priority": "high",
-      "status": "open",
-      "good_first_issue": false,
-      "score": 80,
-      "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 25,
-        "open_dispute": 15,
-        "active_scope": 10,
-        "good_first_issue": 0,
-        "status_adjustment": 0
-      },
-      "claim_ids": [
-        "CLM-009",
-        "CLM-010"
-      ],
-      "contradiction_ids": [
-        "CTR-006"
-      ],
-      "rank": 5
-    },
     {
       "task_id": "RSH-010",
       "title": "Verify Pair Extraordinaire tier thresholds",
@@ -146,31 +25,31 @@
       "contradiction_ids": [
         "CTR-004"
       ],
-      "rank": 6
+      "rank": 1
     },
     {
-      "task_id": "RSH-009",
-      "title": "Reproduce Pair Extraordinaire merge attribution",
-      "achievement_slug": "pair-extraordinaire",
-      "declared_priority": "high",
+      "task_id": "RSH-002",
+      "title": "Independently reproduce the YOLO review-state trigger",
+      "achievement_slug": "yolo",
+      "declared_priority": "critical",
       "status": "open",
       "good_first_issue": false,
-      "score": 65,
+      "score": 70,
       "score_components": {
-        "declared_priority": 30,
-        "evidence_weakness": 15,
-        "open_dispute": 10,
+        "declared_priority": 40,
+        "evidence_weakness": 0,
+        "open_dispute": 20,
         "active_scope": 10,
         "good_first_issue": 0,
         "status_adjustment": 0
       },
       "claim_ids": [
-        "CLM-005"
+        "CLM-004"
       ],
       "contradiction_ids": [
-        "CTR-004"
+        "CTR-002"
       ],
-      "rank": 7
+      "rank": 2
     },
     {
       "task_id": "RSH-008",
@@ -190,7 +69,56 @@
       },
       "claim_ids": [],
       "contradiction_ids": [],
-      "rank": 8
+      "rank": 3
+    },
+    {
+      "task_id": "RSH-005",
+      "title": "Verify Starstruck ownership edge cases",
+      "achievement_slug": "starstruck",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 55,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 0,
+        "open_dispute": 15,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "contradiction_ids": [
+        "CTR-006"
+      ],
+      "rank": 4
+    },
+    {
+      "task_id": "RSH-009",
+      "title": "Reproduce Pair Extraordinaire merge attribution",
+      "achievement_slug": "pair-extraordinaire",
+      "declared_priority": "high",
+      "status": "open",
+      "good_first_issue": false,
+      "score": 50,
+      "score_components": {
+        "declared_priority": 30,
+        "evidence_weakness": 0,
+        "open_dispute": 10,
+        "active_scope": 10,
+        "good_first_issue": 0,
+        "status_adjustment": 0
+      },
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "contradiction_ids": [
+        "CTR-004"
+      ],
+      "rank": 5
     },
     {
       "task_id": "RSH-011",
@@ -212,7 +140,7 @@
         "CLM-007"
       ],
       "contradiction_ids": [],
-      "rank": 9
+      "rank": 6
     },
     {
       "task_id": "RSH-012",
@@ -234,7 +162,7 @@
         "CLM-011"
       ],
       "contradiction_ids": [],
-      "rank": 10
+      "rank": 7
     }
   ]
 }

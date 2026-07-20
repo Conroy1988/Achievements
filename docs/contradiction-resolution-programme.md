@@ -9,44 +9,44 @@ permalink: /contradiction-resolution-programme/
 
 All six contradictions have been reassessed against event-linked and boundary evidence. Narrowing a dispute is not the same as resolving it.
 
-**Narrowed:** 4  
-**Still disputed:** 2  
-**Resolved:** 0
+**Narrowed:** 3  
+**Still disputed:** 0  
+**Resolved:** 3
 
 | Contradiction | Outcome | Evidence basis |
 |---|---|---|
-| `CTR-001` | narrowed | `EVT-2026-001`, `BND-005`, `EVT-2026-006`, `EVT-2026-007` |
+| `CTR-001` | resolved | `GAF-2026-001` |
 | `CTR-002` | narrowed | `EVT-2026-002`, `EVT-2026-008`, `EVT-2026-009` |
-| `CTR-003` | still-disputed | `BND-001`, `EVT-2026-003`, `EVT-2026-004`, `EVT-2026-005` |
+| `CTR-003` | resolved | `GAF-2026-004` |
 | `CTR-004` | narrowed | `BND-002`, `EVT-2026-010`, `EVT-2026-011` |
-| `CTR-005` | still-disputed | `BND-003` |
-| `CTR-006` | narrowed | `BND-004` |
+| `CTR-005` | resolved | `GAF-2026-005` |
+| `CTR-006` | narrowed | `GAF-2026-006` |
 
-## Remaining questions
+## Assessment details
 
-### CTR-001 — narrowed
+### CTR-001 — resolved
 
-What is the maximum qualifying interval, do issue and pull-request closure behave identically, and when does the award first become visible?
+Resolved by GitHub's first-party five-minute Quickdraw criterion; issue equivalence and processing delay remain documented limitations outside the timing dispute.
 
 ### CTR-002 — narrowed
 
 Do comment-only, changes-requested, dismissed, or approved review objects prevent the award, and must the author also be the merger?
 
-### CTR-003 — still-disputed
+### CTR-003 — resolved
 
-Which merged PRs GitHub attributes internally and where each exact tier boundary lies.
+Resolved by GitHub's first-party x4 Pull Shark milestone history: 2, 16, 128, and 1024 merged pull requests.
 
 ### CTR-004 — narrowed
 
 How squash, rebase, email mismatch, and rewritten history affect final achievement attribution and exact tier counts.
 
-### CTR-005 — still-disputed
+### CTR-005 — resolved
 
-Exact accepted-answer totals immediately around each displayed tier.
+Resolved by GitHub's first-party x4 Galaxy Brain milestone history: 2, 8, 16, and 32 accepted answers.
 
 ### CTR-006 — narrowed
 
-The exact star boundaries and persistence across ownership transfer, forks, archival, and falling counts.
+The exact star milestones are resolved; repository transfer, organisation ownership, forks, archival, falling counts, and persistence remain open.
 
 ## Machine-readable data
 

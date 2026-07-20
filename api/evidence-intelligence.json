@@ -1,24 +1,6 @@
 {
   "achievements": [
     {
-      "achievement_name": "Pull Shark",
-      "achievement_slug": "pull-shark",
-      "achievement_status": "active",
-      "boundary_programme_count": 1,
-      "candidate_observed_event_count": 0,
-      "claim_count": 2,
-      "contradiction_outcome": "still-disputed",
-      "coverage_rating": "fragile",
-      "coverage_score": 55.0,
-      "deferred_adjudication_count": 1,
-      "event_count": 3,
-      "negative_inconclusive_event_count": 3,
-      "next_evidence": [
-        "Capture independently attributed exact counts immediately below and at each visible tier transition."
-      ],
-      "pressure_score": 67
-    },
-    {
       "achievement_name": "Pair Extraordinaire",
       "achievement_slug": "pair-extraordinaire",
       "achievement_status": "active",
@@ -26,15 +8,15 @@
       "candidate_observed_event_count": 0,
       "claim_count": 2,
       "contradiction_outcome": "narrowed",
-      "coverage_rating": "critical",
-      "coverage_score": 37.5,
+      "coverage_rating": "fragile",
+      "coverage_score": 57.5,
       "deferred_adjudication_count": 2,
       "event_count": 2,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [
         "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
       ],
-      "pressure_score": 58
+      "pressure_score": 49
     },
     {
       "achievement_name": "Starstruck",
@@ -44,51 +26,33 @@
       "candidate_observed_event_count": 0,
       "claim_count": 2,
       "contradiction_outcome": "narrowed",
-      "coverage_rating": "critical",
-      "coverage_score": 37.5,
+      "coverage_rating": "robust",
+      "coverage_score": 90.0,
       "deferred_adjudication_count": 1,
       "event_count": 0,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [
-        "Obtain exact unrounded star totals immediately below and above the x4 transition with ownership and timing controls."
+        "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
       ],
-      "pressure_score": 58
+      "pressure_score": 34
     },
     {
-      "achievement_name": "Galaxy Brain",
-      "achievement_slug": "galaxy-brain",
+      "achievement_name": "Pull Shark",
+      "achievement_slug": "pull-shark",
       "achievement_status": "active",
       "boundary_programme_count": 1,
       "candidate_observed_event_count": 0,
       "claim_count": 2,
-      "contradiction_outcome": "still-disputed",
-      "coverage_rating": "developing",
-      "coverage_score": 62.5,
-      "deferred_adjudication_count": 1,
-      "event_count": 0,
-      "negative_inconclusive_event_count": 0,
-      "next_evidence": [
-        "Capture exact accepted-answer totals and public tier states around each proposed transition."
-      ],
-      "pressure_score": 55
-    },
-    {
-      "achievement_name": "Quickdraw",
-      "achievement_slug": "quickdraw",
-      "achievement_status": "active",
-      "boundary_programme_count": 1,
-      "candidate_observed_event_count": 1,
-      "claim_count": 1,
-      "contradiction_outcome": "narrowed",
-      "coverage_rating": "fragile",
-      "coverage_score": 50.0,
+      "contradiction_outcome": "none",
+      "coverage_rating": "robust",
+      "coverage_score": 100.0,
       "deferred_adjudication_count": 1,
       "event_count": 3,
-      "negative_inconclusive_event_count": 0,
+      "negative_inconclusive_event_count": 3,
       "next_evidence": [
-        "Run independent positive and negative controls immediately around the proposed five-minute boundary."
+        "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
       ],
-      "pressure_score": 52
+      "pressure_score": 27
     },
     {
       "achievement_name": "YOLO",
@@ -98,13 +62,49 @@
       "candidate_observed_event_count": 1,
       "claim_count": 1,
       "contradiction_outcome": "narrowed",
-      "coverage_rating": "fragile",
-      "coverage_score": 50.0,
+      "coverage_rating": "robust",
+      "coverage_score": 90.0,
       "deferred_adjudication_count": 1,
       "event_count": 3,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [],
-      "pressure_score": 42
+      "pressure_score": 24
+    },
+    {
+      "achievement_name": "Galaxy Brain",
+      "achievement_slug": "galaxy-brain",
+      "achievement_status": "active",
+      "boundary_programme_count": 1,
+      "candidate_observed_event_count": 0,
+      "claim_count": 2,
+      "contradiction_outcome": "none",
+      "coverage_rating": "robust",
+      "coverage_score": 100.0,
+      "deferred_adjudication_count": 1,
+      "event_count": 0,
+      "negative_inconclusive_event_count": 0,
+      "next_evidence": [
+        "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
+      ],
+      "pressure_score": 18
+    },
+    {
+      "achievement_name": "Quickdraw",
+      "achievement_slug": "quickdraw",
+      "achievement_status": "active",
+      "boundary_programme_count": 1,
+      "candidate_observed_event_count": 1,
+      "claim_count": 1,
+      "contradiction_outcome": "none",
+      "coverage_rating": "robust",
+      "coverage_score": 100.0,
+      "deferred_adjudication_count": 1,
+      "event_count": 3,
+      "negative_inconclusive_event_count": 0,
+      "next_evidence": [
+        "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
+      ],
+      "pressure_score": 18
     },
     {
       "achievement_name": "Arctic Code Vault Contributor",
@@ -162,10 +162,10 @@
     "boundary_programme_count": 5,
     "deferred_adjudication_count": 7,
     "event_count": 11,
-    "narrowed_contradiction_count": 4,
-    "overall_coverage_score": 60.4,
-    "release_status": "blocked",
-    "still_disputed_contradiction_count": 2
+    "narrowed_contradiction_count": 3,
+    "overall_coverage_score": 91.2,
+    "release_status": "ready",
+    "still_disputed_contradiction_count": 0
   },
   "pressure_formula": {
     "boundary_programme_points": 10,
@@ -179,10 +179,10 @@
   },
   "release_candidate": "v1.4.0",
   "release_gaps": {
-    "claims_to_promote_to_confirmed_or_official": 3,
-    "contradictions_to_resolve": 3,
-    "coverage_points_needed": 9.6,
-    "official_or_confirmed_claims_needed": 3
+    "claims_to_promote_to_confirmed_or_official": 0,
+    "contradictions_to_resolve": 0,
+    "coverage_points_needed": 0.0,
+    "official_or_confirmed_claims_needed": 0
   },
   "schema_version": "1.0.0",
   "source_endpoints": [

@@ -6,7 +6,7 @@
       "id": "CTR-001",
       "title": "Quickdraw qualifying-window uncertainty",
       "dispute_type": "threshold-dispute",
-      "status": "open",
+      "status": "resolved",
       "severity": "critical",
       "claim_ids": [
         "CLM-003"
@@ -22,7 +22,12 @@
         "GitHub publishes no exact threshold and independent timing evidence remains incomplete."
       ],
       "resolution_criteria": "Independent, dated reproduction across at least two accounts with creation, closure, and award timestamps.",
-      "last_reviewed": "2026-07-19"
+      "last_reviewed": "2026-07-19",
+      "resolved_at": "2026-07-19",
+      "resolution_basis_ids": [
+        "GAF-2026-001"
+      ],
+      "resolution_summary": "GitHub's live Quickdraw detail fragment explicitly states 'Closed within 5 minutes of opening' and links the qualifying pull request."
     },
     {
       "id": "CTR-002",
@@ -50,7 +55,7 @@
       "id": "CTR-003",
       "title": "Pull Shark tier thresholds",
       "dispute_type": "threshold-dispute",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "claim_ids": [
         "CLM-002"
@@ -66,7 +71,12 @@
         "GitHub does not publish the complete tier contract and attribution edge cases can change observed counts."
       ],
       "resolution_criteria": "Independently attributed observations at each boundary with processing-delay controls.",
-      "last_reviewed": "2026-07-19"
+      "last_reviewed": "2026-07-19",
+      "resolved_at": "2026-07-19",
+      "resolution_basis_ids": [
+        "GAF-2026-004"
+      ],
+      "resolution_summary": "GitHub's live Pull Shark x4 detail fragment publishes the 2nd, 16th, 128th, and 1024th merged-pull-request milestones."
     },
     {
       "id": "CTR-004",
@@ -96,7 +106,7 @@
       "id": "CTR-005",
       "title": "Galaxy Brain tier thresholds",
       "dispute_type": "threshold-dispute",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "claim_ids": [
         "CLM-008"
@@ -112,7 +122,12 @@
         "GitHub does not publish the complete tier table and accepted-answer state can be confused with other moderation labels."
       ],
       "resolution_criteria": "Dated accepted-answer counts observed immediately around each award boundary on independent accounts.",
-      "last_reviewed": "2026-07-19"
+      "last_reviewed": "2026-07-19",
+      "resolved_at": "2026-07-19",
+      "resolution_basis_ids": [
+        "GAF-2026-005"
+      ],
+      "resolution_summary": "GitHub's live Galaxy Brain x4 detail fragment publishes the 2nd, 8th, 16th, and 32nd accepted-answer milestones."
     },
     {
       "id": "CTR-006",

@@ -9,13 +9,13 @@ description: Accepted GitHub Discussions answers, community-reported Galaxy Brai
 
 **Status:** Earnable  
 **Tiered:** Yes  
-**Evidence level:** Trigger and thresholds are community documented; GitHub does not publish a complete tier table.
+**Evidence level:** GitHub's live x4 achievement fragment officially publishes the accepted-answer trigger and complete milestone table.
 
 ## Trigger
 
 Galaxy Brain recognises answers in GitHub Discussions that are marked as accepted answers.
 
-## Community-reported tiers
+## Official tiers
 
 | Level | Accepted answers |
 |---|---:|
@@ -24,7 +24,7 @@ Galaxy Brain recognises answers in GitHub Discussions that are marked as accepte
 | Silver | 16 |
 | Gold | 32 |
 
-Treat these values as community-verified rather than guaranteed platform contracts.
+GitHub's x4 achievement history labels these as the 2nd, 8th, 16th, and 32nd accepted answers.
 
 ## What qualifies
 
@@ -45,8 +45,12 @@ GitHub added a separate verified-answer state for Discussions in 2025. Galaxy Br
 
 Check that the discussion category supports answers and that the response visibly carries the accepted-answer state. Achievement updates may be delayed.
 
+## References
+
+- [Official achievement fragment corpus]({{ site.baseurl }}/official-achievement-fragments/)
+
 ## Last verified
 
-**19 July 2026** — reviewed accepted-answer behaviour, community-reported tiers, the verified-answer distinction, and responsible participation guidance.
+**19 July 2026** — verified GitHub's live x4 Galaxy Brain fragment, complete accepted-answer milestone history, the verified-answer distinction, and remaining revocation and processing limitations.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

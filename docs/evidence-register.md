@@ -15,12 +15,12 @@ This register links each canonical achievement to a dated, privacy-safe evidence
 
 | Record | Achievement | Evidence | Reproduction | Decision | Observed |
 |---|---|---|---|---|---|
-| `EVD-2026-001` | [Pull Shark](../docs/achievements/pull-shark.md) | confirmed | reproduced | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-002` | [Quickdraw](../docs/quickdraw.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-003` | [YOLO](../docs/achievements/yolo.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-004` | [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | observed | two-independent-public-reconstructions | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-005` | [Galaxy Brain](../docs/achievements/galaxy-brain.md) | official | official-trigger-description | accepted-with-limitations | 2026-07-19 |
-| `EVD-2026-006` | [Starstruck](../docs/achievements/starstruck.md) | observed | observed-not-fully-reproduced | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-001` | [Pull Shark](../docs/achievements/pull-shark.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-002` | [Quickdraw](../docs/quickdraw.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-003` | [YOLO](../docs/achievements/yolo.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-004` | [Pair Extraordinaire](../achievements/pair-extraordinaire.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-005` | [Galaxy Brain](../docs/achievements/galaxy-brain.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
+| `EVD-2026-006` | [Starstruck](../docs/achievements/starstruck.md) | official | github-owned-live-product-fragment | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-007` | [Public Sponsor](../docs/achievements/public-sponsor.md) | official | officially-documented-trigger | accepted-with-limitations | 2026-07-19 |
 | `EVD-2026-008` | [Arctic Code Vault Contributor](../docs/arctic-code-vault-contributor.md) | official | historical-official-documentation | accepted | 2026-07-19 |
 | `EVD-2026-009` | [Mars 2020 Contributor](../docs/mars-2020-contributor.md) | official | historical-official-documentation | accepted | 2026-07-19 |
@@ -29,75 +29,75 @@ This register links each canonical achievement to a dated, privacy-safe evidence
 
 ### EVD-2026-001 — Pull Shark
 
-**Claim:** A substantive pull request attributable to the account is merged.
+**Claim:** GitHub's live product fragment explicitly documents the material Pull Shark contract.
 
 **Guide location:** `docs/achievements/pull-shark.md` — Trigger and attribution
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 1 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-The trigger is confirmed; the complete tier table remains community-reported.
+GitHub's live x4 detail fragment states the merged-pull-request trigger and the 2nd, 16th, 128th, and 1024th milestones.
 
 ### EVD-2026-002 — Quickdraw
 
-**Claim:** Closing an issue or pull request very shortly after creation can award Quickdraw.
+**Claim:** GitHub's live product fragment explicitly documents the material Quickdraw contract.
 
 **Guide location:** `docs/quickdraw.md` — Qualifying time window
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 4 public source(s), 0 archive source(s)  
+**Sources:** 5 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Two independent public pull requests were merged within five and nine seconds and both accounts publicly display Quickdraw. The exact maximum interval and direct contributing-event link remain unresolved.
+GitHub's live detail fragment links a qualifying pull request and states that it was closed within five minutes of opening.
 
 ### EVD-2026-003 — YOLO
 
-**Claim:** A pull request authored by the account and merged without a submitted formal review can award YOLO.
+**Claim:** GitHub's live product fragment explicitly documents the material YOLO contract.
 
 **Guide location:** `docs/achievements/yolo.md` — Review-state requirement
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 4 public source(s), 0 archive source(s)  
+**Sources:** 5 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Two independent authored pull requests were merged with zero submitted formal reviews and both accounts publicly display YOLO. Merger identity and alternate review-state controls remain unresolved.
+GitHub's live detail fragment links a qualifying pull request and states that it was merged without a review.
 
 ### EVD-2026-004 — Pair Extraordinaire
 
-**Claim:** A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.
+**Claim:** GitHub's live product fragment explicitly documents the material Pair Extraordinaire contract.
 
 **Guide location:** `achievements/pair-extraordinaire.md` — Co-author attribution
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 7 public source(s), 0 archive source(s)  
+**Sources:** 8 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Two independent public accounts have account-linked co-author attribution preserved in merged pull-request history and publicly display Pair Extraordinaire. Exact counts and rewrite edge cases remain unresolved.
+GitHub's live detail fragment states that Pair Extraordinaire recognises coauthored commits on merged pull requests; numerical tier counts remain unpublished.
 
 ### EVD-2026-005 — Galaxy Brain
 
-**Claim:** A GitHub Discussion answer authored by the account is deemed helpful by another user.
+**Claim:** GitHub's live product fragment explicitly documents the material Galaxy Brain contract.
 
 **Guide location:** `docs/achievements/galaxy-brain.md` — Accepted answers
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 2 public source(s), 0 archive source(s)  
+**Sources:** 3 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-GitHub’s launch material directly ties Galaxy Brain to Discussion answers another user deems helpful. Exact current accepted-state semantics, processing delay, and tiers remain separate research questions.
+GitHub's live x4 detail fragment publishes accepted-answer milestones at 2, 8, 16, and 32.
 
 ### EVD-2026-006 — Starstruck
 
-**Claim:** A repository associated with the account reaches a community-reported star threshold.
+**Claim:** GitHub's live product fragment explicitly documents the material Starstruck contract.
 
 **Guide location:** `docs/achievements/starstruck.md` — Repository ownership and star thresholds
 
 **Privacy:** `public-no-personal-data`  
-**Sources:** 0 public source(s), 0 archive source(s)  
+**Sources:** 1 public source(s), 0 archive source(s)  
 **Contradictory evidence:** 0 item(s)
 
-Ownership-transfer edge cases and the complete tier table are not officially documented.
+GitHub's live x4 detail fragment states the repository-creation trigger and star milestones at 16, 128, 512, and 4096.
 
 ### EVD-2026-007 — Public Sponsor
 

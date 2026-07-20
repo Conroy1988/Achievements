@@ -6,7 +6,7 @@
     ],
     "category": "discussions",
     "evidence": {
-      "tiers": "community-reported",
+      "tiers": "official",
       "trigger": "official"
     },
     "guide_path": "docs/achievements/galaxy-brain.md",
@@ -23,7 +23,8 @@
       "community": [],
       "official": [
         "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
-        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+        "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions",
+        "https://github.com/users/ljharb/achievements/galaxy-brain/detail?hovercard=1"
       ]
     },
     "status": "active",
@@ -50,7 +51,7 @@
         "unit": "accepted answers"
       }
     ],
-    "trigger": "A GitHub Discussion answer authored by the account is deemed helpful by another user."
+    "trigger": "Have answers in GitHub Discussions accepted."
   },
   "api_version": "1.1.0",
   "dataset_schema_version": "1.0.0"

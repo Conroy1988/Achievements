@@ -14,12 +14,12 @@
     "automatic_application_count": 0
   },
   "current_release_snapshot": {
-    "claims_below_confirmed": 8,
-    "coverage_score": 60.4,
-    "official_or_confirmed_claims": 5,
-    "open_contradictions": 6,
+    "claims_below_confirmed": 1,
+    "coverage_score": 91.2,
+    "official_or_confirmed_claims": 12,
+    "open_contradictions": 3,
     "operational_health_target": 100
   },
-  "current_release_status": "blocked",
+  "current_release_status": "ready",
   "plans": []
 }

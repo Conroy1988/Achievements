@@ -9,12 +9,12 @@
       "category": "collaboration",
       "tiered": true,
       "primary_action": "Have pull requests merged",
-      "trigger": "A substantive pull request attributable to the account is merged.",
+      "trigger": "Opening pull requests that are merged can award Pull Shark.",
       "guide_path": "docs/achievements/pull-shark.md",
       "permalink": "/achievements/pull-shark/",
       "evidence": {
-        "trigger": "confirmed",
-        "tiers": "community-reported"
+        "trigger": "official",
+        "tiers": "official"
       },
       "tiers": [
         {
@@ -44,7 +44,9 @@
         "pull request achievement"
       ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.com/users/ljharb/achievements/pull-shark/detail?hovercard=1"
+        ],
         "community": []
       },
       "known_limitations": [
@@ -59,11 +61,11 @@
       "category": "issues-and-pull-requests",
       "tiered": false,
       "primary_action": "Close an issue or pull request shortly after opening it",
-      "trigger": "Closing an issue or pull request very shortly after creation can award Quickdraw.",
+      "trigger": "Close a qualifying pull request within five minutes of opening.",
       "guide_path": "docs/quickdraw.md",
       "permalink": "/quickdraw/",
       "evidence": {
-        "trigger": "observed",
+        "trigger": "official",
         "tiers": "not-applicable"
       },
       "tiers": [],
@@ -73,7 +75,9 @@
         "quick issue close"
       ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.com/users/Schweinepriester/achievements/quickdraw/detail?hovercard=1"
+        ],
         "community": []
       },
       "known_limitations": [
@@ -88,11 +92,11 @@
       "category": "pull-request-review",
       "tiered": false,
       "primary_action": "Merge a pull request without review",
-      "trigger": "A pull request authored by the account and merged without a submitted formal review can award YOLO.",
+      "trigger": "Merge a pull request without a review.",
       "guide_path": "docs/achievements/yolo.md",
       "permalink": "/achievements/yolo/",
       "evidence": {
-        "trigger": "observed",
+        "trigger": "official",
         "tiers": "not-applicable"
       },
       "tiers": [],
@@ -102,7 +106,9 @@
         "merge without review"
       ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1"
+        ],
         "community": []
       },
       "known_limitations": [
@@ -117,11 +123,11 @@
       "category": "collaboration",
       "tiered": true,
       "primary_action": "Co-author commits in merged pull requests",
-      "trigger": "A correctly attributed co-authored commit incorporated into a merged pull request can qualify for Pair Extraordinaire.",
+      "trigger": "Participate in coauthored commits on merged pull requests.",
       "guide_path": "achievements/pair-extraordinaire.md",
       "permalink": "/achievements/pair-extraordinaire/",
       "evidence": {
-        "trigger": "observed",
+        "trigger": "official",
         "tiers": "community-reported"
       },
       "tiers": [
@@ -153,7 +159,8 @@
       ],
       "sources": {
         "official": [
-          "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors"
+          "https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors",
+          "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1"
         ],
         "community": []
       },
@@ -169,12 +176,12 @@
       "category": "discussions",
       "tiered": true,
       "primary_action": "Receive accepted answers in GitHub Discussions",
-      "trigger": "A GitHub Discussion answer authored by the account is deemed helpful by another user.",
+      "trigger": "Have answers in GitHub Discussions accepted.",
       "guide_path": "docs/achievements/galaxy-brain.md",
       "permalink": "/achievements/galaxy-brain/",
       "evidence": {
         "trigger": "official",
-        "tiers": "community-reported"
+        "tiers": "official"
       },
       "tiers": [
         {
@@ -206,7 +213,8 @@
       "sources": {
         "official": [
           "https://github.blog/news-insights/product-news/introducing-achievements-recognizing-the-many-stages-of-a-developers-coding-journey/",
-          "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions"
+          "https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions",
+          "https://github.com/users/ljharb/achievements/galaxy-brain/detail?hovercard=1"
         ],
         "community": []
       },
@@ -222,12 +230,12 @@
       "category": "repositories",
       "tiered": true,
       "primary_action": "Own a repository that receives stars",
-      "trigger": "A repository associated with the account reaches a community-reported star threshold.",
+      "trigger": "Create a repository that reaches GitHub's published star milestones.",
       "guide_path": "docs/achievements/starstruck.md",
       "permalink": "/achievements/starstruck/",
       "evidence": {
-        "trigger": "observed",
-        "tiers": "community-reported"
+        "trigger": "official",
+        "tiers": "official"
       },
       "tiers": [
         {
@@ -257,7 +265,9 @@
         "star achievement"
       ],
       "sources": {
-        "official": [],
+        "official": [
+          "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1"
+        ],
         "community": []
       },
       "known_limitations": [

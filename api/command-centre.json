@@ -6,11 +6,11 @@
     "achievement_count": 9,
     "active_achievement_count": 7,
     "claim_count": 13,
-    "weak_claim_count": 8,
+    "weak_claim_count": 1,
     "unassigned_gap_count": 0,
     "research_task_count": 12,
-    "open_research_task_count": 10,
-    "open_contradiction_count": 6,
+    "open_research_task_count": 7,
+    "open_contradiction_count": 3,
     "reproduction_protocol_count": 5
   },
   "targets": {
