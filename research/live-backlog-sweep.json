@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "observed_at": "2026-07-20T01:35:36Z",
+  "observed_at": "2026-07-20T01:38:16Z",
   "purpose": "First-party evidence sweep for CLM-006 and contradictions CTR-002, CTR-004, and CTR-006.",
   "automatic_canonical_mutation": false,
   "records": [
@@ -10,8 +10,28 @@
       "url": "https://github.com/users/Rongronggg9/achievements/pair-extraordinaire/detail?hovercard=1",
       "achievement_slug": "pair-extraordinaire",
       "subject_login": "Rongronggg9",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "68bca1296b0b4871f3fd6fe05b775f59ddb0ba4ced84c2bb287cb49425059ebc",
+      "normalized_text": "Pair Extraordinaire x4 @Rongronggg9 coauthored commits on merged pull requests. History 100% unlocked · First unlocked 2022-05-24 01:59:16 UTC inaccessible · Coauthored with an unknown user jimmy-walker/RSSHub#315 · Coauthored with @hacklu , @auto-bot-ty , @pull , @TonyRL , @gl0zzy , and @CancerGary DIYgod/RSSHub#9761 · Coauthored with @LyleLee and @TonyRL chengjianhua/RSSHub#3 · Coauthored with an unknown user",
+      "normalized_text_sha256": "fc7e82e93ff436ac0aa39718a38bb59aee25a4f67015b9e0a2a1dec9c065b6b6",
+      "github_links": [
+        "https://github.com/jimmy-walker/RSSHub/pull/315",
+        "https://github.com/hacklu",
+        "https://github.com/auto-bot-ty",
+        "https://github.com/apps/pull",
+        "https://github.com/TonyRL",
+        "https://github.com/gl0zzy",
+        "https://github.com/CancerGary",
+        "https://github.com/DIYgod/RSSHub/pull/9761",
+        "https://github.com/LyleLee",
+        "https://github.com/chengjianhua/RSSHub/pull/3"
+      ],
+      "milestone_candidates": [
+        24,
+        16
+      ]
     },
     {
       "id": "PAIR-X4-TORVALDS",
@@ -19,8 +39,34 @@
       "url": "https://github.com/users/torvalds/achievements/pair-extraordinaire/detail?hovercard=1",
       "achievement_slug": "pair-extraordinaire",
       "subject_login": "torvalds",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "d0c5c784e26da465479ea66a484c29a07c9663c90049275335274ac0fd2a4e97",
+      "normalized_text": "Pair Extraordinaire x4 @torvalds coauthored commits on merged pull requests. History 100% unlocked · First unlocked 2022-07-14 09:32:38 UTC samodostal/.dotfiles#4 · Coauthored with @samodostal thenithinbalaji/Text-Encrypter#6 · Coauthored with @thenithinbalaji inaccessible · Coauthored with an unknown user ARKANYOTA/ARKANYOTA#2 · Coauthored with @ARKANYOTA , @Yolwoocle , @PouletRaPHOO , @utopyin , @Theobosse , @Gouspourd , @MaximCosta , @Yauyau123 , @Antoine-Roucau , and @PoulpitoGDL",
+      "normalized_text_sha256": "d8a89f362d5a00e935463dfe4faaf732ade670f84888eeeedb6b2a00bf25a328",
+      "github_links": [
+        "https://github.com/samodostal/.dotfiles/pull/4",
+        "https://github.com/samodostal",
+        "https://github.com/thenithinbalaji/Text-Encrypter/pull/6",
+        "https://github.com/thenithinbalaji",
+        "https://github.com/ARKANYOTA/ARKANYOTA/pull/2",
+        "https://github.com/ARKANYOTA",
+        "https://github.com/Yolwoocle",
+        "https://github.com/PouletRaPHOO",
+        "https://github.com/utopyin",
+        "https://github.com/Theobosse",
+        "https://github.com/Gouspourd",
+        "https://github.com/MaximCosta",
+        "https://github.com/Yauyau123",
+        "https://github.com/Antoine-Roucau",
+        "https://github.com/PoulpitoGDL"
+      ],
+      "milestone_candidates": [
+        32,
+        4,
+        2
+      ]
     },
     {
       "id": "PAIR-X3-SCHWEINEPRIESTER",
@@ -28,8 +74,21 @@
       "url": "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1",
       "achievement_slug": "pair-extraordinaire",
       "subject_login": "Schweinepriester",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "b4701c1c3388d196a13f7c5644ac44c598a072df18acef5d76fdf1dd3a75fb8f",
+      "normalized_text": "Pair Extraordinaire x3 @Schweinepriester coauthored commits on merged pull requests. History Bronze and Silver unlocked · First unlocked 2022-05-25 05:24:26 UTC inaccessible · Coauthored with an unknown user Fyrd/caniuse#6271 · Coauthored with @sheik124 Fyrd/caniuse#7306 · Coauthored with @hyunbinseo",
+      "normalized_text_sha256": "cb797108153cf4a4b64fde20c4394c2925f7585e6397bfbfec554670a6837e10",
+      "github_links": [
+        "https://github.com/Fyrd/caniuse/pull/6271",
+        "https://github.com/sheik124",
+        "https://github.com/Fyrd/caniuse/pull/7306",
+        "https://github.com/hyunbinseo"
+      ],
+      "milestone_candidates": [
+        24
+      ]
     },
     {
       "id": "YOLO-SCHWEINEPRIESTER",
@@ -37,8 +96,18 @@
       "url": "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1",
       "achievement_slug": "yolo",
       "subject_login": "Schweinepriester",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "d2aefe39f32f4ce932a2790e24ef046e1423810a508fae4340e61a93397af11d",
+      "normalized_text": "YOLO You want it? You merge it. History 100% unlocked · Unlocked 2022-06-12 20:40:02 UTC Schweinepriester/achievement-testarea#4 · Merged without a review",
+      "normalized_text_sha256": "cd8ad4e09c19927d3f2634a8c1e8b2859d433f355d800f2f38183e556028b1b1",
+      "github_links": [
+        "https://github.com/Schweinepriester/achievement-testarea/pull/4"
+      ],
+      "milestone_candidates": [
+        4
+      ]
     },
     {
       "id": "STARSTRUCK-X4-TORVALDS",
@@ -46,8 +115,22 @@
       "url": "https://github.com/users/torvalds/achievements/starstruck/detail?hovercard=1",
       "achievement_slug": "starstruck",
       "subject_login": "torvalds",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "faad8fc5a920e1428217923d674fd030eda64729be336d762367b5bc414b81f3",
+      "normalized_text": "Starstruck x4 @torvalds created a repository that has many stars. History 100% unlocked · First unlocked 2011-09-04 22:48:12 UTC torvalds/linux · ⭐️ 16 stars torvalds/linux · ⭐️ 128 stars torvalds/linux · ⭐️ 512 stars torvalds/linux · ⭐️ 4096 stars",
+      "normalized_text_sha256": "dac2dd2de0c85e9a34e0d22ed9c133868e21938a47c8bf92a855233de2b6a834",
+      "github_links": [
+        "https://github.com/torvalds/linux"
+      ],
+      "milestone_candidates": [
+        48,
+        16,
+        128,
+        512,
+        4096
+      ]
     },
     {
       "id": "STARSTRUCK-X4-SCHWEINEPRIESTER",
@@ -55,8 +138,21 @@
       "url": "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1",
       "achievement_slug": "starstruck",
       "subject_login": "Schweinepriester",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "12fab1a9b43fc53afcbf1ed1d671accb4f73d79237b23e2c3f60ecf887ad2e02",
+      "normalized_text": "Starstruck x4 @Schweinepriester created a repository that has many stars. History 100% unlocked · First unlocked 2021-05-18 02:37:29 UTC Schweinepriester/github-profile-achievements · ⭐️ 16 stars Schweinepriester/github-profile-achievements · ⭐️ 128 stars Schweinepriester/github-profile-achievements · ⭐️ 512 stars Schweinepriester/github-profile-achievements · ⭐️ 4096 stars",
+      "normalized_text_sha256": "56fda9adcb675b5bfe5e317fc4ed5be1aef4e208c856494cfb78040fe7f8240e",
+      "github_links": [
+        "https://github.com/Schweinepriester/github-profile-achievements"
+      ],
+      "milestone_candidates": [
+        16,
+        128,
+        512,
+        4096
+      ]
     },
     {
       "id": "STARSTRUCK-X3-RONGRONGGG9",
@@ -64,8 +160,20 @@
       "url": "https://github.com/users/Rongronggg9/achievements/starstruck/detail?hovercard=1",
       "achievement_slug": "starstruck",
       "subject_login": "Rongronggg9",
-      "status": "fetch-failed",
-      "error": "HTTP Error 406: Not Acceptable"
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "6716d80a8a78aa36ee6b9ba6a3840099740ca5705ec8fe1814f424fea76808f8",
+      "normalized_text": "Starstruck x3 @Rongronggg9 created a repository that has many stars. History Bronze and Silver unlocked · First unlocked 2020-08-30 05:58:05 UTC Rongronggg9/RSS-to-Telegram-Bot · ⭐️ 16 stars Rongronggg9/RSS-to-Telegram-Bot · ⭐️ 128 stars Rongronggg9/RSS-to-Telegram-Bot · ⭐️ 512 stars",
+      "normalized_text_sha256": "f0dc8408fbfee915009da4f2b9c9aeeee0c16896d9357e22a9fca11df5e95791",
+      "github_links": [
+        "https://github.com/Rongronggg9/RSS-to-Telegram-Bot"
+      ],
+      "milestone_candidates": [
+        16,
+        128,
+        512
+      ]
     },
     {
       "id": "YOLO-REFERENCE-PR",
