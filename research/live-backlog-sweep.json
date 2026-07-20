@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "observed_at": "2026-07-20T01:40:35Z",
+  "observed_at": "2026-07-20T01:40:57Z",
   "purpose": "First-party evidence sweep for CLM-006 and contradictions CTR-002, CTR-004, and CTR-006.",
   "automatic_canonical_mutation": false,
   "records": [
@@ -278,5 +278,78 @@
       "body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "api_payload": []
     }
-  ]
+  ],
+  "pair_linked_pull_requests": [
+    {
+      "pull_request_url": "https://github.com/ARKANYOTA/ARKANYOTA/pull/2",
+      "achievement_fragment_ids": [
+        "PAIR-X4-TORVALDS"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/DIYgod/RSSHub/pull/9761",
+      "achievement_fragment_ids": [
+        "PAIR-X4-RONGRONGGG9"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/Fyrd/caniuse/pull/6271",
+      "achievement_fragment_ids": [
+        "PAIR-X3-SCHWEINEPRIESTER"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/Fyrd/caniuse/pull/7306",
+      "achievement_fragment_ids": [
+        "PAIR-X3-SCHWEINEPRIESTER"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/chengjianhua/RSSHub/pull/3",
+      "achievement_fragment_ids": [
+        "PAIR-X4-RONGRONGGG9"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/jimmy-walker/RSSHub/pull/315",
+      "achievement_fragment_ids": [
+        "PAIR-X4-RONGRONGGG9"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/samodostal/.dotfiles/pull/4",
+      "achievement_fragment_ids": [
+        "PAIR-X4-TORVALDS"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "pull_request_url": "https://github.com/thenithinbalaji/Text-Encrypter/pull/6",
+      "achievement_fragment_ids": [
+        "PAIR-X4-TORVALDS"
+      ],
+      "status": "enrichment-failed",
+      "error": "HTTP Error 503: Service Unavailable"
+    }
+  ],
+  "pair_merge_evidence_summary": {
+    "linked_pull_request_count": 8,
+    "merge_methods": [],
+    "final_trailer_preserved_count": 0,
+    "enrichment_failure_count": 8,
+    "automatic_canonical_mutation": false
+  }
 }
