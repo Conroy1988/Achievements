@@ -1,0 +1,86 @@
+name: v1.4.0 release baseline verification
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    if: github.head_ref == 'agent/v1.4.0-release-baseline' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out baseline branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: agent/v1.4.0-release-baseline
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Verify published release and tag
+        run: |
+          curl --fail-with-body --location --silent --show-error \
+            --header 'Accept: application/vnd.github+json' \
+            --output v1.4.0-release-verification.json \
+            'https://api.github.com/repos/Conroy1988/Achievements/releases/tags/v1.4.0'
+          git fetch --tags --force origin
+          test "$(git rev-list -n 1 refs/tags/v1.4.0)" = '98d478c7b73cff9c6e8fa5235640f12597544b67'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          value = json.loads(Path('v1.4.0-release-verification.json').read_text(encoding='utf-8'))
+          assert value['tag_name'] == 'v1.4.0', value
+          assert value['name'] == 'GitHub Achievement Encyclopedia v1.4.0', value
+          assert value['draft'] is False, value
+          assert value['prerelease'] is False, value
+          print(value['html_url'])
+          PY
+      - name: Regenerate health dashboard from public repository state
+        run: python -m scripts.build_health_dashboard
+      - name: Record immutable release baseline
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/api-reference.md')
+          text = path.read_text(encoding='utf-8')
+          old = "The `v1.4.0` release is published only after [`release-readiness.json`](../api/release-readiness.json) reports `ready` and merged-main operational health is verified at 100/100. Its immutable tag SHA is recorded after publication."
+          new = "The immutable `v1.4.0` source baseline is commit `98d478c7b73cff9c6e8fa5235640f12597544b67`. The tag resolves exactly to that commit after `release-readiness.json` reported `ready` and merged-main operational health was verified at 100/100."
+          if old not in text:
+              raise SystemExit('v1.4.0 baseline placeholder not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+      - name: Validate refreshed status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('api/status.json').read_text(encoding='utf-8'))
+          assert status['health']['score'] == 100, status
+          assert status['release']['tag'] == 'v1.4.0', status
+          print(json.dumps(status['release'], indent=2))
+          PY
+      - name: Upload publication verification
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: v1.4.0-release-verification
+          path: v1.4.0-release-verification.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit verified baseline
+        run: |
+          if git diff --quiet; then
+            echo 'Release baseline is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/api-reference.md docs/health-dashboard.md api/status.json
+          git commit -m 'Record v1.4.0 verified release baseline'
+          git push origin HEAD:agent/v1.4.0-release-baseline
