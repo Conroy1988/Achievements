@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-07-20T01:35:36Z",
+  "purpose": "First-party evidence sweep for CLM-006 and contradictions CTR-002, CTR-004, and CTR-006.",
+  "automatic_canonical_mutation": false,
+  "records": [
+    {
+      "id": "PAIR-X4-RONGRONGGG9",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/Rongronggg9/achievements/pair-extraordinaire/detail?hovercard=1",
+      "achievement_slug": "pair-extraordinaire",
+      "subject_login": "Rongronggg9",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "PAIR-X4-TORVALDS",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/torvalds/achievements/pair-extraordinaire/detail?hovercard=1",
+      "achievement_slug": "pair-extraordinaire",
+      "subject_login": "torvalds",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "PAIR-X3-SCHWEINEPRIESTER",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/Schweinepriester/achievements/pair-extraordinaire/detail?hovercard=1",
+      "achievement_slug": "pair-extraordinaire",
+      "subject_login": "Schweinepriester",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "YOLO-SCHWEINEPRIESTER",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/Schweinepriester/achievements/yolo/detail?hovercard=1",
+      "achievement_slug": "yolo",
+      "subject_login": "Schweinepriester",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "STARSTRUCK-X4-TORVALDS",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/torvalds/achievements/starstruck/detail?hovercard=1",
+      "achievement_slug": "starstruck",
+      "subject_login": "torvalds",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "STARSTRUCK-X4-SCHWEINEPRIESTER",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1",
+      "achievement_slug": "starstruck",
+      "subject_login": "Schweinepriester",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "STARSTRUCK-X3-RONGRONGGG9",
+      "kind": "achievement-fragment",
+      "url": "https://github.com/users/Rongronggg9/achievements/starstruck/detail?hovercard=1",
+      "achievement_slug": "starstruck",
+      "subject_login": "Rongronggg9",
+      "status": "fetch-failed",
+      "error": "HTTP Error 406: Not Acceptable"
+    },
+    {
+      "id": "YOLO-REFERENCE-PR",
+      "kind": "github-api",
+      "url": "https://api.github.com/repos/Schweinepriester/achievement-testarea/pulls/4",
+      "achievement_slug": null,
+      "subject_login": null,
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "body_sha256": "76423758f1a49b8b25f4cb6a0d4b86a8d92a8580efa51d8b1d41b750b62a80ff",
+      "api_payload": {
+        "id": 965086285,
+        "html_url": "https://github.com/Schweinepriester/achievement-testarea/pull/4",
+        "number": 4,
+        "state": "closed",
+        "user": {
+          "login": "Schweinepriester",
+          "id": 2644614,
+          "html_url": "https://github.com/Schweinepriester",
+          "type": "User"
+        },
+        "merged_at": "2022-06-12T20:40:00Z",
+        "merge_commit_sha": "d4a4cae66e8e718f3a99e4565fe42ac415cecc55",
+        "requested_reviewers": [
+          {
+            "login": "ale-lit",
+            "id": 91823697,
+            "html_url": "https://github.com/ale-lit",
+            "type": "User"
+          }
+        ],
+        "head": {
+          "ref": "Schweinepriester-patch-1",
+          "sha": "3ec5c848e33d206879d6ec1cde66ae44f61ed4cd",
+          "user": {
+            "login": "Schweinepriester",
+            "id": 2644614,
+            "html_url": "https://github.com/Schweinepriester",
+            "type": "User"
+          },
+          "repo": {
+            "id": 502170457,
+            "name": "achievement-testarea",
+            "full_name": "Schweinepriester/achievement-testarea",
+            "owner": {
+              "login": "Schweinepriester",
+              "id": 2644614,
+              "html_url": "https://github.com/Schweinepriester",
+              "type": "User"
+            },
+            "html_url": "https://github.com/Schweinepriester/achievement-testarea",
+            "fork": false,
+            "stargazers_count": 20,
+            "archived": false
+          }
+        },
+        "base": {
+          "ref": "main",
+          "sha": "57c6032fbb4f486e6ac32f3c08422e5166dc6272",
+          "user": {
+            "login": "Schweinepriester",
+            "id": 2644614,
+            "html_url": "https://github.com/Schweinepriester",
+            "type": "User"
+          },
+          "repo": {
+            "id": 502170457,
+            "name": "achievement-testarea",
+            "full_name": "Schweinepriester/achievement-testarea",
+            "owner": {
+              "login": "Schweinepriester",
+              "id": 2644614,
+              "html_url": "https://github.com/Schweinepriester",
+              "type": "User"
+            },
+            "html_url": "https://github.com/Schweinepriester/achievement-testarea",
+            "fork": false,
+            "stargazers_count": 20,
+            "archived": false
+          }
+        },
+        "author_association": "OWNER",
+        "merged": true,
+        "merged_by": {
+          "login": "Schweinepriester",
+          "id": 2644614,
+          "html_url": "https://github.com/Schweinepriester",
+          "type": "User"
+        }
+      }
+    },
+    {
+      "id": "YOLO-REFERENCE-REVIEWS",
+      "kind": "github-api",
+      "url": "https://api.github.com/repos/Schweinepriester/achievement-testarea/pulls/4/reviews",
+      "achievement_slug": null,
+      "subject_login": null,
+      "status": "fetched",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "api_payload": []
+    }
+  ]
+}
