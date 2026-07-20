@@ -1,0 +1,39 @@
+name: Live evidence backlog sweep
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    if: github.head_ref == 'agent/resolve-evidence-backlogs' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out evidence branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: agent/resolve-evidence-backlogs
+          fetch-depth: 0
+      - name: Collect GitHub-owned backlog evidence
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/collect_live_backlog_evidence.py
+      - name: Commit evidence snapshot
+        run: |
+          if git diff --quiet -- research/live-backlog-sweep.json; then
+            echo 'Evidence snapshot is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/live-backlog-sweep.json
+          git commit -m 'Capture live evidence backlog sweep'
+          git push origin HEAD:agent/resolve-evidence-backlogs
