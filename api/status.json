@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-07-20T01:21:05Z",
+  "generated_at": "2026-07-20T02:19:27Z",
   "health": {
     "label": "Excellent",
     "score": 100
   },
-  "latest_successful_audit": "2026-07-20T01:20:52Z",
+  "latest_successful_audit": "2026-07-20T01:21:25Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
@@ -15,9 +15,9 @@
     "source_stability": {
       "Archived": 1,
       "High": 20,
-      "Medium": 62
+      "Medium": 67
     },
-    "sources": 83,
+    "sources": 88,
     "visual_baselines": 10
   },
   "open": {
