@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from pathlib import Path
 import argparse
 import json
@@ -17,6 +18,8 @@ ALLOWED_STATUS = {"open", "in-progress", "blocked", "resolved"}
 ALLOWED_PRIORITY = {"critical", "high", "medium", "low"}
 ALLOWED_DIFFICULTY = {"beginner", "intermediate", "advanced"}
 ALLOWED_TARGETS = {"official", "confirmed", "observed", "community-reported", "unknown"}
+ALLOWED_BUCKETS = {"active", "blocked", "monitoring", "queued", "complete"}
+BUCKET_ORDER = {"active": 0, "blocked": 1, "monitoring": 2, "queued": 3, "complete": 4}
 
 
 def load(path: Path) -> dict:
@@ -28,6 +31,10 @@ def validate(queue: dict, achievements: dict, evidence: dict) -> list[str]:
     tasks = queue.get("tasks")
     if not isinstance(tasks, list) or not tasks:
         return ["tasks must be a non-empty array"]
+    if queue.get("campaign_version") != "v1.5.0":
+        failures.append("campaign_version must identify v1.5.0")
+    if set(queue.get("campaign_buckets", [])) != ALLOWED_BUCKETS:
+        failures.append("campaign_buckets must declare the complete Phase 65 bucket set")
     achievement_slugs = {item["slug"] for item in achievements.get("achievements", [])}
     evidence_ids = {item["id"] for item in evidence.get("records", [])}
     seen: set[str] = set()
@@ -42,8 +49,20 @@ def validate(queue: dict, achievements: dict, evidence: dict) -> list[str]:
         slug = task.get("achievement_slug")
         if slug is not None and slug not in achievement_slugs:
             failures.append(f"{prefix}: unknown achievement slug")
-        if task.get("status") not in ALLOWED_STATUS:
+        status = task.get("status")
+        bucket = task.get("campaign_bucket")
+        if status not in ALLOWED_STATUS:
             failures.append(f"{prefix}: invalid status")
+        if bucket not in ALLOWED_BUCKETS:
+            failures.append(f"{prefix}: invalid campaign bucket")
+        if status == "resolved" and bucket != "complete":
+            failures.append(f"{prefix}: resolved tasks must be complete")
+        if status == "blocked" and bucket != "blocked":
+            failures.append(f"{prefix}: blocked tasks must use the blocked bucket")
+        if bucket == "active" and status != "in-progress":
+            failures.append(f"{prefix}: active tasks must be in-progress")
+        if bucket == "queued" and status != "open":
+            failures.append(f"{prefix}: queued tasks must be open")
         if task.get("priority") not in ALLOWED_PRIORITY:
             failures.append(f"{prefix}: invalid priority")
         if task.get("difficulty") not in ALLOWED_DIFFICULTY:
@@ -65,76 +84,65 @@ def validate(queue: dict, achievements: dict, evidence: dict) -> list[str]:
         for field in ("title", "task_type", "research_question"):
             if not isinstance(task.get(field), str) or not task[field].strip():
                 failures.append(f"{prefix}: {field} must be non-empty")
+    unresolved = [task for task in tasks if task.get("status") != "resolved"]
+    if len(unresolved) != 7:
+        failures.append("Phase 65 must classify exactly seven unresolved research tasks")
+    if sum(task.get("campaign_bucket") == "active" for task in unresolved) != 3:
+        failures.append("Phase 65 must expose exactly three active tasks")
     return failures
 
 
 def render_markdown(queue: dict, achievements: dict) -> str:
     names = {item["slug"]: item["name"] for item in achievements["achievements"]}
-    tasks = sorted(queue["tasks"], key=lambda item: (item["status"] != "open", {"critical": 0, "high": 1, "medium": 2, "low": 3}[item["priority"]], item["id"]))
-    open_count = sum(item["status"] == "open" for item in tasks)
-    good_first = sum(item["good_first_issue"] and item["status"] == "open" for item in tasks)
+    priority_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+    tasks = sorted(queue["tasks"], key=lambda item: (BUCKET_ORDER[item["campaign_bucket"]], priority_order[item["priority"]], item["id"]))
+    counts = Counter(item["campaign_bucket"] for item in tasks)
+    good_first = sum(item["good_first_issue"] and item["campaign_bucket"] in {"active", "queued"} for item in tasks)
     lines = [
-        "---",
-        "layout: default",
-        "title: Contributor research hub",
-        "description: Structured, reproducible research tasks for improving GitHub achievement evidence.",
-        "permalink: /research-hub/",
-        "---",
-        "",
-        "## Contributor research hub",
-        "",
-        "This hub converts known evidence gaps into bounded research tasks. Contributions must follow the evidence register policy and may document failed or contradictory results.",
-        "",
-        f"**Open tasks:** {open_count}  ",
-        f"**Good first research tasks:** {good_first}  ",
-        f"**Schema version:** `{queue['schema_version']}`",
-        "",
-        "| Task | Achievement | Type | Priority | Difficulty | Status |",
-        "|---|---|---|---|---|---|",
+        "---", "layout: default", "title: Contributor research hub",
+        "description: Campaign-classified, reproducible research tasks for improving GitHub achievement evidence.",
+        "permalink: /research-hub/", "---", "", "## Contributor research hub", "",
+        "This hub converts known evidence gaps into bounded research tasks. Phase 65 separates work that is active, blocked, monitored, queued, or complete without weakening evidence requirements.", "",
+        f"**Campaign:** `{queue['campaign_version']}`  ",
+        f"**Active:** {counts['active']}  ", f"**Blocked:** {counts['blocked']}  ",
+        f"**Monitoring:** {counts['monitoring']}  ", f"**Queued:** {counts['queued']}  ",
+        f"**Good first research tasks:** {good_first}  ", f"**Schema version:** `{queue['schema_version']}`", "",
+        "| Task | Achievement | Type | Priority | Difficulty | Campaign | Status |",
+        "|---|---|---|---|---|---|---|",
     ]
     for task in tasks:
         achievement = names.get(task["achievement_slug"], "Cross-achievement")
         first = " — good first issue" if task["good_first_issue"] else ""
-        lines.append(f"| `{task['id']}` | {achievement} | {task['task_type']}{first} | {task['priority']} | {task['difficulty']} | {task['status']} |")
-    lines.extend(["", "## Research tasks", ""])
-    for task in tasks:
-        achievement = names.get(task["achievement_slug"], "Cross-achievement")
-        lines.extend([
-            f"### {task['id']} — {task['title']}",
-            "",
-            f"**Achievement:** {achievement}  ",
-            f"**Priority:** `{task['priority']}`  ",
-            f"**Difficulty:** `{task['difficulty']}`  ",
-            f"**Target evidence:** `{task['target_evidence_level']}`",
-            "",
-            f"**Research question:** {task['research_question']}",
-            "",
-            "**Acceptance criteria**",
-            "",
-        ])
-        lines.extend(f"- {criterion}" for criterion in task["acceptance_criteria"])
-        related = task["related_evidence_ids"]
-        lines.extend(["", f"**Related evidence records:** {', '.join(f'`{item}`' for item in related) if related else 'None'}", ""])
+        lines.append(f"| `{task['id']}` | {achievement} | {task['task_type']}{first} | {task['priority']} | {task['difficulty']} | {task['campaign_bucket']} | {task['status']} |")
+    for bucket in ("active", "blocked", "monitoring", "queued", "complete"):
+        lines.extend(["", f"## {bucket.title()} tasks", ""])
+        for task in [item for item in tasks if item["campaign_bucket"] == bucket]:
+            achievement = names.get(task["achievement_slug"], "Cross-achievement")
+            lines.extend([
+                f"### {task['id']} — {task['title']}", "",
+                f"**Achievement:** {achievement}  ", f"**Priority:** `{task['priority']}`  ",
+                f"**Difficulty:** `{task['difficulty']}`  ", f"**Target evidence:** `{task['target_evidence_level']}`", "",
+                f"**Research question:** {task['research_question']}", "", "**Acceptance criteria**", "",
+            ])
+            lines.extend(f"- {criterion}" for criterion in task["acceptance_criteria"])
+            related = task["related_evidence_ids"]
+            lines.extend(["", f"**Related evidence records:** {', '.join(f'`{item}`' for item in related) if related else 'None'}", ""])
     lines.extend([
-        "## Starting work",
-        "",
-        "1. Choose an open task and open a research issue using the structured form.",
-        "2. State the task ID and planned reproduction method.",
-        "3. Preserve privacy and avoid fabricated or meaningless activity.",
-        "4. Submit both successful and failed observations with dates and limitations.",
-        "",
-        "Machine-readable tasks are available from [`/api/research-queue.json`](../api/research-queue.json).",
-        "",
+        "## Starting work", "", "1. Start with an active task or a queued task that has become naturally actionable.",
+        "2. Preserve the published mission, protocol, safeguards, and evidence requirements.",
+        "3. Never manufacture activity to unblock a threshold or fill a matrix cell.",
+        "4. Submit successful, failed, delayed, and contradictory observations with dates and limitations.", "",
+        "Machine-readable tasks are available from [`/api/research-queue.json`](../api/research-queue.json).", "",
     ])
     return "\n".join(lines)
 
 
 def render_api(queue: dict) -> str:
+    counts = Counter(task["campaign_bucket"] for task in queue["tasks"])
     return json.dumps({
-        "api_version": "1.0.0",
-        "schema_version": queue["schema_version"],
-        "count": len(queue["tasks"]),
-        "tasks": queue["tasks"],
+        "api_version": "1.1.0", "schema_version": queue["schema_version"],
+        "campaign_version": queue["campaign_version"], "count": len(queue["tasks"]),
+        "metrics": dict(sorted(counts.items())), "tasks": queue["tasks"],
     }, indent=2, ensure_ascii=False) + "\n"
 
 
@@ -147,16 +155,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    queue = load(QUEUE_PATH)
-    achievements = load(ACHIEVEMENTS_PATH)
-    evidence = load(EVIDENCE_PATH)
+    queue, achievements, evidence = load(QUEUE_PATH), load(ACHIEVEMENTS_PATH), load(EVIDENCE_PATH)
     failures = validate(queue, achievements, evidence)
-    report = [
-        "# Contributor research hub validation",
-        "",
-        f"- Tasks: {len(queue.get('tasks', []))}",
-        f"- Result: {'FAIL' if failures else 'PASS'}",
-    ]
+    report = ["# Contributor research hub validation", "", f"- Tasks: {len(queue.get('tasks', []))}", f"- Result: {'FAIL' if failures else 'PASS'}"]
     if failures:
         report.extend(["", "## Failures", "", *[f"- {item}" for item in failures]])
     (ROOT / args.report).write_text("\n".join(report) + "\n", encoding="utf-8")
@@ -173,7 +174,7 @@ def main() -> int:
         for path, content in outputs.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
-    print(f"Research hub passed with {len(queue['tasks'])} tasks.")
+    print(f"Research hub passed with {len(queue['tasks'])} tasks across Phase 65 campaign buckets.")
     return 0
 
 

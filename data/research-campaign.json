@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "programme_date": "2026-07-20",
+  "lifecycle_states": [
+    "post-release",
+    "collecting-evidence",
+    "release-candidate",
+    "release-ready",
+    "published",
+    "archived"
+  ],
+  "active_campaign": {
+    "version": "v1.5.0",
+    "phase": 65,
+    "name": "Post-v1.4 Research Operations",
+    "lifecycle": "collecting-evidence",
+    "started_on": "2026-07-20",
+    "primary_mission_id": "MSN-006",
+    "secondary_mission_ids": [
+      "MSN-007",
+      "MSN-001"
+    ],
+    "current_snapshot": {
+      "coverage_score": 91.2,
+      "official_or_confirmed_claims": 12,
+      "claims_below_confirmed": 1,
+      "open_contradictions": 3,
+      "operational_health": 100
+    },
+    "required_snapshot": {
+      "minimum_coverage_score": 92.0,
+      "minimum_official_or_confirmed_claims": 12,
+      "maximum_claims_below_confirmed": 1,
+      "maximum_open_contradictions": 2,
+      "required_operational_health": 100
+    },
+    "publication_rule": "The v1.5.0 campaign may advance to release-candidate only after its evidence gate passes, all generated outputs are current, and a maintainer explicitly changes the lifecycle. Release-ready additionally requires a fully passing merged-main operational audit."
+  },
+  "task_buckets": {
+    "active": [
+      "RSH-002",
+      "RSH-008",
+      "RSH-009"
+    ],
+    "blocked": [
+      "RSH-010"
+    ],
+    "monitoring": [
+      "RSH-005"
+    ],
+    "queued": [
+      "RSH-011",
+      "RSH-012"
+    ]
+  },
+  "archived_campaigns": [
+    {
+      "version": "v1.4.0",
+      "phase_range": [
+        52,
+        64
+      ],
+      "status": "published",
+      "published_at": "2026-07-20T00:16:51Z",
+      "release_commit": "98d478c7b73cff9c6e8fa5235640f12597544b67",
+      "baseline_record_commit": "c2dc2f43bd860b4ae6282daf066359fdd9a94e22",
+      "release_url": "https://github.com/Conroy1988/Achievements/releases/tag/v1.4.0",
+      "final_snapshot": {
+        "coverage_score": 91.2,
+        "official_or_confirmed_claims": 12,
+        "claims_below_confirmed": 1,
+        "open_contradictions": 3,
+        "operational_health": 100
+      }
+    }
+  ],
+  "operating_rules": [
+    "An archived release snapshot is immutable and cannot be reused as the active campaign.",
+    "Campaign lifecycle changes require a maintainer-reviewed source change; builders only validate and publish state.",
+    "Blocked evidence remains blocked until the published evidence requirement is met without artificial activity.",
+    "Active missions must preserve repository safeguards, independent usefulness, privacy, and fail-closed adjudication."
+  ]
+}

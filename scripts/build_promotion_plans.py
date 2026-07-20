@@ -264,7 +264,7 @@ def build_plans(
     return sorted(plans, key=lambda item: item["id"]), errors
 
 
-def payload(policy: dict, plans: list[dict], release_readiness: dict) -> dict:
+def payload(policy: dict, plans: list[dict], campaign_status: dict) -> dict:
     counts = Counter(item["status"] for item in plans)
     return {
         "api_version": "1.0.0",
@@ -281,8 +281,10 @@ def payload(policy: dict, plans: list[dict], release_readiness: dict) -> dict:
             "affected_claim_count": len({item["claim_id"] for item in plans}),
             "automatic_application_count": 0,
         },
-        "current_release_snapshot": release_readiness.get("current_snapshot", {}),
-        "current_release_status": release_readiness.get("status"),
+        "current_campaign_version": campaign_status.get("active_campaign", {}).get("version"),
+        "current_campaign_snapshot": campaign_status.get("active_campaign", {}).get("current_snapshot", {}),
+        "current_campaign_lifecycle": campaign_status.get("active_campaign", {}).get("lifecycle"),
+        "current_release_status": "published",
         "plans": plans,
     }
 
@@ -296,7 +298,7 @@ def schema_payload(policy: dict, schema: dict) -> dict:
     }
 
 
-def markdown(policy: dict, plans: list[dict], release_readiness: dict) -> str:
+def markdown(policy: dict, plans: list[dict], campaign_status: dict) -> str:
     ready = sum(item["status"] == "ready-for-maintainer-review" for item in plans)
     blocked = sum(item["status"] == "blocked" for item in plans)
     lines = [
@@ -315,7 +317,8 @@ def markdown(policy: dict, plans: list[dict], release_readiness: dict) -> str:
         f"**Ready for maintainer review:** {ready}  ",
         f"**Blocked:** {blocked}  ",
         f"**Automatic applications:** 0  ",
-        f"**Current release status:** `{release_readiness.get('status', 'unknown')}`",
+        f"**Current campaign:** `{campaign_status.get('active_campaign', {}).get('version', 'unknown')}`  ",
+        f"**Campaign lifecycle:** `{campaign_status.get('active_campaign', {}).get('lifecycle', 'unknown')}`",
         "",
         "## Planning rules",
         "",
@@ -361,7 +364,7 @@ def main() -> int:
         queue_payload = load(API / "mission-review-queue.json")
         claims_payload = load(DATA / "claims.json")
         achievements_payload = load(DATA / "achievements.json")
-        release_readiness = load(API / "release-readiness.json")
+        campaign_status = load(API / "campaign-status.json")
     except (OSError, ValueError, json.JSONDecodeError) as error:
         print(error)
         return 1
@@ -383,9 +386,9 @@ def main() -> int:
         return 1
 
     outputs = {
-        API / "promotion-plans.json": json.dumps(payload(policy, plans, release_readiness), indent=2, ensure_ascii=False) + "\n",
+        API / "promotion-plans.json": json.dumps(payload(policy, plans, campaign_status), indent=2, ensure_ascii=False) + "\n",
         API / "promotion-plan-schema.json": json.dumps(schema_payload(policy, schema), indent=2, ensure_ascii=False) + "\n",
-        DOCS / "promotion-planner.md": markdown(policy, plans, release_readiness),
+        DOCS / "promotion-planner.md": markdown(policy, plans, campaign_status),
     }
     if args.check:
         stale = [

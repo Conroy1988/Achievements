@@ -1,0 +1,104 @@
+{
+  "active_campaign": {
+    "current_snapshot": {
+      "claims_below_confirmed": 1,
+      "coverage_score": 91.2,
+      "official_or_confirmed_claims": 12,
+      "open_contradictions": 3,
+      "operational_health": 100
+    },
+    "evidence_gate_status": "blocked",
+    "lifecycle": "collecting-evidence",
+    "name": "Post-v1.4 Research Operations",
+    "phase": 65,
+    "primary_mission_id": "MSN-006",
+    "publication_rule": "The v1.5.0 campaign may advance to release-candidate only after its evidence gate passes, all generated outputs are current, and a maintainer explicitly changes the lifecycle. Release-ready additionally requires a fully passing merged-main operational audit.",
+    "required_snapshot": {
+      "maximum_claims_below_confirmed": 1,
+      "maximum_open_contradictions": 2,
+      "minimum_coverage_score": 92.0,
+      "minimum_official_or_confirmed_claims": 12,
+      "required_operational_health": 100
+    },
+    "secondary_mission_ids": [
+      "MSN-007",
+      "MSN-001"
+    ],
+    "started_on": "2026-07-20",
+    "version": "v1.5.0"
+  },
+  "api_version": "1.0.0",
+  "archived_campaigns": [
+    {
+      "baseline_record_commit": "c2dc2f43bd860b4ae6282daf066359fdd9a94e22",
+      "final_snapshot": {
+        "claims_below_confirmed": 1,
+        "coverage_score": 91.2,
+        "official_or_confirmed_claims": 12,
+        "open_contradictions": 3,
+        "operational_health": 100
+      },
+      "phase_range": [
+        52,
+        64
+      ],
+      "published_at": "2026-07-20T00:16:51Z",
+      "release_commit": "98d478c7b73cff9c6e8fa5235640f12597544b67",
+      "release_url": "https://github.com/Conroy1988/Achievements/releases/tag/v1.4.0",
+      "status": "published",
+      "version": "v1.4.0"
+    }
+  ],
+  "campaign_gaps": {
+    "claims_to_promote": 0,
+    "contradictions_to_resolve": 1,
+    "coverage_points_needed": 0.8,
+    "official_or_confirmed_claims_needed": 0,
+    "operational_health_points_needed": 0
+  },
+  "metrics": {
+    "active_task_count": 3,
+    "archived_campaign_count": 1,
+    "blocked_task_count": 1,
+    "monitoring_task_count": 1,
+    "operational_health": 100,
+    "queued_task_count": 2
+  },
+  "operating_rules": [
+    "An archived release snapshot is immutable and cannot be reused as the active campaign.",
+    "Campaign lifecycle changes require a maintainer-reviewed source change; builders only validate and publish state.",
+    "Blocked evidence remains blocked until the published evidence requirement is met without artificial activity.",
+    "Active missions must preserve repository safeguards, independent usefulness, privacy, and fail-closed adjudication."
+  ],
+  "primary_mission": {
+    "achievement_slug": "yolo",
+    "id": "MSN-006",
+    "protocol_ids": [
+      "LAB-002"
+    ],
+    "research_task_ids": [
+      "RSH-002"
+    ],
+    "status": "active",
+    "title": "Run the active YOLO submitted-review-state matrix"
+  },
+  "schema_version": "1.0.0",
+  "status": "live",
+  "task_buckets": {
+    "active": [
+      "RSH-002",
+      "RSH-008",
+      "RSH-009"
+    ],
+    "blocked": [
+      "RSH-010"
+    ],
+    "monitoring": [
+      "RSH-005"
+    ],
+    "queued": [
+      "RSH-011",
+      "RSH-012"
+    ]
+  }
+}

@@ -7,22 +7,23 @@ permalink: /evidence-intelligence/
 
 ## Evidence intelligence dashboard
 
-This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the formal release gate.
+This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the active research campaign lifecycle.
 
 **Evidence coverage:** 91.2/100  
 **Event-linked records:** 16  
 **Boundary investigations:** 5  
 **Deferred adjudications:** 7  
-**Release status:** `ready`
+**Campaign lifecycle:** `collecting-evidence`  
+**Campaign gate:** `blocked`
 
-## Distance to the evidence-quality release
+## Distance to the active campaign gate
 
 | Gate | Remaining gap |
 |---|---:|
-| Coverage | 0.0 points |
+| Coverage | 0.8 points |
 | Official or confirmed claims | 0 claims |
 | Claims below confirmed | 0 promotions |
-| Open contradictions | 0 resolutions |
+| Open contradictions | 1 resolutions |
 
 ## Research pressure ranking
 

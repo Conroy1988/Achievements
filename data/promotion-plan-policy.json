@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "policy_date": "2026-07-19",
+  "policy_date": "2026-07-20",
   "source_review_queue": "api/mission-review-queue.json",
   "review_directory": "reviews/mission",
   "plan_directory": "plans/promotion",
@@ -32,6 +32,7 @@
     "data/achievements.json",
     "data/contradictions.json",
     "data/evidence-quality-programme.json",
+    "data/research-campaign.json",
     "CHANGELOG.md"
   ],
   "generated_output_paths": [
@@ -47,7 +48,9 @@
     "docs/contradiction-ledger.md",
     "docs/evidence-coverage.md",
     "docs/evidence-intelligence-dashboard.md",
-    "docs/evidence-quality-release-gate.md"
+    "docs/evidence-quality-release-gate.md",
+    "api/campaign-status.json",
+    "docs/research-campaign-status.md"
   ],
   "required_preconditions": [
     "The source packet remains accepted in the public mission review queue.",
@@ -63,6 +66,7 @@
     "python scripts/build_research_intelligence.py --check",
     "python scripts/build_evidence_quality_programme.py --check",
     "python scripts/build_evidence_intelligence.py --check",
+    "python scripts/build_research_campaign.py --check",
     "python scripts/build_public_api.py --check",
     "python scripts/build_promotion_plans.py --check"
   ],
@@ -78,7 +82,7 @@
     "The planner must never write canonical claims, evidence, contradictions, missions, thresholds, release gates, tags, or releases.",
     "Every plan requires a separate maintainer-reviewed pull request before canonical changes may occur.",
     "Contradiction resolution is never implied by claim promotion and requires its own published criteria to pass.",
-    "Release readiness must be regenerated after the canonical change; the plan may not declare v1.4.0 publishable in advance.",
+    "The active campaign status must be regenerated after a canonical change; a plan may not advance the campaign lifecycle or declare a release ready.",
     "Blocked plans remain public and may not be silently discarded."
   ]
 }

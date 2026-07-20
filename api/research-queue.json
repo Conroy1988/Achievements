@@ -1,7 +1,15 @@
 {
-  "api_version": "1.0.0",
-  "schema_version": "1.1.0",
+  "api_version": "1.1.0",
+  "schema_version": "1.2.0",
+  "campaign_version": "v1.5.0",
   "count": 12,
+  "metrics": {
+    "active": 3,
+    "blocked": 1,
+    "complete": 5,
+    "monitoring": 1,
+    "queued": 2
+  },
   "tasks": [
     {
       "id": "RSH-001",
@@ -22,7 +30,8 @@
         "Separate issue and pull-request results where behaviour differs.",
         "Document failed reproductions and possible confounding factors."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "complete"
     },
     {
       "id": "RSH-002",
@@ -43,7 +52,8 @@
         "Record author and merger identity, branch protection, and merge method.",
         "Provide dated results from at least two independent accounts using legitimate substantive changes."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "active"
     },
     {
       "id": "RSH-003",
@@ -64,7 +74,8 @@
         "Record processing delays and repository visibility.",
         "Do not create meaningless pull requests solely to inflate counts."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "complete"
     },
     {
       "id": "RSH-004",
@@ -85,7 +96,8 @@
         "Separate accepted answers from other verified or moderated answer states.",
         "Include at least two independent observations for any threshold promoted to confirmed."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "complete"
     },
     {
       "id": "RSH-005",
@@ -106,7 +118,8 @@
         "Separate current organization ownership from the exact timing of transfer and award processing.",
         "Document counterexamples, persistence, and revocation without soliciting artificial stars."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "monitoring"
     },
     {
       "id": "RSH-006",
@@ -127,7 +140,8 @@
         "Explain what the source proves and what it does not prove.",
         "Avoid account-specific private evidence."
       ],
-      "target_evidence_level": "official"
+      "target_evidence_level": "official",
+      "campaign_bucket": "complete"
     },
     {
       "id": "RSH-007",
@@ -148,14 +162,15 @@
         "Identify whether the source documents the badge, the repository list, or only mission use.",
         "Do not infer a complete qualification list from partial examples."
       ],
-      "target_evidence_level": "official"
+      "target_evidence_level": "official",
+      "campaign_bucket": "complete"
     },
     {
       "id": "RSH-008",
       "title": "Document award-processing delay observations",
       "achievement_slug": null,
       "task_type": "cross-achievement-observation",
-      "status": "open",
+      "status": "in-progress",
       "priority": "medium",
       "difficulty": "beginner",
       "good_first_issue": true,
@@ -167,7 +182,8 @@
         "Do not present a maximum guarantee from a small sample.",
         "Remove unnecessary account identifiers from submitted evidence."
       ],
-      "target_evidence_level": "observed"
+      "target_evidence_level": "observed",
+      "campaign_bucket": "active"
     },
     {
       "id": "RSH-009",
@@ -188,7 +204,8 @@
         "Include an email-mismatch or stripped-trailer negative control without misattributing a real person.",
         "Provide dated results from at least two independent accounts and retain failed reproductions."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "active"
     },
     {
       "id": "RSH-010",
@@ -209,7 +226,8 @@
         "Separate base, bronze, silver, and gold transitions and measure processing delay.",
         "Do not manufacture meaningless pull requests or misattribute co-authorship."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "blocked"
     },
     {
       "id": "RSH-011",
@@ -230,7 +248,8 @@
         "Distinguish accepted answers from verified answers, labels, reactions, and other moderation states.",
         "Provide observations from at least two independent accounts without publishing restricted content."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "queued"
     },
     {
       "id": "RSH-012",
@@ -251,7 +270,8 @@
         "Record cancellation or visibility-change outcomes without exposing financial or eligibility data.",
         "Provide dated observations from at least two independent accounts."
       ],
-      "target_evidence_level": "confirmed"
+      "target_evidence_level": "confirmed",
+      "campaign_bucket": "queued"
     }
   ]
 }

@@ -63,8 +63,8 @@ def load(path: Path) -> dict:
 def validate(missions: dict, schema: dict, form: str) -> list[str]:
     errors: list[str] = []
     mission_rows = missions.get("missions")
-    if not isinstance(mission_rows, list) or len(mission_rows) != 7:
-        errors.append("mission API must contain exactly seven missions")
+    if not isinstance(mission_rows, list) or len(mission_rows) != 8:
+        errors.append("mission API must contain exactly eight missions")
     if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
         errors.append("mission submission schema must be a closed object")
     required = set(schema.get("required", []))

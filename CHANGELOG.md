@@ -6,6 +6,18 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 ## Unreleased
 
+### Added
+
+- Phase 65 live research campaign control plane for `v1.5.0`, including lifecycle, campaign gates, task buckets, mission priority, and archived release history.
+- Dedicated campaign-status API, public campaign dashboard, and validation workflow.
+
+### Changed
+
+- Archived the published `v1.4.0` readiness gate as an immutable historical baseline.
+- Classified the seven unresolved research tasks as active, blocked, monitoring, or queued.
+- Activated the YOLO submitted-review-state mission and separated the blocked Pair tier-boundary mission from merge-attribution work.
+- Rewired evidence intelligence and promotion planning to the live campaign rather than the historical release gate.
+
 ### Changed
 
 - Narrowed the remaining YOLO, Pair Extraordinaire, and Starstruck contradiction backlog with five privacy-safe GitHub-owned event records.

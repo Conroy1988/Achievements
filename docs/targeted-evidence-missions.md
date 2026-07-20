@@ -9,20 +9,25 @@ permalink: /targeted-evidence-missions/
 
 These missions turn the evidence-intelligence ranking into bounded research. They prohibit spam, false attribution, repository manipulation, achievement farming, and automatic claim promotion.
 
-**Missions:** 7  
+**Missions:** 8  
 **Claims targeted:** 10  
 **Contradictions targeted:** 6  
+**Active missions:** 1  
+**Blocked missions:** 1  
 **Scheduled checkpoints:** 1
+
+Mission rank remains evidence-pressure order; the active status identifies the current execution priority.
 
 | Rank | Mission | Achievement | Pressure | Status |
 |---:|---|---|---:|---|
-| 1 | `MSN-001` — Preserve real co-author attribution across merge methods | pair-extraordinaire | 49 | participant-needed |
-| 2 | `MSN-004` — Find exact public observations around the Starstruck x4 boundary | starstruck | 34 | complete |
-| 3 | `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | pull-shark | 27 | scheduled |
-| 4 | `MSN-006` — Separate YOLO review-state and merger-identity conditions | yolo | 24 | participant-needed |
-| 5 | `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | galaxy-brain | 18 | complete |
-| 6 | `MSN-003` — Bracket the Quickdraw timing boundary | quickdraw | 18 | complete |
-| 7 | `MSN-007` — Maintain a passive cross-achievement processing-delay ledger | cross-achievement | 0 | passive-observation |
+| 1 | `MSN-001` — Preserve real co-author attribution across remaining merge methods | pair-extraordinaire | 49 | participant-needed |
+| 2 | `MSN-008` — Observe exact Pair Extraordinaire tier transitions | pair-extraordinaire | 49 | blocked |
+| 3 | `MSN-004` — Find exact public observations around the Starstruck x4 boundary | starstruck | 34 | complete |
+| 4 | `MSN-002` — Measure Pull Shark processing and attributed-count behaviour | pull-shark | 27 | scheduled |
+| 5 | `MSN-006` — Run the active YOLO submitted-review-state matrix | yolo | 24 | active |
+| 6 | `MSN-005` — Link accepted-answer counts to visible Galaxy Brain tiers | galaxy-brain | 18 | complete |
+| 7 | `MSN-003` — Bracket the Quickdraw timing boundary | quickdraw | 18 | complete |
+| 8 | `MSN-007` — Maintain a passive cross-achievement processing-delay ledger | cross-achievement | 0 | passive-observation |
 
 ## Operating rules
 
@@ -31,12 +36,12 @@ These missions turn the evidence-intelligence ranking into bounded research. The
 - Negative, blocked, delayed, and inconclusive outcomes remain visible.
 - Completion creates a reviewable evidence package, never an automatic promotion.
 
-### 1. MSN-001 — Preserve real co-author attribution across merge methods
+### 1. MSN-001 — Preserve real co-author attribution across remaining merge methods
 
-Collect legitimate collaborative pull requests that show whether merge commit, squash, and rebase workflows preserve qualifying final-history co-author attribution and any observable tier transition.
+Collect legitimate collaborative pull requests that show whether rebase, fast-forward, stripped-trailer, email-mismatch, and later rewrite states preserve qualifying final-history co-author attribution after squash preservation was observed.
 
 **Status:** `participant-needed`  
-**Claims:** `CLM-005`, `CLM-006`  
+**Claims:** `CLM-005`  
 **Contradictions:** `CTR-004`
 
 **Controls**
@@ -67,7 +72,44 @@ Collect legitimate collaborative pull requests that show whether merge commit, s
 - False Co-authored-by trailers are prohibited.
 - Every repository change must remain independently useful and reviewable.
 
-### 2. MSN-004 — Find exact public observations around the Starstruck x4 boundary
+### 2. MSN-008 — Observe exact Pair Extraordinaire tier transitions
+
+Preserve dated qualifying counts immediately below, at, and above the reported 1, 10, 24, and 48 boundaries without creating artificial pull requests or inferring counts from an x3 or x4 badge sighting.
+
+**Status:** `blocked`  
+**Claims:** `CLM-006`  
+**Contradictions:** `CTR-004`
+
+**Controls**
+
+- Record exact below, at, and above counts rather than relying on a displayed multiplier alone.
+- Inspect final default-branch history for retained account-linked Co-authored-by trailers.
+- Measure first-visible tier time separately from merge time and retain negative or delayed results.
+
+**Required evidence**
+
+- public_pull_request_url
+- final_commit_url
+- qualifying_count_before
+- qualifying_count_after
+- displayed_tier_before
+- displayed_tier_after
+- merge_method
+- account_linkage_state
+- first_visible_time_utc_or_cutoff
+
+**Stop conditions**
+
+- Stop if the exact qualifying count cannot be reconstructed from public history.
+- Do not create additional pull requests solely to approach or cross a boundary.
+- Stop if attribution would be false, misleading, or expose a private email address.
+
+**Ethics**
+
+- Every co-author must have made a real contribution.
+- A blocked boundary is preferable to manufactured activity or inferred evidence.
+
+### 3. MSN-004 — Find exact public observations around the Starstruck x4 boundary
 
 Locate public account-owned repositories immediately below and above the reported x4 boundary while preserving exact API star counts and ownership state.
 
@@ -104,7 +146,7 @@ Locate public account-owned repositories immediately below and above the reporte
 - This mission is observation-only.
 - Repository popularity must not be manipulated for research.
 
-### 3. MSN-002 — Measure Pull Shark processing and attributed-count behaviour
+### 4. MSN-002 — Measure Pull Shark processing and attributed-count behaviour
 
 Capture the public Pull Shark detail state after a bounded processing window and preserve a reproducible support package without generating additional badge-chasing activity.
 
@@ -142,11 +184,11 @@ Capture the public Pull Shark detail state after a bounded processing window and
 - Only existing substantive development activity is used.
 - Negative and inconclusive results remain visible in the evidence record.
 
-### 4. MSN-006 — Separate YOLO review-state and merger-identity conditions
+### 5. MSN-006 — Run the active YOLO submitted-review-state matrix
 
-Observe no-review, comment-only, changes-requested, and approved-review states across legitimate self-merged pull requests without weakening repository safeguards.
+Observe submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, automated-review, and differing-merger states across legitimate pull requests after the pending-review-request subcase was resolved.
 
-**Status:** `participant-needed`  
+**Status:** `active`  
 **Claims:** `CLM-004`  
 **Contradictions:** `CTR-002`
 
@@ -179,7 +221,7 @@ Observe no-review, comment-only, changes-requested, and approved-review states a
 - Normal review quality and repository safety take precedence over the mission.
 - A missing matrix cell is preferable to manufactured activity.
 
-### 5. MSN-005 — Link accepted-answer counts to visible Galaxy Brain tiers
+### 6. MSN-005 — Link accepted-answer counts to visible Galaxy Brain tiers
 
 Capture exact accepted-answer counts, moderation state, and profile-processing time around genuine Discussion answers and any observed tier transition.
 
@@ -215,7 +257,7 @@ Capture exact accepted-answer counts, moderation state, and profile-processing t
 - Questions and answers must be genuine and useful.
 - Maintainer moderation remains independent.
 
-### 6. MSN-003 — Bracket the Quickdraw timing boundary
+### 7. MSN-003 — Bracket the Quickdraw timing boundary
 
 Collect independent positive and negative controls around the reported five-minute boundary for both issues and pull requests under legitimate repository use.
 
@@ -252,7 +294,7 @@ Collect independent positive and negative controls around the reported five-minu
 - Every issue or pull request must have a legitimate repository purpose.
 - Repeated artificial open-close activity is prohibited.
 
-### 7. MSN-007 — Maintain a passive cross-achievement processing-delay ledger
+### 8. MSN-007 — Maintain a passive cross-achievement processing-delay ledger
 
 Record qualifying-event and first-visible-award timestamps from normal activity so processing delay is measured rather than assumed.
 

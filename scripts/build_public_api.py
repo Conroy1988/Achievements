@@ -41,6 +41,7 @@ AUXILIARY_ENDPOINTS = {
     "adjudication": Path("adjudication.json"),
     "contradiction_assessments": Path("contradiction-assessments.json"),
     "release_readiness": Path("release-readiness.json"),
+    "campaign_status": Path("campaign-status.json"),
 }
 AUXILIARY_COLLECTIONS = {
     "evidence": "records",
@@ -226,6 +227,10 @@ def validate_auxiliary(output: Path, errors: list[str]) -> None:
             for field in ("candidate_version", "status", "current_snapshot", "required_snapshot", "publication_rule"):
                 if field not in payload:
                     errors.append(f"api/release-readiness.json is missing {field}")
+        if name == "campaign_status":
+            for field in ("active_campaign", "campaign_gaps", "task_buckets", "primary_mission", "archived_campaigns", "metrics"):
+                if field not in payload:
+                    errors.append(f"api/campaign-status.json is missing {field}")
 
 
 def write_documents(output: Path, documents: dict[Path, object]) -> None:
