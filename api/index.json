@@ -19,6 +19,7 @@
     "acquisition_missions": "/Achievements/api/acquisition-missions.json",
     "adjudication": "/Achievements/api/adjudication.json",
     "auditor_rules": "/Achievements/api/auditor-rules.json",
+    "campaign_status": "/Achievements/api/campaign-status.json",
     "change_impact": "/Achievements/api/change-impact.json",
     "claims": "/Achievements/api/claims.json",
     "command_centre": "/Achievements/api/command-centre.json",

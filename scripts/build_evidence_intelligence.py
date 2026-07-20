@@ -17,7 +17,7 @@ INPUTS = {
     "boundaries": API / "threshold-boundaries.json",
     "adjudication": API / "adjudication.json",
     "contradictions": API / "contradiction-assessments.json",
-    "release": API / "release-readiness.json",
+    "campaign": API / "campaign-status.json",
 }
 
 
@@ -36,7 +36,7 @@ def validate(documents: dict[str, dict]) -> list[str]:
         "boundaries": ("programmes",),
         "adjudication": ("decisions", "metrics"),
         "contradictions": ("assessments", "metrics"),
-        "release": ("candidate_version", "status", "current_snapshot", "required_snapshot"),
+        "campaign": ("active_campaign", "campaign_gaps", "task_buckets"),
     }
     for name, fields in required.items():
         document = documents[name]
@@ -65,9 +65,11 @@ def validate(documents: dict[str, dict]) -> list[str]:
             if item.get("achievement_slug") not in coverage_slugs:
                 errors.append(f"{item.get('id', collection)}: unknown achievement")
 
-    release = documents["release"]
-    if release.get("status") not in {"blocked", "ready"}:
-        errors.append("release readiness status must be blocked or ready")
+    active_campaign = documents["campaign"].get("active_campaign", {})
+    if active_campaign.get("lifecycle") not in {"post-release", "collecting-evidence", "release-candidate", "release-ready"}:
+        errors.append("active campaign lifecycle is invalid")
+    if active_campaign.get("evidence_gate_status") not in {"blocked", "ready"}:
+        errors.append("active campaign evidence gate must be blocked or ready")
     return errors
 
 
@@ -100,7 +102,8 @@ def build(documents: dict[str, dict]) -> dict:
     boundaries = documents["boundaries"]["programmes"]
     decisions = documents["adjudication"]["decisions"]
     assessments = documents["contradictions"]["assessments"]
-    release = documents["release"]
+    campaign = documents["campaign"]
+    active_campaign = campaign["active_campaign"]
 
     claim_to_slug = {
         item["claim_id"]: item["achievement_slug"]
@@ -171,8 +174,8 @@ def build(documents: dict[str, dict]) -> dict:
 
     rows.sort(key=lambda item: (-item["pressure_score"], item["achievement_name"]))
 
-    current = release["current_snapshot"]
-    required = release["required_snapshot"]
+    current = active_campaign["current_snapshot"]
+    required = active_campaign["required_snapshot"]
     release_gaps = {
         "coverage_points_needed": round(
             max(0.0, required["minimum_coverage_score"] - current["coverage_score"]), 1
@@ -204,7 +207,7 @@ def build(documents: dict[str, dict]) -> dict:
             "/Achievements/api/threshold-boundaries.json",
             "/Achievements/api/adjudication.json",
             "/Achievements/api/contradiction-assessments.json",
-            "/Achievements/api/release-readiness.json",
+            "/Achievements/api/campaign-status.json",
         ],
         "metrics": {
             "achievement_count": len(rows),
@@ -223,7 +226,8 @@ def build(documents: dict[str, dict]) -> dict:
                 item.get("outcome") == "still-disputed" for item in assessments
             ),
             "overall_coverage_score": coverage["overall_coverage_score"],
-            "release_status": release["status"],
+            "campaign_lifecycle": active_campaign["lifecycle"],
+            "campaign_gate_status": active_campaign["evidence_gate_status"],
         },
         "pressure_formula": {
             "coverage_gap_weight": 0.45,
@@ -235,7 +239,9 @@ def build(documents: dict[str, dict]) -> dict:
             "negative_inconclusive_event_cap": 9,
             "maximum_score": 100,
         },
-        "release_candidate": release["candidate_version"],
+        "campaign_version": active_campaign["version"],
+        "campaign_gaps": release_gaps,
+        "release_candidate": active_campaign["version"],
         "release_gaps": release_gaps,
         "achievements": rows,
     }
@@ -254,15 +260,16 @@ def markdown(payload: dict) -> str:
         "",
         "## Evidence intelligence dashboard",
         "",
-        "This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the formal release gate.",
+        "This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the active research campaign lifecycle.",
         "",
         f"**Evidence coverage:** {metrics['overall_coverage_score']}/100  ",
         f"**Event-linked records:** {metrics['event_count']}  ",
         f"**Boundary investigations:** {metrics['boundary_programme_count']}  ",
         f"**Deferred adjudications:** {metrics['deferred_adjudication_count']}  ",
-        f"**Release status:** `{metrics['release_status']}`",
+        f"**Campaign lifecycle:** `{metrics['campaign_lifecycle']}`  ",
+        f"**Campaign gate:** `{metrics['campaign_gate_status']}`",
         "",
-        "## Distance to the evidence-quality release",
+        "## Distance to the active campaign gate",
         "",
         "| Gate | Remaining gap |",
         "|---|---:|",

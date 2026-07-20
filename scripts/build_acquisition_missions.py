@@ -14,7 +14,7 @@ DATA = ROOT / "data"
 API = ROOT / "api"
 DOCS = ROOT / "docs"
 MISSION_ID = re.compile(r"^MSN-[0-9]{3}$")
-STATUSES = {"participant-needed", "scheduled", "candidate-search", "passive-observation", "complete", "cancelled"}
+STATUSES = {"active", "participant-needed", "scheduled", "candidate-search", "passive-observation", "blocked", "complete", "cancelled"}
 GATES = {"claims_below_confirmed", "official_or_confirmed_claims", "open_contradictions", "coverage_score"}
 
 
@@ -134,6 +134,11 @@ def validate(programme: dict, queue: dict, protocols: dict, claims: dict, contra
     scheduled = [row for row in missions if row.get("status") == "scheduled"]
     if len(scheduled) != 1 or scheduled[0].get("achievement_slug") != "pull-shark":
         errors.append("exactly one scheduled Pull Shark checkpoint is required")
+    active = [row for row in missions if row.get("status") == "active"]
+    if len(active) != 1 or active[0].get("id") != programme.get("primary_mission_id") or active[0].get("achievement_slug") != "yolo":
+        errors.append("exactly one active YOLO primary mission is required")
+    if programme.get("campaign_version") != "v1.5.0":
+        errors.append("mission programme must identify the v1.5.0 campaign")
     return errors
 
 
@@ -164,12 +169,16 @@ def payload(programme: dict, intelligence: dict) -> dict:
         "status": "live",
         "policy": "/Achievements/targeted-evidence-missions/",
         "mission_date": programme["mission_date"],
+        "campaign_version": programme["campaign_version"],
+        "primary_mission_id": programme["primary_mission_id"],
         "count": len(missions),
         "metrics": {
             "mission_count": len(missions),
             "achievement_mission_count": sum(row["achievement_slug"] is not None for row in missions),
+            "active_count": statuses["active"],
             "scheduled_count": statuses["scheduled"],
             "participant_needed_count": statuses["participant-needed"],
+            "blocked_count": statuses["blocked"],
             "candidate_search_count": statuses["candidate-search"],
             "passive_observation_count": statuses["passive-observation"],
             "targeted_claim_count": len(claims),
@@ -177,7 +186,7 @@ def payload(programme: dict, intelligence: dict) -> dict:
             "research_task_count": len(tasks),
             "protocol_count": len(protocols),
         },
-        "release_gaps_at_launch": intelligence.get("release_gaps", {}),
+        "campaign_gaps_at_launch": intelligence.get("campaign_gaps", {}),
         "targeted_claim_ids": claims,
         "targeted_contradiction_ids": contradictions,
         "research_task_ids": tasks,
@@ -197,7 +206,10 @@ def markdown(programme: dict, intelligence: dict) -> str:
         f"**Missions:** {output['metrics']['mission_count']}  ",
         f"**Claims targeted:** {output['metrics']['targeted_claim_count']}  ",
         f"**Contradictions targeted:** {output['metrics']['targeted_contradiction_count']}  ",
+        f"**Active missions:** {output['metrics']['active_count']}  ",
+        f"**Blocked missions:** {output['metrics']['blocked_count']}  ",
         f"**Scheduled checkpoints:** {output['metrics']['scheduled_count']}", "",
+        "Mission rank remains evidence-pressure order; the active status identifies the current execution priority.", "",
         "| Rank | Mission | Achievement | Pressure | Status |", "|---:|---|---|---:|---|",
     ]
     for row in output["missions"]:

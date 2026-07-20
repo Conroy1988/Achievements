@@ -1,0 +1,54 @@
+name: Research campaign
+
+# The published v1.4.0 gate is historical; this workflow validates the live v1.5.0 lifecycle, evidence gate, and generated control plane.
+on:
+  pull_request:
+    paths:
+      - 'data/research-campaign.json'
+      - 'data/research-queue.json'
+      - 'data/acquisition-missions.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'api/coverage.json'
+      - 'api/status.json'
+      - 'api/campaign-status.json'
+      - 'docs/research-campaign-status.md'
+      - 'scripts/build_research_campaign.py'
+      - '.github/workflows/research-campaign.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/research-campaign.json'
+      - 'data/research-queue.json'
+      - 'data/acquisition-missions.json'
+      - 'data/claims.json'
+      - 'data/contradictions.json'
+      - 'api/coverage.json'
+      - 'api/status.json'
+      - 'api/campaign-status.json'
+      - 'docs/research-campaign-status.md'
+      - 'scripts/build_research_campaign.py'
+      - '.github/workflows/research-campaign.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate live research campaign
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Validate campaign source and generated outputs
+        run: python scripts/build_research_campaign.py --check --report research-campaign-report.md
+      - name: Upload campaign validation report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: research-campaign-validation
+          path: research-campaign-report.md
+          if-no-files-found: warn
+          retention-days: 30

@@ -13,7 +13,8 @@ The planner converts accepted mission-review promotion proposals into isolated i
 **Ready for maintainer review:** 0  
 **Blocked:** 0  
 **Automatic applications:** 0  
-**Current release status:** `ready`
+**Current campaign:** `v1.5.0`  
+**Campaign lifecycle:** `collecting-evidence`
 
 ## Planning rules
 
@@ -21,7 +22,7 @@ The planner converts accepted mission-review promotion proposals into isolated i
 - The planner must never write canonical claims, evidence, contradictions, missions, thresholds, release gates, tags, or releases.
 - Every plan requires a separate maintainer-reviewed pull request before canonical changes may occur.
 - Contradiction resolution is never implied by claim promotion and requires its own published criteria to pass.
-- Release readiness must be regenerated after the canonical change; the plan may not declare v1.4.0 publishable in advance.
+- The active campaign status must be regenerated after a canonical change; a plan may not advance the campaign lifecycle or declare a release ready.
 - Blocked plans remain public and may not be silently discarded.
 
 ## Promotion plans

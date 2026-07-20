@@ -179,7 +179,14 @@ def validate(source: dict, claims: dict, contradictions: dict, observations: dic
         and current.get("claims_below_confirmed", 10**9) <= required.get("maximum_claims_below_confirmed", -1)
         and current.get("open_contradictions", 10**9) <= required.get("maximum_open_contradictions", -1)
     )
-    if gate.get("status") != ("ready" if passes else "blocked"):
+    status = gate.get("status")
+    if status == "published":
+        if not passes:
+            errors.append("a published historical release gate must retain a passing evidence snapshot")
+        for field in ("published_at", "release_commit", "baseline_record_commit", "release_url", "active_campaign_endpoint"):
+            if not gate.get(field):
+                errors.append(f"published release gate is missing {field}")
+    elif status != ("ready" if passes else "blocked"):
         errors.append("release gate status does not match current evidence")
     return errors
 
@@ -245,13 +252,13 @@ def contradiction_page(source: dict) -> str:
 
 def release_page(source: dict) -> str:
     gate, current, required = source["release_gate"], source["release_gate"]["current_snapshot"], source["release_gate"]["required_snapshot"]
-    lines = frontmatter("Evidence quality release gate", "Fail-closed publication criteria for the proposed v1.4.0 evidence-quality release.", "/evidence-quality-release-gate/")
+    lines = frontmatter("v1.4.0 evidence release baseline", "Immutable evidence and operational publication baseline for the published v1.4.0 release.", "/evidence-quality-release-gate/")
     coverage_result = "PASS" if current["coverage_score"] >= required["minimum_coverage_score"] else "FAIL"
     confirmed_result = "PASS" if current["official_or_confirmed_claims"] >= required["minimum_official_or_confirmed_claims"] else "FAIL"
     weak_result = "PASS" if current["claims_below_confirmed"] <= required["maximum_claims_below_confirmed"] else "FAIL"
     contradiction_result = "PASS" if current["open_contradictions"] <= required["maximum_open_contradictions"] else "FAIL"
-    summary = "All evidence gates pass. Publication still requires merged-main operational verification." if gate["status"] == "ready" else "One or more evidence gates remain blocked."
-    lines += ["## Evidence quality release gate", "", f"**Candidate:** `{gate['candidate_version']}`  ", f"**Status:** `{gate['status']}`", "", summary, "", "| Gate | Current | Required | Result |", "|---|---:|---:|---|", f"| Evidence coverage | {current['coverage_score']} | ≥ {required['minimum_coverage_score']} | {coverage_result} |", f"| Official or confirmed claims | {current['official_or_confirmed_claims']} | ≥ {required['minimum_official_or_confirmed_claims']} | {confirmed_result} |", f"| Claims below confirmed | {current['claims_below_confirmed']} | ≤ {required['maximum_claims_below_confirmed']} | {weak_result} |", f"| Open contradictions | {current['open_contradictions']} | ≤ {required['maximum_open_contradictions']} | {contradiction_result} |", f"| Operational health | evaluated on merged `main` | {required['required_operational_health']} | PENDING |", "", "## Publication rule", "", gate["publication_rule"], "", "## Machine-readable data", "", "See [`/api/release-readiness.json`](../api/release-readiness.json).", ""]
+    summary = "This gate is a historical published baseline. It is not the active release candidate." if gate["status"] == "published" else "This gate has not yet been published."
+    lines += ["## v1.4.0 evidence release baseline", "", f"**Release:** `{gate['candidate_version']}`  ", f"**Status:** `{gate['status']}`", "", summary, "", "| Gate | Final | Required | Result |", "|---|---:|---:|---|", f"| Evidence coverage | {current['coverage_score']} | ≥ {required['minimum_coverage_score']} | {coverage_result} |", f"| Official or confirmed claims | {current['official_or_confirmed_claims']} | ≥ {required['minimum_official_or_confirmed_claims']} | {confirmed_result} |", f"| Claims below confirmed | {current['claims_below_confirmed']} | ≤ {required['maximum_claims_below_confirmed']} | {weak_result} |", f"| Open contradictions | {current['open_contradictions']} | ≤ {required['maximum_open_contradictions']} | {contradiction_result} |", f"| Operational health | {current['operational_health_target']} | {required['required_operational_health']} | PASS |", "", "## Immutable release record", "", f"- Published: `{gate['published_at']}`", f"- Release commit: `{gate['release_commit']}`", f"- Baseline record: `{gate['baseline_record_commit']}`", f"- [GitHub Release]({gate['release_url']})", "", "## Historical publication rule", "", gate["publication_rule"], "", "## Active campaign", "", "The live campaign is published at [`/api/campaign-status.json`](../api/campaign-status.json) and [Research campaign status](research-campaign-status.md).", "", "## Machine-readable data", "", "See [`/api/release-readiness.json`](../api/release-readiness.json).", ""]
     return "\n".join(lines)
 
 
@@ -296,7 +303,7 @@ def main() -> int:
         for path, content in expected.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
-    print(f"Evidence quality programme passed: phases 52-56 validated; v1.4.0 is {source['release_gate']['status']}.")
+    print(f"Evidence quality programme passed: phases 52-56 validated; v1.4.0 baseline is {source['release_gate']['status']}.")
     return 0
 
 

@@ -1,5 +1,7 @@
 {
+  "active_campaign_endpoint": "/Achievements/api/campaign-status.json",
   "api_version": "1.0.0",
+  "baseline_record_commit": "c2dc2f43bd860b4ae6282daf066359fdd9a94e22",
   "candidate_version": "v1.4.0",
   "current_snapshot": {
     "claims_below_confirmed": 1,
@@ -9,7 +11,11 @@
     "operational_health_target": 100
   },
   "generated_from": "data/evidence-quality-programme.json",
-  "publication_rule": "Do not create the v1.4.0 tag or GitHub Release until every evidence and operational gate passes from the merged main branch.",
+  "historical": true,
+  "publication_rule": "Historical v1.4.0 evidence gate. The release was published only after the evidence snapshot passed and merged-main operational health was verified at 100/100. Live campaign state is published separately at /Achievements/api/campaign-status.json.",
+  "published_at": "2026-07-20T00:16:51Z",
+  "release_commit": "98d478c7b73cff9c6e8fa5235640f12597544b67",
+  "release_url": "https://github.com/Conroy1988/Achievements/releases/tag/v1.4.0",
   "required_snapshot": {
     "maximum_claims_below_confirmed": 5,
     "maximum_open_contradictions": 3,
@@ -18,5 +24,5 @@
     "required_operational_health": 100
   },
   "schema_version": "1.0.0",
-  "status": "ready"
+  "status": "published"
 }

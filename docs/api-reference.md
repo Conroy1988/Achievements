@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Public data API
-description: Static JSON endpoints for achievements, evidence, research missions, intake, review and promotion contracts, analytics, adjudication, release readiness, schema, and repository health.
+description: Static JSON endpoints for achievements, evidence, research missions, intake, review and promotion contracts, analytics, adjudication, campaign lifecycle, release history, schema, and repository health.
 permalink: /api/
 ---
 
@@ -65,9 +65,10 @@ https://conroy1988.github.io/Achievements/api/
 | [`threshold-boundaries.json`](../api/threshold-boundaries.json) | Proposed boundaries, current brackets, blockers, and required next evidence |
 | [`adjudication.json`](../api/adjudication.json) | Fail-closed promotion rules and current human-review decisions |
 | [`contradiction-assessments.json`](../api/contradiction-assessments.json) | One current resolution assessment for every open contradiction |
-| [`release-readiness.json`](../api/release-readiness.json) | Deterministic v1.4.0 evidence and operational publication gate |
+| [`release-readiness.json`](../api/release-readiness.json) | Immutable published v1.4.0 evidence and operational baseline |
+| [`campaign-status.json`](../api/campaign-status.json) | Live v1.5.0 campaign lifecycle, task buckets, mission priority, gate distance, and archived release history |
 
-The discovery index now exposes **40 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-five auxiliary endpoints.
+The discovery index now exposes **41 public JSON files**: the aggregate catalogue, nine individual achievement records, schema, discovery, status, and twenty-five auxiliary endpoints.
 
 ## Response obligations
 
@@ -102,6 +103,7 @@ python scripts/build_public_observations.py
 python scripts/build_public_reconstructions.py
 python scripts/build_official_achievement_fragments.py
 python scripts/build_evidence_quality_programme.py
+python scripts/build_research_campaign.py
 python scripts/build_evidence_intelligence.py
 python scripts/build_acquisition_missions.py
 python scripts/build_mission_intake.py
@@ -140,7 +142,8 @@ The immutable `v1.4.0` source baseline is commit `98d478c7b73cff9c6e8fa5235640f1
 - [Threshold boundary programme](threshold-boundary-programme.md)
 - [Evidence adjudication engine](evidence-adjudication-engine.md)
 - [Contradiction resolution programme](contradiction-resolution-programme.md)
-- [Evidence quality release gate](evidence-quality-release-gate.md)
+- [Research campaign status](research-campaign-status.md)
+- [Published v1.4.0 release baseline](evidence-quality-release-gate.md)
 - [Public observation corpus](public-observation-corpus.md)
 - [Public reconstruction corpus](public-reconstruction-corpus.md)
 - [Official achievement fragments](official-achievement-fragments.md)

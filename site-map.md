@@ -11,6 +11,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 ## Public tools
 
 - [Research command centre](research-command-centre.md)
+- [Research campaign status](docs/research-campaign-status.md)
 - [Evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md)
 - [Targeted evidence missions](docs/targeted-evidence-missions.md)
 - [Mission execution intake](docs/mission-execution-intake.md)
@@ -34,6 +35,7 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 
 ## Research operations
 
+- [Research campaign status](docs/research-campaign-status.md)
 - [Evidence road to 100](docs/evidence-road-to-100.md)
 - [Evidence intelligence dashboard](docs/evidence-intelligence-dashboard.md)
 - [Targeted evidence acquisition missions](docs/targeted-evidence-missions.md)
@@ -85,7 +87,8 @@ Use this page as the central route into the GitHub Achievement Encyclopedia.
 - [Threshold boundaries](api/threshold-boundaries.json)
 - [Adjudication decisions](api/adjudication.json)
 - [Contradiction assessments](api/contradiction-assessments.json)
-- [Evidence release readiness](api/release-readiness.json)
+- [Live campaign status](api/campaign-status.json)
+- [Published release baseline](api/release-readiness.json)
 - [Reproduction protocols](api/lab-protocols.json)
 - [Profile auditor rules](api/auditor-rules.json)
 - [Evidence submission schema](api/submission-schema.json)

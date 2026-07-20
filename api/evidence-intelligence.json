@@ -156,15 +156,23 @@
     }
   ],
   "api_version": "1.0.0",
+  "campaign_gaps": {
+    "claims_to_promote_to_confirmed_or_official": 0,
+    "contradictions_to_resolve": 1,
+    "coverage_points_needed": 0.8,
+    "official_or_confirmed_claims_needed": 0
+  },
+  "campaign_version": "v1.5.0",
   "metrics": {
     "achievement_count": 9,
     "active_achievement_count": 7,
     "boundary_programme_count": 5,
+    "campaign_gate_status": "blocked",
+    "campaign_lifecycle": "collecting-evidence",
     "deferred_adjudication_count": 7,
     "event_count": 16,
     "narrowed_contradiction_count": 3,
     "overall_coverage_score": 91.2,
-    "release_status": "ready",
     "still_disputed_contradiction_count": 0
   },
   "pressure_formula": {
@@ -177,11 +185,11 @@
     "negative_inconclusive_event_points_each": 3,
     "still_disputed_contradiction_points": 20
   },
-  "release_candidate": "v1.4.0",
+  "release_candidate": "v1.5.0",
   "release_gaps": {
     "claims_to_promote_to_confirmed_or_official": 0,
-    "contradictions_to_resolve": 0,
-    "coverage_points_needed": 0.0,
+    "contradictions_to_resolve": 1,
+    "coverage_points_needed": 0.8,
     "official_or_confirmed_claims_needed": 0
   },
   "schema_version": "1.0.0",
@@ -191,7 +199,7 @@
     "/Achievements/api/threshold-boundaries.json",
     "/Achievements/api/adjudication.json",
     "/Achievements/api/contradiction-assessments.json",
-    "/Achievements/api/release-readiness.json"
+    "/Achievements/api/campaign-status.json"
   ],
   "status": "live"
 }

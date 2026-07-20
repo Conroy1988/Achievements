@@ -56,16 +56,16 @@
       "title": "Document award-processing delay observations",
       "achievement_slug": null,
       "declared_priority": "medium",
-      "status": "open",
+      "status": "in-progress",
       "good_first_issue": true,
-      "score": 58,
+      "score": 48,
       "score_components": {
         "declared_priority": 20,
         "evidence_weakness": 30,
         "open_dispute": 0,
         "active_scope": 5,
         "good_first_issue": 3,
-        "status_adjustment": 0
+        "status_adjustment": -10
       },
       "claim_ids": [],
       "contradiction_ids": [],
