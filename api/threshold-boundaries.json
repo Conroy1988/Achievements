@@ -25,7 +25,7 @@
       "achievement_slug": "pair-extraordinaire",
       "claim_id": "CLM-006",
       "id": "BND-002",
-      "next_evidence": "Capture final-history co-author attribution and visible tier state around each merge-method boundary.",
+      "next_evidence": "GitHub-owned x3 and x4 fragments confirm that multiple Pair Extraordinaire tiers exist, and two independent squash-merge cases preserve final-history attribution. Exact 1, 10, 24, and 48 boundaries still require dated below/at/above account counts; a high-tier sighting alone cannot confirm them.",
       "observation_ids": [
         "OBS-2026-006"
       ],
@@ -35,7 +35,7 @@
         24,
         48
       ],
-      "status": "blocked-missing-coauthor-counts",
+      "status": "blocked-missing-boundary-counts",
       "unit": "qualifying merged pull requests"
     },
     {

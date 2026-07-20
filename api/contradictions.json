@@ -46,11 +46,22 @@
         "RSH-002"
       ],
       "positions": [
-        "The relevant condition is absence of an approving review.",
-        "Any formal review object, including comments or requested changes, may alter qualification."
+        "A requested reviewer without a submitted review does not itself defeat YOLO in the GitHub-linked observed case.",
+        "Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, or automated review objects may affect qualification differently."
       ],
-      "resolution_criteria": "Controlled tests covering no review, comment-only, changes-requested, and approved review states.",
-      "last_reviewed": "2026-07-19"
+      "resolution_criteria": "Controlled tests covering submitted comment-only, changes-requested, approved, dismissed, and automation review states, plus author-versus-merger identity; the pending-review-request subcase is resolved.",
+      "last_reviewed": "2026-07-20",
+      "resolved_subcases": [
+        "A reviewer may be requested while zero formal reviews are submitted; GitHub still linked the merge as a YOLO event."
+      ],
+      "remaining_subcases": [
+        "Submitted COMMENT review",
+        "Submitted REQUEST_CHANGES review",
+        "Submitted APPROVE review",
+        "Dismissed review",
+        "Automation-submitted review",
+        "Author and merger are different accounts"
+      ]
     },
     {
       "id": "CTR-003",
@@ -97,11 +108,21 @@
         "RSH-010"
       ],
       "positions": [
-        "A valid Co-authored-by trailer should preserve attribution.",
-        "Squash merges, rewritten commits, and email matching can prevent the final merged history from retaining qualifying attribution."
+        "A squash merge can preserve Pair Extraordinaire attribution when the final commit retains an account-linked Co-authored-by trailer.",
+        "Rebase, stripped trailers, email mismatch, and later history rewriting can still alter or remove final attribution."
       ],
-      "resolution_criteria": "Controlled merge-method tests that inspect final commit attribution and subsequent award visibility.",
-      "last_reviewed": "2026-07-19"
+      "resolution_criteria": "Controlled rebase or fast-forward, stripped-trailer, email-mismatch, and post-merge rewrite tests with final-history inspection; the squash-preservation subcase is supported by two independent GitHub-linked events.",
+      "last_reviewed": "2026-07-20",
+      "resolved_subcases": [
+        "Two independent squash merges retained account-linked trailers in their final commits and are linked by GitHub from Pair Extraordinaire history."
+      ],
+      "remaining_subcases": [
+        "Rebase or fast-forward merge",
+        "Trailer removed during squash",
+        "Email not linked to account",
+        "Commit history rewritten after merge",
+        "Exact unit counting across merge methods"
+      ]
     },
     {
       "id": "CTR-005",
@@ -147,11 +168,22 @@
         "RSH-005"
       ],
       "positions": [
-        "Stars on a repository owned by the account contribute to the achievement.",
-        "Organization ownership, repository transfer, forks, archival, and falling star counts may change attribution or persistence."
+        "GitHub can retain creator attribution when a milestone repository is currently owned by an organization.",
+        "Transfer timing, forks, archival, falling counts, deletion, restoration, and revocation may still affect attribution or persistence."
       ],
-      "resolution_criteria": "Documented public edge cases covering ownership state before and after award or transfer.",
-      "last_reviewed": "2026-07-19"
+      "resolution_criteria": "Dated before-and-after observations for transfer timing, forks, archival, falling counts, deletion or restoration, and award persistence; the current organization-ownership subcase is supported by two independent GitHub-owned fragments.",
+      "last_reviewed": "2026-07-20",
+      "resolved_subcases": [
+        "GitHub currently credits balloob for home-assistant/core and tiangolo for fastapi/fastapi while both repositories are organization-owned."
+      ],
+      "remaining_subcases": [
+        "Transfer timing relative to milestone",
+        "Fork ownership",
+        "Archived repository",
+        "Falling below a milestone",
+        "Repository deletion or restoration",
+        "Award or tier revocation"
+      ]
     }
   ]
 }

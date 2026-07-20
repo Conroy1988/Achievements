@@ -19,7 +19,7 @@ Pair Extraordinaire recognises genuine collaboration recorded through co-authore
 
 GitHub's live detail fragment states that Pair Extraordinaire recognises **coauthored commits on merged pull requests**.
 
-A visible `Co-authored-by:` trailer proves commit attribution, while squash, rebase, email matching and rewritten-history counting remain separate limitations.
+A visible `Co-authored-by:` trailer proves commit attribution. Two independent GitHub-linked events now show that squash merging can preserve Pair Extraordinaire attribution when the final commit retains the account-linked trailer. Rebase, stripped-trailer, email-matching, later rewrite, and exact counting behavior remain separate limitations.
 
 ## Community-reported progression
 
@@ -68,12 +68,13 @@ Do not publish private repository names, private commit content, personal email 
 - **Confirmed:** Correctly formatted co-author trailers are displayed on GitHub after the commit is pushed.
 - **Official:** GitHub's live product fragment states that the achievement recognises coauthored commits on merged pull requests.
 - **Community-reported:** The thresholds are 1, 10, 24, and 48 qualifying merged pull requests.
-- **Unknown:** The exact treatment of every private-repository, squash-merge, rebase, rewritten-history, and delayed-processing scenario.
+- **Observed:** Two independent squash merges retained account-linked trailers in their final commits and appear in GitHub's Pair Extraordinaire history.
+- **Unknown:** Rebase or fast-forward behavior, stripped trailers, email mismatch, later rewritten history, private repositories, exact unit counting, and delayed processing.
 
 ## Known limitations and edge cases
 
 - A trailer using an unassociated email may display as text without linking to the intended account.
-- Rewriting or squashing commits can remove or alter the original trailer.
+- Squash merging can preserve attribution when the final commit retains the linked trailer, but settings or edits that strip the trailer can still remove it.
 - Attribution added only to a pull-request description or comment does not create a co-authored commit.
 - A co-authored commit on an unmerged branch does not satisfy the commonly reported merged-pull-request condition.
 - GitHub may process contribution attribution and achievement progression on different schedules.
@@ -114,6 +115,6 @@ Material changes should therefore be documented with dated, reproducible evidenc
 
 ## Last verified
 
-**19 July 2026** — verified GitHub's first-party Pair Extraordinaire fragment and linked co-author history. The broad trigger is official; numerical tier thresholds and merge-rewrite edge cases remain community-reported or unknown.
+**20 July 2026** — verified GitHub's first-party Pair Extraordinaire fragments plus two independent linked squash-merge histories. The broad trigger is official and squash preservation is observed; numerical thresholds and remaining rewrite states stay community-reported or unknown.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

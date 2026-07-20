@@ -8,16 +8,16 @@
       "title": "Verify Pair Extraordinaire tier thresholds",
       "achievement_slug": "pair-extraordinaire",
       "declared_priority": "high",
-      "status": "open",
+      "status": "blocked",
       "good_first_issue": false,
-      "score": 75,
+      "score": 85,
       "score_components": {
         "declared_priority": 30,
         "evidence_weakness": 25,
         "open_dispute": 10,
         "active_scope": 10,
         "good_first_issue": 0,
-        "status_adjustment": 0
+        "status_adjustment": 10
       },
       "claim_ids": [
         "CLM-006"
@@ -32,16 +32,16 @@
       "title": "Independently reproduce the YOLO review-state trigger",
       "achievement_slug": "yolo",
       "declared_priority": "critical",
-      "status": "open",
+      "status": "in-progress",
       "good_first_issue": false,
-      "score": 70,
+      "score": 60,
       "score_components": {
         "declared_priority": 40,
         "evidence_weakness": 0,
         "open_dispute": 20,
         "active_scope": 10,
         "good_first_issue": 0,
-        "status_adjustment": 0
+        "status_adjustment": -10
       },
       "claim_ids": [
         "CLM-004"
@@ -76,16 +76,16 @@
       "title": "Verify Starstruck ownership edge cases",
       "achievement_slug": "starstruck",
       "declared_priority": "high",
-      "status": "open",
+      "status": "in-progress",
       "good_first_issue": false,
-      "score": 55,
+      "score": 45,
       "score_components": {
         "declared_priority": 30,
         "evidence_weakness": 0,
         "open_dispute": 15,
         "active_scope": 10,
         "good_first_issue": 0,
-        "status_adjustment": 0
+        "status_adjustment": -10
       },
       "claim_ids": [
         "CLM-009",
@@ -101,16 +101,16 @@
       "title": "Reproduce Pair Extraordinaire merge attribution",
       "achievement_slug": "pair-extraordinaire",
       "declared_priority": "high",
-      "status": "open",
+      "status": "in-progress",
       "good_first_issue": false,
-      "score": 50,
+      "score": 40,
       "score_components": {
         "declared_priority": 30,
         "evidence_weakness": 0,
         "open_dispute": 10,
         "active_scope": 10,
         "good_first_issue": 0,
-        "status_adjustment": 0
+        "status_adjustment": -10
       },
       "claim_ids": [
         "CLM-005"

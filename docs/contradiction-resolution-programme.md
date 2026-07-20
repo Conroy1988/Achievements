@@ -16,11 +16,11 @@ All six contradictions have been reassessed against event-linked and boundary ev
 | Contradiction | Outcome | Evidence basis |
 |---|---|---|
 | `CTR-001` | resolved | `GAF-2026-001` |
-| `CTR-002` | narrowed | `EVT-2026-002`, `EVT-2026-008`, `EVT-2026-009` |
+| `CTR-002` | narrowed | `EVT-2026-002`, `EVT-2026-008`, `EVT-2026-009`, `EVT-2026-012` |
 | `CTR-003` | resolved | `GAF-2026-004` |
-| `CTR-004` | narrowed | `BND-002`, `EVT-2026-010`, `EVT-2026-011` |
+| `CTR-004` | narrowed | `BND-002`, `EVT-2026-010`, `EVT-2026-011`, `EVT-2026-013`, `EVT-2026-014` |
 | `CTR-005` | resolved | `GAF-2026-005` |
-| `CTR-006` | narrowed | `GAF-2026-006` |
+| `CTR-006` | narrowed | `GAF-2026-006`, `EVT-2026-015`, `EVT-2026-016` |
 
 ## Assessment details
 
@@ -30,7 +30,7 @@ Resolved by GitHub's first-party five-minute Quickdraw criterion; issue equivale
 
 ### CTR-002 — narrowed
 
-Do comment-only, changes-requested, dismissed, or approved review objects prevent the award, and must the author also be the merger?
+A pending review request is now distinguished from a submitted review and did not prevent the linked award. Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed-review, automation-review, and merger-identity cases remain open.
 
 ### CTR-003 — resolved
 
@@ -38,7 +38,7 @@ Resolved by GitHub's first-party x4 Pull Shark milestone history: 2, 16, 128, an
 
 ### CTR-004 — narrowed
 
-How squash, rebase, email mismatch, and rewritten history affect final achievement attribution and exact tier counts.
+Two independent GitHub-linked squash cases preserve attribution when the final commit retains the trailer. Rebase or fast-forward behavior, stripped trailers, email mismatch, later rewrites, and exact tier counts remain open.
 
 ### CTR-005 — resolved
 
@@ -46,7 +46,7 @@ Resolved by GitHub's first-party x4 Galaxy Brain milestone history: 2, 8, 16, an
 
 ### CTR-006 — narrowed
 
-The exact star milestones are resolved; repository transfer, organisation ownership, forks, archival, falling counts, and persistence remain open.
+Current organization ownership does not necessarily erase creator attribution: two GitHub-owned fragments credit personal creators for organization-owned repositories. Transfer timing, forks, archival, falling counts, deletion, restoration, and award persistence remain open.
 
 ## Machine-readable data
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "programme_date": "2026-07-19",
+  "programme_date": "2026-07-20",
   "policy": "docs/evidence-adjudication-engine.md",
   "phases": [
     {
@@ -296,6 +296,128 @@
         "The exact attributed qualifying count is not public.",
         "The example does not resolve every squash, rebase, email-matching, or history-rewrite case."
       ]
+    },
+    {
+      "id": "EVT-2026-012",
+      "achievement_slug": "yolo",
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "event_type": "merge-with-review-request-but-no-submitted-review",
+      "event_url": "https://github.com/Schweinepriester/achievement-testarea/pull/4",
+      "subject_login": "Schweinepriester",
+      "created_at": "2022-06-12T20:40:00Z",
+      "completed_at": "2022-06-12T20:40:02Z",
+      "elapsed_seconds": 2,
+      "public_facts": [
+        "The pull request had a requested reviewer at merge time, but the public reviews endpoint contains no submitted review objects.",
+        "GitHub's achievement-detail fragment links this pull request and states that it was merged without a review."
+      ],
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "adjudication_status": "accepted",
+      "independent_account_count": 1,
+      "limitations": [
+        "This establishes that requesting a reviewer is not itself a submitted review for this observed award.",
+        "It does not establish how submitted COMMENT, REQUEST_CHANGES, APPROVE, or dismissed reviews affect qualification."
+      ]
+    },
+    {
+      "id": "EVT-2026-013",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "event_type": "squash-merge-preserving-coauthor-attribution",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/6271",
+      "subject_login": "Schweinepriester",
+      "created_at": "2022-05-15T13:45:46Z",
+      "completed_at": "2022-05-26T04:31:39Z",
+      "elapsed_seconds": 917153,
+      "public_facts": [
+        "The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.",
+        "GitHub's Pair Extraordinaire x3 achievement-detail fragment links this pull request in its contributing history."
+      ],
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "adjudication_status": "accepted",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose how many qualifying pull requests GitHub attributed to the account.",
+        "One successful squash configuration does not prove that every squash setting preserves attribution."
+      ]
+    },
+    {
+      "id": "EVT-2026-014",
+      "achievement_slug": "pair-extraordinaire",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "event_type": "squash-merge-preserving-coauthor-attribution",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/7306",
+      "subject_login": "Schweinepriester",
+      "created_at": "2025-04-14T01:33:01Z",
+      "completed_at": "2025-04-16T05:41:36Z",
+      "elapsed_seconds": 187715,
+      "public_facts": [
+        "The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.",
+        "GitHub's Pair Extraordinaire x3 achievement-detail fragment independently links this pull request in its contributing history."
+      ],
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "adjudication_status": "accepted",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose the internal attributed count or the exact tier boundary crossed by this event.",
+        "Rebase, stripped-trailer, mismatched-email, and later history-rewrite cases remain outside this observation."
+      ]
+    },
+    {
+      "id": "EVT-2026-015",
+      "achievement_slug": "starstruck",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "event_type": "creator-attribution-on-organization-owned-repository",
+      "event_url": "https://github.com/users/balloob/achievements/starstruck/detail?hovercard=1",
+      "subject_login": "balloob",
+      "created_at": "2026-07-20T01:38:16Z",
+      "completed_at": "2026-07-20T01:38:16Z",
+      "elapsed_seconds": 0,
+      "public_facts": [
+        "GitHub's Starstruck x4 fragment credits balloob and links home-assistant/core for published star milestones.",
+        "The linked repository is currently owned by the home-assistant organization rather than the credited personal account."
+      ],
+      "award_link": "github-owned-achievement-fragment",
+      "adjudication_status": "accepted",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not publish the repository transfer date or prove whether transfer occurred before or after each milestone.",
+        "Fork, archive, deletion, restoration, falling-count, and award-removal behavior remain unresolved."
+      ]
+    },
+    {
+      "id": "EVT-2026-016",
+      "achievement_slug": "starstruck",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "event_type": "creator-attribution-on-organization-owned-repository",
+      "event_url": "https://github.com/users/tiangolo/achievements/starstruck/detail?hovercard=1",
+      "subject_login": "tiangolo",
+      "created_at": "2026-07-20T01:38:16Z",
+      "completed_at": "2026-07-20T01:38:16Z",
+      "elapsed_seconds": 0,
+      "public_facts": [
+        "GitHub's Starstruck x4 fragment credits tiangolo and links fastapi/fastapi for the published 4096-star milestone.",
+        "The linked repository is currently owned by the fastapi organization rather than the credited personal account."
+      ],
+      "award_link": "github-owned-achievement-fragment",
+      "adjudication_status": "accepted",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose the ownership state at the exact moment the milestone or award was processed.",
+        "It does not resolve forks, archival, falling star counts, deletion, restoration, or revocation behavior."
+      ]
     }
   ],
   "boundary_programmes": [
@@ -331,8 +453,8 @@
       "observation_ids": [
         "OBS-2026-006"
       ],
-      "status": "blocked-missing-coauthor-counts",
-      "next_evidence": "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
+      "status": "blocked-missing-boundary-counts",
+      "next_evidence": "GitHub-owned x3 and x4 fragments confirm that multiple Pair Extraordinaire tiers exist, and two independent squash-merge cases preserve final-history attribution. Exact 1, 10, 24, and 48 boundaries still require dated below/at/above account counts; a high-tier sighting alone cannot confirm them."
     },
     {
       "id": "BND-003",
@@ -445,7 +567,7 @@
       "decision": "defer",
       "current_level": "official",
       "proposed_level": "official",
-      "reason": "GitHub's live YOLO fragment states 'Merged without a review'. Alternate review-state and merger-identity edge cases remain separate research."
+      "reason": "GitHub's linked YOLO event shows that an outstanding review request with zero submitted reviews can still be classified as 'Merged without a review'. Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed-review, and merger-identity cases remain separate controls."
     },
     {
       "id": "ADJ-D003",
@@ -461,7 +583,7 @@
       "decision": "defer",
       "current_level": "community-reported",
       "proposed_level": "observed",
-      "reason": "The x4 sighting lacks final-history co-author counts and merge-method controls."
+      "reason": "GitHub-owned x3 and x4 fragments confirm tier existence, but not the reported 1, 10, 24, and 48 boundaries. The numeric claim remains community-reported pending controlled boundary counts."
     },
     {
       "id": "ADJ-D005",
@@ -477,7 +599,7 @@
       "decision": "defer",
       "current_level": "official",
       "proposed_level": "official",
-      "reason": "GitHub's live Starstruck x4 fragment publishes the complete star milestone table; ownership-transfer persistence remains open."
+      "reason": "GitHub's Starstruck fragments publish the complete milestone table and retain creator attribution for at least two currently organization-owned repositories. Transfer timing, forks, archival, falling counts, and award persistence remain bounded edge cases."
     },
     {
       "id": "ADJ-D007",
@@ -485,7 +607,7 @@
       "decision": "defer",
       "current_level": "official",
       "proposed_level": "official",
-      "reason": "GitHub's live Pair Extraordinaire fragment states the broad coauthored-commit trigger; numerical tiers and merge-rewrite edge cases remain open."
+      "reason": "The broad trigger is official. Two independent GitHub-linked squash cases show that attribution can survive when the final commit retains the account-linked trailer; rebase, stripped trailers, email mismatch, later rewrites, and exact tier counts remain open."
     }
   ],
   "contradiction_assessments": [
@@ -503,9 +625,10 @@
       "basis_ids": [
         "EVT-2026-002",
         "EVT-2026-008",
-        "EVT-2026-009"
+        "EVT-2026-009",
+        "EVT-2026-012"
       ],
-      "remaining_question": "Do comment-only, changes-requested, dismissed, or approved review objects prevent the award, and must the author also be the merger?"
+      "remaining_question": "A pending review request is now distinguished from a submitted review and did not prevent the linked award. Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed-review, automation-review, and merger-identity cases remain open."
     },
     {
       "contradiction_id": "CTR-003",
@@ -521,9 +644,11 @@
       "basis_ids": [
         "BND-002",
         "EVT-2026-010",
-        "EVT-2026-011"
+        "EVT-2026-011",
+        "EVT-2026-013",
+        "EVT-2026-014"
       ],
-      "remaining_question": "How squash, rebase, email mismatch, and rewritten history affect final achievement attribution and exact tier counts."
+      "remaining_question": "Two independent GitHub-linked squash cases preserve attribution when the final commit retains the trailer. Rebase or fast-forward behavior, stripped trailers, email mismatch, later rewrites, and exact tier counts remain open."
     },
     {
       "contradiction_id": "CTR-005",
@@ -537,9 +662,11 @@
       "contradiction_id": "CTR-006",
       "outcome": "narrowed",
       "basis_ids": [
-        "GAF-2026-006"
+        "GAF-2026-006",
+        "EVT-2026-015",
+        "EVT-2026-016"
       ],
-      "remaining_question": "The exact star milestones are resolved; repository transfer, organisation ownership, forks, archival, falling counts, and persistence remain open."
+      "remaining_question": "Current organization ownership does not necessarily erase creator attribution: two GitHub-owned fragments credit personal creators for organization-owned repositories. Transfer timing, forks, archival, falling counts, deletion, restoration, and award persistence remain open."
     }
   ],
   "release_gate": {

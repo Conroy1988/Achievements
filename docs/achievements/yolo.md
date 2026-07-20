@@ -17,8 +17,9 @@ YOLO is generally observed as a single-level achievement with no published tier 
 - The qualifying object must be a pull request.
 - The pull request must be merged rather than merely closed.
 - No formal pull-request review should have been submitted before merge.
+- A requested reviewer is not itself a submitted review: GitHub links one award event where a reviewer was requested but the reviews endpoint remained empty.
 - Branch protection, rulesets, and organisation policy may require reviews and prevent this route.
-- Ordinary issue comments and pull-request conversation comments are distinct from submitted reviews, but GitHub does not publish every internal qualification detail.
+- Ordinary issue comments and pull-request conversation comments are distinct from submitted reviews; submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, and automated review states remain under investigation.
 
 ## Award timing
 
@@ -36,7 +37,8 @@ The merge event appears immediately in the pull request, while profile-achieveme
 
 - GitHub officially documents pull-request merges, reviews, branch protection, and rulesets.
 - GitHub's live product fragment officially states `Merged without a review`.
-- Alternate review states and structured merger identity remain unresolved implementation edge cases.
+- A pending review request with zero submitted reviews is observed as compatible with the linked award.
+- Submitted review states and structured merger identity remain unresolved implementation edge cases.
 
 ## Known limitations and edge cases
 
@@ -72,6 +74,6 @@ YOLO was introduced with GitHub profile achievements. GitHub's live detail fragm
 
 ## Last verified
 
-**19 July 2026.** Scope: GitHub's first-party `Merged without a review` fragment, linked qualifying pull request, current review controls, and unresolved alternate-review and merger-identity edge cases.
+**20 July 2026.** Scope: GitHub's first-party `Merged without a review` fragment, its linked pull request with a requested reviewer but zero submitted reviews, and the remaining submitted-review and merger-identity controls.
 
 [Back to the achievement index]({{ site.baseurl }}/docs/achievement-index.html)

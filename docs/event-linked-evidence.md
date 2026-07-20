@@ -9,7 +9,7 @@ permalink: /event-linked-evidence/
 
 This register links public GitHub events to achievement claims. A link is not automatically causal: participant reports, processing delay, hidden attribution, and missing controls remain explicit.
 
-**Events:** 11  
+**Events:** 16  
 **Candidate observations:** 2  
 **Negative or inconclusive:** 3
 
@@ -26,6 +26,11 @@ This register links public GitHub events to achievement claims. A link is not au
 | `EVT-2026-009` | yolo | [pull-request-merge-without-formal-review](https://github.com/tronicapp/tronic-track/pull/1) | accepted | 9 seconds |
 | `EVT-2026-010` | pair-extraordinaire | [coauthored-commit-in-merged-pull-request](https://github.com/devflash101/POC/pull/11) | accepted | 21 seconds |
 | `EVT-2026-011` | pair-extraordinaire | [coauthored-final-merge-commit](https://github.com/Fyrd/caniuse/pull/7466) | accepted | 533698 seconds |
+| `EVT-2026-012` | yolo | [merge-with-review-request-but-no-submitted-review](https://github.com/Schweinepriester/achievement-testarea/pull/4) | accepted | 2 seconds |
+| `EVT-2026-013` | pair-extraordinaire | [squash-merge-preserving-coauthor-attribution](https://github.com/Fyrd/caniuse/pull/6271) | accepted | 917153 seconds |
+| `EVT-2026-014` | pair-extraordinaire | [squash-merge-preserving-coauthor-attribution](https://github.com/Fyrd/caniuse/pull/7306) | accepted | 187715 seconds |
+| `EVT-2026-015` | starstruck | [creator-attribution-on-organization-owned-repository](https://github.com/users/balloob/achievements/starstruck/detail?hovercard=1) | accepted | 0 seconds |
+| `EVT-2026-016` | starstruck | [creator-attribution-on-organization-owned-repository](https://github.com/users/tiangolo/achievements/starstruck/detail?hovercard=1) | accepted | 0 seconds |
 
 ## Event records
 
@@ -215,6 +220,91 @@ This register links public GitHub events to achievement claims. A link is not au
 
 - The exact attributed qualifying count is not public.
 - The example does not resolve every squash, rebase, email-matching, or history-rewrite case.
+
+### EVT-2026-012 — yolo
+
+**Claims:** `CLM-004`  
+**Account:** `Schweinepriester`  
+**Award link:** `github-owned-achievement-fragment-linked-event`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The pull request had a requested reviewer at merge time, but the public reviews endpoint contains no submitted review objects.
+- GitHub's achievement-detail fragment links this pull request and states that it was merged without a review.
+
+**Limitations**
+
+- This establishes that requesting a reviewer is not itself a submitted review for this observed award.
+- It does not establish how submitted COMMENT, REQUEST_CHANGES, APPROVE, or dismissed reviews affect qualification.
+
+### EVT-2026-013 — pair-extraordinaire
+
+**Claims:** `CLM-005`  
+**Account:** `Schweinepriester`  
+**Award link:** `github-owned-achievement-fragment-linked-event`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.
+- GitHub's Pair Extraordinaire x3 achievement-detail fragment links this pull request in its contributing history.
+
+**Limitations**
+
+- The fragment does not expose how many qualifying pull requests GitHub attributed to the account.
+- One successful squash configuration does not prove that every squash setting preserves attribution.
+
+### EVT-2026-014 — pair-extraordinaire
+
+**Claims:** `CLM-005`  
+**Account:** `Schweinepriester`  
+**Award link:** `github-owned-achievement-fragment-linked-event`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.
+- GitHub's Pair Extraordinaire x3 achievement-detail fragment independently links this pull request in its contributing history.
+
+**Limitations**
+
+- The fragment does not expose the internal attributed count or the exact tier boundary crossed by this event.
+- Rebase, stripped-trailer, mismatched-email, and later history-rewrite cases remain outside this observation.
+
+### EVT-2026-015 — starstruck
+
+**Claims:** `CLM-009`, `CLM-010`  
+**Account:** `balloob`  
+**Award link:** `github-owned-achievement-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- GitHub's Starstruck x4 fragment credits balloob and links home-assistant/core for published star milestones.
+- The linked repository is currently owned by the home-assistant organization rather than the credited personal account.
+
+**Limitations**
+
+- The fragment does not publish the repository transfer date or prove whether transfer occurred before or after each milestone.
+- Fork, archive, deletion, restoration, falling-count, and award-removal behavior remain unresolved.
+
+### EVT-2026-016 — starstruck
+
+**Claims:** `CLM-009`, `CLM-010`  
+**Account:** `tiangolo`  
+**Award link:** `github-owned-achievement-fragment`  
+**Adjudication:** `accepted`
+
+**Public facts**
+
+- GitHub's Starstruck x4 fragment credits tiangolo and links fastapi/fastapi for the published 4096-star milestone.
+- The linked repository is currently owned by the fastapi organization rather than the credited personal account.
+
+**Limitations**
+
+- The fragment does not expose the ownership state at the exact moment the milestone or award was processed.
+- It does not resolve forks, archival, falling star counts, deletion, restoration, or revocation behavior.
 
 ## Machine-readable data
 

@@ -100,7 +100,7 @@
         "tiers": "not-applicable"
       },
       "tiers": [],
-      "last_verified": "2026-07-19",
+      "last_verified": "2026-07-20",
       "aliases": [
         "self merge badge",
         "merge without review"
@@ -112,7 +112,7 @@
         "community": []
       },
       "known_limitations": [
-        "Comments and formal approving reviews are different GitHub objects.",
+        "A requested reviewer is distinct from a submitted review; submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, and automated review states remain under investigation.",
         "Protected branches may correctly prevent the qualifying sequence."
       ]
     },
@@ -152,7 +152,7 @@
           "unit": "qualifying merged pull requests"
         }
       ],
-      "last_verified": "2026-07-19",
+      "last_verified": "2026-07-20",
       "aliases": [
         "co-author badge",
         "paired commit achievement"
@@ -165,8 +165,8 @@
         "community": []
       },
       "known_limitations": [
-        "Squash merges and rewritten history can alter attribution.",
-        "Private repository and unusual merge-strategy behaviour is not comprehensively documented."
+        "Squash merging can preserve attribution when the final commit retains an account-linked Co-authored-by trailer; rebase, stripped-trailer, email-mismatch, and later rewrite cases remain incomplete.",
+        "Exact tier boundaries, private-repository behavior, and unusual merge strategies are not comprehensively documented."
       ]
     },
     {
@@ -259,20 +259,22 @@
           "unit": "repository stars"
         }
       ],
-      "last_verified": "2026-07-19",
+      "last_verified": "2026-07-20",
       "aliases": [
         "repository star badge",
         "star achievement"
       ],
       "sources": {
         "official": [
-          "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1"
+          "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1",
+          "https://github.com/users/balloob/achievements/starstruck/detail?hovercard=1",
+          "https://github.com/users/tiangolo/achievements/starstruck/detail?hovercard=1"
         ],
         "community": []
       },
       "known_limitations": [
-        "Repository ownership and transfer edge cases are not fully documented.",
-        "Star counts can fall after a tier is awarded."
+        "Current organization ownership does not necessarily erase creator attribution, but the exact transfer timing relative to milestone processing is not exposed.",
+        "Forks, archival, falling counts, deletion, restoration, and award or tier revocation remain incompletely documented."
       ]
     },
     {

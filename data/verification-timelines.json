@@ -5,82 +5,210 @@
     {
       "achievement_slug": "pull-shark",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["The earliest public appearance and initial rollout date are not established by the current evidence set."],
+      "history_limitations": [
+        "The earliest public appearance and initial rollout date are not established by the current evidence set."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "confirmed", "summary": "Canonical trigger wording and community-reported tier thresholds were reviewed."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-001 was accepted with documented tier limitations."}
+        {
+          "date": "2026-07-19",
+          "type": "guide-verification",
+          "evidence_level": "confirmed",
+          "summary": "Canonical trigger wording and community-reported tier thresholds were reviewed."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "confirmed",
+          "summary": "Evidence record EVD-2026-001 was accepted with documented tier limitations."
+        }
       ]
     },
     {
       "achievement_slug": "quickdraw",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["The exact qualifying time window and earliest award date remain undocumented by GitHub."],
+      "history_limitations": [
+        "The exact qualifying time window and earliest award date remain undocumented by GitHub."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "community-reported", "summary": "The guide retained a provisional short-window description rather than asserting a fixed threshold."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-002 was marked provisional and awaiting independent reproduction."}
+        {
+          "date": "2026-07-19",
+          "type": "guide-verification",
+          "evidence_level": "community-reported",
+          "summary": "The guide retained a provisional short-window description rather than asserting a fixed threshold."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "community-reported",
+          "summary": "Evidence record EVD-2026-002 was marked provisional and awaiting independent reproduction."
+        }
       ]
     },
     {
       "achievement_slug": "yolo",
-      "last_reviewed": "2026-07-19",
-      "history_limitations": ["GitHub does not publish an official achievement contract or original rollout date."],
+      "last_reviewed": "2026-07-20",
+      "history_limitations": [
+        "Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, automated, and differing-merger review states remain unresolved."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "community-reported", "summary": "The distinction between comments and approving reviews was retained as a qualifying limitation."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-003 was marked provisional and awaiting independent reproduction."}
+        {
+          "date": "2026-07-19",
+          "type": "guide-verification",
+          "evidence_level": "official",
+          "summary": "GitHub's live achievement fragment established the broad 'Merged without a review' trigger."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "official",
+          "summary": "Evidence record EVD-2026-003 was reconciled against GitHub's first-party product fragment."
+        },
+        {
+          "date": "2026-07-20",
+          "type": "review-request-boundary",
+          "evidence_level": "observed",
+          "summary": "A GitHub-linked qualifying pull request had a requested reviewer but zero submitted reviews, separating review requests from submitted review objects."
+        }
       ]
     },
     {
       "achievement_slug": "pair-extraordinaire",
-      "last_reviewed": "2026-07-19",
-      "history_limitations": ["The original achievement rollout date and complete tier contract are not established by official documentation."],
+      "last_reviewed": "2026-07-20",
+      "history_limitations": [
+        "Exact numerical tier boundaries, rebase or fast-forward behavior, stripped trailers, email mismatch, later history rewrites, and private-repository behavior remain unresolved."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "official-source-review", "evidence_level": "official", "summary": "GitHub's documented multiple-author commit syntax was linked as attribution context."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-004 was accepted with limitations around merge strategy and tier thresholds."}
+        {
+          "date": "2026-07-19",
+          "type": "official-source-review",
+          "evidence_level": "official",
+          "summary": "GitHub's multiple-author commit syntax and live Pair Extraordinaire trigger fragment were linked as attribution evidence."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "official",
+          "summary": "Evidence record EVD-2026-004 retained numerical tier limitations while the broad trigger advanced to official."
+        },
+        {
+          "date": "2026-07-20",
+          "type": "squash-attribution-boundary",
+          "evidence_level": "observed",
+          "summary": "Two independent GitHub-linked squash merges retained account-linked Co-authored-by trailers in their final commits."
+        }
       ]
     },
     {
       "achievement_slug": "galaxy-brain",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["The initial rollout date and full tier thresholds are not officially documented."],
+      "history_limitations": [
+        "The initial rollout date and full tier thresholds are not officially documented."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "observed", "summary": "Accepted answers were retained as distinct from other Discussion moderation states."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "observed", "summary": "Evidence record EVD-2026-005 was accepted with limitations and incomplete reproduction."}
+        {
+          "date": "2026-07-19",
+          "type": "guide-verification",
+          "evidence_level": "observed",
+          "summary": "Accepted answers were retained as distinct from other Discussion moderation states."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "observed",
+          "summary": "Evidence record EVD-2026-005 was accepted with limitations and incomplete reproduction."
+        }
       ]
     },
     {
       "achievement_slug": "starstruck",
-      "last_reviewed": "2026-07-19",
-      "history_limitations": ["The original rollout date, ownership edge cases, and complete tier table remain undocumented."],
+      "last_reviewed": "2026-07-20",
+      "history_limitations": [
+        "Transfer timing, forks, archival, falling star counts, deletion, restoration, and award or tier revocation remain unresolved."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "guide-verification", "evidence_level": "observed", "summary": "Repository ownership and falling star-count limitations were preserved."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "observed", "summary": "Evidence record EVD-2026-006 was accepted with limitations and incomplete reproduction."}
+        {
+          "date": "2026-07-19",
+          "type": "official-fragment-review",
+          "evidence_level": "official",
+          "summary": "GitHub's live x4 fragment established the 16, 128, 512, and 4096 star milestones."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "official",
+          "summary": "Evidence record EVD-2026-006 was reconciled against GitHub's first-party trigger and milestone history."
+        },
+        {
+          "date": "2026-07-20",
+          "type": "organization-ownership-boundary",
+          "evidence_level": "observed",
+          "summary": "Two GitHub-owned fragments retained personal creator attribution for repositories currently owned by organizations."
+        }
       ]
     },
     {
       "achievement_slug": "public-sponsor",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["GitHub documents Sponsors but does not publish a complete achievement-award contract or rollout date."],
+      "history_limitations": [
+        "GitHub documents Sponsors but does not publish a complete achievement-award contract or rollout date."
+      ],
       "events": [
-        {"date": "2026-07-19", "type": "official-source-review", "evidence_level": "official", "summary": "GitHub Sponsors documentation was retained as product context rather than proof of the achievement trigger."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "community-reported", "summary": "Evidence record EVD-2026-007 was accepted with privacy and eligibility limitations."}
+        {
+          "date": "2026-07-19",
+          "type": "official-source-review",
+          "evidence_level": "official",
+          "summary": "GitHub Sponsors documentation was retained as product context rather than proof of the achievement trigger."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "community-reported",
+          "summary": "Evidence record EVD-2026-007 was accepted with privacy and eligibility limitations."
+        }
       ]
     },
     {
       "achievement_slug": "arctic-code-vault-contributor",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["The complete archived qualification list and account-level award chronology are not reproduced in this repository."],
+      "history_limitations": [
+        "The complete archived qualification list and account-level award chronology are not reproduced in this repository."
+      ],
       "events": [
-        {"date": "2020-01-01", "date_precision": "year", "type": "historical-qualification", "evidence_level": "confirmed", "summary": "The qualifying GitHub Arctic Code Vault archival event occurred during 2020; no more precise date is asserted here."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-008 was accepted as a historical, non-repeatable qualification."}
+        {
+          "date": "2020-01-01",
+          "date_precision": "year",
+          "type": "historical-qualification",
+          "evidence_level": "confirmed",
+          "summary": "The qualifying GitHub Arctic Code Vault archival event occurred during 2020; no more precise date is asserted here."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "confirmed",
+          "summary": "Evidence record EVD-2026-008 was accepted as a historical, non-repeatable qualification."
+        }
       ]
     },
     {
       "achievement_slug": "mars-2020-contributor",
       "last_reviewed": "2026-07-19",
-      "history_limitations": ["The complete internal repository qualification list and account-level award chronology are not available as a current public contract."],
+      "history_limitations": [
+        "The complete internal repository qualification list and account-level award chronology are not available as a current public contract."
+      ],
       "events": [
-        {"date": "2020-01-01", "date_precision": "year", "type": "historical-qualification", "evidence_level": "confirmed", "summary": "The mission-linked qualification is associated with Mars 2020; no more precise achievement-award date is asserted here."},
-        {"date": "2026-07-19", "type": "evidence-baseline", "evidence_level": "confirmed", "summary": "Evidence record EVD-2026-009 was accepted as a historical, non-repeatable qualification."}
+        {
+          "date": "2020-01-01",
+          "date_precision": "year",
+          "type": "historical-qualification",
+          "evidence_level": "confirmed",
+          "summary": "The mission-linked qualification is associated with Mars 2020; no more precise achievement-award date is asserted here."
+        },
+        {
+          "date": "2026-07-19",
+          "type": "evidence-baseline",
+          "evidence_level": "confirmed",
+          "summary": "Evidence record EVD-2026-009 was accepted as a historical, non-repeatable qualification."
+        }
       ]
     }
   ]

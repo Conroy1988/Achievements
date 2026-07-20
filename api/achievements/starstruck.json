@@ -11,10 +11,10 @@
     },
     "guide_path": "docs/achievements/starstruck.md",
     "known_limitations": [
-      "Repository ownership and transfer edge cases are not fully documented.",
-      "Star counts can fall after a tier is awarded."
+      "Current organization ownership does not necessarily erase creator attribution, but the exact transfer timing relative to milestone processing is not exposed.",
+      "Forks, archival, falling counts, deletion, restoration, and award or tier revocation remain incompletely documented."
     ],
-    "last_verified": "2026-07-19",
+    "last_verified": "2026-07-20",
     "name": "Starstruck",
     "permalink": "/achievements/starstruck/",
     "primary_action": "Own a repository that receives stars",
@@ -22,7 +22,9 @@
     "sources": {
       "community": [],
       "official": [
-        "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1"
+        "https://github.com/users/Schweinepriester/achievements/starstruck/detail?hovercard=1",
+        "https://github.com/users/balloob/achievements/starstruck/detail?hovercard=1",
+        "https://github.com/users/tiangolo/achievements/starstruck/detail?hovercard=1"
       ]
     },
     "status": "active",

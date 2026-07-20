@@ -11,10 +11,10 @@
     },
     "guide_path": "docs/achievements/yolo.md",
     "known_limitations": [
-      "Comments and formal approving reviews are different GitHub objects.",
+      "A requested reviewer is distinct from a submitted review; submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed, and automated review states remain under investigation.",
       "Protected branches may correctly prevent the qualifying sequence."
     ],
-    "last_verified": "2026-07-19",
+    "last_verified": "2026-07-20",
     "name": "YOLO",
     "permalink": "/achievements/yolo/",
     "primary_action": "Merge a pull request without review",

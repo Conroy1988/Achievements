@@ -33,19 +33,19 @@
       "title": "Independently reproduce the YOLO review-state trigger",
       "achievement_slug": "yolo",
       "task_type": "independent-reproduction",
-      "status": "open",
+      "status": "in-progress",
       "priority": "critical",
       "difficulty": "advanced",
       "good_first_issue": false,
       "related_evidence_ids": [
         "EVD-2026-003"
       ],
-      "research_question": "Which pull-request review states prevent or permit YOLO when the author merges their own pull request?",
+      "research_question": "Which submitted pull-request review states prevent or permit YOLO after the pending-review-request subcase is excluded?",
       "acceptance_criteria": [
-        "Test no review, comment-only review, requested-changes review, and approving review where repository rules permit.",
-        "Use legitimate test repositories and substantive changes.",
-        "Record branch-protection and merge-method conditions.",
-        "Provide dated results from at least two independent accounts."
+        "Test submitted comment-only, requested-changes, approving, dismissed, and automation review states where repository rules permit.",
+        "Separate requested reviewers from submitted review objects.",
+        "Record author and merger identity, branch protection, and merge method.",
+        "Provide dated results from at least two independent accounts using legitimate substantive changes."
       ],
       "target_evidence_level": "confirmed"
     },
@@ -96,19 +96,19 @@
       "title": "Verify Starstruck ownership edge cases",
       "achievement_slug": "starstruck",
       "task_type": "edge-case-research",
-      "status": "open",
+      "status": "in-progress",
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
       "related_evidence_ids": [
         "EVD-2026-006"
       ],
-      "research_question": "How do repository transfer, organization ownership, forks, archived repositories, and falling star counts affect Starstruck attribution?",
+      "research_question": "How do transfer timing, forks, archival, falling star counts, deletion, restoration, and revocation affect Starstruck after organization ownership is shown to remain attributable in some cases?",
       "acceptance_criteria": [
         "Use only legitimate repository history and public metadata.",
-        "Record ownership state at the time of award and after any transfer.",
-        "Distinguish personal and organization-owned repositories.",
-        "Document counterexamples as well as successful attribution."
+        "Record ownership state and milestone state before and after a documented transition.",
+        "Separate current organization ownership from the exact timing of transfer and award processing.",
+        "Document counterexamples, persistence, and revocation without soliciting artificial stars."
       ],
       "target_evidence_level": "confirmed"
     },
@@ -178,19 +178,19 @@
       "title": "Reproduce Pair Extraordinaire merge attribution",
       "achievement_slug": "pair-extraordinaire",
       "task_type": "independent-reproduction",
-      "status": "open",
+      "status": "in-progress",
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
       "related_evidence_ids": [
         "EVD-2026-004"
       ],
-      "research_question": "Which merge methods, email-matching conditions, and final-history states preserve qualifying Pair Extraordinaire co-author attribution?",
+      "research_question": "Which rebase, fast-forward, email-matching, stripped-trailer, and post-merge rewrite states preserve Pair Extraordinaire attribution after squash preservation is observed?",
       "acceptance_criteria": [
-        "Test merge commit, squash merge, and rebase merge where repository policy permits.",
-        "Record the exact Co-authored-by trailer and whether its email is linked to the observed account.",
-        "Inspect final merged commit attribution rather than relying only on the pull-request interface.",
-        "Provide dated results from at least two independent accounts and include failed reproductions."
+        "Test legitimate rebase or fast-forward and merge-commit cases where repository policy permits.",
+        "Record whether the final merged history retains an account-linked Co-authored-by trailer.",
+        "Include an email-mismatch or stripped-trailer negative control without misattributing a real person.",
+        "Provide dated results from at least two independent accounts and retain failed reproductions."
       ],
       "target_evidence_level": "confirmed"
     },
@@ -199,18 +199,18 @@
       "title": "Verify Pair Extraordinaire tier thresholds",
       "achievement_slug": "pair-extraordinaire",
       "task_type": "threshold-verification",
-      "status": "open",
+      "status": "blocked",
       "priority": "high",
       "difficulty": "advanced",
       "good_first_issue": false,
       "related_evidence_ids": [
         "EVD-2026-004"
       ],
-      "research_question": "Can the listed Pair Extraordinaire tier thresholds be independently reproduced using qualifying merged pull requests with preserved co-author attribution?",
+      "research_question": "Can the reported 1, 10, 24, and 48 Pair Extraordinaire boundaries be observed with exact qualifying counts rather than inferred from x3 or x4 badge sightings?",
       "acceptance_criteria": [
-        "Record qualifying count immediately before and after each observed tier boundary.",
+        "Record qualifying count immediately below, at, and above each proposed boundary.",
         "Confirm final merged history retains the co-author identity used for counting.",
-        "Separate base-award evidence from bronze, silver, and gold tier evidence.",
+        "Separate base, bronze, silver, and gold transitions and measure processing delay.",
         "Do not manufacture meaningless pull requests or misattribute co-authorship."
       ],
       "target_evidence_level": "confirmed"

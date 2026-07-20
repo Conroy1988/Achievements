@@ -11,10 +11,10 @@
       "coverage_rating": "fragile",
       "coverage_score": 57.5,
       "deferred_adjudication_count": 2,
-      "event_count": 2,
+      "event_count": 4,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [
-        "Capture final-history co-author attribution and visible tier state around each merge-method boundary."
+        "GitHub-owned x3 and x4 fragments confirm that multiple Pair Extraordinaire tiers exist, and two independent squash-merge cases preserve final-history attribution. Exact 1, 10, 24, and 48 boundaries still require dated below/at/above account counts; a high-tier sighting alone cannot confirm them."
       ],
       "pressure_score": 49
     },
@@ -29,7 +29,7 @@
       "coverage_rating": "robust",
       "coverage_score": 90.0,
       "deferred_adjudication_count": 1,
-      "event_count": 0,
+      "event_count": 2,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [
         "Monitor the GitHub-owned achievement fragment for product-contract drift; no additional threshold search is required."
@@ -65,7 +65,7 @@
       "coverage_rating": "robust",
       "coverage_score": 90.0,
       "deferred_adjudication_count": 1,
-      "event_count": 3,
+      "event_count": 4,
       "negative_inconclusive_event_count": 0,
       "next_evidence": [],
       "pressure_score": 24
@@ -161,7 +161,7 @@
     "active_achievement_count": 7,
     "boundary_programme_count": 5,
     "deferred_adjudication_count": 7,
-    "event_count": 11,
+    "event_count": 16,
     "narrowed_contradiction_count": 3,
     "overall_coverage_score": 91.2,
     "release_status": "ready",
