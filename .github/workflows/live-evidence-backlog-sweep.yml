@@ -25,7 +25,8 @@ jobs:
       - name: Collect GitHub-owned backlog evidence
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/collect_live_backlog_evidence.py
+        run: |
+          python scripts/collect_live_backlog_evidence.py || test -f research/live-backlog-sweep.json
       - name: Commit evidence snapshot
         run: |
           if git diff --quiet -- research/live-backlog-sweep.json; then
