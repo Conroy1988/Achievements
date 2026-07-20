@@ -24,6 +24,8 @@ jobs:
           fetch-depth: 0
       - name: Apply canonical campaign reset
         run: python scripts/apply_phase65_campaign_reset.py
+      - name: Normalize generated builder escaping
+        run: python scripts/fix_phase65_generated_escaping.py
       - name: Build research hub
         id: research_hub
         continue-on-error: true
@@ -77,6 +79,7 @@ jobs:
       - name: Remove temporary migration infrastructure
         run: |
           rm -f scripts/apply_phase65_campaign_reset.py
+          rm -f scripts/fix_phase65_generated_escaping.py
           rm -f .github/workflows/phase-65-campaign-reset.yml
           rm -f research-hub-report.md research-intelligence-report.md evidence-quality-programme-report.md
           rm -f research-campaign-report.md evidence-intelligence-report.md acquisition-missions-report.md
