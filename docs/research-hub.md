@@ -9,44 +9,26 @@ permalink: /research-hub/
 
 This hub converts known evidence gaps into bounded research tasks. Contributions must follow the evidence register policy and may document failed or contradictory results.
 
-**Open tasks:** 10  
+**Open tasks:** 7  
 **Good first research tasks:** 1  
 **Schema version:** `1.1.0`
 
 | Task | Achievement | Type | Priority | Difficulty | Status |
 |---|---|---|---|---|---|
-| `RSH-001` | Quickdraw | independent-reproduction | critical | advanced | open |
 | `RSH-002` | YOLO | independent-reproduction | critical | advanced | open |
-| `RSH-003` | Pull Shark | threshold-verification | high | advanced | open |
-| `RSH-004` | Galaxy Brain | threshold-verification | high | advanced | open |
 | `RSH-005` | Starstruck | edge-case-research | high | advanced | open |
 | `RSH-009` | Pair Extraordinaire | independent-reproduction | high | advanced | open |
 | `RSH-010` | Pair Extraordinaire | threshold-verification | high | advanced | open |
 | `RSH-011` | Galaxy Brain | edge-case-research | high | intermediate | open |
 | `RSH-012` | Public Sponsor | edge-case-research | high | intermediate | open |
 | `RSH-008` | Cross-achievement | cross-achievement-observation — good first issue | medium | beginner | open |
+| `RSH-001` | Quickdraw | independent-reproduction | critical | advanced | resolved |
+| `RSH-003` | Pull Shark | threshold-verification | high | advanced | resolved |
+| `RSH-004` | Galaxy Brain | threshold-verification | high | advanced | resolved |
 | `RSH-006` | Arctic Code Vault Contributor | source-replacement — good first issue | medium | beginner | resolved |
 | `RSH-007` | Mars 2020 Contributor | source-replacement — good first issue | medium | beginner | resolved |
 
 ## Research tasks
-
-### RSH-001 — Independently reproduce the Quickdraw qualifying window
-
-**Achievement:** Quickdraw  
-**Priority:** `critical`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** What is the shortest and longest reproducible issue or pull-request close interval that awards Quickdraw under normal public-repository use?
-
-**Acceptance criteria**
-
-- Provide dated observations from at least two independent accounts.
-- Record creation, closure, and award-processing times without exposing private account data.
-- Separate issue and pull-request results where behaviour differs.
-- Document failed reproductions and possible confounding factors.
-
-**Related evidence records:** `EVD-2026-002`
 
 ### RSH-002 — Independently reproduce the YOLO review-state trigger
 
@@ -65,42 +47,6 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 - Provide dated results from at least two independent accounts.
 
 **Related evidence records:** `EVD-2026-003`
-
-### RSH-003 — Strengthen Pull Shark tier evidence
-
-**Achievement:** Pull Shark  
-**Priority:** `high`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** Can each currently listed Pull Shark tier threshold be independently reproduced with attribution and processing-delay controls?
-
-**Acceptance criteria**
-
-- Provide dated account-level observations for every threshold being claimed.
-- Distinguish merged pull-request count from author, committer, and merger identity.
-- Record processing delays and repository visibility.
-- Do not create meaningless pull requests solely to inflate counts.
-
-**Related evidence records:** `EVD-2026-001`
-
-### RSH-004 — Verify Galaxy Brain tier thresholds
-
-**Achievement:** Galaxy Brain  
-**Priority:** `high`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** Do the listed accepted-answer thresholds consistently award the corresponding Galaxy Brain tiers?
-
-**Acceptance criteria**
-
-- Use genuine GitHub Discussion answers accepted by repository maintainers.
-- Record accepted-answer count before and after each observed award.
-- Separate accepted answers from other verified or moderated answer states.
-- Include at least two independent observations for any threshold promoted to confirmed.
-
-**Related evidence records:** `EVD-2026-005`
 
 ### RSH-005 — Verify Starstruck ownership edge cases
 
@@ -209,6 +155,60 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 - Remove unnecessary account identifiers from submitted evidence.
 
 **Related evidence records:** None
+
+### RSH-001 — Independently reproduce the Quickdraw qualifying window
+
+**Achievement:** Quickdraw  
+**Priority:** `critical`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** What is the shortest and longest reproducible issue or pull-request close interval that awards Quickdraw under normal public-repository use?
+
+**Acceptance criteria**
+
+- Provide dated observations from at least two independent accounts.
+- Record creation, closure, and award-processing times without exposing private account data.
+- Separate issue and pull-request results where behaviour differs.
+- Document failed reproductions and possible confounding factors.
+
+**Related evidence records:** `EVD-2026-002`
+
+### RSH-003 — Strengthen Pull Shark tier evidence
+
+**Achievement:** Pull Shark  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Can each currently listed Pull Shark tier threshold be independently reproduced with attribution and processing-delay controls?
+
+**Acceptance criteria**
+
+- Provide dated account-level observations for every threshold being claimed.
+- Distinguish merged pull-request count from author, committer, and merger identity.
+- Record processing delays and repository visibility.
+- Do not create meaningless pull requests solely to inflate counts.
+
+**Related evidence records:** `EVD-2026-001`
+
+### RSH-004 — Verify Galaxy Brain tier thresholds
+
+**Achievement:** Galaxy Brain  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Do the listed accepted-answer thresholds consistently award the corresponding Galaxy Brain tiers?
+
+**Acceptance criteria**
+
+- Use genuine GitHub Discussion answers accepted by repository maintainers.
+- Record accepted-answer count before and after each observed award.
+- Separate accepted answers from other verified or moderated answer states.
+- Include at least two independent observations for any threshold promoted to confirmed.
+
+**Related evidence records:** `EVD-2026-005`
 
 ### RSH-006 — Locate durable Arctic Code Vault sources
 
