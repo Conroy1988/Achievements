@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "observed_at": "2026-07-20T01:38:16Z",
+  "observed_at": "2026-07-20T01:40:35Z",
   "purpose": "First-party evidence sweep for CLM-006 and contradictions CTR-002, CTR-004, and CTR-006.",
   "automatic_canonical_mutation": false,
   "records": [
