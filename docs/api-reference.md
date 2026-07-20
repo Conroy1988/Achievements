@@ -123,10 +123,11 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 - [`v1.1.0`](releases/v1.1.0.md) introduced the initial achievement and health API.
 - [`v1.2.0`](releases/v1.2.0.md) introduced evidence, timeline, and contributor-research discovery.
 - [`v1.3.0`](releases/v1.3.0.md) introduced research intelligence, reproduction protocols, automated triage, the profile auditor, and the command centre.
+- [`v1.4.0`](releases/v1.4.0.md) introduces GitHub-owned achievement contracts, public reconstructions, controlled evidence missions, review and promotion planning, and release-ready evidence governance.
 
 The immutable `v1.3.0` source baseline is commit `4869e71b392fc8a8f6d20835cdabe123c0c95e6f`. The tag resolves exactly to that commit.
 
-The proposed `v1.4.0` release remains blocked until [`release-readiness.json`](../api/release-readiness.json) reports every evidence and operational gate as passing from merged `main`.
+The `v1.4.0` release is published only after [`release-readiness.json`](../api/release-readiness.json) reports `ready` and merged-main operational health is verified at 100/100. Its immutable tag SHA is recorded after publication.
 
 ## Related material
 

@@ -6,6 +6,8 @@ The project uses semantic versioning for tagged documentation releases in accord
 
 ## Unreleased
 
+## v1.4.0 — 2026-07-20
+
 ### Added
 
 - Evidence road-to-100 campaign with claim-specific gates for confirmed and official status.
@@ -15,9 +17,9 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Event-linked evidence collector with five public GitHub events, participant-attestation boundaries, and negative-result retention.
 - Threshold boundary programme covering Pull Shark, Pair Extraordinaire, Galaxy Brain, Starstruck, and Quickdraw.
 - Fail-closed evidence adjudication engine with explicit promotion, deferral, retraction, and negative-evidence rules.
-- One current resolution assessment for every open contradiction.
-- Deterministic `v1.4.0` release-readiness gate that blocks publication until every evidence and operational threshold passes.
-- Five new evidence-quality API endpoints and a dedicated validation workflow.
+- One current resolution assessment for every contradiction.
+- Deterministic `v1.4.0` release-readiness gate covering evidence and operational thresholds.
+- Five evidence-quality API endpoints and dedicated validation automation.
 - Evidence intelligence dashboard combining coverage, event evidence, boundary work, adjudication, contradiction state, and release gaps.
 - Transparent per-achievement research-pressure formula with generated Markdown, JSON, and dedicated drift validation.
 - Seven targeted evidence acquisition missions covering the six highest-pressure achievements and cross-achievement processing delay.
@@ -40,37 +42,52 @@ The project uses semantic versioning for tagged documentation releases in accord
 - Deterministic promotion planner that converts only accepted review proposals into isolated maintainer-review plans.
 - Six promotion-planner tests covering empty state, valid plans, non-accepted proposals, duplicate claims, stale transitions, and automatic-mutation blocking.
 - Dedicated promotion-planner workflow and public plan/schema endpoints.
+- Weekly live-fragment drift verification against GitHub-owned achievement product output.
 
 ### Changed
 
-- Evidence coverage increased from 44.2 to 54.6 without changing weights or suppressing disputes.
+- Evidence coverage increased from **44.2** at the v1.3.0 baseline to **91.2/100 — Robust**.
 - Galaxy Brain, Public Sponsor, Arctic Code Vault Contributor, and Mars 2020 Contributor claims were reconciled against GitHub-owned sources.
-- Arctic and Mars source-replacement tasks are resolved; Galaxy Brain and Public Sponsor tasks now target implementation edge cases rather than broad triggers.
 - Public API discovery expanded from 26 to 40 JSON files.
-- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, mission packet review, and promotion planning.
-- Three contradictions are narrowed, while all six remain formally open pending their published resolution criteria.
+- Site navigation and API guidance now expose event evidence, boundary research, adjudication, contradiction assessments, release readiness, evidence intelligence, acquisition missions, mission execution intake, mission packet review, promotion planning, public reconstructions, and official fragments.
 - Research priorities now expose a deterministic achievement-level pressure ranking without replacing claim-level evidence scores.
 - Evidence pressure rankings now map to bounded execution missions rather than additional infrastructure work.
-- General evidence observations and mission-controlled evidence now use separate issue forms, schemas, triage rules, and draft packet paths.
-- Search discovery now includes the targeted mission board, mission execution intake, mission packet review queue, and promotion planner.
-- Promotion proposals now require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
+- General evidence observations and mission-controlled evidence use separate issue forms, schemas, triage rules, and draft packet paths.
+- Search discovery includes the targeted mission board, mission execution intake, mission packet review queue, promotion planner, public reconstruction corpus, and official fragment corpus.
+- Promotion proposals require two reviewers, one unconflicted reviewer, the applicable adjudication rule, the published mission target, and a fully passing checklist.
 - Quickdraw, YOLO, and Pair Extraordinaire broad trigger claims advanced from community-reported to observed using two independent public reconstructions per claim.
 - GitHub-owned live fragments subsequently promoted Pull Shark, Quickdraw, YOLO, Pair Extraordinaire, Galaxy Brain tiers, and Starstruck claims to official while retaining Pair tier and edge-case limitations.
-- Quickdraw timing, Pull Shark tiers, and Galaxy Brain tiers are resolved from first-party product history; YOLO review edge cases, Pair rewrite/tier behaviour, and Starstruck ownership persistence remain open.
+- Quickdraw timing, Pull Shark tiers, and Galaxy Brain tiers were resolved from first-party product history.
+- Open contradictions reduced from six to three.
 - Accepted promotion proposals now produce impact previews with exact source paths, generated outputs, release-gate direction, validation steps, and rollback scope.
+
+### Corrected
+
+- Replaced community-only milestone classifications where GitHub's live product fragments publish exact contracts.
+- Separated broad trigger certainty from unresolved edge cases, processing behaviour, transfer semantics, and attribution rewrites.
+- Removed stale blocked-release wording after the merged-main evidence and operational gates passed.
+
+### Verification
+
+- Evidence coverage: **91.2**, required **70.0**.
+- Official or confirmed claims: **12**, required **8**.
+- Claims below confirmed: **1**, maximum **5**.
+- Open contradictions: **3**, maximum **3**.
+- Merged-main operational health: **100/100 — Excellent**.
+- All permanent evidence, API, content, browser, visual, release, and repository-audit workflows passed.
+- Recorded the evidence-quality release in [`docs/releases/v1.4.0.md`](docs/releases/v1.4.0.md).
 
 ### Integrity
 
-- Three broad trigger claims changed from community-reported to observed in Phase 62; no claim was promoted to confirmed or official.
-- Evidence coverage increases from 54.6 to 60.4 through public reconstructions, then to 91.2 through GitHub-owned product fragments without changing weights.
-- The v1.4.0 evidence gates now pass at 12 official/confirmed claims, 1 claim below confirmed, and 3 open contradictions; publication still requires merged-main operational verification.
-- Research-pressure values are prioritisation aids, not evidence-confidence scores.
-- Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass are prohibited by every mission and mission submission.
+- Evidence weights were not changed to reach the release gates.
+- Research-pressure values remain prioritisation aids rather than evidence-confidence scores.
+- Artificial qualifying activity, false attribution, star solicitation, answer farming, and protection bypass remain prohibited.
 - Automated mission acceptance creates only a draft review packet and cannot promote evidence, resolve contradictions, or change mission state.
 - Review records classify packets only and must report `canonical_mutation: false`.
-- Promotion plans are non-executable and must report `automatic_application: false`.
-- The mission review queue and promotion planner launch empty because no real packet has passed intake and review.
-- `v1.4.0` remains blocked and no release tag is created.
+- Promotion plans remain non-executable and must report `automatic_application: false`.
+- Pair Extraordinaire numerical tiers remain community-reported.
+- YOLO review edge cases, Pair attribution rewrites, and Starstruck ownership persistence remain open.
+- The verified release workflow publishes `v1.4.0` from the merged release-note commit and treats its tag as immutable.
 
 ## v1.3.0 — 2026-07-19
 
