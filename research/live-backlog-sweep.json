@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "observed_at": "2026-07-20T01:47:42Z",
+  "observed_at": "2026-07-20T01:59:10Z",
   "purpose": "First-party evidence sweep for CLM-006 and contradictions CTR-002, CTR-004, and CTR-006.",
   "automatic_canonical_mutation": false,
   "records": [
@@ -285,8 +285,127 @@
       "achievement_fragment_ids": [
         "PAIR-X4-TORVALDS"
       ],
-      "status": "enrichment-failed",
-      "error": "HTTP Error 503: Service Unavailable"
+      "github_linked_as_pair_event": true,
+      "merged_at": "2022-08-03T20:03:47Z",
+      "author_login": "ARKANYOTA",
+      "merged_by_login": "ARKANYOTA",
+      "merge_commit_sha": "ee2454e3e2e24fdb50e3effb1e7b8b1ac3cbcff0",
+      "pull_commit_count": 1,
+      "merge_method_classification": "merge-commit",
+      "pull_commits": [
+        {
+          "sha": "8c333e33feceeb04122350032b23c625a9e02aef",
+          "html_url": "https://github.com/ARKANYOTA/ARKANYOTA/commit/8c333e33feceeb04122350032b23c625a9e02aef",
+          "author_login": "ARKANYOTA",
+          "committer_login": "ARKANYOTA",
+          "parent_shas": [
+            "2804157c7f8dc69f27359ecef310070be42bb792"
+          ],
+          "subject": "PairExtraordinaire x2 Bronze",
+          "coauthor_trailers": [
+            {
+              "name": "Yolwoocle",
+              "email": "54135715+Yolwoocle@users.noreply.github.com"
+            },
+            {
+              "name": "PouletRaPHOO",
+              "email": "70721948+pouletRaphoo@users.noreply.github.com"
+            },
+            {
+              "name": "Linus Torvalds",
+              "email": "1024025+torvalds@users.noreply.github.com"
+            },
+            {
+              "name": "utopy",
+              "email": "30875147+utopyin@users.noreply.github.com"
+            },
+            {
+              "name": "Theobosse",
+              "email": "60153892+theobosse@users.noreply.github.com"
+            },
+            {
+              "name": "Gouspourd",
+              "email": "71386539+gouspourd@users.noreply.github.com"
+            },
+            {
+              "name": "Maxio",
+              "email": "91082344+maximcosta@users.noreply.github.com"
+            },
+            {
+              "name": "Notgoyome",
+              "email": "43115206+Yauyau123@users.noreply.github.com"
+            },
+            {
+              "name": "Antoine Roucau",
+              "email": "76783848+Antoine-roucau@users.noreply.github.com"
+            },
+            {
+              "name": "PoulpitoGDL",
+              "email": "86129726+PoulpitoGDL@users.noreply.github.com"
+            }
+          ]
+        }
+      ],
+      "final_default_branch_commit": {
+        "sha": "ee2454e3e2e24fdb50e3effb1e7b8b1ac3cbcff0",
+        "html_url": "https://github.com/ARKANYOTA/ARKANYOTA/commit/ee2454e3e2e24fdb50e3effb1e7b8b1ac3cbcff0",
+        "author_login": "ARKANYOTA",
+        "committer_login": "web-flow",
+        "parent_shas": [
+          "2804157c7f8dc69f27359ecef310070be42bb792",
+          "8c333e33feceeb04122350032b23c625a9e02aef"
+        ],
+        "subject": "Merge pull request #2 from ARKANYOTA/Achievements",
+        "coauthor_trailers": []
+      },
+      "coauthor_trailers_in_pull_commits": [
+        {
+          "name": "Yolwoocle",
+          "email": "54135715+Yolwoocle@users.noreply.github.com"
+        },
+        {
+          "name": "PouletRaPHOO",
+          "email": "70721948+pouletRaphoo@users.noreply.github.com"
+        },
+        {
+          "name": "Linus Torvalds",
+          "email": "1024025+torvalds@users.noreply.github.com"
+        },
+        {
+          "name": "utopy",
+          "email": "30875147+utopyin@users.noreply.github.com"
+        },
+        {
+          "name": "Theobosse",
+          "email": "60153892+theobosse@users.noreply.github.com"
+        },
+        {
+          "name": "Gouspourd",
+          "email": "71386539+gouspourd@users.noreply.github.com"
+        },
+        {
+          "name": "Maxio",
+          "email": "91082344+maximcosta@users.noreply.github.com"
+        },
+        {
+          "name": "Notgoyome",
+          "email": "43115206+Yauyau123@users.noreply.github.com"
+        },
+        {
+          "name": "Antoine Roucau",
+          "email": "76783848+Antoine-roucau@users.noreply.github.com"
+        },
+        {
+          "name": "PoulpitoGDL",
+          "email": "86129726+PoulpitoGDL@users.noreply.github.com"
+        }
+      ],
+      "coauthor_trailers_in_final_commit": [],
+      "final_history_preserves_coauthor_trailer": false,
+      "limitations": [
+        "GitHub links this pull request from an achievement fragment, but the fragment does not expose its internal attributed count.",
+        "The merge-method classification is derived from public commit topology and does not reveal every internal qualification filter."
+      ]
     },
     {
       "pull_request_url": "https://github.com/DIYgod/RSSHub/pull/9761",
@@ -3402,7 +3521,7 @@
       "squash"
     ],
     "final_trailer_preserved_count": 4,
-    "enrichment_failure_count": 2,
+    "enrichment_failure_count": 1,
     "automatic_canonical_mutation": false
   },
   "starstruck_transfer_candidates": [
