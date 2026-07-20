@@ -11,10 +11,10 @@
     },
     "guide_path": "achievements/pair-extraordinaire.md",
     "known_limitations": [
-      "Squash merges and rewritten history can alter attribution.",
-      "Private repository and unusual merge-strategy behaviour is not comprehensively documented."
+      "Squash merging can preserve attribution when the final commit retains an account-linked Co-authored-by trailer; rebase, stripped-trailer, email-mismatch, and later rewrite cases remain incomplete.",
+      "Exact tier boundaries, private-repository behavior, and unusual merge strategies are not comprehensively documented."
     ],
-    "last_verified": "2026-07-19",
+    "last_verified": "2026-07-20",
     "name": "Pair Extraordinaire",
     "permalink": "/achievements/pair-extraordinaire/",
     "primary_action": "Co-author commits in merged pull requests",
