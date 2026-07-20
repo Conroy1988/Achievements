@@ -9,98 +9,26 @@ permalink: /research-hub/
 
 This hub converts known evidence gaps into bounded research tasks. Contributions must follow the evidence register policy and may document failed or contradictory results.
 
-**Open tasks:** 7  
+**Open tasks:** 3  
 **Good first research tasks:** 1  
 **Schema version:** `1.1.0`
 
 | Task | Achievement | Type | Priority | Difficulty | Status |
 |---|---|---|---|---|---|
-| `RSH-002` | YOLO | independent-reproduction | critical | advanced | open |
-| `RSH-005` | Starstruck | edge-case-research | high | advanced | open |
-| `RSH-009` | Pair Extraordinaire | independent-reproduction | high | advanced | open |
-| `RSH-010` | Pair Extraordinaire | threshold-verification | high | advanced | open |
 | `RSH-011` | Galaxy Brain | edge-case-research | high | intermediate | open |
 | `RSH-012` | Public Sponsor | edge-case-research | high | intermediate | open |
 | `RSH-008` | Cross-achievement | cross-achievement-observation — good first issue | medium | beginner | open |
 | `RSH-001` | Quickdraw | independent-reproduction | critical | advanced | resolved |
+| `RSH-002` | YOLO | independent-reproduction | critical | advanced | in-progress |
 | `RSH-003` | Pull Shark | threshold-verification | high | advanced | resolved |
 | `RSH-004` | Galaxy Brain | threshold-verification | high | advanced | resolved |
+| `RSH-005` | Starstruck | edge-case-research | high | advanced | in-progress |
+| `RSH-009` | Pair Extraordinaire | independent-reproduction | high | advanced | in-progress |
+| `RSH-010` | Pair Extraordinaire | threshold-verification | high | advanced | blocked |
 | `RSH-006` | Arctic Code Vault Contributor | source-replacement — good first issue | medium | beginner | resolved |
 | `RSH-007` | Mars 2020 Contributor | source-replacement — good first issue | medium | beginner | resolved |
 
 ## Research tasks
-
-### RSH-002 — Independently reproduce the YOLO review-state trigger
-
-**Achievement:** YOLO  
-**Priority:** `critical`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** Which pull-request review states prevent or permit YOLO when the author merges their own pull request?
-
-**Acceptance criteria**
-
-- Test no review, comment-only review, requested-changes review, and approving review where repository rules permit.
-- Use legitimate test repositories and substantive changes.
-- Record branch-protection and merge-method conditions.
-- Provide dated results from at least two independent accounts.
-
-**Related evidence records:** `EVD-2026-003`
-
-### RSH-005 — Verify Starstruck ownership edge cases
-
-**Achievement:** Starstruck  
-**Priority:** `high`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** How do repository transfer, organization ownership, forks, archived repositories, and falling star counts affect Starstruck attribution?
-
-**Acceptance criteria**
-
-- Use only legitimate repository history and public metadata.
-- Record ownership state at the time of award and after any transfer.
-- Distinguish personal and organization-owned repositories.
-- Document counterexamples as well as successful attribution.
-
-**Related evidence records:** `EVD-2026-006`
-
-### RSH-009 — Reproduce Pair Extraordinaire merge attribution
-
-**Achievement:** Pair Extraordinaire  
-**Priority:** `high`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** Which merge methods, email-matching conditions, and final-history states preserve qualifying Pair Extraordinaire co-author attribution?
-
-**Acceptance criteria**
-
-- Test merge commit, squash merge, and rebase merge where repository policy permits.
-- Record the exact Co-authored-by trailer and whether its email is linked to the observed account.
-- Inspect final merged commit attribution rather than relying only on the pull-request interface.
-- Provide dated results from at least two independent accounts and include failed reproductions.
-
-**Related evidence records:** `EVD-2026-004`
-
-### RSH-010 — Verify Pair Extraordinaire tier thresholds
-
-**Achievement:** Pair Extraordinaire  
-**Priority:** `high`  
-**Difficulty:** `advanced`  
-**Target evidence:** `confirmed`
-
-**Research question:** Can the listed Pair Extraordinaire tier thresholds be independently reproduced using qualifying merged pull requests with preserved co-author attribution?
-
-**Acceptance criteria**
-
-- Record qualifying count immediately before and after each observed tier boundary.
-- Confirm final merged history retains the co-author identity used for counting.
-- Separate base-award evidence from bronze, silver, and gold tier evidence.
-- Do not manufacture meaningless pull requests or misattribute co-authorship.
-
-**Related evidence records:** `EVD-2026-004`
 
 ### RSH-011 — Verify Galaxy Brain accepted-answer semantics and processing
 
@@ -174,6 +102,24 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 
 **Related evidence records:** `EVD-2026-002`
 
+### RSH-002 — Independently reproduce the YOLO review-state trigger
+
+**Achievement:** YOLO  
+**Priority:** `critical`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Which submitted pull-request review states prevent or permit YOLO after the pending-review-request subcase is excluded?
+
+**Acceptance criteria**
+
+- Test submitted comment-only, requested-changes, approving, dismissed, and automation review states where repository rules permit.
+- Separate requested reviewers from submitted review objects.
+- Record author and merger identity, branch protection, and merge method.
+- Provide dated results from at least two independent accounts using legitimate substantive changes.
+
+**Related evidence records:** `EVD-2026-003`
+
 ### RSH-003 — Strengthen Pull Shark tier evidence
 
 **Achievement:** Pull Shark  
@@ -209,6 +155,60 @@ This hub converts known evidence gaps into bounded research tasks. Contributions
 - Include at least two independent observations for any threshold promoted to confirmed.
 
 **Related evidence records:** `EVD-2026-005`
+
+### RSH-005 — Verify Starstruck ownership edge cases
+
+**Achievement:** Starstruck  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** How do transfer timing, forks, archival, falling star counts, deletion, restoration, and revocation affect Starstruck after organization ownership is shown to remain attributable in some cases?
+
+**Acceptance criteria**
+
+- Use only legitimate repository history and public metadata.
+- Record ownership state and milestone state before and after a documented transition.
+- Separate current organization ownership from the exact timing of transfer and award processing.
+- Document counterexamples, persistence, and revocation without soliciting artificial stars.
+
+**Related evidence records:** `EVD-2026-006`
+
+### RSH-009 — Reproduce Pair Extraordinaire merge attribution
+
+**Achievement:** Pair Extraordinaire  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Which rebase, fast-forward, email-matching, stripped-trailer, and post-merge rewrite states preserve Pair Extraordinaire attribution after squash preservation is observed?
+
+**Acceptance criteria**
+
+- Test legitimate rebase or fast-forward and merge-commit cases where repository policy permits.
+- Record whether the final merged history retains an account-linked Co-authored-by trailer.
+- Include an email-mismatch or stripped-trailer negative control without misattributing a real person.
+- Provide dated results from at least two independent accounts and retain failed reproductions.
+
+**Related evidence records:** `EVD-2026-004`
+
+### RSH-010 — Verify Pair Extraordinaire tier thresholds
+
+**Achievement:** Pair Extraordinaire  
+**Priority:** `high`  
+**Difficulty:** `advanced`  
+**Target evidence:** `confirmed`
+
+**Research question:** Can the reported 1, 10, 24, and 48 Pair Extraordinaire boundaries be observed with exact qualifying counts rather than inferred from x3 or x4 badge sightings?
+
+**Acceptance criteria**
+
+- Record qualifying count immediately below, at, and above each proposed boundary.
+- Confirm final merged history retains the co-author identity used for counting.
+- Separate base, bronze, silver, and gold transitions and measure processing delay.
+- Do not manufacture meaningless pull requests or misattribute co-authorship.
+
+**Related evidence records:** `EVD-2026-004`
 
 ### RSH-006 — Locate durable Arctic Code Vault sources
 

@@ -58,7 +58,7 @@ GitHub's live Quickdraw fragment now states the five-minute contract. Further wo
 
 ### ADJ-D002 — CLM-004
 
-GitHub's live YOLO fragment states 'Merged without a review'. Alternate review-state and merger-identity edge cases remain separate research.
+GitHub's linked YOLO event shows that an outstanding review request with zero submitted reviews can still be classified as 'Merged without a review'. Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed-review, and merger-identity cases remain separate controls.
 
 ### ADJ-D003 — CLM-002
 
@@ -66,7 +66,7 @@ GitHub's live Pull Shark x4 fragment publishes the complete merged-pull-request 
 
 ### ADJ-D004 — CLM-006
 
-The x4 sighting lacks final-history co-author counts and merge-method controls.
+GitHub-owned x3 and x4 fragments confirm tier existence, but not the reported 1, 10, 24, and 48 boundaries. The numeric claim remains community-reported pending controlled boundary counts.
 
 ### ADJ-D005 — CLM-008
 
@@ -74,11 +74,11 @@ GitHub's live Galaxy Brain x4 fragment publishes the complete accepted-answer mi
 
 ### ADJ-D006 — CLM-010
 
-GitHub's live Starstruck x4 fragment publishes the complete star milestone table; ownership-transfer persistence remains open.
+GitHub's Starstruck fragments publish the complete milestone table and retain creator attribution for at least two currently organization-owned repositories. Transfer timing, forks, archival, falling counts, and award persistence remain bounded edge cases.
 
 ### ADJ-D007 — CLM-005
 
-GitHub's live Pair Extraordinaire fragment states the broad coauthored-commit trigger; numerical tiers and merge-rewrite edge cases remain open.
+The broad trigger is official. Two independent GitHub-linked squash cases show that attribution can survive when the final commit retains the account-linked trailer; rebase, stripped trailers, email mismatch, later rewrites, and exact tier counts remain open.
 
 ## Machine-readable data
 

@@ -15,7 +15,7 @@
       "decision": "defer",
       "id": "ADJ-D002",
       "proposed_level": "official",
-      "reason": "GitHub's live YOLO fragment states 'Merged without a review'. Alternate review-state and merger-identity edge cases remain separate research."
+      "reason": "GitHub's linked YOLO event shows that an outstanding review request with zero submitted reviews can still be classified as 'Merged without a review'. Submitted COMMENT, REQUEST_CHANGES, APPROVE, dismissed-review, and merger-identity cases remain separate controls."
     },
     {
       "claim_id": "CLM-002",
@@ -31,7 +31,7 @@
       "decision": "defer",
       "id": "ADJ-D004",
       "proposed_level": "observed",
-      "reason": "The x4 sighting lacks final-history co-author counts and merge-method controls."
+      "reason": "GitHub-owned x3 and x4 fragments confirm tier existence, but not the reported 1, 10, 24, and 48 boundaries. The numeric claim remains community-reported pending controlled boundary counts."
     },
     {
       "claim_id": "CLM-008",
@@ -47,7 +47,7 @@
       "decision": "defer",
       "id": "ADJ-D006",
       "proposed_level": "official",
-      "reason": "GitHub's live Starstruck x4 fragment publishes the complete star milestone table; ownership-transfer persistence remains open."
+      "reason": "GitHub's Starstruck fragments publish the complete milestone table and retain creator attribution for at least two currently organization-owned repositories. Transfer timing, forks, archival, falling counts, and award persistence remain bounded edge cases."
     },
     {
       "claim_id": "CLM-005",
@@ -55,7 +55,7 @@
       "decision": "defer",
       "id": "ADJ-D007",
       "proposed_level": "official",
-      "reason": "GitHub's live Pair Extraordinaire fragment states the broad coauthored-commit trigger; numerical tiers and merge-rewrite edge cases remain open."
+      "reason": "The broad trigger is official. Two independent GitHub-linked squash cases show that attribution can survive when the final commit retains the account-linked trailer; rebase, stripped trailers, email mismatch, later rewrites, and exact tier counts remain open."
     }
   ],
   "generated_from": "data/evidence-quality-programme.json",

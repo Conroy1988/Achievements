@@ -10,7 +10,7 @@ permalink: /evidence-intelligence/
 This dashboard combines the public evidence-operation endpoints into one read-only decision surface. It does not promote claims, resolve contradictions, or override the formal release gate.
 
 **Evidence coverage:** 91.2/100  
-**Event-linked records:** 11  
+**Event-linked records:** 16  
 **Boundary investigations:** 5  
 **Deferred adjudications:** 7  
 **Release status:** `ready`
@@ -28,10 +28,10 @@ This dashboard combines the public evidence-operation endpoints into one read-on
 
 | Rank | Achievement | Pressure | Coverage | Events | Boundaries | Deferred | Contradiction |
 |---:|---|---:|---:|---:|---:|---:|---|
-| 1 | Pair Extraordinaire | 49 | 57.5 | 2 | 1 | 2 | narrowed |
-| 2 | Starstruck | 34 | 90.0 | 0 | 1 | 1 | narrowed |
+| 1 | Pair Extraordinaire | 49 | 57.5 | 4 | 1 | 2 | narrowed |
+| 2 | Starstruck | 34 | 90.0 | 2 | 1 | 1 | narrowed |
 | 3 | Pull Shark | 27 | 100.0 | 3 | 1 | 1 | none |
-| 4 | YOLO | 24 | 90.0 | 3 | 0 | 1 | narrowed |
+| 4 | YOLO | 24 | 90.0 | 4 | 0 | 1 | narrowed |
 | 5 | Galaxy Brain | 18 | 100.0 | 0 | 1 | 1 | none |
 | 6 | Quickdraw | 18 | 100.0 | 3 | 1 | 1 | none |
 | 7 | Arctic Code Vault Contributor | 0 | 100.0 | 0 | 0 | 0 | none |
@@ -42,7 +42,7 @@ This dashboard combines the public evidence-operation endpoints into one read-on
 
 ### Pair Extraordinaire
 
-- Capture final-history co-author attribution and visible tier state around each merge-method boundary.
+- GitHub-owned x3 and x4 fragments confirm that multiple Pair Extraordinaire tiers exist, and two independent squash-merge cases preserve final-history attribution. Exact 1, 10, 24, and 48 boundaries still require dated below/at/above account counts; a high-tier sighting alone cannot confirm them.
 
 ### Starstruck
 

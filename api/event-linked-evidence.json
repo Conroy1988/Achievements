@@ -1,6 +1,6 @@
 {
   "api_version": "1.0.0",
-  "count": 11,
+  "count": 16,
   "events": [
     {
       "achievement_slug": "quickdraw",
@@ -268,11 +268,133 @@
         "Schweinepriester publicly displays Pair Extraordinaire x3."
       ],
       "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "yolo",
+      "adjudication_status": "accepted",
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "claim_ids": [
+        "CLM-004"
+      ],
+      "completed_at": "2022-06-12T20:40:02Z",
+      "created_at": "2022-06-12T20:40:00Z",
+      "elapsed_seconds": 2,
+      "event_type": "merge-with-review-request-but-no-submitted-review",
+      "event_url": "https://github.com/Schweinepriester/achievement-testarea/pull/4",
+      "id": "EVT-2026-012",
+      "independent_account_count": 1,
+      "limitations": [
+        "This establishes that requesting a reviewer is not itself a submitted review for this observed award.",
+        "It does not establish how submitted COMMENT, REQUEST_CHANGES, APPROVE, or dismissed reviews affect qualification."
+      ],
+      "public_facts": [
+        "The pull request had a requested reviewer at merge time, but the public reviews endpoint contains no submitted review objects.",
+        "GitHub's achievement-detail fragment links this pull request and states that it was merged without a review."
+      ],
+      "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "adjudication_status": "accepted",
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "completed_at": "2022-05-26T04:31:39Z",
+      "created_at": "2022-05-15T13:45:46Z",
+      "elapsed_seconds": 917153,
+      "event_type": "squash-merge-preserving-coauthor-attribution",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/6271",
+      "id": "EVT-2026-013",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose how many qualifying pull requests GitHub attributed to the account.",
+        "One successful squash configuration does not prove that every squash setting preserves attribution."
+      ],
+      "public_facts": [
+        "The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.",
+        "GitHub's Pair Extraordinaire x3 achievement-detail fragment links this pull request in its contributing history."
+      ],
+      "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "pair-extraordinaire",
+      "adjudication_status": "accepted",
+      "award_link": "github-owned-achievement-fragment-linked-event",
+      "claim_ids": [
+        "CLM-005"
+      ],
+      "completed_at": "2025-04-16T05:41:36Z",
+      "created_at": "2025-04-14T01:33:01Z",
+      "elapsed_seconds": 187715,
+      "event_type": "squash-merge-preserving-coauthor-attribution",
+      "event_url": "https://github.com/Fyrd/caniuse/pull/7306",
+      "id": "EVT-2026-014",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose the internal attributed count or the exact tier boundary crossed by this event.",
+        "Rebase, stripped-trailer, mismatched-email, and later history-rewrite cases remain outside this observation."
+      ],
+      "public_facts": [
+        "The two-commit pull request was squash-merged and its final default-branch commit retained an account-linked Schweinepriester Co-authored-by trailer.",
+        "GitHub's Pair Extraordinaire x3 achievement-detail fragment independently links this pull request in its contributing history."
+      ],
+      "subject_login": "Schweinepriester"
+    },
+    {
+      "achievement_slug": "starstruck",
+      "adjudication_status": "accepted",
+      "award_link": "github-owned-achievement-fragment",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "completed_at": "2026-07-20T01:38:16Z",
+      "created_at": "2026-07-20T01:38:16Z",
+      "elapsed_seconds": 0,
+      "event_type": "creator-attribution-on-organization-owned-repository",
+      "event_url": "https://github.com/users/balloob/achievements/starstruck/detail?hovercard=1",
+      "id": "EVT-2026-015",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not publish the repository transfer date or prove whether transfer occurred before or after each milestone.",
+        "Fork, archive, deletion, restoration, falling-count, and award-removal behavior remain unresolved."
+      ],
+      "public_facts": [
+        "GitHub's Starstruck x4 fragment credits balloob and links home-assistant/core for published star milestones.",
+        "The linked repository is currently owned by the home-assistant organization rather than the credited personal account."
+      ],
+      "subject_login": "balloob"
+    },
+    {
+      "achievement_slug": "starstruck",
+      "adjudication_status": "accepted",
+      "award_link": "github-owned-achievement-fragment",
+      "claim_ids": [
+        "CLM-009",
+        "CLM-010"
+      ],
+      "completed_at": "2026-07-20T01:38:16Z",
+      "created_at": "2026-07-20T01:38:16Z",
+      "elapsed_seconds": 0,
+      "event_type": "creator-attribution-on-organization-owned-repository",
+      "event_url": "https://github.com/users/tiangolo/achievements/starstruck/detail?hovercard=1",
+      "id": "EVT-2026-016",
+      "independent_account_count": 2,
+      "limitations": [
+        "The fragment does not expose the ownership state at the exact moment the milestone or award was processed.",
+        "It does not resolve forks, archival, falling star counts, deletion, restoration, or revocation behavior."
+      ],
+      "public_facts": [
+        "GitHub's Starstruck x4 fragment credits tiangolo and links fastapi/fastapi for the published 4096-star milestone.",
+        "The linked repository is currently owned by the fastapi organization rather than the credited personal account."
+      ],
+      "subject_login": "tiangolo"
     }
   ],
   "generated_from": "data/evidence-quality-programme.json",
   "metrics": {
-    "accepted": 6,
+    "accepted": 11,
     "candidate-observed": 2,
     "negative-inconclusive": 3
   },
