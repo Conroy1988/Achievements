@@ -115,6 +115,8 @@ def render_markdown(queue: dict, achievements: dict) -> str:
         first = " — good first issue" if task["good_first_issue"] else ""
         lines.append(f"| `{task['id']}` | {achievement} | {task['task_type']}{first} | {task['priority']} | {task['difficulty']} | {task['campaign_bucket']} | {task['status']} |")
     for bucket in ("active", "blocked", "monitoring", "queued", "complete"):
+        if lines and lines[-1] == "":
+            lines.pop()
         lines.extend(["", f"## {bucket.title()} tasks", ""])
         for task in [item for item in tasks if item["campaign_bucket"] == bucket]:
             achievement = names.get(task["achievement_slug"], "Cross-achievement")

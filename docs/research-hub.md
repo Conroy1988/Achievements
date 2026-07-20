@@ -88,7 +88,6 @@ This hub converts known evidence gaps into bounded research tasks. Phase 65 sepa
 
 **Related evidence records:** None
 
-
 ## Blocked tasks
 
 ### RSH-010 — Verify Pair Extraordinaire tier thresholds
@@ -109,7 +108,6 @@ This hub converts known evidence gaps into bounded research tasks. Phase 65 sepa
 
 **Related evidence records:** `EVD-2026-004`
 
-
 ## Monitoring tasks
 
 ### RSH-005 — Verify Starstruck ownership edge cases
@@ -129,7 +127,6 @@ This hub converts known evidence gaps into bounded research tasks. Phase 65 sepa
 - Document counterexamples, persistence, and revocation without soliciting artificial stars.
 
 **Related evidence records:** `EVD-2026-006`
-
 
 ## Queued tasks
 
@@ -168,7 +165,6 @@ This hub converts known evidence gaps into bounded research tasks. Phase 65 sepa
 - Provide dated observations from at least two independent accounts.
 
 **Related evidence records:** `EVD-2026-007`
-
 
 ## Complete tasks
 
