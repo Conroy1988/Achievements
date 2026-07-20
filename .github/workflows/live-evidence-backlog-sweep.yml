@@ -29,12 +29,12 @@ jobs:
           python scripts/collect_live_backlog_evidence.py || test -f research/live-backlog-sweep.json
       - name: Commit evidence snapshot
         run: |
-          if git diff --quiet -- research/live-backlog-sweep.json; then
+          git add -f research/live-backlog-sweep.json
+          if git diff --cached --quiet; then
             echo 'Evidence snapshot is already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/live-backlog-sweep.json
           git commit -m 'Capture live evidence backlog sweep'
           git push origin HEAD:agent/resolve-evidence-backlogs
