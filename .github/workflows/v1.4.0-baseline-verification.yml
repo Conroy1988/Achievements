@@ -41,8 +41,26 @@ jobs:
           assert value['prerelease'] is False, value
           print(value['html_url'])
           PY
-      - name: Regenerate health dashboard from public repository state
+      - name: Regenerate operational health
         run: python -m scripts.build_health_dashboard
+      - name: Apply verified release metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.build_health_dashboard import build_markdown
+
+          release = json.loads(Path('v1.4.0-release-verification.json').read_text(encoding='utf-8'))
+          status_path = Path('api/status.json')
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          status['release'] = {
+              'tag': release['tag_name'],
+              'published_at': release['published_at'],
+              'url': release['html_url'],
+          }
+          status_path.write_text(json.dumps(status, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          Path('docs/health-dashboard.md').write_text(build_markdown(status), encoding='utf-8')
+          PY
       - name: Record immutable release baseline
         run: |
           python - <<'PY'
@@ -63,6 +81,7 @@ jobs:
           status = json.loads(Path('api/status.json').read_text(encoding='utf-8'))
           assert status['health']['score'] == 100, status
           assert status['release']['tag'] == 'v1.4.0', status
+          assert status['release']['url'].endswith('/releases/tag/v1.4.0'), status
           print(json.dumps(status['release'], indent=2))
           PY
       - name: Upload publication verification
