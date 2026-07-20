@@ -127,7 +127,7 @@ Generated endpoints must not be edited independently. Update the canonical sourc
 
 The immutable `v1.3.0` source baseline is commit `4869e71b392fc8a8f6d20835cdabe123c0c95e6f`. The tag resolves exactly to that commit.
 
-The `v1.4.0` release is published only after [`release-readiness.json`](../api/release-readiness.json) reports `ready` and merged-main operational health is verified at 100/100. Its immutable tag SHA is recorded after publication.
+The immutable `v1.4.0` source baseline is commit `98d478c7b73cff9c6e8fa5235640f12597544b67`. The tag resolves exactly to that commit after `release-readiness.json` reported `ready` and merged-main operational health was verified at 100/100.
 
 ## Related material
 
