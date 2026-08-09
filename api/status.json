@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-08-09T14:07:27Z",
+  "generated_at": "2026-08-09T14:08:12Z",
   "health": {
     "label": "Excellent",
     "score": 100
   },
-  "latest_successful_audit": "2026-08-09T14:00:43Z",
+  "latest_successful_audit": "2026-08-09T14:08:02Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
