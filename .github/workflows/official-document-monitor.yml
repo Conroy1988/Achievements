@@ -59,7 +59,7 @@ jobs:
             official-doc-monitor-report.md
             official-doc-monitor-report.json
           if-no-files-found: error
-          retention-days: 90
+          retention-days: 7
       - name: Enforce monitor result
         if: steps.monitor.outputs.status == 'error'
         run: exit 1
