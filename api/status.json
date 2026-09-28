@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-09-21T13:21:10Z",
+  "generated_at": "2026-09-28T14:28:24Z",
   "health": {
-    "label": "Healthy",
-    "score": 86
+    "label": "Watch",
+    "score": 81
   },
-  "latest_successful_audit": "2026-09-21T13:08:52Z",
+  "latest_successful_audit": "2026-09-28T14:28:12Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
@@ -21,7 +21,7 @@
     "visual_baselines": 10
   },
   "open": {
-    "issues": 0,
+    "issues": 1,
     "pull_requests": 1
   },
   "release": {
