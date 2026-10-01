@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-09-28T14:28:24Z",
+  "generated_at": "2026-10-01T14:25:57Z",
   "health": {
     "label": "Watch",
-    "score": 81
+    "score": 79
   },
-  "latest_successful_audit": "2026-09-28T14:28:12Z",
+  "latest_successful_audit": "2026-10-01T14:25:45Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
@@ -22,7 +22,7 @@
   },
   "open": {
     "issues": 1,
-    "pull_requests": 1
+    "pull_requests": 2
   },
   "release": {
     "published_at": "2026-07-20T00:16:51Z",
