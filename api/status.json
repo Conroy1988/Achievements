@@ -1,11 +1,11 @@
 {
   "api_status": "live",
-  "generated_at": "2026-10-19T13:57:20Z",
+  "generated_at": "2026-10-26T13:34:06Z",
   "health": {
-    "label": "Watch",
-    "score": 79
+    "label": "Action required",
+    "score": 67
   },
-  "latest_successful_audit": "2026-10-19T13:56:57Z",
+  "latest_successful_audit": "2026-10-26T13:25:35Z",
   "metrics": {
     "freshness": {
       "Fresh": 9
@@ -36,6 +36,6 @@
     "Link check": "success",
     "Source inventory": "success",
     "Verification release": "unknown",
-    "Visual regression": "success"
+    "Visual regression": "failure"
   }
 }
