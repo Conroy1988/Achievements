@@ -9,7 +9,7 @@ description: Live operational health, verification freshness, automation status,
 
 **Overall health:** 67/100 — **Action required**
 
-Generated at **2026-11-16 16:25:07 UTC** from repository data and the GitHub API.
+Generated at **2026-11-23 18:44:27 UTC** from repository data and the GitHub API.
 
 ## Current operating state
 
@@ -36,7 +36,7 @@ Generated at **2026-11-16 16:25:07 UTC** from repository data and the GitHub API
 | Verification release | Unknown |
 | Visual regression | Failure |
 
-Latest successful tracked audit: **2026-11-16 16:14:31 UTC**.
+Latest successful tracked audit: **2026-11-23 18:35:30 UTC**.
 
 ## Source resilience
 
